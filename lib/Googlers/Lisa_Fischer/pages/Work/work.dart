@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/pages/Work/components/grid_item.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/header.dart';
 
+import 'components/footer.dart';
 import 'model/cart.dart';
 
 class LFWork extends StatelessWidget {
@@ -22,6 +23,7 @@ class LFWork extends StatelessWidget {
         buildInfoText(_fontS),
 
         buildWorkItems(),
+        WorkFooter(),
       ],
     );
   }

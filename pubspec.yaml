@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   easy_rich_text: ^0.5.4
+  flutter_svg: ^0.22.0
   google_fonts: ^2.0.0
   scrollable_positioned_list: ^0.2.0-nullsafety.0
 
