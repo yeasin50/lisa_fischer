@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Lisa_Fischer/pages/work.dart';
+import 'pages/Work/work.dart';
 
 ///`HomePage`
 class LisaFischer extends StatelessWidget {
