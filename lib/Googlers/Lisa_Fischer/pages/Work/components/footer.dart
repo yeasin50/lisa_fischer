@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'social_icons.dart';
-
-class WorkFooter extends StatelessWidget {
+class WorkFooterText extends StatelessWidget {
   final TextStyle _footerTextStyle = GoogleFonts.lato();
   @override
   Widget build(BuildContext context) {
@@ -17,7 +14,6 @@ class WorkFooter extends StatelessWidget {
             style: _footerTextStyle,
           ),
         ),
-        SocialIcons(),
       ],
     );
   }
