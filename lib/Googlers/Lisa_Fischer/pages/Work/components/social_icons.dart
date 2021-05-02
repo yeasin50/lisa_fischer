@@ -8,6 +8,7 @@ class SocialIcons extends StatefulWidget {
 
 class _SocialIconsState extends State<SocialIcons> {
   bool _isHoverRow = false;
+  double _iconSize = 35;
 
   @override
   Widget build(BuildContext context) {
@@ -26,31 +27,31 @@ class _SocialIconsState extends State<SocialIcons> {
           mainAxisSize: MainAxisSize.min,
           children: [
             SocialIcon(
-              svgPath: "assets/images/twitter.svg",
-              onClick: () {},
-              isGroupHover: _isHoverRow,
-            ),
-            SocialIcon(
+              size: _iconSize,
               svgPath: "assets/images/email.svg",
               onClick: () {},
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
+              size: _iconSize,
               svgPath: "assets/images/linkedIn.svg",
               onClick: () {},
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
+              size: _iconSize,
               svgPath: "assets/images/behance.svg",
               onClick: () {},
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
+              size: _iconSize,
               svgPath: "assets/images/insta.svg",
               onClick: () {},
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
+              size: _iconSize,
               svgPath: "assets/images/twitter.svg",
               onClick: () {},
               isGroupHover: _isHoverRow,
@@ -65,6 +66,7 @@ class _SocialIconsState extends State<SocialIcons> {
 class SocialIcon extends StatefulWidget {
   const SocialIcon({
     Key? key,
+    required this.size,
     required this.svgPath,
     required this.onClick,
     required this.isGroupHover,
@@ -75,6 +77,7 @@ class SocialIcon extends StatefulWidget {
   final String svgPath;
   final Function onClick;
   final bool isGroupHover;
+  final double size;
 }
 
 class _SocialIconState extends State<SocialIcon> {
@@ -82,7 +85,7 @@ class _SocialIconState extends State<SocialIcon> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 4),
       child: InkWell(
         onTap: () {},
         hoverColor: Colors.transparent,
@@ -102,8 +105,8 @@ class _SocialIconState extends State<SocialIcon> {
           ))),
           child: SvgPicture.asset(
             widget.svgPath,
-            width: 36,
-            fit: BoxFit.fitHeight,
+            width: widget.size,
+            fit: BoxFit.cover,
             color:
                 widget.isGroupHover && !_isHover ? Colors.grey : Colors.black,
           ),
