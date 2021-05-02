@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class GridItem extends StatefulWidget {
   const GridItem({
     Key? key,
+    required this.width,
     required this.imageUrl,
     required this.onPress,
     required this.title,
@@ -11,6 +12,7 @@ class GridItem extends StatefulWidget {
   });
   final String title;
   final String subtitle;
+  final double width;
 
   final String imageUrl;
   final Function onPress;
@@ -21,8 +23,6 @@ class GridItem extends StatefulWidget {
 
 class _GridItemState extends State<GridItem> {
   bool _isHover = false;
-
-  final double _containerW = 400;
 
   double _bottomPadding = 20;
 
@@ -36,8 +36,8 @@ class _GridItemState extends State<GridItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: _containerW,
-      width: _containerW,
+      height: widget.width,
+      width: widget.width,
       child: InkWell(
         onTap: () {
           print("clicked: ${widget.imageUrl}");
@@ -57,10 +57,10 @@ class _GridItemState extends State<GridItem> {
         child: Stack(
           children: [
             FadeInImage.assetNetwork(
-              placeholder: "assets/images/placeHolder.png",
-              image: widget.imageUrl,
-              fit: BoxFit.cover,
-            ),
+                placeholder: "assets/images/placeHolder.png",
+                image: widget.imageUrl,
+                fit: BoxFit.fill,
+                width: widget.width),
 
             /// a little pushUp and itemPopUp from bottom
             /// we can increase bottom margin 😂
@@ -68,8 +68,8 @@ class _GridItemState extends State<GridItem> {
               AnimatedContainer(
                 duration: Duration(milliseconds: 600),
                 padding: EdgeInsets.only(bottom: _bottomPadding),
-                width: _containerW,
-                height: _containerW,
+                width: widget.width,
+                height: widget.width,
                 alignment: Alignment(0, 1),
                 curve: Curves.easeOutExpo,
                 color: Colors.black.withOpacity(.65),
