@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/components/mobile/menu.dart';
 
 import 'package:portfolio/Googlers/Lisa_Fischer/pages/Work/components/grid_item.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/header.dart';
@@ -45,22 +46,23 @@ class LFWork extends StatelessWidget {
           buildCenterBody(constraints, _width, _fontS),
 
           ///`Header`
-          Align(
-              alignment: Alignment(0, -1),
-              child: Container(
-                width: _width * .95,
-                height: 100,
-                alignment: Alignment.center,
-                color: Colors.transparent,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    LSHeader().buildLogo(),
-                    LSHeader().navigators(),
-                  ],
-                ),
-              )),
+          if (_griditemC > 1)
+            Align(
+                alignment: Alignment(0, -1),
+                child: Container(
+                  width: _width * .95,
+                  height: 100,
+                  alignment: Alignment.center,
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      LSHeader().buildLogo(),
+                      LSHeader().navigators(),
+                    ],
+                  ),
+                )),
 
           ///`Footer on width>=440*3`
           if (_griditemC > 2)
@@ -99,9 +101,20 @@ class LFWork extends StatelessWidget {
             SliverList(
               delegate: SliverChildListDelegate([
                 //TOP empty space
-                SizedBox(
-                  height: 100,
-                ),
+                if (_griditemC > 1)
+                  SizedBox(
+                    height: 100,
+                  ),
+                if (_griditemC == 1)
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      LSMenu(width: constraints.maxWidth),
+                      SizedBox(height: 5),
+                      LSHeader().buildLogo(width: 44),
+                    ],
+                  ),
+
                 // Center(child: AnimateEmojis()),
                 SizedBox(
                   height: 16,
