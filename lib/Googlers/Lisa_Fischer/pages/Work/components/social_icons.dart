@@ -25,6 +25,7 @@ class _SocialIconsState extends State<SocialIcons> {
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SocialIcon(
               size: _iconSize,

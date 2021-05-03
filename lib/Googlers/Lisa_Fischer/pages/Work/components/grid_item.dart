@@ -46,12 +46,12 @@ class _GridItemState extends State<GridItem> {
           if (value) {
             setState(() => _isHover = true);
             Future.delayed(Duration(milliseconds: 100), () {
-              setState(() => _bottomPadding = 50);
+              setState(() => _bottomPadding = 25);
             });
           } else
             setState(() {
               _isHover = false;
-              _bottomPadding = 20;
+              _bottomPadding = 0;
             });
         },
         child: Stack(
@@ -70,8 +70,8 @@ class _GridItemState extends State<GridItem> {
                 padding: EdgeInsets.only(bottom: _bottomPadding),
                 width: widget.width,
                 height: widget.width,
-                alignment: Alignment(0, 1),
-                curve: Curves.easeOutExpo,
+                alignment: Alignment(-.75, .7),
+                curve: Curves.decelerate,
                 color: Colors.black.withOpacity(.65),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -81,10 +81,20 @@ class _GridItemState extends State<GridItem> {
                     Text(
                       widget.title,
                       style: _titleTextStyle,
+                      textAlign: TextAlign.left,
                     ),
-                    Text("div"),
+
+                    /// divColor
+                    Container(
+                      width: widget.width * .02,
+                      height: widget.width * .003,
+                      color: Colors.green,
+                      margin:
+                          EdgeInsets.symmetric(vertical: widget.width * .01),
+                    ),
                     Text(
                       widget.subtitle,
+                      textAlign: TextAlign.left,
                       style: _titleTextStyle.copyWith(
                         fontSize: 14,
                         color: Colors.grey,
