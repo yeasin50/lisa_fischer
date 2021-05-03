@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/page_nav.dart';
 
 class LSHeader {
-  Image buildLogo({double width = 44}) {
+  Image buildLogo({
+    double width = 44,
+  }) {
     final String _personal_monogram =
         "assets/images/lisa_personal_monogram.png";
     return Image.asset(
       _personal_monogram,
       scale: 1,
-      fit: BoxFit.cover,
+      fit: BoxFit.fitHeight,
       width: width,
+      height: width * 1.5,
     );
   }
 
