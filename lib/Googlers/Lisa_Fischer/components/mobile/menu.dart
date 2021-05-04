@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LSMenu extends StatefulWidget {
-  const LSMenu({Key? key, required this.width}) : super(key: key);
-
   @override
   _LSMenuState createState() => _LSMenuState();
-  final double width;
 }
 
 class _LSMenuState extends State<LSMenu> {
@@ -16,9 +13,12 @@ class _LSMenuState extends State<LSMenu> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-          width: widget.width,
+          width: double.infinity,
           color: Colors.black,
           padding: const EdgeInsets.only(bottom: 8, top: 4),
+          margin: const EdgeInsets.only(
+            bottom: 8,
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
