@@ -65,44 +65,42 @@ class _GridItemState extends State<GridItem> {
             /// a little pushUp and itemPopUp from bottom
             /// we can increase bottom margin 😂
             if (_isHover)
-              AnimatedContainer(
-                duration: Duration(milliseconds: 600),
-                padding: EdgeInsets.only(bottom: _bottomPadding),
-                width: widget.width,
-                height: widget.width,
-                alignment: Alignment(-.75, .7),
-                curve: Curves.decelerate,
-                color: Colors.black.withOpacity(.65),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.title,
-                      style: _titleTextStyle,
-                      textAlign: TextAlign.left,
-                    ),
+            AnimatedContainer(
+              duration: Duration(milliseconds: 600),
+              padding: EdgeInsets.only(bottom: _bottomPadding),
+              width: widget.width * .9,
+              alignment: Alignment(-.75, .7),
+              curve: Curves.decelerate,
+              color: Colors.black.withOpacity(.65),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.title,
+                    style: _titleTextStyle,
+                    textAlign: TextAlign.left,
+                  ),
 
-                    /// divColor
-                    Container(
-                      width: widget.width * .02,
-                      height: widget.width * .003,
-                      color: Colors.green,
-                      margin:
-                          EdgeInsets.symmetric(vertical: widget.width * .01),
+                  /// divColor
+                  Container(
+                    width: 30,
+                    height: 3,
+                    color: Colors.green,
+                    padding: EdgeInsets.symmetric(vertical: 4),
+                  ),
+                  Text(
+                    widget.subtitle,
+                    textAlign: TextAlign.left,
+                    style: _titleTextStyle.copyWith(
+                      fontSize: 14,
+                      color: Colors.grey,
                     ),
-                    Text(
-                      widget.subtitle,
-                      textAlign: TextAlign.left,
-                      style: _titleTextStyle.copyWith(
-                        fontSize: 14,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
-                ),
-              )
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
