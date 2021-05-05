@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/config/breakpoints.dart';
+import 'package:portfolio/config/constants.dart';
 
 //// Thanks to https://github.com/abuanwar072
 class Responsive extends StatelessWidget {
