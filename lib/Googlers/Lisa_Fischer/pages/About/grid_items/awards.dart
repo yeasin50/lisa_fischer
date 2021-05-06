@@ -4,22 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/pages/About/grid_items/grid.dart';
 import 'package:portfolio/config/constants.dart';
 
-class LisaAwards extends StatefulWidget {
-  @override
-  _LisaAwardsState createState() => _LisaAwardsState();
-}
-
-class _LisaAwardsState extends State<LisaAwards> {
-  TextStyle _style = TextStyle(
-    fontFamily: kFproximaNova,
-  );
-
-  TextStyle _linkTextStyle = TextStyle(
-    fontFamily: kFproximaNova,
-    color: Colors.green,
-  );
+class LisaAwards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final TextStyle _style = TextStyle(
+      fontFamily: kFproximaNova,
+    );
+
+    final TextStyle _linkTextStyle = TextStyle(
+      fontFamily: kFproximaNova,
+      color: Colors.green,
+    );
     return GridItem(
       title: "AWARDS",
       body: EasyRichText(
