@@ -4,13 +4,11 @@ import 'package:portfolio/config/constants.dart';
 class UrlNaVigator extends StatefulWidget {
   final Function onClick;
   final String title;
-  final String url;
 
   const UrlNaVigator({
     Key? key,
     required this.onClick,
     required this.title,
-    required this.url,
   }) : super(key: key);
 
   @override
