@@ -11,6 +11,7 @@ import 'package:portfolio/config/constants.dart';
 
 import 'components/profile_image.dart';
 import 'components/text_helper.dart';
+import 'components/text_navigator_url.dart';
 import 'grid_items/awards.dart';
 import 'grid_items/design_skills.dart';
 import 'grid_items/education.dart';
@@ -21,11 +22,7 @@ import 'grid_items/press.dart';
 import 'grid_items/technical_skills.dart';
 import 'grid_items/writing.dart';
 
-// ignore: must_be_immutable
 class LSAboutPageBody extends StatefulWidget {
-  LSAboutPageBody({required this.gridItemCount});
-  int gridItemCount;
-
   @override
   _LSAboutPageBodyState createState() => _LSAboutPageBodyState();
 }
@@ -42,12 +39,16 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
     color: Colors.black,
   );
 
-  _getCount(BoxConstraints constraints) {
-    if (constraints.maxWidth < 850)
-      return .55;
-    else
-      return 1;
-  }
+  final _listWidget = [
+    LisaEducation(),
+    LisaExperience(),
+    LisaDesignSkills(),
+    LisaTechnicalSkills(),
+    LisaAwards(),
+    LisaFeture(),
+    LisaPress(),
+    LisaWriting()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -178,11 +179,12 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
     );
   }
 
+  /// `layout for Desktop & Web`
   CustomScrollView buildCustomScrollForWebTablet(BoxConstraints constraints) {
     //// this method will handle all layout except Mobile
     return CustomScrollView(
       shrinkWrap: true,
-      semanticChildCount: widget.gridItemCount > 1 ? 2 : 1,
+      // semanticChildCount: widget.gridItemCount > 1 ? 2 : 1,
       slivers: [
         SliverList(
             delegate: SliverChildListDelegate([
@@ -206,32 +208,85 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
           ),
           SizedBox(
             height: 10,
-          )
+          ),
+          Column(mainAxisSize: MainAxisSize.min, children: [
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(
+                  4,
+                  (index) => Container(
+                        width: constraints.maxWidth * .24,
+                        child: _listWidget[0 + index],
+                      )),
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(
+                  4,
+                  (index) => Container(
+                        width: constraints.maxWidth * .24,
+                        child: _listWidget[index + 4],
+                      )),
+            ),
+          ]),
         ])),
 
-        /// gridItems on count>1 else on List
-        SliverGrid(
-          delegate: SliverChildListDelegate([
-            LisaEducation(),
-            LisaExperience(),
-            LisaDesignSkills(),
-            LisaTechnicalSkills(),
-            LisaAwards(),
-            LisaFeture(),
-            LisaPress(),
-            LisaWriting(),
-          ]),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: widget.gridItemCount,
-            mainAxisSpacing: 10.0,
-            crossAxisSpacing: 10.0,
-            childAspectRatio: _getCount(constraints),
-          ),
-        ),
+        /// `Connect & contact`
 
         /// Bottom space to hold on stack
         SliverList(
           delegate: SliverChildListDelegate([
+            /// `Divider`
+            SizedBox(
+              height: 24,
+            ),
+            Divider(
+              // height: 12,
+              color: Colors.red,
+              thickness: 2.4,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      "Connect",
+                    ),
+                    UrlNaVigator(
+                      onClick: () {
+                        print("https://twitter.com/lisasuefischer");
+                      },
+                      title: 'Instagram',
+                    ),
+                    Text(
+                      "Linkedin",
+                    ),
+                    UrlNaVigator(
+                      onClick: () {
+                        print("https://www.linkedin.com/in/lisasuefischer");
+                      },
+                      title: 'Instagram',
+                    ),
+                    Text(
+                      "Twitter",
+                    ),
+                    UrlNaVigator(
+                      onClick: () {
+                        print("https://twitter.com/lisasuefischer");
+                      },
+                      title: 'Instagram',
+                    ),
+                  ],
+                )
+              ],
+            ),
             SizedBox(
               height: 100,
             ),
