@@ -15,9 +15,7 @@ class LisaAboutPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Responsive(
-          mobile: LSAboutPageBody(
-            gridItemCount: 1,
-          ),
+          mobile: LSAboutPageBody(),
           tablet: AboutDesktop(),
           desktop: AboutDesktop(),
         ),
@@ -34,15 +32,13 @@ class AboutDesktop extends StatelessWidget {
         Align(
           alignment: Alignment(0, 0),
           child: MaxWidthContainer(
-            child: LSAboutPageBody(
-              gridItemCount: Responsive.isDesktop(context) ? 4 : 3,
-            ),
+            child: LSAboutPageBody(),
           ),
         ),
         Align(
-          alignment: Alignment(0, -1),
+          alignment: Alignment(0, -.9),
           child: Container(
-            width: kTabletMaxWidth,
+            width: kTabletMaxWidth * .9,
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

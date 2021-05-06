@@ -45,7 +45,7 @@ class WorkDesktopTablet extends StatelessWidget {
           ),
         ),
         Align(
-          alignment: Alignment(0, -1),
+          alignment: Alignment(0, -.8),
           child: Container(
             width: kTabletMaxWidth,
             child: Row(
