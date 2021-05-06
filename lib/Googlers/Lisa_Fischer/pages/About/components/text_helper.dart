@@ -3,7 +3,7 @@ import 'package:portfolio/config/constants.dart';
 
 Padding subHeader(String title) {
   return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 8),
+    padding: const EdgeInsets.symmetric(vertical: 0),
     child: Text(
       title,
       style: TextStyle(
