@@ -3,12 +3,17 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/footer_text.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/header.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/components/main_footer.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/mobile/menu.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/page_nav.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/social_icons.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/pages/About/components/text_styles.dart';
 
 import 'package:portfolio/config/constants.dart';
 
+import 'components/connectAndContact/connect.dart';
+import 'components/connectAndContact/contactOnAbout.dart';
+import 'components/connectAndContact/get_in_touch_button.dart';
 import 'components/profile_image.dart';
 import 'components/text_helper.dart';
 import 'components/text_navigator_url.dart';
@@ -60,96 +65,33 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
     });
   }
 
+  ///`Mobile View`
   CustomScrollView buildScrollForPhone(BoxConstraints constraints) {
-    //// this method will handle  Mobile
-    TextStyle _linkTextStyle = TextStyle(
-      fontFamily: kFproximaNova,
-      color: Colors.green,
-    );
+    //// this method will handle  `Mobile`
+
     return CustomScrollView(
-      // shrinkWrap: true,
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.vertical,
+      semanticChildCount: 1,
       slivers: [
         SliverList(
           delegate: SliverChildListDelegate(
             [
               LSMenu(),
+
               LSHeader().buildLogo(),
               ProfileImage(),
               briefInfo(),
+
+              SizedBox(height: 10),
+              Divider(
+                  color: Colors.red, indent: 4, endIndent: 4, thickness: 1.4),
+              SizedBox(height: 15),
               LisaEducation(),
               LisaExperience(),
               LisaDesignSkills(),
               LisaTechnicalSkills(),
               LisaAwards(),
-
-              // header("Awards"),
-              // Container(
-              //   margin: const EdgeInsets.symmetric(
-              //     vertical: 10,
-              //   ),
-              //   width: 30,
-              //   height: 3,
-              //   color: kColorDash,
-              // ),
-
-              // Container(
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     mainAxisSize: MainAxisSize.min,
-              //     children: [
-              //       Expanded(
-              //         child: EasyRichText(
-              //           "Graphis New Talent Annual 2016: Silver Award + Merit Award, " +
-              //               "Adobe Design Achievement Awards 2016: Semifinalist," +
-              //               " Applied Arts Magazine 2016: Winner, " +
-              //               "Applied Arts Creative Excellence Award 2016: Winner," +
-              //               " IDA International Design Awards 2016: Bronze Award, " +
-              //               "SCAD Secession 2016: Bronze Award + Finalist," +
-              //               " SCAD Academic Honors Award: 2014, 2015, " +
-              //               "SCAD Achievement Honors Award: 2014, 2015," +
-              //               " SCAD Artistic Honors Award 2015",
-              //           patternList: [
-              //             EasyRichTextPattern(
-              //               targetString: "Graphis",
-              //               matchWordBoundaries: false,
-              //               style: _linkTextStyle,
-              //               recognizer: TapGestureRecognizer()
-              //                 ..onTap = () => print('Tap Here onTap'),
-              //             ),
-              //             EasyRichTextPattern(
-              //               targetString: "Adobe Design Achievement",
-              //               matchWordBoundaries: false,
-              //               style: _linkTextStyle,
-              //             ),
-              //             EasyRichTextPattern(
-              //               targetString:
-              //                   "Applied Arts Creative Excellence Award",
-              //               matchWordBoundaries: false,
-              //               style: _linkTextStyle,
-              //             ),
-              //             EasyRichTextPattern(
-              //               targetString: "Applied Arts Magazine",
-              //               matchWordBoundaries: false,
-              //               style: _linkTextStyle,
-              //             ),
-              //             EasyRichTextPattern(
-              //               targetString: "IDA International Design Awards",
-              //               matchWordBoundaries: false,
-              //               style: _linkTextStyle,
-              //             ),
-              //             EasyRichTextPattern(
-              //               targetString: "SCAD Secession ",
-              //               matchWordBoundaries: false,
-              //               style: _linkTextStyle,
-              //             ),
-              //           ],
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
 
               LisaFeture(),
               LisaPress(),
@@ -157,17 +99,29 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
 
               // divider
               SizedBox(height: 10),
-              Divider(color: Colors.red, thickness: 2.4),
+              Divider(
+                  color: Colors.red, indent: 4, endIndent: 4, thickness: 1.4),
               SizedBox(height: 10),
 
-              Container(
-                height: 50,
-                width: 50,
-                color: Colors.amber,
+              //// Extra left Padding for `Connect & Contact`
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ConnectOnAbout(),
+                    SizedBox(height: 12),
+                    ContactOnAbout(),
+                    SizedBox(height: 12),
+                    GetInTouch(),
+                  ],
+                ),
               ),
+
               // // //divider
               SizedBox(height: 10),
-              Divider(color: Colors.red, thickness: 2.4),
+              Divider(
+                  color: Colors.red, indent: 4, endIndent: 4, thickness: 1.4),
               SizedBox(height: 10),
 
               FooterText(),
@@ -184,12 +138,13 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
     //// this method will handle all layout except Mobile
     return CustomScrollView(
       shrinkWrap: true,
+      physics: BouncingScrollPhysics(),
       // semanticChildCount: widget.gridItemCount > 1 ? 2 : 1,
       slivers: [
         SliverList(
             delegate: SliverChildListDelegate([
           SizedBox(
-            height: 100,
+            height: 120,
           ),
         ])),
 
@@ -197,43 +152,41 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
 
         /// Divider
         SliverList(
-            delegate: SliverChildListDelegate([
-          SizedBox(
-            height: 24,
+          delegate: SliverChildListDelegate(
+            [
+              SizedBox(
+                height: 24,
+              ),
+              Divider(
+                  color: Colors.red, thickness: 2.4, endIndent: 20, indent: 20),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: List.generate(
+                    4,
+                    (index) => Container(
+                          width: constraints.maxWidth * .24,
+                          child: _listWidget[0 + index],
+                        )),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: List.generate(
+                    4,
+                    (index) => Container(
+                          width: constraints.maxWidth * .24,
+                          child: _listWidget[index + 4],
+                        )),
+              ),
+            ],
           ),
-          Divider(
-            // height: 12,
-            color: Colors.red,
-            thickness: 2.4,
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Column(mainAxisSize: MainAxisSize.min, children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: List.generate(
-                  4,
-                  (index) => Container(
-                        width: constraints.maxWidth * .24,
-                        child: _listWidget[0 + index],
-                      )),
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: List.generate(
-                  4,
-                  (index) => Container(
-                        width: constraints.maxWidth * .24,
-                        child: _listWidget[index + 4],
-                      )),
-            ),
-          ]),
-        ])),
+        ),
 
         /// `Connect & contact`
 
@@ -241,57 +194,39 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
         SliverList(
           delegate: SliverChildListDelegate([
             /// `Divider`
-            SizedBox(
-              height: 24,
-            ),
+            SizedBox(height: 24),
             Divider(
-              // height: 12,
-              color: Colors.red,
-              thickness: 2.4,
+                color: Colors.red, indent: 20, endIndent: 20, thickness: 2.4),
+            SizedBox(height: 10),
+
+            ////`2nd part Contact & Connect`
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ConnectOnAbout(),
+                  ContactOnAbout(),
+
+                  /// extra space handler, you can use any empty widget here
+                  Container(),
+
+                  GetInTouch(),
+                ],
+              ),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      "Connect",
-                    ),
-                    UrlNaVigator(
-                      onClick: () {
-                        print("https://twitter.com/lisasuefischer");
-                      },
-                      title: 'Instagram',
-                    ),
-                    Text(
-                      "Linkedin",
-                    ),
-                    UrlNaVigator(
-                      onClick: () {
-                        print("https://www.linkedin.com/in/lisasuefischer");
-                      },
-                      title: 'Instagram',
-                    ),
-                    Text(
-                      "Twitter",
-                    ),
-                    UrlNaVigator(
-                      onClick: () {
-                        print("https://twitter.com/lisasuefischer");
-                      },
-                      title: 'Instagram',
-                    ),
-                  ],
-                )
-              ],
-            ),
+
+            //extra height for holding bottom Stacks chidren
             SizedBox(
               height: 100,
             ),
+
+            /// if we are in tablet we want to set footer at bottom
+            if (constraints.maxWidth < kTabletMaxWidth) footerRow(),
           ]),
-        )
+        ),
       ],
     );
   }
@@ -320,43 +255,50 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
     ]));
   }
 
-  Column briefInfo() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Lisa Fischer",
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontFamily: "ProximaNova",
-            color: Color.fromRGBO(5, 173, 134, .21),
-            fontWeight: FontWeight.w700,
-            fontSize: 80,
+  Padding briefInfo() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Lisa Fischer",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontFamily: "ProximaNova",
+              color: Color.fromRGBO(5, 173, 134, .21),
+              fontWeight: FontWeight.w700,
+              fontSize: 80,
+            ),
           ),
-        ),
-        Text(
-          "👋",
-          style: TextStyle(
-            fontSize: 40,
+          Text(
+            "👋",
+            style: TextStyle(
+              fontSize: 40,
+            ),
           ),
-        ),
-        Text(
-          "\nLisa is a designer focused on building brands and creating digital experiences — currently working at Google.",
-          style: TextStyle(
-            fontSize: 21,
-            fontWeight: FontWeight.w700,
+          Text(
+            "\nLisa is a designer focused on building brands and creating digital experiences — currently working at Google.",
+            style: TextStyle(
+              fontSize: 21,
+              fontWeight: FontWeight.w700,
+              height: kNormalTextHeight,
+              letterSpacing: .27,
+            ),
           ),
-        ),
-        Text(
-          _texts1 + "\n\n" + _texts2,
-          style: _textStyleS,
-        ),
-        Text(
-          "— Based in the San Francisco Bay area",
-          style: _textStyleS,
-        ),
-      ],
+          Text(
+            _texts1 + "\n\n" + _texts2 + "\n",
+            style: normalStyle.copyWith(
+              letterSpacing: .27,
+            ),
+          ),
+          Text(
+            "— Based in the San Francisco Bay area",
+            style: normalStyle,
+          ),
+        ],
+      ),
     );
   }
 }
