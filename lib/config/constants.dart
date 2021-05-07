@@ -6,4 +6,6 @@ const double kTabletMaxWidth = 1130.0;
 
 const Color kColorDash = const Color(0xff00b288);
 
-const String kFproximaNova= "ProximaNova";
+const String kFproximaNova = "ProximaNova";
+
+const double kNormalTextHeight = 1.4;
