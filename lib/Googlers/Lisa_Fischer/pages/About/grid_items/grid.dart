@@ -24,6 +24,7 @@ class GridItem extends StatelessWidget {
         children: [
           header(title),
           Container(
+            padding: const EdgeInsets.only(top: 28),
             margin: const EdgeInsets.symmetric(
               vertical: 6,
             ),
