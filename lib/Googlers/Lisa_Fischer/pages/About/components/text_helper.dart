@@ -9,6 +9,7 @@ Padding subHeader(String title) {
       style: TextStyle(
         fontFamily: kFproximaNova,
         letterSpacing: 1.3,
+        height: kNormalTextHeight,
         fontWeight: FontWeight.w700,
         color: Colors.black87,
       ),
@@ -22,6 +23,7 @@ Text header(String title) {
     style: TextStyle(
       fontFamily: kFproximaNova,
       fontSize: 21,
+      height: kNormalTextHeight,
     ),
   );
 }
@@ -32,6 +34,7 @@ Text normalText(String text) {
     softWrap: true,
     style: TextStyle(
       fontFamily: kFproximaNova,
+      height: kNormalTextHeight,
     ),
   );
 }
