@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/footer_text.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/header.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/components/main_footer.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/social_icons.dart';
 import 'package:portfolio/config/constants.dart';
 import 'package:portfolio/config/max_width_container.dart';
@@ -38,31 +39,25 @@ class AboutDesktop extends StatelessWidget {
         Align(
           alignment: Alignment(0, -.9),
           child: Container(
-            width: kTabletMaxWidth * .9,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                LSHeader().buildLogo(width: 44),
-                LSHeader().navigators(),
-              ],
+            width: kTabletMaxWidth,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  LSHeader().buildLogo(width: 44),
+                  LSHeader().navigators(),
+                ],
+              ),
             ),
           ),
         ),
-        Align(
-          alignment: Alignment(0, 1),
-          child: Container(
-            color: Colors.white,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                FooterText(),
-                SocialIcons(),
-              ],
-            ),
+        if (Responsive.isDesktop(context))
+          Align(
+            alignment: Alignment(0, 1),
+            child: footerRow(),
           ),
-        )
       ],
     );
   }
