@@ -7,13 +7,13 @@ import 'package:portfolio/Googlers/Lisa_Fischer/components/main_footer.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/mobile/menu.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/page_nav.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/social_icons.dart';
-import 'package:portfolio/Googlers/Lisa_Fischer/pages/About/components/text_styles.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/components/text_styles.dart';
 
 import 'package:portfolio/config/constants.dart';
 
 import 'components/connectAndContact/connect.dart';
 import 'components/connectAndContact/contactOnAbout.dart';
-import 'components/connectAndContact/get_in_touch_button.dart';
+import '../../components/custom_button.dart';
 import 'components/profile_image.dart';
 import 'components/text_helper.dart';
 import 'components/text_navigator_url.dart';
@@ -113,7 +113,10 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
                     SizedBox(height: 12),
                     ContactOnAbout(),
                     SizedBox(height: 12),
-                    GetInTouch(),
+                    CustomButton(
+                      label: "GET IN TOUCH",
+                      onTap: () {},
+                    ),
                   ],
                 ),
               ),
@@ -213,7 +216,10 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
                   /// extra space handler, you can use any empty widget here
                   Container(),
 
-                  GetInTouch(),
+                  CustomButton(
+                    label: "GET IN TOUCH",
+                    onTap: () {},
+                  ),
                 ],
               ),
             ),
@@ -265,12 +271,7 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
           Text(
             "Lisa Fischer",
             textAlign: TextAlign.left,
-            style: TextStyle(
-              fontFamily: "ProximaNova",
-              color: Color.fromRGBO(5, 173, 134, .21),
-              fontWeight: FontWeight.w700,
-              fontSize: 80,
-            ),
+            style: titleTextStyle,
           ),
           Text(
             "👋",
@@ -280,12 +281,7 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
           ),
           Text(
             "\nLisa is a designer focused on building brands and creating digital experiences — currently working at Google.",
-            style: TextStyle(
-              fontSize: 21,
-              fontWeight: FontWeight.w700,
-              height: kNormalTextHeight,
-              letterSpacing: .27,
-            ),
+            style: subHeaderTextStyle,
           ),
           Text(
             _texts1 + "\n\n" + _texts2 + "\n",
