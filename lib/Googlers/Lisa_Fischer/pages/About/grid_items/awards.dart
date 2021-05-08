@@ -5,7 +5,7 @@ import 'package:portfolio/Googlers/Lisa_Fischer/pages/About/grid_items/grid.dart
 import 'package:portfolio/config/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../components/text_styles.dart';
+import '../../../components/text_styles.dart';
 
 class LisaAwards extends StatelessWidget {
   @override
