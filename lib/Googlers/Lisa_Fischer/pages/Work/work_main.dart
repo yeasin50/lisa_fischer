@@ -53,7 +53,7 @@ class WorkDesktopTablet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 LSHeader().buildLogo(width: 44),
-                LSHeader().navigators(),
+                LSHeader().navigators(context),
               ],
             ),
           ),

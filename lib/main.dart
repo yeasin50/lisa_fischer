@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/pages/About/lisa_about.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/pages/Contact/contact.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/pages/Work/work_main.dart';
 
 import 'body.dart';
 
@@ -16,6 +19,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
+      routes: {
+        LisaFischerWorkMain.routename: (_) => LisaFischerWorkMain(),
+        LisaAboutPage.routeName: (_) => LisaAboutPage(),
+        LisaContactPage.routeName: (_) => LisaContactPage(),
+      },
     );
   }
 }

@@ -9,6 +9,7 @@ import 'package:portfolio/config/responsive.dart';
 import 'body.dart';
 
 class LisaContactPage extends StatelessWidget {
+  static final String routeName = "/contactpage";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -52,7 +53,7 @@ class DesktopTabletMode extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           LSHeader().buildLogo(width: 44),
-                          LSHeader().navigators(),
+                          LSHeader().navigators(context),
                         ],
                       ),
                     ),

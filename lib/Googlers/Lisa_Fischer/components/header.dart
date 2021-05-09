@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/page_nav.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/pages/About/lisa_about.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/pages/Contact/contact.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/pages/Work/work_main.dart';
 
 class LSHeader {
   Image buildLogo({
@@ -16,27 +19,24 @@ class LSHeader {
     );
   }
 
-  Row navigators() {
+  Row navigators(BuildContext context) {
     return Row(
       children: [
         PageNavigator(
             title: "WORK",
             isActive: true,
-            onClick: () {
-              print("Page Navigate to Work");
-            }),
+            onClick: () => Navigator.of(context)
+                .pushReplacementNamed(LisaFischerWorkMain.routename)),
         PageNavigator(
             isActive: false,
             title: "ABOUT",
-            onClick: () {
-              print("Page Navigate to About");
-            }),
+            onClick: () => Navigator.of(context)
+                .pushReplacementNamed(LisaAboutPage.routeName)),
         PageNavigator(
             isActive: false,
             title: "CONTACT",
-            onClick: () {
-              print("Page Navigate to contact");
-            }),
+            onClick: () => Navigator.of(context)
+                .pushReplacementNamed(LisaContactPage.routeName)),
       ],
     );
   }

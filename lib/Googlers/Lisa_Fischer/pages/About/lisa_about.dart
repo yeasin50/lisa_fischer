@@ -10,6 +10,7 @@ import 'package:portfolio/config/responsive.dart';
 import 'body.dart';
 
 class LisaAboutPage extends StatelessWidget {
+  static final String routeName = "/about";
   @override
   Widget build(BuildContext context) {
     print("rebuild Page");
@@ -37,7 +38,7 @@ class AboutDesktop extends StatelessWidget {
           ),
         ),
         Align(
-          alignment: Alignment(0, -.9),
+          alignment: kTopBodyStackChildAlignment,
           child: Container(
             width: kTabletMaxWidth,
             child: Padding(
@@ -47,7 +48,7 @@ class AboutDesktop extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   LSHeader().buildLogo(width: 44),
-                  LSHeader().navigators(),
+                  LSHeader().navigators(context),
                 ],
               ),
             ),
