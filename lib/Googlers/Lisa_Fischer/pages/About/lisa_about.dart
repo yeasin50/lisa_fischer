@@ -32,7 +32,7 @@ class AboutDesktop extends StatelessWidget {
     return Stack(
       children: [
         Align(
-          alignment: Alignment(0, 0),
+          alignment: kTopBodyStackChildAlignment,
           child: MaxWidthContainer(
             child: LSAboutPageBody(),
           ),

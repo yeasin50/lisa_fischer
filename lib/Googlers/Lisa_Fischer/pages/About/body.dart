@@ -1,6 +1,7 @@
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/components/custom_route.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/footer_text.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/header.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/main_footer.dart';
@@ -8,6 +9,7 @@ import 'package:portfolio/Googlers/Lisa_Fischer/components/mobile/menu.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/page_nav.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/social_icons.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/text_styles.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/pages/Contact/contact.dart';
 
 import 'package:portfolio/config/constants.dart';
 
@@ -147,7 +149,7 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
         SliverList(
             delegate: SliverChildListDelegate([
           SizedBox(
-            height: 120,
+            height: kTopLevelStackSpace,
           ),
         ])),
 
@@ -218,7 +220,12 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
 
                   CustomButton(
                     label: "GET IN TOUCH",
-                    onTap: () {},
+                    onTap: () {
+                      LSHeader.currentActiveIndex = 2;
+                      Navigator.of(context).pushReplacement(pageRouteFromRT(
+                          () => LisaContactPage(),
+                          startOffset: Offset(1.0, 0)));
+                    },
                   ),
                 ],
               ),

@@ -34,45 +34,49 @@ class WorkDesktopTablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Align(
-          alignment: Alignment(0, 0),
-          child: MaxWidthContainer(
-            child: LFWorkBody(
-              griditemC: Responsive.isDesktop(context) ? 3 : 2,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment(0, 0),
+            child: MaxWidthContainer(
+              child: LFWorkBody(
+                griditemC: Responsive.isDesktop(context) ? 3 : 2,
+              ),
             ),
           ),
-        ),
-        Align(
-          alignment: Alignment(0, -.8),
-          child: Container(
-            width: kTabletMaxWidth,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                LSHeader().buildLogo(width: 44),
-                LSHeader().navigators(context),
-              ],
+          Align(
+            alignment: kTopBodyStackChildAlignment,
+            child: Container(
+              width: kTabletMaxWidth,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  LSHeader().buildLogo(width: 44),
+                  LSHeader().navigators(context),
+                ],
+              ),
             ),
           ),
-        ),
-        Align(
-          alignment: Alignment(0, 1),
-          child: Container(
-            color: Colors.white,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                FooterText(),
-                SocialIcons(),
-              ],
-            ),
-          ),
-        )
-      ],
+          if (Responsive.isDesktop(context))
+            Align(
+              alignment: Alignment(0, 1),
+              child: Container(
+                color: Colors.white,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    FooterText(),
+                    SocialIcons(),
+                  ],
+                ),
+              ),
+            )
+        ],
+      ),
     );
   }
 }

@@ -4,11 +4,13 @@ import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/footer_text.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/components/main_footer.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/mobile/menu.dart';
 
 import 'package:portfolio/Googlers/Lisa_Fischer/pages/Work/components/grid_item.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/header.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/social_icons.dart';
+import 'package:portfolio/config/constants.dart';
 
 import 'components/animate_emojis.dart';
 
@@ -36,7 +38,7 @@ class LFWorkBody extends StatelessWidget {
             if (griditemC == 1) LSHeader().buildLogo(width: 35),
             if (griditemC > 1)
               SizedBox(
-                height: 100,
+                height: kTopLevelStackSpace,
               ),
             Center(child: AnimateEmojis()),
             SizedBox(
@@ -86,10 +88,11 @@ class LFWorkBody extends StatelessWidget {
         /// Bottom space to hold on stack
         SliverList(
           delegate: SliverChildListDelegate([
-            if (griditemC > 1)
+            if (griditemC == 3)
               SizedBox(
                 height: 100,
               ),
+            if (griditemC == 2) footerRow(),
             if (griditemC == 1) FooterText(),
             if (griditemC == 1) SocialIcons(),
           ]),
