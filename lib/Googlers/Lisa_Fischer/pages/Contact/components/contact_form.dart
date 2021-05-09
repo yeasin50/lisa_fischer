@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/custom_button.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/text_styles.dart';
 import 'package:portfolio/config/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactForm extends StatefulWidget {
   @override
@@ -16,6 +17,12 @@ class _ContactFormState extends State<ContactForm> {
   final ValueKey _emailValueKey = ValueKey("email");
   final ValueKey _subjectValueKey = ValueKey("subject");
   final ValueKey _messageValueKey = ValueKey("message");
+
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _subjectController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
 
   final _inputDecoration = InputDecoration(
     enabledBorder: OutlineInputBorder(
@@ -77,12 +84,60 @@ class _ContactFormState extends State<ContactForm> {
 
   bool _isEmptyMessage = false;
 
-  ////validate and submit form
-  _submitForm() {
-    print("on Submit");
+  ////validate and submit form &
+  /// sending `Email` to `myself`
+  _submitForm() async {
+    // print("on Submit");
     if (_formKey.currentState!.validate()) {
-      print("Valid");
+      final String firstName = _firstNameController.text.trim().toString();
+      final String lastname = _lastNameController.text.trim().toString();
+      final String email = _emailController.text.trim().toString();
+      final String subject = _subjectController.text.trim().toString();
+      final String message = _messageController.text.trim().toString();
+
+      // print(" Name: $firstName + $lastname \n $email \n $subject \n$message");
+
+      //// construct email
+      final String _bodyText = "Hi I am $firstName $lastname. " + message;
+
+      ///FIXME:: getting extra `+` on using `space` like `Hi+I+am+Yeasin+sheikh.+text` inside [Email Body]
+      final Uri _emailLauncher =
+          Uri(scheme: "mailto", path: email, queryParameters: {
+        'subject': subject,
+        'body': _bodyText,
+      });
+
+      if (await canLaunch(_emailLauncher.toString())) {
+        await launch(_emailLauncher.toString());
+      } else {
+        _showAlertDialog(context);
+      }
     }
+  }
+
+  _showAlertDialog(BuildContext context) {
+    // set up the button
+    Widget okButton = TextButton(
+      child: Text("OK"),
+      onPressed: () {},
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Failed"),
+      content: Text("Something went wrong!"),
+      actions: [
+        okButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
   }
 
   /// empty validation
@@ -131,6 +186,7 @@ class _ContactFormState extends State<ContactForm> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TextFormField(
+                                controller: _firstNameController,
                                 autocorrect: false,
                                 textCapitalization: TextCapitalization.none,
                                 key: _firstNameValueKey,
@@ -159,6 +215,7 @@ class _ContactFormState extends State<ContactForm> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TextFormField(
+                                controller: _lastNameController,
                                 style: TextStyle(),
                                 autocorrect: false,
                                 textCapitalization: TextCapitalization.none,
@@ -189,6 +246,7 @@ class _ContactFormState extends State<ContactForm> {
 
                   setLabel("Email Address"),
                   TextFormField(
+                    controller: _emailController,
                     style: TextStyle(),
                     onTap: () {
                       // print("Play onUnserName Animation\n");
@@ -211,6 +269,7 @@ class _ContactFormState extends State<ContactForm> {
 
                   setLabel("Subject"),
                   TextFormField(
+                    controller: _subjectController,
                     style: TextStyle(),
                     onTap: () {
                       // print("Play onUnserName Animation\n");
@@ -267,6 +326,7 @@ class _ContactFormState extends State<ContactForm> {
               controller: _controller,
               child: TextFormField(
                 key: _messageValueKey,
+                controller: _messageController,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(10),
                   border: InputBorder.none,
