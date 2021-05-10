@@ -28,6 +28,12 @@ class _AnimateEmojisState extends State<AnimateEmojis>
     });
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   _initController() {
     /// 4 items = 4 sec;
     _controller =
