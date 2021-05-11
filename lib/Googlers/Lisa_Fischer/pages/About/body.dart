@@ -9,6 +9,7 @@ import 'package:portfolio/Googlers/Lisa_Fischer/components/mobile/menu.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/page_nav.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/social_icons.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/text_styles.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/components/wave_animation.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/pages/Contact/contact.dart';
 
 import 'package:portfolio/config/constants.dart';
@@ -280,10 +281,12 @@ class _LSAboutPageBodyState extends State<LSAboutPageBody> {
             textAlign: TextAlign.left,
             style: titleTextStyle,
           ),
-          Text(
-            "👋",
-            style: TextStyle(
-              fontSize: 40,
+          WavingWidget(
+            child: Text(
+              "👋",
+              style: TextStyle(
+                fontSize: 40,
+              ),
             ),
           ),
           Text(
