@@ -26,7 +26,7 @@ class LSHeader {
   }
 
   Row navigators(BuildContext context) {
-    print("current index: $currentActiveIndex");
+    // print("current index: $currentActiveIndex");
     return Row(
       children: [
         PageNavigator(

@@ -5,7 +5,7 @@ Route pageRouteFromRT(
   Function child, {
   Offset startOffset = const Offset(0, -.8),
 }) {
-  print("type=> ${child.runtimeType} ");
+  // print("type=> ${child.runtimeType} ");
   return PageRouteBuilder(
     transitionDuration: Duration(milliseconds: 500),
     pageBuilder: (context, animation, secondaryAnimation) => child(),

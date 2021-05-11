@@ -4,6 +4,7 @@ import 'package:portfolio/Googlers/Lisa_Fischer/pages/Contact/contact.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/pages/Work/work_main.dart';
 
 import 'body.dart';
+import 'test/parent_test.dart';
 import 'test/routeAnimTest/page1.dart';
 import 'test/routeAnimTest/page2.dart';
 

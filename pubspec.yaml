@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  animated_text_kit: ^4.2.1
   cupertino_icons: ^1.0.2
   easy_rich_text: ^0.5.4
   flutter_svg: ^0.22.0

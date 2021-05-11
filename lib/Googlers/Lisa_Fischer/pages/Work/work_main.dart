@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/components/animated_logo.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/footer_text.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/social_icons.dart';
 import 'package:portfolio/config/constants.dart';
@@ -17,7 +18,10 @@ class LisaFischerWorkMain extends StatelessWidget {
       child: Scaffold(
         body: Responsive(
           desktop: WorkDesktopTablet(),
-          tablet: WorkDesktopTablet(),
+          tablet: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: WorkDesktopTablet(),
+          ),
           mobile: LFWorkBody(
             griditemC: 1,
           ),
@@ -54,7 +58,9 @@ class WorkDesktopTablet extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  LSHeader().buildLogo(width: 44),
+                  AnimatedLogo(
+                    animType: AnimationType.rotate,
+                  ),
                   LSHeader().navigators(context),
                 ],
               ),
