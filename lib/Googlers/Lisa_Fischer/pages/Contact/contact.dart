@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/Googlers/Lisa_Fischer/components/animated_logo.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/footer_text.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/header.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/social_icons.dart';
@@ -52,7 +53,9 @@ class DesktopTabletMode extends StatelessWidget {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          LSHeader().buildLogo(width: 44),
+                          AnimatedLogo(
+                            animType: AnimationType.scaleX,
+                          ),
                           LSHeader().navigators(context),
                         ],
                       ),
