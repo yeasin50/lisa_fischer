@@ -16,3 +16,6 @@ const double kTopLevelStackSpace = 150;
 
 /// The first child(`Main Body`) of Stack
 const Alignment kTopBodyStackChildAlignment = Alignment(0, -.85);
+
+///placeHolderImagePath => assets
+const String placeHolderImagePath = "assets/images/placeHolder.png";
