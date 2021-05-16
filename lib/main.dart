@@ -3,6 +3,7 @@ import 'package:portfolio/Googlers/Lisa_Fischer/pages/About/lisa_about.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/pages/Contact/contact.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/pages/Work/work_main.dart';
 
+import 'Googlers/Lisa_Fischer/pages/GridItemDetails/BuyOnGoogle/buy_on_google.dart';
 import 'body.dart';
 import 'test/parent_test.dart';
 import 'test/routeAnimTest/page1.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: BuyOnGoogle(),
       routes: {
         LisaFischerWorkMain.routename: (_) => LisaFischerWorkMain(),
         LisaAboutPage.routeName: (_) => LisaAboutPage(),
