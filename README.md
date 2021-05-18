@@ -26,7 +26,22 @@ The numerical values 100 to 900 roughly correspond to the following common weigh
 |900 |	Black (Heavy) |
 |950| Extra Black (Ultra Black) |
 
+Flutter supports the following font formats:
+
+* ttf
+* otf
+Flutter does not support ``.woff ``and ``.woff2`` fonts for all platforms.
+
+Sorry Couldn't manage ProximaNova ttf or otf version. Google fonts as Proxima Nova alternatives
+- Montserrat
+- Lato
+- Nunito Sans
+- Raleway
+
+
+
 -----------
+
 
 ## Targets
  -  [Lisa Fischer](http://www.lisasuefischer.com/)
