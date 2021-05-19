@@ -60,14 +60,14 @@ flutter:
   fonts:
     - family: ProximaNova
       fonts:
-        - asset: assets/fonts/ProximaNovaRegular.otf
-          weight: 400
-
-        - asset: assets/fonts/ProximaNovaBold.woff
-          weight: 700
-
-        - asset: assets/fonts/ProximaNovaBoldExtra.woff
-          weight: 900
+        - asset: assets/fonts/ProximaNova/ProximaNovaRegular.otf
+        # - asset: assets/fonts/ProximaNova/Rene Bieder  Milliard Bold.woff
+        #   weight: 700
+        # - asset: assets/fonts/ProximaNova/Rene-Bieder-Milliard-ExtraBold.woff
+        #   weight: 900
+        # - asset: assets/fonts/ProximaNova/Rene-Bieder-Milliard-ExtraBold-Italic.woff
+        #   weight: 900
+        #   style: italic
 
   #   - family: Trajan Pro
   #     fonts:
