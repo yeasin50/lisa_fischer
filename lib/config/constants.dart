@@ -19,3 +19,6 @@ const Alignment kTopBodyStackChildAlignment = Alignment(0, -.85);
 
 ///placeHolderImagePath => assets
 const String placeHolderImagePath = "assets/images/placeHolder.png";
+
+/// [SizeBox] with height 20
+const SizedBox columnSpace = SizedBox(height: 20);
