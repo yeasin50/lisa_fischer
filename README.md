@@ -6,6 +6,11 @@
 
 A new Flutter ``web`` project for creating different style portfolios.
 
+Dependencies:
+- youtube_player_flutter: ^8.0.0 => BSD, doesnt support on web 😓
+  - Although the minimum to be set is 17, the player won't play on device with API < 20 (19 if Hybrid Composition is enabled). For API < 20 devices, you might want to forward the video to be played using YouTube app instead, using packages like url_launcher or android_intent.
+- 
+
 
 
 ---------
