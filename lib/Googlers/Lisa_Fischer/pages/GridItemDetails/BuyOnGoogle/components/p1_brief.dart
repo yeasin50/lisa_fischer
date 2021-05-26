@@ -6,7 +6,14 @@ import 'package:portfolio/config/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 ///intro Text within [ConstrainedBox] part
-class P1GShopIntro extends StatelessWidget {
+class P1GShopIntro extends StatefulWidget {
+  @override
+  _P1GShopIntroState createState() => _P1GShopIntroState();
+}
+
+class _P1GShopIntroState extends State<P1GShopIntro> {
+  bool _isHover = false;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,21 +40,33 @@ class P1GShopIntro extends StatelessWidget {
             maxWidth: 400,
           ),
           child: RichText(
-              text: TextSpan(style: normalStyle, text: "The ", children: [
-            TextSpan(
-              text: "newly launched Google Shopping ",
-              style: normalStyle.copyWith(
-                color: Colors.blue,
-                fontWeight: FontWeight.w600,
-              ),
-              recognizer: TapGestureRecognizer()
-                ..onTap = () => launch("https://shopping.google.com/u/0/"),
-            ),
-            TextSpan(
-              text:
-                  "experience is available in the U.S. and France with the special ability to buy directly on Google. This feature required thoughtful brand strategy and design for each buying touchpoint throughout the Google Shopping journey in both countries.",
-            ),
-          ])),
+              text: TextSpan(
+                  style: MyTextStyles().normatText,
+                  text: "The ",
+                  children: [
+                TextSpan(
+                  text: "newly launched Google Shopping ",
+                  style: MyTextStyles().normatText.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: _isHover
+                            ? kColorDash
+                            : MyTextStyles().normatText.color,
+                      ),
+
+                  ///on hover Event Change the Text Color
+                  /// we arent adding underLine, because of padding issue,
+                  /// if we use shadow then it will failed to align with paragraph,
+                  /// or we can make full paragraph with Text shadow to solve this 😅
+                  onEnter: (event) => setState(() => _isHover = true),
+                  onExit: (event) => setState(() => _isHover = false),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => launch("https://shopping.google.com/u/0/"),
+                ),
+                TextSpan(
+                  text:
+                      "experience is available in the U.S. and France with the special ability to buy directly on Google. This feature required thoughtful brand strategy and design for each buying touchpoint throughout the Google Shopping journey in both countries.",
+                ),
+              ])),
         ),
       ],
     );
