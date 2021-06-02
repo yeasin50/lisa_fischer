@@ -3,14 +3,15 @@ import 'package:portfolio/Googlers/Lisa_Fischer/components/animated_logo.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/header.dart';
 import 'package:portfolio/Googlers/Lisa_Fischer/components/wave_animation.dart';
 
-import 'visibility.dart';
+import 'routeAnimTest/tranform_.dart';
+import 'routeAnimTest/visibility.dart';
 
 class TestLab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Center(child: AnimOnVisible()),
+        body: Center(child: TransalateTranForm()),
       ),
     );
   }
