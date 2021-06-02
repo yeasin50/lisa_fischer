@@ -61,17 +61,36 @@ class MyTextStyles {
     color: const Color(0xff737373),
   );
 
+  ///shop from thousands of stores
+  final TextStyle sub26 = GoogleFonts.lato(
+    fontSize: 26,
+    color: const Color(0xff737373),
+  );
+
+  final TextStyle textParan20 = GoogleFonts.lato(
+    fontSize: 20,
+    color: Colors.black87,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 1.2,
+  );
+
   final TextStyle subtitle12 = GoogleFonts.lato(
     fontSize: 12.5,
-    color: const Color(0xff9d9e9e),
-    fontWeight: FontWeight.w800,
-    letterSpacing: 1.4,
+    color: Colors.grey,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 1.2,
   );
 
   final TextStyle normatText = GoogleFonts.lato(
-    fontSize: 16,
-    height: 1.7,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
     color: const Color(0xff737373),
+  );
+
+  final TextStyle textInParan = GoogleFonts.lato(
+    fontSize: 13,
+    color: const Color(0xff9d9e9e),
+    fontWeight: FontWeight.w600,
+    letterSpacing: 1.6,
   );
 }
