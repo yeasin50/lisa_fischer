@@ -77,7 +77,7 @@ class MyTextStyles {
   final TextStyle subtitle12 = GoogleFonts.lato(
     fontSize: 12.5,
     color: Colors.grey,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w800,
     letterSpacing: 1.2,
   );
 
@@ -92,5 +92,13 @@ class MyTextStyles {
     color: const Color(0xff9d9e9e),
     fontWeight: FontWeight.w600,
     letterSpacing: 1.6,
+  );
+
+  /// small header grey
+  final TextStyle smallHeader13pxW610 = GoogleFonts.lato(
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+    color: const Color(0xff9d9e9e),
+    letterSpacing: 1.5,
   );
 }
