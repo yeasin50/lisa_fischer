@@ -101,4 +101,11 @@ class MyTextStyles {
     color: const Color(0xff9d9e9e),
     letterSpacing: 1.5,
   );
+
+  final TextStyle normalS16_W500_LH22_C737373 = GoogleFonts.lato(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: const Color(0xff737373),
+    height: 1.7,
+  );
 }

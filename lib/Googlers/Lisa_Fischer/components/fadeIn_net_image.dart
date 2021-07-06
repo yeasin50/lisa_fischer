@@ -11,10 +11,24 @@ fadeNetImage(BoxConstraints constraints, String _url) =>
       placeholder: placeHolderImagePath,
       image: _url,
       width: constraints.maxWidth,
+
       // imageScale: .67,
       fit: BoxFit.fitWidth,
       // ),
     );
+
+fadeNetImageH6(
+  BoxConstraints constraints,
+  String url,
+) {
+  return FadeInImage.assetNetwork(
+    placeholder: placeHolderImagePath,
+    fit: BoxFit.fitWidth,
+    width: constraints.maxWidth,
+    height: constraints.maxWidth * .6,
+    image: url,
+  );
+}
 
 ConstrainedBox fadeInImageHalf(BoxConstraints constraints, String _url) =>
     ConstrainedBox(
