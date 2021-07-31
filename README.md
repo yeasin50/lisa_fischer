@@ -3,12 +3,13 @@
 <!-- 
 [![Flutter Responsive](https://img.shields.io/badge/flutter-responsive-brightgreen.svg?style=flat-square)](https://github.com/Codelessly/ResponsiveFramework) -->
 
-
 A new Flutter ``web`` project for creating different style portfolios.
 
 Dependencies:
+
 - youtube_player_flutter: ^8.0.0 => BSD, doesnt support on web 😓
-  - Although the minimum to be set is 17, the player won't play on device with API < 20 (19 if Hybrid Composition is enabled). For API < 20 devices, you might want to forward the video to be played using YouTube app instead, using packages like url_launcher or android_intent.
+- next using `video_player: ^2.1.1`
+  
 - 
 
 
@@ -27,8 +28,8 @@ The numerical values 100 to 900 roughly correspond to the following common weigh
 |500 |	Medium |
 |600 |	Semi Bold (Demi Bold) |
 |700 |	Bold |
-|800 |	Extra Bold (Ultra Bold) |
-|900 |	Black (Heavy) |
+|800 | Extra Bold (Ultra Bold) |
+|900 | Black (Heavy) |
 |950| Extra Black (Ultra Black) |
 
 Flutter supports the following font formats:
@@ -38,6 +39,7 @@ Flutter supports the following font formats:
 Flutter does not support ``.woff ``and ``.woff2`` fonts for all platforms.
 
 Sorry Couldn't manage ProximaNova ttf or otf version. Google fonts as Proxima Nova alternatives
+
 - Montserrat
 - Lato
 - Nunito Sans
@@ -49,10 +51,9 @@ Sorry Couldn't manage ProximaNova ttf or otf version. Google fonts as Proxima No
 
 
 ## Targets
+
  -  [Lisa Fischer](http://www.lisasuefischer.com/)
-   this the first website I'm Building with Flutter.
-    - scrollable_positioned_list giving a little error. I may use Rive to handle [ping-pong] animation.  
-    - there are others limitation like `RichText` hover detector. 
-    - windows emojis 1st render problem
-    - ``Montserrat`` is Alternative to: Gotham, Proxima Nova
+   this the first website I'm Building with Flutter.  
+  - windows emojis 1st render problem
+  - ``Montserrat`` is Alternative to: Gotham, Proxima Nova
   

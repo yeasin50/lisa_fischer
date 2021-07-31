@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/constants.dart';
 
-//// Thanks to https://github.com/abuanwar072
+/// Detecting layout
 class Responsive extends StatelessWidget {
   final Widget mobile;
   final Widget tablet;
