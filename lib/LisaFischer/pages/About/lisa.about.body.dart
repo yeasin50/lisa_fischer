@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/LisaFischer/pages/About/widgets/widgets.dart';
-import 'package:portfolio/LisaFischer/pages/Contact/contact.dart';
+import 'package:portfolio/LisaFischer/pages/Contact/lisa.contact.screen.dart';
 import 'package:portfolio/LisaFischer/widgets/widgets.dart';
 import 'package:portfolio/configs/config.constants.dart';
 import 'package:portfolio/configs/config.textStyles.dart';
