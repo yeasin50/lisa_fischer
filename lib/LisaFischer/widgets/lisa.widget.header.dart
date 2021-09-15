@@ -34,7 +34,7 @@ class LSHeader {
             onClick: () {
               currentActiveIndex = 0;
               Navigator.of(context).pushReplacement(pageRouteFromRT(
-                  () => LisaFischerWorkMain(),
+                  () => WorkPage(),
                   startOffset: Offset(.2, .5)));
             }),
         PageNavigator(

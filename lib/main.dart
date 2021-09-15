@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'LisaFischer/pages/About/lisa.about.page.dart';
 import 'LisaFischer/pages/Contact/lisa.contact.screen.dart';
-
-import 'LisaFischer/pages/GridDetails/Leveled/leveled.screen.dart';
 import 'LisaFischer/pages/Work/lisa.work.screen.dart';
+import 'body.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,9 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LeveledGridItemScreen(),
+      home: MyHomePage(),
       routes: {
-        LisaFischerWorkMain.routename: (_) => LisaFischerWorkMain(),
+        WorkPage.routename: (_) => WorkPage(),
         LisaAboutPage.routeName: (_) => LisaAboutPage(),
         LisaContactPage.routeName: (_) => LisaContactPage(),
       },

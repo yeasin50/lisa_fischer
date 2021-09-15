@@ -1,22 +1,12 @@
 import 'dart:ui';
-import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/LisaFischer/pages/Work/utils/utils.dart';
 import 'package:portfolio/LisaFischer/pages/Work/widgets/lisa.work.widget.gridItem.dart';
-import 'package:portfolio/LisaFischer/widgets/widgets.dart';
-import 'package:portfolio/configs/configs.dart';
 
-import 'utils/lisa.work.utils.cart.dart';
-import 'widgets/lisa.work.widget.animateEmojis.dart';
+import 'utils/lisa.work.widgetHelper.dart';
 
-// ignore: must_be_immutable
-class LFWorkBody extends StatelessWidget {
-  final String infoText =
-      "Lisa Fischer is a designer focused on building brands and creating digital experiences — currently working at Google.";
-
-  final int griditemC;
-
-  const LFWorkBody({Key? key, required this.griditemC}) : super(key: key);
+class DesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double _fontS = Theme.of(context).textTheme.headline5!.fontSize!;
@@ -27,17 +17,6 @@ class LFWorkBody extends StatelessWidget {
       slivers: [
         SliverList(
           delegate: SliverChildListDelegate([
-            if (griditemC == 1) LSMenu(),
-            if (griditemC == 1) LSHeader().buildLogo(width: 35),
-            if (griditemC > 1)
-              SizedBox(
-                height: kTopLevelStackSpace,
-              ),
-            Center(child: AnimateEmojis()),
-            SizedBox(
-              height: 16,
-            ),
-
             ///`header Text`
             Center(
               child: ConstrainedBox(
@@ -62,7 +41,7 @@ class LFWorkBody extends StatelessWidget {
           ]),
         ),
         SliverGrid.count(
-          crossAxisCount: griditemC,
+          crossAxisCount: 3,
           childAspectRatio: 1,
           crossAxisSpacing: 0,
           mainAxisSpacing: 0,
@@ -77,36 +56,7 @@ class LFWorkBody extends StatelessWidget {
             ),
           ),
         ),
-
-        /// Bottom space to hold on stack
-        SliverList(
-          delegate: SliverChildListDelegate([
-            if (griditemC == 3)
-              SizedBox(
-                height: 100,
-              ),
-            if (griditemC == 2) footerRow(),
-            if (griditemC == 1) FooterText(),
-            if (griditemC == 1) SocialIcons(),
-          ]),
-        ),
       ],
-    );
-  }
-
-  Widget buildInfoText(double _fontS) {
-    ////TODO: fix TextStyle
-    TextStyle _infoTextStyle = GoogleFonts.lato(
-      fontSize: _fontS,
-      fontWeight: FontWeight.w500,
-    );
-
-    return FittedBox(
-      child: EasyRichText(
-        infoText,
-        textAlign: TextAlign.center,
-        defaultStyle: _infoTextStyle,
-      ),
     );
   }
 }
