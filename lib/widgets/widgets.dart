@@ -1,4 +1,4 @@
-export 'widget.bgNeonCircleBorder.dart';
-export 'widget.bgRectNeon.dart';
+export 'widget.circleNeonBorder.dart';
+export 'widget.rectNeonBorder.dart';
 export 'widget.desktopWrapper.dart';
 export 'widget.tabletWrapper.dart';
