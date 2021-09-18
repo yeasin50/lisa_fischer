@@ -14,6 +14,7 @@ class _AnimateEmojisState extends State<AnimateEmojis>
 
   @override
   Widget build(BuildContext context) {
+    //TODO: Fix height and show another half
     return Container(
       width: 33 + (8 * 2),
       alignment: Alignment.center,
