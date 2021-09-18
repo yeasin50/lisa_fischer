@@ -20,14 +20,20 @@ class DesktopViewWrapper extends StatelessWidget {
             //* body
             Align(
               alignment: Alignment(0, 0),
-              child: MaxWidthContainer(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 150,
-                    bottom: 80,
-                  ),
-                  child: child,
-                ),
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: MaxWidthContainer(
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: 150,
+                          bottom: 80,
+                        ),
+                        child: child,
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
 
