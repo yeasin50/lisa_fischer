@@ -10,6 +10,10 @@ Divider get divider => Divider(
       thickness: dividerThickness,
     );
 
-SizedBox get spaceBetweenColumnItems => SizedBox(
+SizedBox get spaceBetweenColumnItemsOnDesktop => SizedBox(
       height: 45,
+    );
+
+SizedBox get spaceBetweenColumnItemsOnTablet => SizedBox(
+      height: 35,
     );
