@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/constants/lisa.const.divider.dart';
-import 'package:portfolio/LisaFischer/pages/About/widgets/widgets.dart';
-import 'package:portfolio/LisaFischer/widgets/widgets.dart';
-import 'package:portfolio/configs/configs.dart';
 
-import 'utils/lisa.about.utils.var.dart';
+import '../../constants/lisa.const.divider.dart';
+import '../../widgets/widgets.dart';
+import 'widgets/lisa.about.widget.briefInfo.dart';
+import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {
   const DesktopView({Key? key}) : super(key: key);
@@ -21,15 +20,17 @@ class DesktopView extends StatelessWidget {
           children: [
             ProfileImage(),
             SizedBox(width: 20),
-            Expanded(child: briefInfo()),
+            Expanded(
+              child: BriefInfo(),
+            ),
           ],
         ),
 
-        spaceBetweenColumnItems,
+        spaceBetweenColumnItemsOnDesktop,
 
         divider,
 
-        spaceBetweenColumnItems,
+        spaceBetweenColumnItemsOnDesktop,
 
         ///*  details
         GridView.count(
@@ -62,11 +63,11 @@ class DesktopView extends StatelessWidget {
           ],
         ),
 
-        spaceBetweenColumnItems,
+        spaceBetweenColumnItemsOnDesktop,
 
         divider,
 
-        spaceBetweenColumnItems,
+        spaceBetweenColumnItemsOnDesktop,
 
         GridView.count(
           key: ValueKey("Contact Row"),
@@ -92,45 +93,6 @@ class DesktopView extends StatelessWidget {
           ],
         ),
       ],
-    );
-  }
-
-  Padding briefInfo() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Lisa Fischer",
-            textAlign: TextAlign.left,
-            style: titleTextStyle,
-          ),
-          WavingWidget(
-            child: Text(
-              "👋",
-              style: TextStyle(
-                fontSize: 40,
-              ),
-            ),
-          ),
-          Text(
-            "\nLisa is a designer focused on building brands and creating digital experiences — currently working at Google.",
-            style: subHeaderTextStyle,
-          ),
-          Text(
-            texts1 + "\n\n" + texts2 + "\n",
-            style: normalStyle.copyWith(
-              letterSpacing: .27,
-            ),
-          ),
-          Text(
-            "— Based in the San Francisco Bay area",
-            style: normalStyle,
-          ),
-        ],
-      ),
     );
   }
 }

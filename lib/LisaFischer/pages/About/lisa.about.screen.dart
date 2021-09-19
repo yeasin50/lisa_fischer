@@ -14,13 +14,15 @@ class LisaAboutPage extends StatelessWidget {
     print("rebuild Page");
     return Scaffold(
       body: SafeArea(
-        child: Responsive(
-          mobile: MobileView(),
-          tablet: TabletViewWrapper(
-            child: TabletView(),
-          ),
-          desktop: DesktopViewWrapper(
-            child: DesktopView(),
+        child: LayoutBuilder(
+          builder: (context, constraints) => Responsive(
+            mobile: MobileView(),
+            tablet: TabletViewWrapper(
+              child: TabletView(constraints: constraints),
+            ),
+            desktop: DesktopViewWrapper(
+              child: DesktopView(),
+            ),
           ),
         ),
       ),
