@@ -18,11 +18,16 @@ class TabletViewWrapper extends StatelessWidget {
           //* body
           Align(
             alignment: Alignment(0, 0),
-            child: MaxWidthContainer(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 120),
-                child: child,
-              ),
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: MaxWidthContainer(
+                      child: Padding(
+                    padding: const EdgeInsets.only(top: 120),
+                    child: child,
+                  )),
+                ),
+              ],
             ),
           ),
           //* Header
