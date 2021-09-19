@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/config.constants.dart';
 
+import '../../../../configs/config.constants.dart';
 import 'lisa.about.widget.textHelper.dart';
-
 
 class GridItem extends StatelessWidget {
   final String title;
@@ -14,11 +13,10 @@ class GridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 270,
-      margin: EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 12,
-      ),
+      // alignment: Alignment.topLeft,
+      // color: Colors.deepOrange.withOpacity(.4),
+      constraints: BoxConstraints(maxWidth: 270),
+
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,

@@ -9,7 +9,7 @@ class ProfileImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: EdgeInsets.only(right: 10),
       child: FadeInImage.assetNetwork(
         placeholder: "assets/images/placeHolder.png",
         fit: BoxFit.fitWidth,
