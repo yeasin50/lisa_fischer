@@ -8,6 +8,8 @@ get dividerIndent => 20.0;
 Divider get divider => Divider(
       color: dividerColor,
       thickness: dividerThickness,
-      indent: dividerIndent,
-      endIndent: dividerIndent,
+    );
+
+SizedBox get spaceBetweenColumnItems => SizedBox(
+      height: 45,
     );
