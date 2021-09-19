@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:portfolio/configs/configs.dart';
-import 'package:portfolio/widgets/widget.desktopWrapper.dart';
-import 'package:portfolio/widgets/widgets.dart';
+import '../../../configs/configs.dart';
+import '../../../widgets/widget.desktopWrapper.dart';
+import '../../../widgets/widgets.dart';
 import 'lisa.work.desktop.dart';
-import 'lisa.work.tablet.dart';
 import 'lisa.work.mobile.dart';
+import 'lisa.work.tablet.dart';
 
 ///`HomePage`
 class WorkPage extends StatelessWidget {
@@ -15,8 +15,12 @@ class WorkPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Responsive(
-          desktop: DesktopViewWrapper(child: DesktopView()),
-          tablet: TabletViewWrapper(child: TabletView()),
+          desktop: DesktopViewWrapper(
+            child: DesktopView(),
+          ),
+          tablet: TabletViewWrapper(
+            child: TabletView(),
+          ),
           mobile: MobileView(),
         ),
       ),
