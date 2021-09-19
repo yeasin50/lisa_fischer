@@ -13,31 +13,31 @@ class TabletView extends StatelessWidget {
   Widget build(BuildContext context) {
     final double _fontS = Theme.of(context).textTheme.headline5!.fontSize!;
 
-    return CustomScrollView(
-      physics: BouncingScrollPhysics(),
-      slivers: [
-        SliverPadding(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Padding(
           padding: EdgeInsets.only(bottom: 16),
-          sliver: SliverToBoxAdapter(
-            child: Center(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  minWidth: 70,
-                  maxWidth: 700,
-                ),
-                child: Text(
-                  infoText,
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.lato(
-                    fontSize: _fontS,
-                    fontWeight: FontWeight.w500,
-                  ),
+          child: Center(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: 70,
+                maxWidth: 700,
+              ),
+              child: Text(
+                infoText,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.lato(
+                  fontSize: _fontS,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
           ),
         ),
-        SliverGrid.count(
+        GridView.count(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
           crossAxisCount: 2,
           childAspectRatio: 1,
           crossAxisSpacing: 0,
@@ -53,9 +53,7 @@ class TabletView extends StatelessWidget {
             ),
           ),
         ),
-        SliverToBoxAdapter(
-          child: footerRow(),
-        )
+        footerRow(),
       ],
     );
   }
