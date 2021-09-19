@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/pages/About/lisa.about.page.dart';
-import 'package:portfolio/LisaFischer/pages/Contact/lisa.contact.screen.dart';
-import 'package:portfolio/LisaFischer/pages/Work/lisa.work.screen.dart';
-import 'package:portfolio/LisaFischer/widgets/lisa.widget..pageNav.dart';
 
 import '/utils/utils.customRoute.dart';
+import '../pages/About/lisa.about.screen.dart';
+import '../pages/Contact/lisa.contact.screen.dart';
+import '../pages/Work/lisa.work.screen.dart';
+import 'lisa.widget..pageNav.dart';
 
 class LSHeader {
   /// track currentPage
