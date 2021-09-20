@@ -83,7 +83,7 @@ class TabletView extends StatelessWidget {
           childAspectRatio: constraints.maxWidth > 994.0
               ? 1.5
               : constraints.maxWidth /
-                  (kMobileMaxWidth * 1.49), //* little dirty trick 😅
+                  (kMobileMaxWidth * 1.5), //* little dirty trick 😅
           children: [
             //TODO: make list
             LisaAwards(),
