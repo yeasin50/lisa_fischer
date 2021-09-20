@@ -6,8 +6,10 @@
 TODO: on Lisa Fischer
 
 - use dot name fileStruct
+- use offline files
 - separate mobile view
 - use nav2
+- use Sizer
 
 A new Flutter `web` project for creating different style portfolios.
 
