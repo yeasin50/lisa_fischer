@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'LisaFischer/pages/About/lisa.about.page.dart';
+import 'package:portfolio/LisaFischer/constants/constants.dart';
+
+import 'LisaFischer/pages/About/lisa.about.screen.dart';
 import 'LisaFischer/pages/Contact/lisa.contact.screen.dart';
 import 'LisaFischer/pages/Work/lisa.work.screen.dart';
 import 'body.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Portfolios',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: white,
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
