@@ -10,7 +10,10 @@ class MobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16),
+      padding: EdgeInsets.only(
+        left: paddingLeftAndRight,
+        right: paddingLeftAndRight,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
