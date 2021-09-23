@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/LisaFischer/constants/constants.dart';
+import 'package:portfolio/LisaFischer/widgets/widgets.dart';
 
 import 'widgets/widgets.dart';
 
@@ -41,6 +42,14 @@ class MobileView extends StatelessWidget {
           ConnectOnAbout(),
           spaceBetweenColumnOnMobile,
           ContactOnAbout(),
+          spaceBetweenColumnOnMobile,
+          Transform.translate(
+            offset: Offset(-8, 0), //todo: separate Paddings form widgets
+            child: CustomButton(
+              label: "GET IN TOUCH",
+              onTap: () {},
+            ),
+          ),
         ],
       ),
     );
