@@ -23,3 +23,5 @@ double get spaceBetweenColumnItemsOnMobile => 12.0;
 SizedBox get spaceBetweenColumnOnMobile => SizedBox(
       height: spaceBetweenColumnItemsOnMobile,
     );
+
+double get paddingLeftAndRight => 16.0;
