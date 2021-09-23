@@ -7,6 +7,7 @@ TODO: on Lisa Fischer
 
 - use dot name fileStruct
 - use offline files
+- controll font sizes
 - separate mobile view
 - use nav2
 - use Sizer
@@ -20,29 +21,7 @@ Dependencies:
 
 ---
 
-Common weight name mapping
-The numerical values 100 to 900 roughly correspond to the following common weight names (see the OpenType specification):
-
-| Value Common | weight name               |
-| ------------ | ------------------------- |
-| 100          | Thin (Hairline)           |
-| 200          | Extra Light (Ultra Light) |
-| 300          | Light                     |
-| 400          | Normal (Regular)          |
-| 500          | Medium                    |
-| 600          | Semi Bold (Demi Bold)     |
-| 700          | Bold                      |
-| 800          | Extra Bold (Ultra Bold)   |
-| 900          | Black (Heavy)             |
-| 950          | Extra Black (Ultra Black) |
-
-Flutter supports the following font formats:
-
-- ttf
-- otf
-  Flutter does not support `.woff` and `.woff2` fonts for all platforms.
-
-Sorry Couldn't manage ProximaNova ttf or otf version. Google fonts as Proxima Nova alternatives
+Google fonts as Proxima Nova alternatives
 
 - Montserrat
 - Lato
