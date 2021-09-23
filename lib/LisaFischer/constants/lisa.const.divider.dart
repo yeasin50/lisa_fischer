@@ -17,3 +17,5 @@ SizedBox get spaceBetweenColumnItemsOnDesktop => SizedBox(
 SizedBox get spaceBetweenColumnItemsOnTablet => SizedBox(
       height: 35,
     );
+
+double get spaceBetweenColumnItemsOnMobile => 12.0;
