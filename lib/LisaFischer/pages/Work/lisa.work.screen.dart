@@ -21,7 +21,9 @@ class WorkPage extends StatelessWidget {
           tablet: TabletViewWrapper(
             child: TabletView(),
           ),
-          mobile: MobileView(),
+          mobile: MobieViewWrapper(
+            child: MobileView(),
+          ),
         ),
       ),
     );
