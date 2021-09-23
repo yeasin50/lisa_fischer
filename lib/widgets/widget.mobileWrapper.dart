@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/LisaFischer/constants/constants.dart';
+
+import '../LisaFischer/widgets/widgets.dart';
 
 class MobieViewWrapper extends StatelessWidget {
   final Widget child;
@@ -11,9 +14,41 @@ class MobieViewWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: child,
+        body: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: LSMenu(),
+            ),
+
+            ///* Logo
+            SliverPadding(
+              padding: EdgeInsets.only(
+                top: spaceBetweenColumnItemsOnMobile,
+                bottom: spaceBetweenColumnItemsOnMobile,
+              ),
+              sliver: SliverToBoxAdapter(
+                child: AnimatedLogo(),
+              ),
+            ),
+
+            SliverToBoxAdapter(
+              child: child,
+            ),
+
+            SliverPadding(
+              padding: EdgeInsets.symmetric(
+                vertical: spaceBetweenColumnItemsOnMobile,
+              ),
+              sliver: SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    SocialIcons(),
+                    FooterText(),
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
