@@ -1,4 +1,5 @@
 export 'lisa.about.widget.awards.dart';
+export 'lisa.about.widget.briefInfo.dart';
 export 'lisa.about.widget.connect.dart';
 export 'lisa.about.widget.contactOnAbout.dart';
 export 'lisa.about.widget.designSkills.dart';

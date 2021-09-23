@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/widget.mobileWrapper.dart';
 
 import '../../../configs/config.responsive.dart';
 import '../../../widgets/widget.desktopWrapper.dart';
@@ -16,12 +17,14 @@ class LisaAboutPage extends StatelessWidget {
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) => Responsive(
-            mobile: MobileView(),
+            desktop: const DesktopViewWrapper(
+              child: const DesktopView(),
+            ),
             tablet: TabletViewWrapper(
               child: TabletView(constraints: constraints),
             ),
-            desktop: DesktopViewWrapper(
-              child: DesktopView(),
+            mobile: const MobieViewWrapper(
+              child: const MobileView(),
             ),
           ),
         ),

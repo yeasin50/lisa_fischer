@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-get dividerColor => Colors.black;
+get dividerColor => Colors.grey;
 get dividerThickness => 1.3;
 
 get dividerIndent => 20.0;
@@ -19,3 +19,7 @@ SizedBox get spaceBetweenColumnItemsOnTablet => SizedBox(
     );
 
 double get spaceBetweenColumnItemsOnMobile => 12.0;
+
+SizedBox get spaceBetweenColumnOnMobile => SizedBox(
+      height: spaceBetweenColumnItemsOnMobile,
+    );
