@@ -6,6 +6,7 @@
 TODO: on Lisa Fischer
 
 - hash-blur image
+- apply `const`
 - use dot name fileStruct
 - use offline files
 - controll font sizes
