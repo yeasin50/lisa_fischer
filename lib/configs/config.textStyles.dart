@@ -49,6 +49,12 @@ final TextStyle normalItalic = TextStyle(
 
 ///TODO:: need to check the styles in finish level including Colors
 class MyTextStyles {
+  final TextStyle header = GoogleFonts.lato(
+    color: Color.fromRGBO(5, 173, 134, .21),
+    fontWeight: FontWeight.w900,
+    fontSize: 68,
+  );
+
   final TextStyle subHeader = GoogleFonts.lato(
     fontSize: 16,
     color: const Color(0xff737373),
@@ -101,4 +107,9 @@ class MyTextStyles {
     color: const Color(0xff737373),
     height: 1.7,
   );
+
+  TextStyle get hintTextStyle => GoogleFonts.lato(
+        fontSize: 14,
+        color: const Color.fromRGBO(18, 18, 18, .56),
+      );
 }
