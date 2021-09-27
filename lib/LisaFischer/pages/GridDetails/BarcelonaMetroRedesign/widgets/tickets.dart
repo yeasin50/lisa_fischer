@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Tickets extends StatelessWidget {
-  const Tickets({Key? key}) : super(key: key);
+  ///* It seems may hard-coded but we are avoiding calling another Query
+  final bool isMobileView;
+  const Tickets({
+    Key? key,
+    this.isMobileView = false,
+  }) : super(key: key);
 
   get _space => SizedBox(
         height: 20,
@@ -21,23 +26,43 @@ class Tickets extends StatelessWidget {
               ),
             ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  "images/ticket_L.jpeg",
-                  fit: BoxFit.cover,
-                  height: constraints.maxWidth * .4,
-                  width: constraints.maxWidth * 1 / 3 - 10,
-                ),
-                Image.asset(
-                  "images/ticket_R.jpeg",
-                  fit: BoxFit.cover,
-                  height: constraints.maxWidth * .4,
-                  width: constraints.maxWidth * 2 / 3 - 10,
-                ),
-              ],
-            ),
+            if (!isMobileView)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    "images/ticket_L.jpeg",
+                    fit: BoxFit.cover,
+                    height: constraints.maxWidth * .4,
+                    width: constraints.maxWidth * 1 / 3 - 10,
+                  ),
+                  Image.asset(
+                    "images/ticket_R.jpeg",
+                    fit: BoxFit.cover,
+                    height: constraints.maxWidth * .4,
+                    width: constraints.maxWidth * 2 / 3 - 10,
+                  ),
+                ],
+              ),
+
+            if (isMobileView)
+              Column(
+                children: [
+                  Image.asset(
+                    "images/ticket_L.jpeg",
+                    fit: BoxFit.cover,
+                    height: constraints.maxWidth * .4,
+                    width: constraints.maxWidth,
+                  ),
+                  _space,
+                  Image.asset(
+                    "images/ticket_R.jpeg",
+                    fit: BoxFit.cover,
+                    height: constraints.maxWidth * .4,
+                    width: constraints.maxWidth,
+                  ),
+                ],
+              ),
             _space,
 
             Image.asset(

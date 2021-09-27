@@ -17,6 +17,7 @@ class Intro extends StatelessWidget {
         Text(
           "Barcelona Metro Redesign",
           style: MyTextStyles().header,
+          textAlign: TextAlign.center,
         ),
         SizedBox(
           height: 12,
@@ -28,6 +29,7 @@ class Intro extends StatelessWidget {
         Text(
           "A redesign that makes the metro clearer, friendlier, and true to Barcelona culture.",
           style: MyTextStyles().sub26,
+          textAlign: TextAlign.center,
         ),
         SizedBox(height: 12),
         ...awards

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/widgets/widgets.dart';
 
 import 'widgets/widgets.dart';
 
@@ -8,12 +7,27 @@ class DesktopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Intro(),
-       
-      ],
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        maxWidth: 875,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: 875 * .7,
+            ),
+            child: Intro(),
+          ),
+          WorkProcessUsingBlurHash(),
+
+          ///* from assets
+          Tickets(),
+          MetroMobileApp(),
+        ],
+      ),
     );
   }
 }
