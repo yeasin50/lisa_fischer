@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/LisaFischer/widgets/widgets.dart';
 
 import 'widgets/widgets.dart';
 
@@ -21,6 +22,7 @@ class TabletView extends StatelessWidget {
             ///* from assets
             Tickets(),
             MetroMobileApp(),
+            footerRow(),
           ],
         ),
       ),
