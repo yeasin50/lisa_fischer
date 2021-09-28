@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/image_transaction.dart';
+import '../../../widgets/widgets.dart';
 import 'widgets/widgets.dart';
 
 class TabletView extends StatelessWidget {
@@ -11,8 +11,11 @@ class TabletView extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Column(
         children: [
-          // Intro(),
-          ImagesWithDetails(),
+          Intro(),
+          ImagesWithDetails(
+            constraints: constraints,
+          ),
+          footerRow(),
         ],
       ),
     );
