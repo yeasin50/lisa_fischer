@@ -4,6 +4,8 @@
 [![Flutter Responsive](https://img.shields.io/badge/flutter-responsive-brightgreen.svg?style=flat-square)](https://github.com/Codelessly/ResponsiveFramework) -->
 
 TODO: on Lisa Fischer
+
+- tablet mode intro text works
 - [x] just make this repo from Lisa Fischer
 - hash-blur image
 - apply `const`
