@@ -11,14 +11,14 @@ class BercelonaMetroRedesign extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Responsive(
-          desktop: DesktopViewWrapper(
-            child: DesktopView(),
+          mobile: MobieViewWrapper(
+            child: MobileView(),
           ),
           tablet: TabletViewWrapper(
             child: TabletView(),
           ),
-          mobile: MobieViewWrapper(
-            child: MobileView(),
+          desktop: DesktopViewWrapper(
+            child: DesktopView(),
           ),
         ),
       ),

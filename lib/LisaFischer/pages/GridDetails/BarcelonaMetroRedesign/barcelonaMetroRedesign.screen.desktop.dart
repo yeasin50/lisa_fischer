@@ -7,25 +7,31 @@ class DesktopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        maxWidth: 875,
-      ),
-      child: Column(
+    return LayoutBuilder(
+      builder: (context, constraints) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ConstrainedBox(
             constraints: BoxConstraints(
-              maxWidth: 875 * .7,
+              maxWidth: constraints.maxWidth * .5,
             ),
             child: Intro(),
           ),
-          WorkProcessUsingBlurHash(),
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: constraints.maxWidth * .75,
+            ),
+            child: Column(
+              children: [
+                WorkProcessUsingBlurHash(),
 
-          ///* from assets
-          Tickets(),
-          MetroMobileApp(),
+                ///* from assets
+                Tickets(),
+                MetroMobileApp(),
+              ],
+            ),
+          ),
         ],
       ),
     );
