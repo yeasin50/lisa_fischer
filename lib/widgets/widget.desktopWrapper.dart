@@ -57,7 +57,7 @@ class DesktopViewWrapper extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: Container(
                 width: kTabletMaxWidth,
-                padding: EdgeInsets.only(top: 40.0),
+                padding: EdgeInsets.only(top: 40, left: 16, right: 16),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
