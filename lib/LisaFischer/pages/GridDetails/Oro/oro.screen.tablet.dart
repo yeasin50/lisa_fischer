@@ -11,9 +11,19 @@ class TabletView extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Column(
         children: [
-          Intro(),
-          ImagesWithDetails(
-            constraints: constraints,
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: constraints.maxWidth * .65,
+            ),
+            child: Intro(),
+          ),
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: constraints.maxWidth * .8,
+            ),
+            child: ImagesWithDetails(
+              constraints: constraints,
+            ),
           ),
           footerRow(),
         ],

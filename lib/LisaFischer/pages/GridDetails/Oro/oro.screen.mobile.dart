@@ -12,9 +12,19 @@ class MobileView extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => Column(
         children: [
-          Intro(),
-          ImagesWithDetails(
-            constraints: constraints,
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: constraints.maxWidth * .75,
+            ),
+            child: Intro(),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(
+              8.0,
+            ),
+            child: ImagesWithDetails(
+              constraints: constraints,
+            ),
           ),
         ],
       ),
