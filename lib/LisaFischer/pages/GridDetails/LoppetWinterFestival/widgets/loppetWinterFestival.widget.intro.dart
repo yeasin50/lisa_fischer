@@ -31,7 +31,7 @@ class _P1IntroState extends State<P1Intro> {
             children: [
               TitleWithSub(
                 title: "Loppet Winter Festival",
-                subtitle: "PRINTMAKING / ILLUSTRATION",
+                rolls: ['PRINTMAKING', 'ILLUSTRATION'],
               ),
               columnSpace,
               Text(
