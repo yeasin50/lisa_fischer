@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/pages/GridDetails/widgets/widgets.dart';
+import 'package:portfolio/LisaFischer/widgets/widgets.dart';
 import 'package:portfolio/configs/configs.dart';
 
 class P1VisdIntro extends StatelessWidget {
   final BoxConstraints constraints;
 
-  const P1VisdIntro({Key? key, required this.constraints}) : super(key: key);
+  const P1VisdIntro({
+    Key? key,
+    required this.constraints,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ConstrainedBox(
@@ -20,17 +23,24 @@ class P1VisdIntro extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TitleWithSub(
-                title: "VisD@",
-                subtitle: "BRANDING / VISUAL DESIGN",
+              Text(
+                "VisD@",
+                style: titleTextStyle,
               ),
+              SubtitleCategoryOfWork(
+                rolls: ['BRANDING', 'VISUAL DESIGN'],
+              ),
+              // TitleWithSub(
+              //   title: "VisD@",
+              //   rolls: ['BRANDING', 'VISUAL DESIGN'],
+              // ),
               columnSpace,
               Text(
                 "Google’s 1st Visual Design Summit",
                 style: MyTextStyles().textParan20,
               ),
               const SizedBox(
-                height: 10,
+                height: 12,
               ),
               Text(
                 "In Fall 2019, Google held its first-ever Visual Design Summit, a day-long event for Google’s Visual Designers to come together as one creative community. I had the pleasure of designing the brand identity from ideation to execution.",
