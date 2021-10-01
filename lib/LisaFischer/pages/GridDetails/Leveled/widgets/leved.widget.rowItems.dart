@@ -1,46 +1,75 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/pages/GridDetails/widgets/widgets.dart';
-import 'package:portfolio/configs/configs.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../../configs/configs.dart';
+import '../../widgets/widgets.dart';
+import '../utils/rowItems.utils.dart';
+
 class P2LeveledRow extends StatelessWidget {
-  final BoxConstraints constraints;
+  //* avoiding using another layoutBuilder
+  final double maxWidth;
+  final bool isMobile;
 
   const P2LeveledRow({
     Key? key,
-    required this.constraints,
+    required this.maxWidth,
+    this.isMobile = false,
   }) : super(key: key);
+
+  List<Padding> _rowItems() {
+    List<Padding> _items = [];
+
+    leveledRowItemsData.forEach((key, value) {
+      _items.add(
+        Padding(
+          padding: const EdgeInsets.only(bottom: 16.0),
+          child: RowItem(
+            title: "$key",
+            body: value,
+            isMobile: isMobile,
+          ),
+        ),
+      );
+    });
+
+    return _items;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _rowItems(constraints),
-        columnSpace,
-        FadeInImage.assetNetwork(
-          placeholder: placeHolderImagePath,
-          width: constraints.maxWidth,
+        Image.network(
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1588445233651-7YV2Z0QRSRKL2HOIRUVJ/image-asset.png?format=750w",
           fit: BoxFit.fitWidth,
-          height: constraints.maxWidth * .4,
-          image:
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1588448894297-OUXN5EOFGSB9YNY2I6UJ/leveled_jpgs+for+portfolio_leveled+logo+blue+bg.png?format=750w",
+          width: maxWidth,
         ),
+        columnSpace,
+        columnSpace,
+        if (!isMobile) _rowItemsNAMobile(),
+        if (isMobile) ..._rowItems(),
+        columnSpace,
+        columnSpace,
+        Image.network(
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1588448894297-OUXN5EOFGSB9YNY2I6UJ/leveled_jpgs+for+portfolio_leveled+logo+blue+bg.png?format=750w",
+          fit: BoxFit.fitWidth,
+          width: maxWidth,
+        ),
+        columnSpace,
       ],
     );
   }
 
   /// row items of ``
-  Widget _rowItems(BoxConstraints constraints) {
-    return Container(
-      width: constraints.maxWidth,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+  Widget _rowItemsNAMobile() {
+    return SizedBox(
+      width: maxWidth,
+      child: Wrap(
+        alignment: WrapAlignment.spaceBetween,
         children: [
           RowItem(
-            width: constraints.maxWidth * .2,
             title: "DATE",
             body: Text(
               "March 2017",
@@ -48,7 +77,6 @@ class P2LeveledRow extends StatelessWidget {
             ),
           ),
           RowItem(
-            width: constraints.maxWidth * .2,
             title: "ROLE",
             body: Text(
               "Brand Designer",
@@ -56,7 +84,6 @@ class P2LeveledRow extends StatelessWidget {
             ),
           ),
           RowItem(
-            width: constraints.maxWidth * .2,
             title: "AGENCY",
             body: RichText(
               text: TextSpan(
@@ -91,7 +118,6 @@ class P2LeveledRow extends StatelessWidget {
             ),
           ),
           RowItem(
-            width: constraints.maxWidth * .2,
             title: "TEAM",
             body: RichText(
               text: TextSpan(

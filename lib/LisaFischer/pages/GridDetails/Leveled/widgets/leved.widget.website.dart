@@ -1,15 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+
 import 'package:portfolio/LisaFischer/pages/GridDetails/widgets/widgets.dart';
 import 'package:portfolio/configs/configs.dart';
 
 class P5Leveled extends StatefulWidget {
-  final BoxConstraints constraints;
+  final double maxWidth;
 
   const P5Leveled({
     Key? key,
-    required this.constraints,
+    required this.maxWidth,
   }) : super(key: key);
 
   @override
@@ -17,6 +18,10 @@ class P5Leveled extends StatefulWidget {
 }
 
 class _P5LeveledState extends State<P5Leveled> {
+  get _itemSpaceAboveRTP => SizedBox(
+        height: 60,
+      );
+
   final images = [
     "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939842289-RW1LOWDBUE2QT2LG5T91/leveled_website+for+portfolio+with+pattern+latest-50.png?format=1500w",
     "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939838360-F3OI2WQVR66L2ITAM9KV/leveled_website+for+portfolio+with+pattern+latest-51.png?format=1500w",
@@ -52,8 +57,8 @@ class _P5LeveledState extends State<P5Leveled> {
         ),
         columnSpace,
         SizedBox(
-          height: widget.constraints.maxWidth * .6,
-          width: widget.constraints.maxWidth,
+          height: widget.maxWidth * .6,
+          width: widget.maxWidth,
           child: Stack(
             fit: StackFit.expand,
             children: [
@@ -63,7 +68,7 @@ class _P5LeveledState extends State<P5Leveled> {
                 fadeOutDuration: Duration(milliseconds: 300),
                 fit: BoxFit.fitWidth,
                 // width: constraints.maxWidth,
-                height: widget.constraints.maxWidth * .6,
+                height: widget.maxWidth * .6,
                 image: images[_index],
               ),
 
@@ -117,8 +122,7 @@ class _P5LeveledState extends State<P5Leveled> {
             ],
           ),
         ),
-        columnSpace,
-        columnSpace,
+        _itemSpaceAboveRTP,
         RichTextInParentheses(
           text: "Social ",
           textStyle: MyTextStyles().textParan20,
@@ -128,8 +132,8 @@ class _P5LeveledState extends State<P5Leveled> {
           placeholder: placeHolderImagePath,
           fadeOutDuration: Duration(milliseconds: 300),
           fit: BoxFit.fitWidth,
-          width: widget.constraints.maxWidth,
-          height: widget.constraints.maxWidth * .6,
+          width: widget.maxWidth,
+          height: widget.maxWidth * .6,
           image:
               "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589906254946-2MV9VK3GDCBHJ773CCCA/leveled_twitter+social-fb-33.png?format=1500w",
         ),
@@ -137,8 +141,8 @@ class _P5LeveledState extends State<P5Leveled> {
           placeholder: placeHolderImagePath,
           fadeOutDuration: Duration(milliseconds: 300),
           fit: BoxFit.fitWidth,
-          width: widget.constraints.maxWidth,
-          height: widget.constraints.maxWidth * .6,
+          width: widget.maxWidth,
+          height: widget.maxWidth * .6,
           image:
               "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589665934776-XDY86EAOXW91EM8UY218/image-asset.jpeg?format=750w",
         ),
