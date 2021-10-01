@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/configs.dart';
-import 'leveled.body.dart';
 
-class LeveledGridItemScreen extends StatelessWidget {
-  const LeveledGridItemScreen({Key? key}) : super(key: key);
+import '../../../../configs/configs.dart';
+import '../../../../widgets/widgets.dart';
+import 'Leveled.dart';
+
+class LeveledScreen extends StatelessWidget {
+  static final String routeName = "/work/leveled/";
+  const LeveledScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
         body: Responsive(
-          desktop: MaxWidthContainer(
-            child: LeveledDesktopBody(),
+          mobile: MobieViewWrapper(
+            child: MobileView(),
           ),
-          tablet: LeveledDesktopBody(),
-          mobile: LeveledDesktopBody(),
+          tablet: TabletViewWrapper(
+            child: TabletView(),
+          ),
+          desktop: DesktopViewWrapper(
+            child: DesktopView(),
+          ),
         ),
       ),
     );
