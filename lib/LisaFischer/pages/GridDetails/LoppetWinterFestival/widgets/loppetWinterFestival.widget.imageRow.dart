@@ -1,13 +1,20 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/pages/GridDetails/widgets/widgets.dart';
-import 'package:portfolio/configs/configs.dart';
+import 'package:portfolio/LisaFischer/pages/GridDetails/LoppetWinterFestival/utils/loppetWinterFestival.utils.rowData.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class P2ImageAndRow extends StatefulWidget {
-  final BoxConstraints constraints;
+import '../../../../../configs/configs.dart';
+import '../../widgets/widgets.dart';
 
-  const P2ImageAndRow({Key? key, required this.constraints}) : super(key: key);
+class P2ImageAndRow extends StatefulWidget {
+  final double maxWidth;
+  final bool isMobile;
+
+  const P2ImageAndRow({
+    Key? key,
+    required this.maxWidth,
+    this.isMobile = false,
+  }) : super(key: key);
 
   @override
   _P2ImageAndRowState createState() => _P2ImageAndRowState();
@@ -29,48 +36,66 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
           );
   }
 
+  List<Padding> _rowItemsMobileView() {
+    List<Padding> _items = [];
+
+    loppetWinterFestivalRowItems.forEach(
+      (key, value) {
+        _items.add(
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16.0),
+            child: RowItem(
+              title: "$key",
+              body: value,
+              isMobile: widget.isMobile,
+            ),
+          ),
+        );
+      },
+    );
+
+    return _items;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         InkWell(
           // just full screen view according to website
           onTap: () => launch(
               "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587410695918-JVYIF2MWQTP0LLA3JQTC/ke17ZwdGBToddI8pDm48kMBU_r1tzMd4QwEaiVpd1vh7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hHMyhIh2kKzuOL3ydJCryB1dMAs-2ojG-6zt94yw4AbCPjKOpSfnmOGIuFB5W9LXA/loppetphoto_1.jpg?format=2500w"),
-          child: FadeInImage.assetNetwork(
-            placeholder: placeHolderImagePath,
-            image:
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587410695918-JVYIF2MWQTP0LLA3JQTC/ke17ZwdGBToddI8pDm48kMBU_r1tzMd4QwEaiVpd1vh7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hHMyhIh2kKzuOL3ydJCryB1dMAs-2ojG-6zt94yw4AbCPjKOpSfnmOGIuFB5W9LXA/loppetphoto_1.jpg?format=750w",
+          child: Image.network(
+            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587410695918-JVYIF2MWQTP0LLA3JQTC/ke17ZwdGBToddI8pDm48kMBU_r1tzMd4QwEaiVpd1vh7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hHMyhIh2kKzuOL3ydJCryB1dMAs-2ojG-6zt94yw4AbCPjKOpSfnmOGIuFB5W9LXA/loppetphoto_1.jpg?format=750w",
             fit: BoxFit.fitWidth,
-            width: widget.constraints.maxWidth,
-            height: widget.constraints.maxWidth * .4,
+            width: widget.maxWidth,
+            height: widget.maxWidth * .4,
           ),
         ),
-        columnSpace,
-        _rowItems(widget.constraints),
-        columnSpace,
-        FadeInImage.assetNetwork(
-          placeholder: placeHolderImagePath,
-          width: widget.constraints.maxWidth,
-          image:
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587270278664-X4Z6AW4RYTS4AER4DIOF/ke17ZwdGBToddI8pDm48kN81e1Vehv44dLGKecSkzRgUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2do-xzQFBgqMOPl73Fn7DbanJ017ygtFq0Te_s3ddcP7ZCjLISwBs8eEdxAxTptZAUg/loppet+animation+banner+skiier.gif?format=1000w",
-          fit: BoxFit.cover,
+        SizedBox(
+          height: columnSpace.height! * 3,
         ),
-        columnSpace,
+        if (!widget.isMobile) _rowItemsNAMobile(widget.maxWidth),
+        if (widget.isMobile) ..._rowItemsMobileView(),
+        SizedBox(
+          height: columnSpace.height! * 3,
+        ),
       ],
     );
   }
 
   /// row items of `Date Role Press Links`
-  Widget _rowItems(BoxConstraints constraints) {
+  Widget _rowItemsNAMobile(double maxWidth) {
+    final _width = maxWidth / 4;
     return Container(
-      width: constraints.maxWidth,
+      width: maxWidth,
       child: Row(
-        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           RowItem(
-            width: constraints.maxWidth * .2,
+            width: _width,
             title: "DATE",
             body: Text(
               "Winter 2017",
@@ -78,7 +103,7 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
             ),
           ),
           RowItem(
-            width: constraints.maxWidth * .2,
+            width: _width,
             title: "ROLE",
             body: Text(
               "Designer / Illustrator",
@@ -86,7 +111,7 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
             ),
           ),
           RowItem(
-            width: constraints.maxWidth * .2,
+            width: _width,
             title: "AGENCY",
             body: RichText(
               text: TextSpan(
@@ -115,7 +140,7 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
 
           ///"About Google Shopping, Google Blog, Google Shopping Actions",
           RowItem(
-            width: constraints.maxWidth * .2,
+            width: _width,
             title: "DELIVERABLES",
             body: RichText(
               text: TextSpan(

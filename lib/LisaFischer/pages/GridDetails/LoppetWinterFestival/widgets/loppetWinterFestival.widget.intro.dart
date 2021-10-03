@@ -2,13 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:portfolio/LisaFischer/pages/GridDetails/widgets/widgets.dart';
-import 'package:portfolio/configs/configs.dart';
+import '../../../../../configs/configs.dart';
+import '../../../../widgets/widgets.dart';
 
 class P1Intro extends StatefulWidget {
-  final BoxConstraints constraints;
-
-  const P1Intro({Key? key, required this.constraints}) : super(key: key);
+  const P1Intro({
+    Key? key,
+  }) : super(key: key);
   @override
   _P1IntroState createState() => _P1IntroState();
 }
@@ -19,55 +19,49 @@ class _P1IntroState extends State<P1Intro> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ConstrainedBox(
-          constraints: BoxConstraints(
-            maxWidth: widget.constraints.maxWidth * .5,
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
+        Text(
+          "Loppet Winter Festival",
+          style: titleTextStyle,
+        ),
+        SubtitleCategoryOfWork(
+          rolls: ['PRINTMAKING', 'ILLUSTRATION'],
+        ),
+        columnSpace,
+        Text(
+          "A Minnesota Winter Tradition",
+          style: MyTextStyles().textParan20,
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        briefDetails1(),
+        columnSpace,
+        briefDetails2(),
+        columnSpace,
+        RichText(
+          text: TextSpan(
             children: [
-              TitleWithSub(
-                title: "Loppet Winter Festival",
-                rolls: ['PRINTMAKING', 'ILLUSTRATION'],
-              ),
-              columnSpace,
-              Text(
-                "A Minnesota Winter Tradition",
-                style: MyTextStyles().textParan20,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              briefDetails1(),
-              columnSpace,
-              briefDetails2(),
-              columnSpace,
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "* ",
-                      style: MyTextStyles().normatText.copyWith(
-                            color: kColorDash,
-                          ),
+              TextSpan(
+                text: "* ",
+                style: MyTextStyles().normatText.copyWith(
+                      color: kColorDash,
                     ),
-                    TextSpan(
-                      text:
-                          "A special thanks to Rick Love for his printmaking expertise.",
-                      style: MyTextStyles().normatText.copyWith(
-                            fontStyle: FontStyle.italic,
-                          ),
-                    ),
-                  ],
-                ),
               ),
-              columnSpace,
+              TextSpan(
+                text:
+                    "A special thanks to Rick Love for his printmaking expertise.",
+                style: MyTextStyles().normatText.copyWith(
+                      fontStyle: FontStyle.italic,
+                    ),
+              ),
             ],
           ),
-        )
+        ),
+        columnSpace,
       ],
     );
   }
@@ -90,7 +84,7 @@ class _P1IntroState extends State<P1Intro> {
                       : MyTextStyles().normatText.color,
                 ),
 
-            ///on hover Event Change the Text Color
+            /// on hover Event Change the Text Color
             /// we arent adding underLine, because of padding issue,
             /// if we use shadow then it will failed to align with paragraph,
             /// or we can make full paragraph with Text shadow to solve this 😅
