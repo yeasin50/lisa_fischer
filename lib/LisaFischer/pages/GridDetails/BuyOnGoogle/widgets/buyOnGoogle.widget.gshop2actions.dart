@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../configs/configs.dart';
 import '../../widgets/widgets.dart';
+import 'widgets.dart';
 
 class P4GShoppingActions extends StatelessWidget {
   final double maxWidth;
@@ -24,7 +27,6 @@ class P4GShoppingActions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
       children: [
         RichTextInParentheses(
           text: "Google Shopping Actions Website",
@@ -44,10 +46,8 @@ class P4GShoppingActions extends StatelessWidget {
           height: columnSpace.height! * 1.5,
         ),
 
-        //TODO::  GIF Gshop/// Not gif but image show
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592248061694-N5AKA85R58LLJ1VRUYIN/ke17ZwdGBToddI8pDm48kPtRZ_-Of0eqM9r1dRvliRl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0prfa1Z6IeUrCPboCAmmHZnFGLgB9zNT32qiWNNlcov3OavIiLKH5Iy-9eb-as2wug/buy+on+google+_shoppping+actionss-higher+res-31.jpg?format=2500w",
-        ),
+        // ::  GIF Gshop/// Not gif but image show
+        SlideShowOnActionWebSite(maxWidth: maxWidth),
 
         SizedBox(
           height: columnSpace.height! * 3,
@@ -62,11 +62,22 @@ class P4GShoppingActions extends StatelessWidget {
           height: columnSpace.height! * 1.5,
         ),
 
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206382479-5BCIRGPFXN1ATGFIUZDB/ke17ZwdGBToddI8pDm48kPtRZ_-Of0eqM9r1dRvliRl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0qoS64ZWQL6nhDAOCStJyMk7phXbdIvSPHOI4WOcEVpcoGVtCguu3ffHOCGxqAJ6Fg/yellow-16.png?format=750w",
+        AspectRatio(
+          aspectRatio: 15 / 10,
+          child: BlurHash(
+            hash:
+                "|4Sr_pRi=9?b=S%M,\$%Lw;E1M{xt%Mxuj[ofWBax+Dt7XCRjXVWBSkRkWt_3%MRjIUM{ayf6oft7}yxuNNM{IvWAW@ayt9?aofj[WBWBWBaya}WBrSRjtSt7kEofbJs:M|~WRjM{t7a#oLWBWAof-nWBRkj[ogofRkoeWC",
+            image:
+                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206382479-5BCIRGPFXN1ATGFIUZDB/ke17ZwdGBToddI8pDm48kPtRZ_-Of0eqM9r1dRvliRl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0qoS64ZWQL6nhDAOCStJyMk7phXbdIvSPHOI4WOcEVpcoGVtCguu3ffHOCGxqAJ6Fg/yellow-16.png?format=750w",
+          ),
         ),
+        // _mwNImage(
+        //   "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206382479-5BCIRGPFXN1ATGFIUZDB/ke17ZwdGBToddI8pDm48kPtRZ_-Of0eqM9r1dRvliRl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0qoS64ZWQL6nhDAOCStJyMk7phXbdIvSPHOI4WOcEVpcoGVtCguu3ffHOCGxqAJ6Fg/yellow-16.png?format=750w",
+        // ),
 
-        columnSpace,
+        SizedBox(
+          height: columnSpace.height! * 3,
+        ),
 
         /// `E-mail Marketing`
         RichTextInParentheses(
@@ -81,84 +92,83 @@ class P4GShoppingActions extends StatelessWidget {
 
         SizedBox(height: kTopLevelStackSpace * .5),
 
-        ///`ACHETER SUR GOOGLE`
+        //* `ACHETER SUR GOOGLE`
 
-        // /// vertical line
-        // Container(
-        //   height: 45,
-        //   width: 3,
-        //   color: kColorDash.withOpacity(.2),
-        // ),
-        // SizedBox(
-        //   height: 20,
-        // ),
-        // Text(
-        //   "ACHETER SUR GOOGLE",
-        //   style: MyTextStyles().subtitle12,
-        // ),
+        // vertical line
+        Container(
+          height: columnSpace.height! * 2,
+          width: 3,
+          color: kColorDash.withOpacity(.2),
+        ),
 
-        // SizedBox(height: 7),
+        columnSpace,
 
-        // Text(
-        //   "Buy on Google France",
-        //   style: GoogleFonts.lato(
-        //     fontSize: 26,
-        //     color: Colors.black87,
-        //   ),
-        // ),
-        // SizedBox(height: 20),
-        // Container(
-        //   width: 30,
-        //   height: 3,
-        //   color: kColorDash,
-        // ),
+        Text(
+          "ACHETER SUR GOOGLE",
+          style: MyTextStyles().subtitle12,
+        ),
 
-        // columnSpace,
+        SizedBox(height: 7),
 
-        // /// "Unlike the United States, Google Shopping France required a branded...
-        // ConstrainedBox(
-        //   constraints: BoxConstraints(
-        //     maxWidth: 500,
-        //   ),
-        //   child: Text(
-        //     "Unlike the United States, Google Shopping France required a branded lockup specifically for buying on Google. The wordmark, Acheter Sur Google (Buy on Google), was designed along with the solo cart to use across multiple marketing communications channels.",
-        //     textAlign: TextAlign.center,
-        //     style: MyTextStyles().subHeader.copyWith(
-        //           height: 1.7,
-        //           fontWeight: FontWeight.w600,
-        //           letterSpacing: 1,
-        //         ),
-        //   ),
-        // ),
+        Text(
+          "Buy on Google France",
+          style: GoogleFonts.lato(
+            fontSize: 26,
+            color: Colors.black87,
+          ),
+        ),
+        columnSpace,
 
-        // SizedBox(height: 100),
+        Container(
+          width: columnSpace.height! * 2,
+          height: 3,
+          color: kColorDash,
+        ),
 
-        // RichTextInParentheses(
-        //   text: "Wordmark ",
-        //   textStyle: MyTextStyles().textParan20,
-        // ),
+        columnSpace,
 
-        // columnSpace,
-        // FadeInImage.assetNetwork(
-        //   placeholder: placeHolderImagePath,
-        //   image:
-        //       "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590430636690-L93FH562JA8FZAYH00NF/ke17ZwdGBToddI8pDm48kNThfiiC1Ss5pt91TYgjpHJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iy8Rj2bPXFyaluz0PeKicNeQIZkpfdXStHiv_LMkZT49G9mFXgpd49nBN3haodOMw/Acheter%2Bsur%2BGoogle_official%2Bbrand%2Blockup_for%2Bportfolio%2Bone%2Bpage-14.jpg?format=1000w",
-        // ),
+        ///* "Unlike the United States, Google Shopping France required a branded...
+        SizedBox(
+          width: maxWidth * .75,
+          child: Text(
+            "Unlike the United States, Google Shopping France required a branded lockup specifically for buying on Google. The wordmark, Acheter Sur Google (Buy on Google), was designed along with the solo cart to use across multiple marketing communications channels.",
+            textAlign: TextAlign.center,
+            style: MyTextStyles().subHeader.copyWith(
+                  height: 1.7,
+                  fontWeight: FontWeight.w500,
+                ),
+          ),
+        ),
+
+        SizedBox(
+          height: columnSpace.height! * 5,
+        ),
+
+        RichTextInParentheses(
+          text: "Wordmark ",
+          textStyle: MyTextStyles().textParan20,
+        ),
 
         // columnSpace,
 
-        // RichTextInParentheses(
-        //   text: "YouTube France Masthead",
-        //   textStyle: MyTextStyles().textParan20,
-        // ),
+        _mwNImage(
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590430636690-L93FH562JA8FZAYH00NF/ke17ZwdGBToddI8pDm48kNThfiiC1Ss5pt91TYgjpHJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iy8Rj2bPXFyaluz0PeKicNeQIZkpfdXStHiv_LMkZT49G9mFXgpd49nBN3haodOMw/Acheter%2Bsur%2BGoogle_official%2Bbrand%2Blockup_for%2Bportfolio%2Bone%2Bpage-14.jpg?format=1000w",
+        ),
 
-        // columnSpace,
+        SizedBox(
+          height: columnSpace.height! * 3,
+        ),
 
-        // FadeInImage.assetNetwork(
-        //   placeholder: placeHolderImagePath,
-        //   image:
-        //       "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590429082173-SZYTUEL9IQ76JETF6FOQ/ke17ZwdGBToddI8pDm48kA1pvmKWYbmcHStTUhjdsVd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mIGv1bYyjw2Ebf4Z7encJBhjhWRA9vBfQElMMak6NDbLs51z2Nd-2qCPLgV8eBK_g/YT+masthead-18.png?format=1000w",
-        // ),
+        RichTextInParentheses(
+          text: "YouTube France Masthead",
+          textStyle: MyTextStyles().textParan20,
+        ),
+
+        columnSpace,
+
+        _mwNImage(
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590429082173-SZYTUEL9IQ76JETF6FOQ/ke17ZwdGBToddI8pDm48kA1pvmKWYbmcHStTUhjdsVd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mIGv1bYyjw2Ebf4Z7encJBhjhWRA9vBfQElMMak6NDbLs51z2Nd-2qCPLgV8eBK_g/YT+masthead-18.png?format=1000w",
+        ),
       ],
     );
   }
