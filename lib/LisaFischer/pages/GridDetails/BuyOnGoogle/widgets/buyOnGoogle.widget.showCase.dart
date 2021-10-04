@@ -1,17 +1,18 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/pages/GridDetails/widgets/widgets.dart';
-import 'package:portfolio/configs/configs.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
+import '../../../../../configs/configs.dart';
+import '../../widgets/widgets.dart';
+
 /// ShowCase images + row items of `Date Role Press Links`
 class P2ShowCase extends StatefulWidget {
-  final BoxConstraints constraints;
+  final double maxWidth;
 
   const P2ShowCase({
     Key? key,
-    required this.constraints,
+    required this.maxWidth,
   }) : super(key: key);
 
   @override
@@ -46,6 +47,13 @@ class _P2ShowCaseState extends State<P2ShowCase> {
   /// init ShowCase Opacity
   double _showcaseOpacity = 0;
 
+  _mwNImage(String url, {double? width, double? height}) => Image.network(
+        url,
+        width: width ?? widget.maxWidth,
+        height: height,
+        fit: BoxFit.fitWidth,
+      );
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -60,29 +68,31 @@ class _P2ShowCaseState extends State<P2ShowCase> {
             }
           },
           child: AnimatedOpacity(
-            duration: Duration(seconds: 1),
+            duration: Duration(milliseconds: 400),
             curve: Curves.easeInCirc,
             opacity: _opacityLevelLogo,
-            child: FadeInImage.assetNetwork(
-              placeholder: placeHolderImagePath,
-              image:
-                  "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593327372980-Q6HQFDRWZVOLL3GYCJKH/ke17ZwdGBToddI8pDm48kCRzb3JqnyRQ7VUq2pE7P097gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ksOtWCjLd_P5vfQSnAKwnrZQ9grcTPXokHRV5Fh7vm2zjLo1yw71vv4_q2u1s0ysA/cart+on+blue+updated-33-33.png?format=750w",
+            child: _mwNImage(
+              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593327372980-Q6HQFDRWZVOLL3GYCJKH/ke17ZwdGBToddI8pDm48kCRzb3JqnyRQ7VUq2pE7P097gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ksOtWCjLd_P5vfQSnAKwnrZQ9grcTPXokHRV5Fh7vm2zjLo1yw71vv4_q2u1s0ysA/cart+on+blue+updated-33-33.png?format=750w",
             ),
           ),
         ),
 
         SizedBox(
-          height: 50,
+          height: columnSpace.height! * 3,
         ),
 
-        rowItems(widget.constraints),
+        rowItems(widget.maxWidth),
 
-        //Show Gshop showCase while widget Visibility=70%
+        SizedBox(
+          height: columnSpace.height! * 3,
+        ),
+
+        //*  Show Gshop showCase while widget Visibility=50%
         VisibilityDetector(
           onVisibilityChanged: (info) {
             // we are just animating once
             // print("frac: ${info.visibleFraction} ");
-            if (info.visibleFraction > .7)
+            if (info.visibleFraction > .5)
               setState(() {
                 _paddingTopLevel = 0;
                 _showcaseOpacity = 1.0;
@@ -90,24 +100,26 @@ class _P2ShowCaseState extends State<P2ShowCase> {
           },
           key: Key("showCaseImage"),
           child: AnimatedContainer(
-            duration: Duration(milliseconds: 800),
+            duration: Duration(milliseconds: 300),
+            width: widget.maxWidth,
             curve: Curves.easeInCubic,
             padding: EdgeInsets.only(top: _paddingTopLevel),
             child: AnimatedOpacity(
-              duration: Duration(milliseconds: 900),
+              duration: Duration(milliseconds: 400),
               opacity: _showcaseOpacity,
-              child: FadeInImage.assetNetwork(
-                placeholder: placeHolderImagePath,
-                fadeInDuration: Duration(milliseconds: 500),
-                alignment: Alignment.bottomCenter,
-                image:
-                    "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590468794072-PYSGV917AQK089V5TJ6D/ke17ZwdGBToddI8pDm48kEQmqQZdtGBB2XcSE0k8ACoUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYwL8IeDg6_3B-BRuF4nNrNcQkVuAT7tdErd0wQFEGFSnJW4iJZo6K6e5Za5EXsF7Xug5INyFhYLnFibc4K5-AtxqVck-AY33nSz_C37nTLCqg/zoomed%252Bin%252Bproduct%252Bcards-22.jpg?format=1000w",
-                fit: BoxFit.fitHeight,
+              child: Image.network(
+                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590468794072-PYSGV917AQK089V5TJ6D/ke17ZwdGBToddI8pDm48kEQmqQZdtGBB2XcSE0k8ACoUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYwL8IeDg6_3B-BRuF4nNrNcQkVuAT7tdErd0wQFEGFSnJW4iJZo6K6e5Za5EXsF7Xug5INyFhYLnFibc4K5-AtxqVck-AY33nSz_C37nTLCqg/zoomed%252Bin%252Bproduct%252Bcards-22.jpg?format=1000w",
+                width: widget.maxWidth,
+                //* may dirty way to handle it
+                height: widget.maxWidth * (448 / 1096),
+                fit: BoxFit.cover,
               ),
             ),
           ),
         ),
-        columnSpace,
+        SizedBox(
+          height: columnSpace.height! * 3,
+        ),
       ],
     );
   }
@@ -126,13 +138,14 @@ class _P2ShowCaseState extends State<P2ShowCase> {
   }
 
   /// row items of `Date Role Press Links`
-  Row rowItems(BoxConstraints constraints) {
+  Row rowItems(double maxWidth) {
+    final double _width = maxWidth / 4;
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         RowItem(
-          width: constraints.maxWidth * .2,
+          width: _width,
           title: "DATE",
           body: Text(
             "March 2018- April 2019",
@@ -140,7 +153,7 @@ class _P2ShowCaseState extends State<P2ShowCase> {
           ),
         ),
         RowItem(
-          width: constraints.maxWidth * .2,
+          width: _width,
           title: "ROLE",
           body: Text(
             "Visual + UX Designer / Brand Strategist",
@@ -148,7 +161,7 @@ class _P2ShowCaseState extends State<P2ShowCase> {
           ),
         ),
         RowItem(
-          width: constraints.maxWidth * .2,
+          width: _width,
           title: "PRESS",
           body: RichText(
             text: TextSpan(
@@ -213,7 +226,7 @@ class _P2ShowCaseState extends State<P2ShowCase> {
 
         ///"About Google Shopping, Google Blog, Google Shopping Actions",
         RowItem(
-          width: constraints.maxWidth * .2,
+          width: _width,
           title: "LINKS",
           body: RichText(
             text: TextSpan(

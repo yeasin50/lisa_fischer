@@ -1,27 +1,36 @@
-import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/pages/GridDetails/widgets/widgets.dart';
-import 'package:portfolio/configs/configs.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../../configs/configs.dart';
+import '../../widgets/widgets.dart';
+
 class P3Challenge2Solutions extends StatelessWidget {
+  final double maxWidth;
+
+  const P3Challenge2Solutions({
+    Key? key,
+    required this.maxWidth,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        ///The Challenge
+        //* The Challenge
         Center(
           child: RichTextInParentheses(
             text: "THE CHALLENGE",
           ),
         ),
-        columnSpace,
+        SizedBox(
+          height: columnSpace.height! * 3,
+        ),
         Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: 827,
-            ),
+          child: SizedBox(
+            width: maxWidth * .75,
             child: Text(
               "How do you convey to users that products are transactable on Google across their Google shopping journey?",
               textAlign: TextAlign.center,
@@ -31,74 +40,100 @@ class P3Challenge2Solutions extends StatelessWidget {
         ),
 
         SizedBox(
-          height: kTopLevelStackSpace,
+          height: columnSpace.height! * 3,
         ),
 
-        ///`Solution 1`
+        ////*`Solution 1`
         solution1(),
 
         columnSpace,
 
-        //Gshop logo
-        ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: 300,
-          ),
-          child: FadeInImage.assetNetwork(
-            placeholder: placeHolderImagePath,
-            image:
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206819594-2Y1OOQMSW6IACML3OET9/ke17ZwdGBToddI8pDm48kHgeF6xw7HSVwCYTTeQdw017gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iE65AXCN5486i28K9GUUCgVjv5ZSo0OWMgFo2W4vcGZk1Rs35klMuCxeyNIaYEgSg/buy+on+google+cart+hero+in+elevation-08.png?format=1000w",
-          ),
+        //* Gshop logo
+        FadeInImage.assetNetwork(
+          placeholder: placeHolderImagePath,
+          image:
+              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206819594-2Y1OOQMSW6IACML3OET9/ke17ZwdGBToddI8pDm48kHgeF6xw7HSVwCYTTeQdw017gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iE65AXCN5486i28K9GUUCgVjv5ZSo0OWMgFo2W4vcGZk1Rs35klMuCxeyNIaYEgSg/buy+on+google+cart+hero+in+elevation-08.png?format=1000w",
+          width: maxWidth * .4,
+          height: maxWidth * .4,
+          fit: BoxFit.cover,
         ),
 
         columnSpace,
 
-        Center(
-          child: RichTextInParentheses(
-            text: "VISUAL DESIGN SOLUTION",
-          ),
+        RichTextInParentheses(
+          text: "VISUAL DESIGN SOLUTION",
         ),
-        columnSpace,
-        Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: 827,
-            ),
-            child: Text(
-              "Cart as a buying metaphor   +   the Google four brand colors",
-              textAlign: TextAlign.center,
-              style: subHeaderTextStyle.copyWith(
-                fontSize: 26,
-                color: Colors.black,
+
+        // columnSpace,
+
+        //TODO:: align with +
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: "Cart as a buying metaphor",
+                style: subHeaderTextStyle.copyWith(
+                  fontSize: 26,
+                  color: Colors.black,
+                ),
               ),
-            ),
+              TextSpan(
+                text: " + ",
+                style: subHeaderTextStyle.copyWith(
+                  fontSize: 26,
+                  color: kColorDash,
+                ),
+              ),
+              TextSpan(
+                text: "the Google four brand colors",
+                style: subHeaderTextStyle.copyWith(
+                  fontSize: 26,
+                  color: Colors.black,
+                ),
+              )
+            ],
           ),
         ),
+
         columnSpace,
-        Center(
-          child: Text(
-            "User comprehension   +   Brand equity",
-            style: MyTextStyles().subHeader,
+
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: "User comprehension ",
+              ),
+              TextSpan(
+                text: "+ ",
+                style: MyTextStyles().subHeader.copyWith(
+                      color: kColorDash,
+                    ),
+              ),
+              TextSpan(
+                text: "Brand equity",
+              )
+            ],
           ),
+          style: MyTextStyles().subHeader,
         ),
 
         SizedBox(
-          height: kTopLevelStackSpace,
+          height: columnSpace.height! * 3,
         ),
         solution2(),
 
         SizedBox(
-          height: kTopLevelStackSpace,
+          height: columnSpace.height! * 3,
         ),
 
         DesktopMobileUserFlow(),
-        columnSpace,
 
-        ///`Solution 3`
-
+        ///* `Solution 3`
         solution3(),
 
-        columnSpace,
+        SizedBox(
+          height: columnSpace.height! * 3,
+        ),
       ],
     );
   }
@@ -106,12 +141,9 @@ class P3Challenge2Solutions extends StatelessWidget {
   Row solution3() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             RichTextInParentheses(
               text: "solution".toUpperCase(),
@@ -124,10 +156,8 @@ class P3Challenge2Solutions extends StatelessWidget {
             columnSpace,
             Padding(
               padding: const EdgeInsets.only(right: 16),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxWidth: 200,
-                ),
+              child: SizedBox(
+                width: maxWidth / 4,
                 child: Text(
                   "Ensure scalability of Buy on Google design for use across marketing communications & multiple Google destinations: Search, Shopping, Assistant, Images, YouTube.",
                   style: TextStyle(
@@ -140,7 +170,7 @@ class P3Challenge2Solutions extends StatelessWidget {
               ),
             ),
           ],
-        ),
+        ), 
         Expanded(
           child: FadeInImage.assetNetwork(
             placeholder: placeHolderImagePath,
@@ -155,12 +185,9 @@ class P3Challenge2Solutions extends StatelessWidget {
   Row solution2() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             RichTextInParentheses(
               text: "solution".toUpperCase(),
@@ -173,16 +200,12 @@ class P3Challenge2Solutions extends StatelessWidget {
             columnSpace,
             Padding(
               padding: const EdgeInsets.only(right: 16),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxWidth: 200,
-                ),
+              child: SizedBox(
+                width: maxWidth / 4,
                 child: Text(
                   "Rearchitect the Google Shopping search results page and product details page to introduce an intuitive Buy on Google user flow.",
                   style: MyTextStyles().subHeader.copyWith(
-                        height: 2,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1,
+                        height: 1.5,
                       ),
                 ),
               ),
@@ -219,10 +242,8 @@ class P3Challenge2Solutions extends StatelessWidget {
               style: titleTextStyle,
             ),
             columnSpace,
-            ConstrainedBox(
-              constraints: BoxConstraints(
-                maxWidth: 200,
-              ),
+            SizedBox(
+              width: maxWidth / 4,
               child: Padding(
                 padding: const EdgeInsets.only(right: 16),
                 child: Text(
@@ -255,38 +276,59 @@ class DesktopMobileUserFlow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
       children: [
         RichTextInParentheses(
           text: "Desktop User Flow",
           textStyle: MyTextStyles().textParan20,
         ),
 
-        ///Starting from the `Google Search` homepage
+        SizedBox(
+          height: columnSpace.height! * .5,
+        ),
+
+        //* Starting from the `Google Search` homepage
         // we can use row and Inkwell Hover Effect here
-        EasyRichText(
-          "Starting from the Google Search homepage",
-          defaultStyle: MyTextStyles().subHeader,
-          patternList: [
-            EasyRichTextPattern(
-                targetString: "Google Search",
+
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: "Starting from the ",
+              ),
+              TextSpan(
+                text: "Google Search ",
                 style: MyTextStyles().subHeader.copyWith(
                       color: kColorDash,
                     ),
                 recognizer: TapGestureRecognizer()
-                  ..onTap = () => launch("https://google.com/")),
-          ],
-        ),
-
-        columnSpace,
-        FadeInImage.assetNetwork(
-          placeholder: placeHolderImagePath,
-          image:
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593358472652-A6IP5T382DZ1A7XSILMP/ke17ZwdGBToddI8pDm48kAHWeGNrnTNuaaRsQC5iQLWLPZHY9930KFuik00L7GzBKdq8kyNB6kzmmlKIayPDyODNVAVoT5JWrLXnFZMIhf1eKxxnxAGk445uFOpsZm_-/image-asset.gif?format=1000w",
+                  ..onTap = () => launch("https://google.com/"),
+              ),
+              TextSpan(
+                text: "Search homepage",
+              ),
+            ],
+          ),
+          style: MyTextStyles().subHeader,
         ),
 
         SizedBox(
-          height: kTopLevelStackSpace,
+          height: columnSpace.height! * 1.5,
+        ),
+
+        // gShop search gif
+        AspectRatio(
+          key: ValueKey("Gshop search on Web"),
+          aspectRatio: 24 / 17,
+          child: BlurHash(
+            hash:
+                "|3SY~#t7X;~p03IV0N%MEn%Mx[InMxaexux]RiM{00xuRPIV%Lxu%LRkt6kVRjoM-;%MD%D%t8%N00t6s,M{xtxtxtRjoIt8of.7RjIUbItRjYRi03WB%LocnhRkt7oes+_3ays:RjbHj[RjfiWBO^RjMxt7%fRPMxogt7",
+            image:
+                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593358472652-A6IP5T382DZ1A7XSILMP/ke17ZwdGBToddI8pDm48kAHWeGNrnTNuaaRsQC5iQLWLPZHY9930KFuik00L7GzBKdq8kyNB6kzmmlKIayPDyODNVAVoT5JWrLXnFZMIhf1eKxxnxAGk445uFOpsZm_-/image-asset.gif?format=1000w",
+          ),
+        ),
+
+        SizedBox(
+          height: columnSpace.height! * 3,
         ),
 
         RichTextInParentheses(
@@ -294,33 +336,51 @@ class DesktopMobileUserFlow extends StatelessWidget {
           textStyle: MyTextStyles().textParan20,
         ),
 
-        columnSpace,
+        SizedBox(
+          height: columnSpace.height! * .5,
+        ),
 
         ///Starting from the` Google Shopping` homepage
-        // we can use row and Inkwell Hover Effect here
-        EasyRichText(
-          "Starting from the Google Shopping homepage",
-          defaultStyle: MyTextStyles().subHeader,
-          patternList: [
-            EasyRichTextPattern(
-                targetString: "Google Shopping",
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: "Starting from the ",
+              ),
+              TextSpan(
+                text: "Google Shopping ",
                 style: MyTextStyles().subHeader.copyWith(
                       color: kColorDash,
                     ),
                 recognizer: TapGestureRecognizer()
-                  ..onTap = () => launch("https://shopping.google.com/")),
-          ],
+                  ..onTap = () => launch("https://shopping.google.com/"),
+              ),
+              TextSpan(
+                text: "homepage",
+              ),
+            ],
+          ),
+          style: MyTextStyles().subHeader,
         ),
 
         SizedBox(
-          height: kTopLevelStackSpace,
+          height: columnSpace.height! * 1.5,
         ),
-        FadeInImage.assetNetwork(
-          placeholder: placeHolderImagePath,
-          image:
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593359373939-6PZMAHELDSJ4VAEKNIY9/ke17ZwdGBToddI8pDm48kAHWeGNrnTNuaaRsQC5iQLWLPZHY9930KFuik00L7GzBKdq8kyNB6kzmmlKIayPDyODNVAVoT5JWrLXnFZMIhf1eKxxnxAGk445uFOpsZm_-/image-asset.gif?format=750w",
+
+        AspectRatio(
+          key: ValueKey("Gshop search on mobileView"),
+          aspectRatio: 18 / 15,
+          child: BlurHash(
+            hash:
+                "|9QJ.mt71noz^ct7D\$ofOa-;j[M{ayoffQt7j[M{0Lay~Vj[9Gayxvfkoc%Mj[Rjayj]fkofj[Rj9ba|?Fj[IVayt8fkocxufQfPfQj[fQayfQj[bxfQngfQWYfQkCfRoJogfQt7j[ayfQRjayt7.8fRD\$ayx]fRWBfQjY",
+            image:
+                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593359373939-6PZMAHELDSJ4VAEKNIY9/ke17ZwdGBToddI8pDm48kAHWeGNrnTNuaaRsQC5iQLWLPZHY9930KFuik00L7GzBKdq8kyNB6kzmmlKIayPDyODNVAVoT5JWrLXnFZMIhf1eKxxnxAGk445uFOpsZm_-/image-asset.gif?format=750w",
+          ),
         ),
-        columnSpace,
+
+        SizedBox(
+          height: columnSpace.height! * 3,
+        ),
       ],
     );
   }
