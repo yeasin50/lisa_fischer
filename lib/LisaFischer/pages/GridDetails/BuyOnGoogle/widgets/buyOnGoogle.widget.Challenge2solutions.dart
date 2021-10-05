@@ -8,10 +8,12 @@ import '../../widgets/widgets.dart';
 
 class P3Challenge2Solutions extends StatelessWidget {
   final double maxWidth;
+  final bool isMobile;
 
   const P3Challenge2Solutions({
     Key? key,
     required this.maxWidth,
+    this.isMobile = false,
   }) : super(key: key);
 
   @override
@@ -138,136 +140,200 @@ class P3Challenge2Solutions extends StatelessWidget {
     );
   }
 
-  Row solution3() {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            RichTextInParentheses(
-              text: "solution".toUpperCase(),
-            ),
-            columnSpace,
-            Text(
-              "03",
-              style: titleTextStyle,
-            ),
-            columnSpace,
-            Padding(
-              padding: const EdgeInsets.only(right: 16),
-              child: SizedBox(
-                width: maxWidth / 4,
-                child: Text(
-                  "Ensure scalability of Buy on Google design for use across marketing communications & multiple Google destinations: Search, Shopping, Assistant, Images, YouTube.",
-                  style: TextStyle(
-                    fontFamily: kFproximaNova,
-                    color: const Color(0xff737373),
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
+  Widget solution3() {
+    final _infoText = Text(
+      "Ensure scalability of Buy on Google design for use across marketing communications & multiple Google destinations: Search, Shopping, Assistant, Images, YouTube.",
+      style: TextStyle(
+        fontFamily: kFproximaNova,
+        color: const Color(0xff737373),
+        fontWeight: FontWeight.w500,
+        fontSize: 16,
+      ),
+    );
+
+    final _image = FadeInImage.assetNetwork(
+      placeholder: placeHolderImagePath,
+      image:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593371429717-399E6BX3HCYTCEBIW9KW/ke17ZwdGBToddI8pDm48kGttJQ3fNJjEPJpWvJxnJ5x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0qRGAtipPmBDa-K0OI3D5BM_VNprNPjtsnKQ3_2ravThonCkQUqLkSQrXw9s6QjMPw/buy+on+google+_shoppping+actionss-higher+res-332-03-32.png?format=750w",
+    );
+
+    return isMobile
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RichTextInParentheses(
+                text: "solution".toUpperCase(),
+              ),
+              columnSpace,
+              Text(
+                "03",
+                style: titleTextStyle,
+              ),
+              columnSpace,
+              _infoText,
+              columnSpace,
+              _image,
+            ],
+          )
+        : Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  RichTextInParentheses(
+                    text: "solution".toUpperCase(),
                   ),
-                ),
+                  columnSpace,
+                  Text(
+                    "03",
+                    style: titleTextStyle,
+                  ),
+                  columnSpace,
+                  Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: SizedBox(
+                      width: maxWidth / 4,
+                      child: _infoText,
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ), 
-        Expanded(
-          child: FadeInImage.assetNetwork(
-            placeholder: placeHolderImagePath,
-            image:
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593371429717-399E6BX3HCYTCEBIW9KW/ke17ZwdGBToddI8pDm48kGttJQ3fNJjEPJpWvJxnJ5x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0qRGAtipPmBDa-K0OI3D5BM_VNprNPjtsnKQ3_2ravThonCkQUqLkSQrXw9s6QjMPw/buy+on+google+_shoppping+actionss-higher+res-332-03-32.png?format=750w",
-          ),
-        ),
-      ],
-    );
+              Expanded(
+                child: _image,
+              ),
+            ],
+          );
   }
 
-  Row solution2() {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            RichTextInParentheses(
-              text: "solution".toUpperCase(),
-            ),
-            columnSpace,
-            Text(
-              "02",
-              style: titleTextStyle,
-            ),
-            columnSpace,
-            Padding(
-              padding: const EdgeInsets.only(right: 16),
-              child: SizedBox(
-                width: maxWidth / 4,
-                child: Text(
-                  "Rearchitect the Google Shopping search results page and product details page to introduce an intuitive Buy on Google user flow.",
-                  style: MyTextStyles().subHeader.copyWith(
-                        height: 1.5,
-                      ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        columnSpace,
-        Expanded(
-          child: FadeInImage.assetNetwork(
-              placeholder: placeHolderImagePath,
-              image:
-                  "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593370185981-ZRTILUE0US7N72K1TZ70/ke17ZwdGBToddI8pDm48kPYL8vMf5MK395rQIEZQsvF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0gkB-ogLx65Ep68Jc3FEurvoKLIolQEeIY4vOEJZJ4JJze7s2JxfUzCZ9mTlu3vZCA/roller+coaster-34-34-35-34-34.png?format=1500w"),
-        ),
-      ],
+  Widget solution2() {
+    final _text = Text(
+      "Rearchitect the Google Shopping search results page and product details page to introduce an intuitive Buy on Google user flow.",
+      style: MyTextStyles().subHeader.copyWith(
+            height: 1.5,
+          ),
     );
+
+    final _image = FadeInImage.assetNetwork(
+      placeholder: placeHolderImagePath,
+      image:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593370185981-ZRTILUE0US7N72K1TZ70/ke17ZwdGBToddI8pDm48kPYL8vMf5MK395rQIEZQsvF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0gkB-ogLx65Ep68Jc3FEurvoKLIolQEeIY4vOEJZJ4JJze7s2JxfUzCZ9mTlu3vZCA/roller+coaster-34-34-35-34-34.png?format=1500w",
+    );
+
+    return isMobile
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RichTextInParentheses(
+                text: "solution".toUpperCase(),
+              ),
+              columnSpace,
+              Text(
+                "02",
+                style: titleTextStyle,
+              ),
+              columnSpace,
+              _text,
+              columnSpace,
+              _image,
+            ],
+          )
+        : Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  RichTextInParentheses(
+                    text: "solution".toUpperCase(),
+                  ),
+                  columnSpace,
+                  Text(
+                    "02",
+                    style: titleTextStyle,
+                  ),
+                  columnSpace,
+                  Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: SizedBox(
+                      width: maxWidth / 4,
+                      child: _text,
+                    ),
+                  ),
+                ],
+              ),
+              columnSpace,
+              Expanded(
+                child: _image,
+              ),
+            ],
+          );
   }
 
-  Row solution1() {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            RichTextInParentheses(
-              text: "solution".toUpperCase(),
-            ),
-            columnSpace,
-            Text(
-              "01",
-              style: titleTextStyle,
-            ),
-            columnSpace,
-            SizedBox(
-              width: maxWidth / 4,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 16),
-                child: Text(
-                  "Establish an identifiable icon representing products you can buy on Google.",
-                  style: MyTextStyles().subHeader.copyWith(
-                        height: 2,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1,
-                      ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        columnSpace,
-        Expanded(
-          child: FadeInImage.assetNetwork(
-            placeholder: placeHolderImagePath,
-            image:
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590350017132-ZJWLDOX3GSITLN1K7GLT/ke17ZwdGBToddI8pDm48kBe3s72x4TW__9H-J8QPN6d7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pQYXULvgm9t5Zb8hmAX2a-2QVMc0DOsEw99humzWVrFVBcZcfL7QrKE_xBa0lpg2Q/buy+on+google+images+for+portfolioo-12.png?format=750w",
+  Widget solution1() {
+    final _text = Text(
+      "Establish an identifiable icon representing products you can buy on Google.",
+      style: MyTextStyles().subHeader.copyWith(
+            height: 2,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 1,
           ),
-        ),
-      ],
     );
+
+    final _image = FadeInImage.assetNetwork(
+      placeholder: placeHolderImagePath,
+      image:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590350017132-ZJWLDOX3GSITLN1K7GLT/ke17ZwdGBToddI8pDm48kBe3s72x4TW__9H-J8QPN6d7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pQYXULvgm9t5Zb8hmAX2a-2QVMc0DOsEw99humzWVrFVBcZcfL7QrKE_xBa0lpg2Q/buy+on+google+images+for+portfolioo-12.png?format=750w",
+    );
+
+    return isMobile
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RichTextInParentheses(
+                text: "solution".toUpperCase(),
+              ),
+              columnSpace,
+              Text(
+                "01",
+                style: titleTextStyle,
+              ),
+              columnSpace,
+              _text,
+              columnSpace,
+              _image,
+            ],
+          )
+        : Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  RichTextInParentheses(
+                    text: "solution".toUpperCase(),
+                  ),
+                  columnSpace,
+                  Text(
+                    "01",
+                    style: titleTextStyle,
+                  ),
+                  columnSpace,
+                  SizedBox(
+                    width: maxWidth / 4,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 16),
+                      child: _text,
+                    ),
+                  ),
+                ],
+              ),
+              columnSpace,
+              Expanded(
+                child: _image,
+              ),
+            ],
+          );
   }
 }
 

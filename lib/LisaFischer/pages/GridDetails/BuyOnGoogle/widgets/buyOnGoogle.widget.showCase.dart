@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/LisaFischer/pages/GridDetails/BuyOnGoogle/utils/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -9,10 +10,12 @@ import '../../widgets/widgets.dart';
 /// ShowCase images + row items of `Date Role Press Links`
 class P2ShowCase extends StatefulWidget {
   final double maxWidth;
+  final bool isMobile;
 
   const P2ShowCase({
     Key? key,
     required this.maxWidth,
+    this.isMobile = false,
   }) : super(key: key);
 
   @override
@@ -54,9 +57,29 @@ class _P2ShowCaseState extends State<P2ShowCase> {
         fit: BoxFit.fitWidth,
       );
 
+  List<Padding> _rowItemsMobile() {
+    List<Padding> _items = [];
+
+    buyOnGoogleRowitems.forEach((key, value) {
+      _items.add(
+        Padding(
+          padding: const EdgeInsets.only(bottom: 16.0),
+          child: RowItem(
+            title: "$key",
+            body: value,
+            isMobile: true,
+          ),
+        ),
+      );
+    });
+
+    return _items;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // GShop Logo
         VisibilityDetector(
@@ -81,8 +104,9 @@ class _P2ShowCaseState extends State<P2ShowCase> {
           height: columnSpace.height! * 3,
         ),
 
-        rowItems(widget.maxWidth),
+        if (!widget.isMobile) rowItems(widget.maxWidth),
 
+        if (widget.isMobile) ..._rowItemsMobile(),
         SizedBox(
           height: columnSpace.height! * 3,
         ),

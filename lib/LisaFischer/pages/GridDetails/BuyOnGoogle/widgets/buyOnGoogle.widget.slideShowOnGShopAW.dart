@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 import '../utils/utils.dart';
 
@@ -31,10 +32,10 @@ class _SlideShowOnActionWebSiteState extends State<SlideShowOnActionWebSite> {
 
     _widgets = imagesPathOfGifMaker
         .map(
-          (path) => Image.network(
-            path,
-            width: widget.maxWidth,
-            fit: BoxFit.fitWidth,
+          (path) => BlurHash(
+            hash:
+                "|3RpIFIU1A?b1T?v0qtREoogoextt7a#Rjj]azj[0H%M-NM{r:IU-nazxV-;ofWCRit7xufiaxof0ZRjxTt7-nWBngofsk_3M{RPt7ofoybHofWBKmofaJRjjDofxZoeV@_4xuj[NGIVM{j[a#azkWWB%MWBRit7IUa{xu",
+            image: path,
           ),
         )
         .toList();
@@ -55,10 +56,10 @@ class _SlideShowOnActionWebSiteState extends State<SlideShowOnActionWebSite> {
 
   @override
   Widget build(BuildContext context) {
-    //* Why not just Image.network[index], because I'm having UI on on 1stLoad
-    return IndexedStack(
-      children: _widgets,
-      index: currentIndex,
+    ///// * Why not just Image.network[index], because I'm having UI on on 1stLoad
+    return AspectRatio(
+      aspectRatio: 15 / 10,
+      child: _widgets[currentIndex],
     );
   }
 }
