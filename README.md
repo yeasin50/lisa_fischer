@@ -7,6 +7,7 @@ TODO: on Lisa Fischer
 
 - tablet mode intro text works
 - [x] just make this repo from Lisa Fischer
+- [ ] ytVide size
 - hash-blur image
 - apply `const`
 - use dot name fileStruct
