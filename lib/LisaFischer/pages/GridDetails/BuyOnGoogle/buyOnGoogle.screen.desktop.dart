@@ -15,29 +15,25 @@ class DesktopView extends StatelessWidget {
           width: maxWidth,
           child: Column(
             children: [
-              // Align(
-              //   alignment: Alignment(-1, -1),
-              //   child: SizedBox(
-              //     width: constraints.maxWidth * .4,
-              //     child: P1GShopIntro(),
-              //   ),
-              // ),
-
-              // P2ShowCase(
-              //   maxWidth: maxWidth,
-              // ),
-
-              // P3Challenge2Solutions(
-              //   maxWidth: maxWidth,
-              // ),
-
+              Align(
+                alignment: Alignment(-1, -1),
+                child: SizedBox(
+                  width: constraints.maxWidth * .4,
+                  child: P1GShopIntro(),
+                ),
+              ),
+              P2ShowCase(
+                maxWidth: maxWidth,
+              ),
+              P3Challenge2Solutions(
+                maxWidth: maxWidth,
+              ),
               P4GShoppingActions(
                 maxWidth: maxWidth,
               ),
-              // columnSpace,
-
-              // // ///`Google Shopping Actions Website`
-              // P4GShoppingActions(),
+              VideoAdsWeb(
+                maxWidth: maxWidth,
+              ),
             ],
           ),
         );
