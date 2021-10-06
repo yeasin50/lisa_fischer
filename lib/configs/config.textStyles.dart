@@ -84,6 +84,7 @@ class MyTextStyles {
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: const Color(0xff737373),
+    height: kNormalTextHeight,
   );
 
   final TextStyle textInParan = GoogleFonts.lato(
@@ -112,4 +113,13 @@ class MyTextStyles {
         fontSize: 14,
         color: const Color.fromRGBO(18, 18, 18, .56),
       );
+
+  final TextStyle subHeaderRow = TextStyle(
+    fontFamily: kFproximaNova,
+    letterSpacing: 1.3,
+    height: 1.1,
+    fontSize: 14.5,
+    fontWeight: FontWeight.w700,
+    color: Colors.black87,
+  );
 }
