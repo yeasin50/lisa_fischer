@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 class ContactGif extends StatelessWidget {
   final String _contactGifUrl =
@@ -6,11 +7,11 @@ class ContactGif extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 100 / 115,
-      child: FadeInImage.assetNetwork(
-        placeholder: "assets/images/placeHolder.png",
+      aspectRatio: 500 / 581,
+      child: BlurHash(
+        hash:
+            "nCPP_t00-;9t?c.TyEo#nhe.pxyEniR5WVL}MIROW.ozRibvpIo}aKxuogogbHbF",
         image: _contactGifUrl,
-        fit: BoxFit.cover,
       ),
     );
   }

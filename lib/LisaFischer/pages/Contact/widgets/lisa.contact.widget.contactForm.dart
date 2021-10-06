@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/widgets/widgets.dart';
-import 'package:portfolio/configs/config.constants.dart';
-import 'package:portfolio/configs/config.textStyles.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../../../configs/config.constants.dart';
+import '../../../../configs/config.textStyles.dart';
+import '../../../widgets/widgets.dart';
 
 class ContactForm extends StatefulWidget {
   @override
