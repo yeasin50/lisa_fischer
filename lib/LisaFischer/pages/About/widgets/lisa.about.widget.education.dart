@@ -1,63 +1,56 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/configs/config.constants.dart';
-import 'package:portfolio/configs/config.textStyles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../configs/config.textStyles.dart';
 import 'lisa.about.widget.grid.dart';
 
-class LisaEducation extends StatelessWidget {
-  final TextStyle _subHeaderStyle = TextStyle(
-    fontFamily: kFproximaNova,
-    letterSpacing: 1.3,
-    height: 1.1,
-    fontSize: 14.5,
-    fontWeight: FontWeight.w700,
-    color: Colors.black87,
-  );
+class LisaEducation extends StatefulWidget {
+  @override
+  State<LisaEducation> createState() => _LisaEducationState();
+}
+
+class _LisaEducationState extends State<LisaEducation> {
+  List<bool> _isHovered = List.generate(2, (index) => false);
   @override
   Widget build(BuildContext context) {
     return GridItem(
-        title: 'EDUCATION',
-        body: RichText(
-          text: TextSpan(children: [
+      title: 'EDUCATION',
+      body: RichText(
+        text: TextSpan(
+          style: MyTextStyles().normatText,
+          children: [
             TextSpan(
               text: "Savannah College of Art and Design",
-              style: _subHeaderStyle,
+              style: _isHovered[0]
+                  ? MyTextStyles().subHeaderRow
+                  : MyTextStyles().subHeaderRow.copyWith(color: kColorDash),
+              onEnter: (event) => setState(() => _isHovered[0] = true),
+              onExit: (event) => setState(() => _isHovered[0] = false),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => launch("https://www.scad.edu/"),
             ),
             TextSpan(
               text: "\nMaster of Arts, Graphic Design, \nJune 2016\n",
-              style: normalStyle,
             ),
             TextSpan(
               text: "\nGeorge Washington University",
-              style: _subHeaderStyle,
+              style: _isHovered[1]
+                  ? MyTextStyles().subHeaderRow
+                  : MyTextStyles().subHeaderRow.copyWith(color: kColorDash),
+              onEnter: (event) => setState(() => _isHovered[1] = true),
+              onExit: (event) => setState(() => _isHovered[1] = false),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => launch("https://www.gwu.edu/"),
             ),
             TextSpan(
               text:
                   "\nBachelor of Business, Administration,\nMarketing, May 2014\n",
-              style: normalStyle,
             )
-          ]),
-        )
-
-        //     EasyRichText(
-        //   "Savannah College of Art and Design \n" +
-        //       "Master of Arts, Graphic Design, June 2016 " +
-        //       "George Washington University" +
-        //       "Bachelor of Business, Administration,\nMarketing, May 2014\n",
-        //   defaultStyle: normalStyle,
-        //   patternList: [
-        //     EasyRichTextPattern(
-        //       matchLeftWordBoundary: false,
-        //       targetString: "Savannah College of Art and Design",
-        //       style: _subHeaderStyle,
-        //     ),
-        //     EasyRichTextPattern(
-        //       targetString: "George Washington University",
-        //       style: _subHeaderStyle,
-        //       matchLeftWordBoundary: false,
-        //     ),
-        //   ],
-        // ),
-        );
+          ],
+        ),
+      ),
+    );
   }
 }
