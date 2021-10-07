@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/configs/configs.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../configs/config.constants.dart';
@@ -13,6 +14,10 @@ class LisaAwards extends StatefulWidget {
 
 class _LisaAwardsState extends State<LisaAwards> {
   List<bool> _isHovered = List.generate(7, (index) => false);
+
+  final _linkTextStyle = MyTextStyles().normatText.copyWith(
+        color: linkTextColor,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +34,10 @@ class _LisaAwardsState extends State<LisaAwards> {
               recognizer: TapGestureRecognizer()
                 ..onTap = () => launch("https://www.graphis.com/"),
               style: _isHovered[0]
-                  ? MyTextStyles().subHeaderRow.copyWith(
-                        color: kColorDash,
-                      )
-                  : MyTextStyles().subHeaderRow,
+                  ? _linkTextStyle.copyWith(
+                      color: kColorDash,
+                    )
+                  : _linkTextStyle,
             ),
             TextSpan(
               text: 'New Talent Annual 2016: Silver Award + Merit Award, ',
@@ -46,10 +51,10 @@ class _LisaAwardsState extends State<LisaAwards> {
               recognizer: TapGestureRecognizer()
                 ..onTap = () => launch("https://www.adobeawards.com/"),
               style: _isHovered[1]
-                  ? MyTextStyles().subHeaderRow.copyWith(
-                        color: kColorDash,
-                      )
-                  : MyTextStyles().subHeaderRow,
+                  ? _linkTextStyle.copyWith(
+                      color: kColorDash,
+                    )
+                  : _linkTextStyle,
             ),
 
             TextSpan(
@@ -64,10 +69,10 @@ class _LisaAwardsState extends State<LisaAwards> {
               recognizer: TapGestureRecognizer()
                 ..onTap = () => launch("https://www.appliedartsmag.com/"),
               style: _isHovered[2]
-                  ? MyTextStyles().subHeaderRow.copyWith(
-                        color: kColorDash,
-                      )
-                  : MyTextStyles().subHeaderRow,
+                  ? _linkTextStyle.copyWith(
+                      color: kColorDash,
+                    )
+                  : _linkTextStyle,
             ),
             TextSpan(
               text: "2016: Winner, ",
@@ -81,10 +86,10 @@ class _LisaAwardsState extends State<LisaAwards> {
               recognizer: TapGestureRecognizer()
                 ..onTap = () => launch("https://www.appliedartsmag.com/"),
               style: _isHovered[3]
-                  ? MyTextStyles().subHeaderRow.copyWith(
-                        color: kColorDash,
-                      )
-                  : MyTextStyles().subHeaderRow,
+                  ? _linkTextStyle.copyWith(
+                      color: kColorDash,
+                    )
+                  : _linkTextStyle,
             ),
 
             TextSpan(
@@ -99,10 +104,10 @@ class _LisaAwardsState extends State<LisaAwards> {
                 ..onTap =
                     () => launch("https://idesignawards.com/graphics.html"),
               style: _isHovered[4]
-                  ? MyTextStyles().subHeaderRow.copyWith(
-                        color: kColorDash,
-                      )
-                  : MyTextStyles().subHeaderRow,
+                  ? _linkTextStyle.copyWith(
+                      color: kColorDash,
+                    )
+                  : _linkTextStyle,
             ),
 
             TextSpan(
@@ -118,10 +123,10 @@ class _LisaAwardsState extends State<LisaAwards> {
                 ..onTap = () => launch(
                     "https://issuu.com/scad/docs/scad-secession-2016/10"),
               style: _isHovered[5]
-                  ? MyTextStyles().subHeaderRow.copyWith(
-                        color: kColorDash,
-                      )
-                  : MyTextStyles().subHeaderRow,
+                  ? _linkTextStyle.copyWith(
+                      color: kColorDash,
+                    )
+                  : _linkTextStyle,
             ),
 
             TextSpan(
