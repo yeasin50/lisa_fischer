@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/constants/constants.dart';
-import 'package:portfolio/LisaFischer/widgets/widgets.dart';
+import 'package:portfolio/configs/config.constants.dart';
 
+import '../../constants/constants.dart';
+import '../../widgets/widgets.dart';
 import 'widgets/widgets.dart';
 
 class MobileView extends StatelessWidget {
@@ -17,40 +18,44 @@ class MobileView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ProfileImage(),
-          BriefInfo(),
-          spaceBetweenColumnOnMobile,
-          divider,
-          spaceBetweenColumnOnMobile,
           ...[
-            LisaEducation(),
-            LisaExperience(),
-            LisaDesignSkills(),
-            LisaTechnicalSkills(),
-            LisaAwards(),
-            LisaFeture(),
-            LisaPress(),
-            LisaWriting(),
+            ProfileImage(),
+            BriefInfo(),
+            divider,
+            ...[
+              /// may text height is coming from mapping
+              LisaEducation(),
+              LisaExperience(),
+              LisaDesignSkills(),
+              LisaTechnicalSkills(),
+              LisaAwards(),
+              LisaFeture(),
+              LisaPress(),
+              LisaWriting(),
+            ].map(
+              (e) => Padding(
+                padding: EdgeInsets.only(
+                  bottom: columnSpace.height!,
+                ),
+                child: e,
+              ),
+            ),
+            divider,
+            ConnectOnAbout(),
+            ContactOnAbout(),
+            Transform.translate(
+              offset: Offset(-8, 0), //todo: separate Paddings form widgets
+              child: CustomButton(
+                label: "GET IN TOUCH",
+                onTap: () {},
+              ),
+            ),
           ].map(
             (e) => Padding(
               padding: EdgeInsets.only(
-                bottom: spaceBetweenColumnItemsOnMobile,
+                bottom: columnSpace.height!,
               ),
               child: e,
-            ),
-          ),
-          spaceBetweenColumnOnMobile,
-          divider,
-          spaceBetweenColumnOnMobile,
-          ConnectOnAbout(),
-          spaceBetweenColumnOnMobile,
-          ContactOnAbout(),
-          spaceBetweenColumnOnMobile,
-          Transform.translate(
-            offset: Offset(-8, 0), //todo: separate Paddings form widgets
-            child: CustomButton(
-              label: "GET IN TOUCH",
-              onTap: () {},
             ),
           ),
         ],

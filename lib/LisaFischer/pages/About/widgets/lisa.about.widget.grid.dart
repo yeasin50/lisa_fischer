@@ -12,28 +12,22 @@ class GridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // alignment: Alignment.topLeft,
-      // color: Colors.deepOrange.withOpacity(.4),
-      constraints: BoxConstraints(maxWidth: 270),
-
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          header(title),
-          Container(
-            padding: const EdgeInsets.only(top: 28),
-            margin: const EdgeInsets.symmetric(
-              vertical: 6,
-            ),
-            width: 30,
-            height: 3,
-            color: kColorDash,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        header(title),
+        Container(
+          padding: const EdgeInsets.only(top: 28),
+          margin: const EdgeInsets.symmetric(
+            vertical: 6,
           ),
-          body,
-        ],
-      ),
+          width: 30,
+          height: 3,
+          color: kColorDash,
+        ),
+        body,
+      ],
     );
   }
 }
