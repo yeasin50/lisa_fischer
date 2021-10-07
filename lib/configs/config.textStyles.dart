@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'config.constants.dart';
+import 'configs.dart';
 
 /// TODO:: Still facing font issue=> download font somewhere else or alt use google FOnt
 final TextStyle titleTextStyle = TextStyle(
@@ -84,6 +86,13 @@ class MyTextStyles {
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: const Color(0xff737373),
+    height: kNormalTextHeight,
+  );
+
+  final TextStyle linkTextStyle = GoogleFonts.lato(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: linkTextColor,
     height: kNormalTextHeight,
   );
 
