@@ -1,73 +1,139 @@
-import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/config.textStyles.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../configs/config.constants.dart';
+import '../../../../configs/config.textStyles.dart';
 import 'lisa.about.widget.grid.dart';
 
-class LisaAwards extends StatelessWidget {
+class LisaAwards extends StatefulWidget {
+  @override
+  State<LisaAwards> createState() => _LisaAwardsState();
+}
+
+class _LisaAwardsState extends State<LisaAwards> {
+  List<bool> _isHovered = List.generate(7, (index) => false);
+
   @override
   Widget build(BuildContext context) {
     return GridItem(
       title: "AWARDS",
-      body: EasyRichText(
-        "Graphis New Talent Annual 2016: Silver Award + Merit Award, " +
-            "Adobe Design Achievement Awards 2016: Semifinalist," +
-            " Applied Arts Magazine 2016: Winner, " +
-            "Applied Arts Creative Excellence Award 2016: Winner," +
-            " IDA International Design Awards 2016: Bronze Award, " +
-            "SCAD Secession 2016: Bronze Award + Finalist," +
-            " SCAD Academic Honors Award: 2014, 2015, " +
-            "SCAD Achievement Honors Award: 2014, 2015," +
-            " SCAD Artistic Honors Award 2015",
-        defaultStyle: normalStyle,
-        patternList: [
-          EasyRichTextPattern(
-            targetString: "Graphis",
-            matchWordBoundaries: false,
-            style: linkTextStyle,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () => launch("https://www.graphis.com/"),
-          ),
-          EasyRichTextPattern(
-            targetString: "Adobe Design Achievement",
-            matchWordBoundaries: false,
-            style: linkTextStyle,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () => launch("https://www.adobeawards.com/"),
-          ),
-          EasyRichTextPattern(
-            targetString: "Applied Arts Creative Excellence Award",
-            matchWordBoundaries: false,
-            style: linkTextStyle,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () => launch("https://www.appliedartsmag.com/"),
-          ),
-          EasyRichTextPattern(
-            targetString: "Applied Arts Magazine",
-            matchWordBoundaries: false,
-            style: linkTextStyle,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () => launch("https://www.appliedartsmag.com/"),
-          ),
-          EasyRichTextPattern(
-            targetString: "IDA International Design Awards",
-            matchWordBoundaries: false,
-            style: linkTextStyle,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () => launch("https://idesignawards.com/graphics.html"),
-          ),
-          EasyRichTextPattern(
-            targetString: "SCAD Secession ",
-            matchWordBoundaries: false,
-            style: linkTextStyle,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () =>
-                  launch("https://issuu.com/scad/docs/scad-secession-2016/10"),
-          ),
-        ],
+      body: RichText(
+        text: TextSpan(
+          style: MyTextStyles().normatText,
+          children: [
+            TextSpan(
+              text: "Graphis ",
+              onEnter: (event) => setState(() => _isHovered[0] = true),
+              onExit: (event) => setState(() => _isHovered[0] = false),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => launch("https://www.graphis.com/"),
+              style: _isHovered[0]
+                  ? MyTextStyles().subHeaderRow.copyWith(
+                        color: kColorDash,
+                      )
+                  : MyTextStyles().subHeaderRow,
+            ),
+            TextSpan(
+              text: 'New Talent Annual 2016: Silver Award + Merit Award, ',
+            ),
+
+            //* Adobe Design Achievement Awards 2016: Semifinalist,
+            TextSpan(
+              text: "Adobe Design Achievement Awards ",
+              onEnter: (event) => setState(() => _isHovered[1] = true),
+              onExit: (event) => setState(() => _isHovered[1] = false),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => launch("https://www.adobeawards.com/"),
+              style: _isHovered[1]
+                  ? MyTextStyles().subHeaderRow.copyWith(
+                        color: kColorDash,
+                      )
+                  : MyTextStyles().subHeaderRow,
+            ),
+
+            TextSpan(
+              text: '2016: Silver Award + Merit Award, ',
+            ),
+
+            // Applied Arts Magazine 2016:
+            TextSpan(
+              text: "Applied Arts Magazine ",
+              onEnter: (event) => setState(() => _isHovered[2] = true),
+              onExit: (event) => setState(() => _isHovered[2] = false),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => launch("https://www.appliedartsmag.com/"),
+              style: _isHovered[2]
+                  ? MyTextStyles().subHeaderRow.copyWith(
+                        color: kColorDash,
+                      )
+                  : MyTextStyles().subHeaderRow,
+            ),
+            TextSpan(
+              text: "2016: Winner, ",
+            ),
+
+            //* Applied Arts Creative Excellence Award 2016: Winner,
+            TextSpan(
+              text: "Applied Arts ",
+              onEnter: (event) => setState(() => _isHovered[3] = true),
+              onExit: (event) => setState(() => _isHovered[3] = false),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => launch("https://www.appliedartsmag.com/"),
+              style: _isHovered[3]
+                  ? MyTextStyles().subHeaderRow.copyWith(
+                        color: kColorDash,
+                      )
+                  : MyTextStyles().subHeaderRow,
+            ),
+
+            TextSpan(
+              text: "Creative Excellence Award 2016: Winner, ",
+            ),
+
+            TextSpan(
+              text: "IDA International Design Awards ",
+              onEnter: (event) => setState(() => _isHovered[4] = true),
+              onExit: (event) => setState(() => _isHovered[4] = false),
+              recognizer: TapGestureRecognizer()
+                ..onTap =
+                    () => launch("https://idesignawards.com/graphics.html"),
+              style: _isHovered[4]
+                  ? MyTextStyles().subHeaderRow.copyWith(
+                        color: kColorDash,
+                      )
+                  : MyTextStyles().subHeaderRow,
+            ),
+
+            TextSpan(
+              text: '2016: Bronze Award, ',
+            ),
+
+            //* SCAD Secession
+            TextSpan(
+              text: "SCAD Secession ",
+              onEnter: (event) => setState(() => _isHovered[5] = true),
+              onExit: (event) => setState(() => _isHovered[5] = false),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => launch(
+                    "https://issuu.com/scad/docs/scad-secession-2016/10"),
+              style: _isHovered[5]
+                  ? MyTextStyles().subHeaderRow.copyWith(
+                        color: kColorDash,
+                      )
+                  : MyTextStyles().subHeaderRow,
+            ),
+
+            TextSpan(
+              text: '2016: Bronze Award + Finalist, ',
+            ),
+
+            TextSpan(
+              text:
+                  ' SCAD Academic Honors Award: 2014, 2015, SCAD Achievement Honors Award: 2014, 2015, SCAD Artistic Honors Award 2015 ',
+            ),
+          ],
+        ),
       ),
     );
   }
