@@ -25,6 +25,7 @@ class BriefInfo extends StatelessWidget {
             style: titleTextStyle,
           ),
           WavingWidget(
+            //TODO: replace image to fix 1st render
             child: Text(
               "👋",
               style: TextStyle(
