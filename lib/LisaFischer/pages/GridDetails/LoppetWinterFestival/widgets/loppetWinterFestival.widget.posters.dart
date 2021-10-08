@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../configs/configs.dart';
+import '../../../../../widgets/widgets.dart';
 import '../../../../widgets/widgets.dart';
-import '../../widgets/widgets.dart';
 
 class P4Postars extends StatelessWidget {
   final double maxWidth;

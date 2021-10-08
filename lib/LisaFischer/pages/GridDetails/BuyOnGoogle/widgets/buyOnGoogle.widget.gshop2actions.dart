@@ -3,7 +3,7 @@ import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../configs/configs.dart';
-import '../../widgets/widgets.dart';
+import '../../../../../widgets/widgets.dart';
 import 'widgets.dart';
 
 class P4GShoppingActions extends StatelessWidget {

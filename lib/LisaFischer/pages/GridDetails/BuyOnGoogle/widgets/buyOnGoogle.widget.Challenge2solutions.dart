@@ -4,7 +4,7 @@ import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../configs/configs.dart';
-import '../../widgets/widgets.dart';
+import '../../../../../widgets/widgets.dart';
 
 class P3Challenge2Solutions extends StatelessWidget {
   final double maxWidth;

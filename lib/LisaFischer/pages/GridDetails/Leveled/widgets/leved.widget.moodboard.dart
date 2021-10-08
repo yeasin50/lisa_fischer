@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../configs/configs.dart';
+import '../../../../../widgets/widgets.dart';
 import '../../../../widgets/widgets.dart';
-import '../../widgets/widgets.dart';
 
 class P4Mood2 extends StatelessWidget {
   final double maxWidth;

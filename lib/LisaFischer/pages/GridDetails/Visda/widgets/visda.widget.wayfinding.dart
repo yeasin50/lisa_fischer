@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/pages/GridDetails/widgets/widgets.dart';
-import 'package:portfolio/LisaFischer/widgets/widgets.dart';
-import 'package:portfolio/configs/configs.dart';
+
+import '../../../../../configs/configs.dart';
+import '../../../../../widgets/widgets.dart';
+import '../../../../widgets/widgets.dart';
 
 class P5WayFinding extends StatelessWidget {
   final double maxWidth;

@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/pages/GridDetails/BuyOnGoogle/utils/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import '../../../../../configs/configs.dart';
-import '../../widgets/widgets.dart';
+import '../../../../../widgets/widgets.dart';
+import '../utils/utils.dart';
 
 /// ShowCase images + row items of `Date Role Press Links`
 class P2ShowCase extends StatefulWidget {

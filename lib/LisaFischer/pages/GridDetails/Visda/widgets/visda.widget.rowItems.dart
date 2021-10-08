@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/widgets.dart';
 
 import '../../../../../configs/configs.dart';
-import '../../widgets/widgets.dart';
 import '../utils/utils.dart';
 
 class P2VisdaRow extends StatelessWidget {

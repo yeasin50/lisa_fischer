@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../configs/configs.dart';
-import '../../widgets/widgets.dart';
+import '../../../../../widgets/widgets.dart';
 import '../utils/rowItems.utils.dart';
 
 class P2LeveledRow extends StatelessWidget {
