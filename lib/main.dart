@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/LisaFischer/constants/constants.dart';
 
-import 'LisaFischer/pages/About/lisa.about.screen.dart';
-import 'LisaFischer/pages/Contact/lisa.contact.screen.dart';
-import 'LisaFischer/pages/Work/lisa.work.screen.dart';
 import 'body.dart';
+import 'constants/constants.dart';
+import 'screens/screens.dart';
 
 void main() => runApp(MyApp());
 

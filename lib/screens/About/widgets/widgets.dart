@@ -1,0 +1,15 @@
+export 'about.widget.awards.dart';
+export 'about.widget.briefInfo.dart';
+export 'about.widget.connect.dart';
+export 'about.widget.contactOnAbout.dart';
+export 'about.widget.designSkills.dart';
+export 'about.widget.education.dart';
+export 'about.widget.experience.dart';
+export 'about.widget.features.dart';
+export 'about.widget.grid.dart';
+export 'about.widget.press.dart';
+export 'about.widget.profileImage.dart';
+export 'about.widget.technicalSkills.dart';
+export 'about.widget.textHelper.dart';
+export 'about.widget.textNavigatorUrl.dart';
+export 'about.widget.writing.dart';
