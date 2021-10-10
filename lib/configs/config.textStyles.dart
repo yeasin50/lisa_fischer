@@ -21,7 +21,7 @@ class AppTextStyles {
 
   static get subHeader => GoogleFonts.lato(
         fontSize: 16,
-        color: const Color(0xff737373),
+        color: greyColor,
       );
 
   // static TextStyle get normal => TextStyle(
@@ -33,14 +33,14 @@ class AppTextStyles {
   static TextStyle get normal => GoogleFonts.lato(
         fontSize: 14,
         fontWeight: FontWeight.w500,
-        color: const Color(0xff737373),
+        color: greyColor,
         height: kNormalTextHeight,
       );
 
   ///shop from thousands of stores
   static TextStyle get sub26 => GoogleFonts.lato(
         fontSize: 26,
-        color: const Color(0xff737373),
+        color: greyColor,
       );
 
   static TextStyle get textParan20 => GoogleFonts.lato(
@@ -52,14 +52,14 @@ class AppTextStyles {
 
   static TextStyle get textInParan13 => GoogleFonts.lato(
         fontSize: 13,
-        color: const Color(0xff9d9e9e),
+        color: greyColor,
         fontWeight: FontWeight.w600,
         letterSpacing: 1.6,
       );
 
   static TextStyle get subtitle12 => GoogleFonts.lato(
         fontSize: 12.5,
-        color: Colors.grey,
+        color: greyColor,
         fontWeight: FontWeight.w800,
         letterSpacing: 1.2,
       );
@@ -89,7 +89,7 @@ class AppTextStyles {
   static TextStyle get smallHeader13 => GoogleFonts.lato(
         fontSize: 13,
         fontWeight: FontWeight.w600,
-        color: const Color(0xff9d9e9e),
+        color: greyColor,
         letterSpacing: 1.5,
       );
 }
