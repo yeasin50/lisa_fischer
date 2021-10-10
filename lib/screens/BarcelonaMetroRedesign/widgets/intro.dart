@@ -18,7 +18,7 @@ class Intro extends StatelessWidget {
       children: [
         Text(
           "Barcelona Metro Redesign",
-          style: MyTextStyles().header,
+          style: AppTextStyles.header,
           textAlign: TextAlign.center,
         ),
         SizedBox(
@@ -30,7 +30,7 @@ class Intro extends StatelessWidget {
         SizedBox(height: 12),
         Text(
           "A redesign that makes the metro clearer, friendlier, and true to Barcelona culture.",
-          style: MyTextStyles().sub26,
+          style: AppTextStyles.sub26,
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 12),

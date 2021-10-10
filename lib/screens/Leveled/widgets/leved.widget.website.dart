@@ -53,7 +53,7 @@ class _P5LeveledState extends State<P5Leveled> {
       children: [
         RichTextInParentheses(
           text: "Website",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
         columnSpace,
         SizedBox(
@@ -125,7 +125,7 @@ class _P5LeveledState extends State<P5Leveled> {
         _itemSpaceAboveRTP,
         RichTextInParentheses(
           text: "Social ",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
         columnSpace,
         FadeInImage.assetNetwork(

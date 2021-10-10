@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/configs/config.textStyles.dart';
 
-import '../configs/configs.dart';
 import 'widgets.dart';
 
 ///for desktop and tablet mode it is always talking half screens' width
@@ -24,7 +24,7 @@ class TitleWithSub extends StatelessWidget {
       children: [
         Text(
           title,
-          style: titleTextStyle,
+          style: AppTextStyles.title,
         ),
         SizedBox(height: 10),
         SubtitleCategoryOfWork(

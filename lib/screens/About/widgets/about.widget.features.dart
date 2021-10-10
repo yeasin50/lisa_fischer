@@ -20,15 +20,15 @@ class _LisaFetureState extends State<LisaFeture> {
       title: "FEATURES",
       body: Text.rich(
         TextSpan(
-          style: MyTextStyles().normatText,
+          style: AppTextStyles.normal,
           children: [
             TextSpan(
               text: "LinkedIn Course: Building an Online Portfolio",
               onEnter: (event) => setState(() => _isHovered[0] = true),
               onExit: (event) => setState(() => _isHovered[0] = false),
               style: _isHovered[0]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -42,8 +42,8 @@ class _LisaFetureState extends State<LisaFeture> {
               onEnter: (event) => setState(() => _isHovered[1] = true),
               onExit: (event) => setState(() => _isHovered[1] = false),
               style: _isHovered[1]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch("https://www.instagram.com/p/BbO2wLCldQB/");
@@ -55,8 +55,8 @@ class _LisaFetureState extends State<LisaFeture> {
               onEnter: (event) => setState(() => _isHovered[2] = true),
               onExit: (event) => setState(() => _isHovered[2] = false),
               style: _isHovered[2]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -69,8 +69,8 @@ class _LisaFetureState extends State<LisaFeture> {
               onEnter: (event) => setState(() => _isHovered[3] = true),
               onExit: (event) => setState(() => _isHovered[3] = false),
               style: _isHovered[3]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -83,8 +83,8 @@ class _LisaFetureState extends State<LisaFeture> {
               onEnter: (event) => setState(() => _isHovered[4] = true),
               onExit: (event) => setState(() => _isHovered[4] = false),
               style: _isHovered[4]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -99,8 +99,8 @@ class _LisaFetureState extends State<LisaFeture> {
               onEnter: (event) => setState(() => _isHovered[5] = true),
               onExit: (event) => setState(() => _isHovered[5] = false),
               style: _isHovered[5]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch("http://portfolios.scad.edu/");
@@ -113,8 +113,8 @@ class _LisaFetureState extends State<LisaFeture> {
               onEnter: (event) => setState(() => _isHovered[6] = true),
               onExit: (event) => setState(() => _isHovered[6] = false),
               style: _isHovered[6]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -128,8 +128,8 @@ class _LisaFetureState extends State<LisaFeture> {
               onEnter: (event) => setState(() => _isHovered[7] = true),
               onExit: (event) => setState(() => _isHovered[7] = false),
               style: _isHovered[7]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -146,7 +146,7 @@ class _LisaFetureState extends State<LisaFeture> {
       //       " Newark Academy Arts Blog," +
       //       " New Jersey Hills Newspaper, " +
       //       "SCAD Portfolio Curated Gallery, Medium, PRWeb",
-      //   defaultStyle: normalStyle,
+      //   defaultStyle:  AppTextStyles.normal,
       //   patternList: [
       //     EasyRichTextPattern(
       //       targetString: "LinkedIn Course: Building an Online Portfolio",

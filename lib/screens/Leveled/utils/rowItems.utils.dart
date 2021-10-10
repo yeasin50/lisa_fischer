@@ -7,24 +7,24 @@ import '../../../configs/configs.dart';
 Map<String, Widget> leveledRowItemsData = {
   'DATE': Text(
     "March 2017",
-    style: MyTextStyles().normatText,
+    style: AppTextStyles.normal,
   ),
   "ROLE": Text(
     "Brand Designer",
-    style: MyTextStyles().normatText,
+    style: AppTextStyles.normal,
   ),
   "AGENCY": RichText(
     text: TextSpan(
-      style: MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w600,
-            height: 1.7,
-          ),
+      style: AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w600,
+        height: 1.7,
+      ),
       children: [
         TextSpan(
           children: [
             TextSpan(
               text: "Duffy Design\n",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch("https://duffy.com/");
@@ -37,7 +37,7 @@ Map<String, Widget> leveledRowItemsData = {
           children: [
             TextSpan(
               text: " Kyle Hoyt",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ],
         ),
@@ -46,17 +46,17 @@ Map<String, Widget> leveledRowItemsData = {
   ),
   'TEAM': RichText(
     text: TextSpan(
-      style: MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w600,
-            height: 1.7,
-          ),
+      style: AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w600,
+        height: 1.7,
+      ),
       children: [
         TextSpan(
           text: "Creative Direction _",
           children: [
             TextSpan(
               text: " Alan Leusink\n",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ],
         ),
@@ -65,7 +65,7 @@ Map<String, Widget> leveledRowItemsData = {
           children: [
             TextSpan(
               text: " Joseph Duffy\n",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ],
         ),
@@ -74,7 +74,7 @@ Map<String, Widget> leveledRowItemsData = {
           children: [
             TextSpan(
               text: " Beccah Erickson",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ],
         ),

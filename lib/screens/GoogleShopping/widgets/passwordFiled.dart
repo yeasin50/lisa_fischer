@@ -36,9 +36,9 @@ class _AuthenticationOnGShopState extends State<AuthenticationOnGShop> {
                   color: Colors.red,
                   child: Text(
                     "Please try again.",
-                    style: MyTextStyles().hintTextStyle.copyWith(
-                          color: Colors.white,
-                        ),
+                    style: AppTextStyles.hintTextStyle.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -48,11 +48,11 @@ class _AuthenticationOnGShopState extends State<AuthenticationOnGShop> {
                 onChanged: (value) => setState(() => _password = value),
                 decoration: InputDecoration(
                   // errorText: _showError ? "Please try again." : null, //* doesnt event near the main UI
-                  errorStyle: MyTextStyles().hintTextStyle.copyWith(
-                        color: Colors.white,
-                        backgroundColor: Colors.red,
-                        // background: Paint()..color = Colors.red,
-                      ),
+                  errorStyle: AppTextStyles.hintTextStyle.copyWith(
+                    color: Colors.white,
+                    backgroundColor: Colors.red,
+                    // background: Paint()..color = Colors.red,
+                  ),
                   errorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       style: BorderStyle.solid,
@@ -70,7 +70,7 @@ class _AuthenticationOnGShopState extends State<AuthenticationOnGShop> {
                     ),
                   ),
                   hintText: "Password",
-                  hintStyle: MyTextStyles().hintTextStyle,
+                  hintStyle: AppTextStyles.hintTextStyle,
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: _borderColor,

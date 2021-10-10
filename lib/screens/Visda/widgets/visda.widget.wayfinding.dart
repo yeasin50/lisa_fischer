@@ -28,7 +28,7 @@ class P5WayFinding extends StatelessWidget {
       children: [
         RichTextInParentheses(
           text: "Wayfinding ",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
         columnSpace,
 
@@ -149,40 +149,40 @@ class P5WayFinding extends StatelessWidget {
   Text clipBoardsDrinks() {
     return Text.rich(
       TextSpan(
-        style: MyTextStyles().textParan20,
+        style: AppTextStyles.textParan20,
         children: [
           TextSpan(
             text: "{ ",
-            style: MyTextStyles().textParan20.copyWith(
-                  color: kColorDash,
-                ),
+            style: AppTextStyles.textParan20.copyWith(
+              color: kColorDash,
+            ),
           ),
           TextSpan(
             text: "Clipboards",
           ),
           TextSpan(
             text: " + ",
-            style: MyTextStyles().textParan20.copyWith(
-                  color: kColorDash,
-                ),
+            style: AppTextStyles.textParan20.copyWith(
+              color: kColorDash,
+            ),
           ),
           TextSpan(
             text: "Stickers",
           ),
           TextSpan(
             text: " + ",
-            style: MyTextStyles().textParan20.copyWith(
-                  color: kColorDash,
-                ),
+            style: AppTextStyles.textParan20.copyWith(
+              color: kColorDash,
+            ),
           ),
           TextSpan(
             text: "Drinks ",
           ),
           TextSpan(
             text: " }",
-            style: MyTextStyles().textParan20.copyWith(
-                  color: kColorDash,
-                ),
+            style: AppTextStyles.textParan20.copyWith(
+              color: kColorDash,
+            ),
           ),
         ],
       ),
@@ -201,11 +201,11 @@ class P5WayFinding extends StatelessWidget {
           columnSpace,
           Text(
             "CHEERS TO CREATIVITY\n",
-            style: MyTextStyles().normatText.copyWith(
-                  color: Colors.black54,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1.4,
-                ),
+            style: AppTextStyles.normal.copyWith(
+              color: Colors.black54,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1.4,
+            ),
           ),
           greenColorLine,
           RichText(
@@ -213,9 +213,9 @@ class P5WayFinding extends StatelessWidget {
               TextSpan(
                 text:
                     "\nThe day wrapped up in celebration of design & new friendships with flavorful 'VisD@' cocktails. 🍸🍸",
-                style: MyTextStyles().sub26.copyWith(
-                      color: Colors.black,
-                    ),
+                style: AppTextStyles.sub26.copyWith(
+                  color: Colors.black,
+                ),
               ),
             ]),
           ),

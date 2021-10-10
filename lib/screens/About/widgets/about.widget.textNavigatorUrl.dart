@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/config.constants.dart';
+
+import '../../../configs/config.constants.dart';
+import '../../../configs/configs.dart';
 
 class UrlNaVigator extends StatefulWidget {
   final Function onClick;

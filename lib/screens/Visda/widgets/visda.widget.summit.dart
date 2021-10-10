@@ -63,7 +63,7 @@ class P4SummitVisD extends StatelessWidget {
 
         RichTextInParentheses(
           text: "Speaker Titles",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
         columnSpace,
         //4x gif
@@ -141,11 +141,11 @@ class P4SummitVisD extends StatelessWidget {
           columnSpace,
           Text(
             "THE SUMMIT\n",
-            style: MyTextStyles().normatText.copyWith(
-                  color: Colors.black54,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1.4,
-                ),
+            style: AppTextStyles.normal.copyWith(
+              color: Colors.black54,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1.4,
+            ),
           ),
           greenColorLine,
           SizedBox(height: 30),
@@ -156,9 +156,9 @@ class P4SummitVisD extends StatelessWidget {
                 TextSpan(
                   text:
                       "A day-long event consisting of inspirational speakers, creative workshops, and networking.",
-                  style: MyTextStyles().sub26.copyWith(
-                        color: Colors.black,
-                      ),
+                  style: AppTextStyles.sub26.copyWith(
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),

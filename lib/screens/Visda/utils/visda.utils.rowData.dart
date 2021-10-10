@@ -5,25 +5,25 @@ import '../../../../../configs/configs.dart';
 Map<String, Widget> visdaRowItems = {
   'DATE': Text(
     "Sept - Nov 2019",
-    style: MyTextStyles().normatText,
+    style: AppTextStyles.normal,
   ),
   "ROLE": Text(
     "Brand Designer",
-    style: MyTextStyles().normatText,
+    style: AppTextStyles.normal,
   ),
   "TEAM": RichText(
     text: TextSpan(
-      style: MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w600,
-            height: 1.4,
-          ),
+      style: AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w600,
+        height: 1.4,
+      ),
       children: [
         TextSpan(
           text: "Creative Direction _",
           children: [
             TextSpan(
               text: " Brad Aldridge\n",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ],
         ),
@@ -32,7 +32,7 @@ Map<String, Widget> visdaRowItems = {
           children: [
             TextSpan(
               text: " Kyle Hoyt\n",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ],
         ),
@@ -41,7 +41,7 @@ Map<String, Widget> visdaRowItems = {
           children: [
             TextSpan(
               text: " Eric Henry",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ],
         ),
@@ -50,9 +50,9 @@ Map<String, Widget> visdaRowItems = {
   ),
   'DELIVERABLES': RichText(
     text: TextSpan(
-      style: MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w500,
-          ),
+      style: AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
       children: [
         TextSpan(
           text:

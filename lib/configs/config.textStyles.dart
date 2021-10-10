@@ -4,131 +4,92 @@ import 'package:google_fonts/google_fonts.dart';
 import 'config.constants.dart';
 import 'configs.dart';
 
-/// TODO:: Still facing font issue=> download font somewhere else or alt use google FOnt
-final TextStyle titleTextStyle = TextStyle(
-  fontFamily: kFproximaNova,
-  color: Color.fromRGBO(5, 173, 134, .21),
-  fontWeight: FontWeight.w900,
-  fontSize: 80,
-);
-
-final TextStyle subTitleTextStyle = TextStyle(
-  fontFamily: kFproximaNova,
-  color: Color.fromRGBO(157, 158, 158, 1),
-  fontWeight: FontWeight.bold,
-  fontSize: 13,
-  letterSpacing: 1.5,
-);
-
-final TextStyle subHeaderTextStyle = TextStyle(
-  fontFamily: kFproximaNova,
-  color: Colors.black.withOpacity(
-    .93,
-  ),
-  fontSize: 19.5,
-  height: kNormalTextHeight,
-  letterSpacing: 1,
-);
-
-final TextStyle normalStyle = TextStyle(
-  fontFamily: kFproximaNova,
-  color: Colors.black,
-  height: kNormalTextHeight,
-);
-
-final TextStyle linkTextStyle = TextStyle(
-  fontFamily: kFproximaNova,
-  color: Colors.green,
-  height: kNormalTextHeight,
-);
-
-final TextStyle normalItalic = TextStyle(
-  fontFamily: kFproximaNova,
-  color: Colors.black.withOpacity(.55),
-  height: kNormalTextHeight,
-  fontStyle: FontStyle.italic,
-);
-
 ///TODO:: need to check the styles in finish level including Colors
-class MyTextStyles {
-  final TextStyle header = GoogleFonts.lato(
-    color: Color.fromRGBO(5, 173, 134, .21),
-    fontWeight: FontWeight.w900,
-    fontSize: 68,
-  );
+class AppTextStyles {
+  static get title => TextStyle(
+        fontFamily: kFproximaNova,
+        color: titleColor,
+        fontWeight: FontWeight.w900,
+        fontSize: 80,
+      );
 
-  final TextStyle subHeader = GoogleFonts.lato(
-    fontSize: 16,
-    color: const Color(0xff737373),
-  );
+  static get header => GoogleFonts.lato(
+        color: titleColor,
+        fontWeight: FontWeight.w900,
+        fontSize: 68,
+      );
+
+  static get subHeader => GoogleFonts.lato(
+        fontSize: 16,
+        color: const Color(0xff737373),
+      );
+
+  // static TextStyle get normal => TextStyle(
+  //       fontFamily: kFproximaNova,
+  //       color: Colors.black,
+  //       height: kNormalTextHeight,
+  //     );
+
+  static TextStyle get normal => GoogleFonts.lato(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: const Color(0xff737373),
+        height: kNormalTextHeight,
+      );
 
   ///shop from thousands of stores
-  final TextStyle sub26 = GoogleFonts.lato(
-    fontSize: 26,
-    color: const Color(0xff737373),
-  );
+  static TextStyle get sub26 => GoogleFonts.lato(
+        fontSize: 26,
+        color: const Color(0xff737373),
+      );
 
-  final TextStyle textParan20 = GoogleFonts.lato(
-    fontSize: 20,
-    color: Colors.black87,
-    fontWeight: FontWeight.w700,
-    letterSpacing: 1.2,
-  );
+  static TextStyle get textParan20 => GoogleFonts.lato(
+        fontSize: 20,
+        color: Colors.black87,
+        fontWeight: FontWeight.w700,
+        letterSpacing: 1.2,
+      );
 
-  final TextStyle subtitle12 = GoogleFonts.lato(
-    fontSize: 12.5,
-    color: Colors.grey,
-    fontWeight: FontWeight.w800,
-    letterSpacing: 1.2,
-  );
+  static TextStyle get textInParan13 => GoogleFonts.lato(
+        fontSize: 13,
+        color: const Color(0xff9d9e9e),
+        fontWeight: FontWeight.w600,
+        letterSpacing: 1.6,
+      );
 
-  final TextStyle normatText = GoogleFonts.lato(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    color: const Color(0xff737373),
-    height: kNormalTextHeight,
-  );
+  static TextStyle get subtitle12 => GoogleFonts.lato(
+        fontSize: 12.5,
+        color: Colors.grey,
+        fontWeight: FontWeight.w800,
+        letterSpacing: 1.2,
+      );
 
-  final TextStyle linkTextStyle = GoogleFonts.lato(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    color: linkTextColor,
-    height: kNormalTextHeight,
-  );
+  static TextStyle get linkTextStyle => GoogleFonts.lato(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: linkTextColor,
+        height: kNormalTextHeight,
+      );
 
-  final TextStyle textInParan = GoogleFonts.lato(
-    fontSize: 13,
-    color: const Color(0xff9d9e9e),
-    fontWeight: FontWeight.w600,
-    letterSpacing: 1.6,
-  );
-
-  /// small header grey
-  final TextStyle smallHeader13pxW610 = GoogleFonts.lato(
-    fontSize: 13,
-    fontWeight: FontWeight.w600,
-    color: const Color(0xff9d9e9e),
-    letterSpacing: 1.5,
-  );
-
-  final TextStyle normalS16_W500_LH22_C737373 = GoogleFonts.lato(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-    color: const Color(0xff737373),
-    height: 1.7,
-  );
-
-  TextStyle get hintTextStyle => GoogleFonts.lato(
+  static TextStyle get hintTextStyle => GoogleFonts.lato(
         fontSize: 14,
         color: const Color.fromRGBO(18, 18, 18, .56),
       );
 
-  final TextStyle subHeaderRow = TextStyle(
-    fontFamily: kFproximaNova,
-    letterSpacing: 1.3,
-    height: 1.1,
-    fontSize: 14.5,
-    fontWeight: FontWeight.w700,
-    color: Colors.black87,
-  );
+  static TextStyle get subHeaderRow => TextStyle(
+        fontFamily: kFproximaNova,
+        letterSpacing: 1.3,
+        height: 1.1,
+        fontSize: 14.5,
+        fontWeight: FontWeight.w700,
+        color: Colors.black87,
+      );
+
+  /// small header grey
+  static TextStyle get smallHeader13 => GoogleFonts.lato(
+        fontSize: 13,
+        fontWeight: FontWeight.w600,
+        color: const Color(0xff9d9e9e),
+        letterSpacing: 1.5,
+      );
 }

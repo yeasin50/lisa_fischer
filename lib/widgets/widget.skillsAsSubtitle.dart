@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/config.constants.dart';
-import 'package:portfolio/configs/config.textStyles.dart';
+
+import '../configs/configs.dart';
 
 class SubtitleCategoryOfWork extends StatelessWidget {
   final List<String> rolls;
@@ -18,7 +18,7 @@ class SubtitleCategoryOfWork extends StatelessWidget {
           ? spans.add(
               TextSpan(
                 text: rolls[i],
-                style: MyTextStyles().subtitle12,
+                style: AppTextStyles.subtitle12,
               ),
             )
           : spans.add(
@@ -26,11 +26,11 @@ class SubtitleCategoryOfWork extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: rolls[i],
-                    style: MyTextStyles().subtitle12,
+                    style: AppTextStyles.subtitle12,
                   ),
                   TextSpan(
                       text: ' / ',
-                      style: subTitleTextStyle.copyWith(
+                      style: AppTextStyles.subtitle12.copyWith(
                         color: kColorDash,
                       ))
                 ],

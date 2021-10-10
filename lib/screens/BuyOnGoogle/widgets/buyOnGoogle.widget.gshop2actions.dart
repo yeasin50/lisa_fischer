@@ -30,7 +30,7 @@ class P4GShoppingActions extends StatelessWidget {
       children: [
         RichTextInParentheses(
           text: "Google Shopping Actions Website",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         // SizedBox(
@@ -39,7 +39,7 @@ class P4GShoppingActions extends StatelessWidget {
 
         Text(
           "Demonstrating Buy on Google destinations for merchants",
-          style: MyTextStyles().subHeader,
+          style: AppTextStyles.subHeader,
         ),
 
         SizedBox(
@@ -55,7 +55,7 @@ class P4GShoppingActions extends StatelessWidget {
 
         RichTextInParentheses(
           text: "Merchant Website Marketing",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         SizedBox(
@@ -82,7 +82,7 @@ class P4GShoppingActions extends StatelessWidget {
         /// `E-mail Marketing`
         RichTextInParentheses(
           text: "E-mail Marketing",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         columnSpace,
@@ -105,7 +105,7 @@ class P4GShoppingActions extends StatelessWidget {
 
         Text(
           "ACHETER SUR GOOGLE",
-          style: MyTextStyles().subtitle12,
+          style: AppTextStyles.subtitle12,
         ),
 
         SizedBox(height: 7),
@@ -133,10 +133,10 @@ class P4GShoppingActions extends StatelessWidget {
           child: Text(
             "Unlike the United States, Google Shopping France required a branded lockup specifically for buying on Google. The wordmark, Acheter Sur Google (Buy on Google), was designed along with the solo cart to use across multiple marketing communications channels.",
             textAlign: TextAlign.center,
-            style: MyTextStyles().subHeader.copyWith(
-                  height: 1.7,
-                  fontWeight: FontWeight.w500,
-                ),
+            style: AppTextStyles.subHeader.copyWith(
+              height: 1.7,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
 
@@ -146,7 +146,7 @@ class P4GShoppingActions extends StatelessWidget {
 
         RichTextInParentheses(
           text: "Wordmark ",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         // columnSpace,
@@ -161,7 +161,7 @@ class P4GShoppingActions extends StatelessWidget {
 
         RichTextInParentheses(
           text: "YouTube France Masthead",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         columnSpace,

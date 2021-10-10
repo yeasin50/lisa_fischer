@@ -36,7 +36,7 @@ class P3Challenge2Solutions extends StatelessWidget {
             child: Text(
               "How do you convey to users that products are transactable on Google across their Google shopping journey?",
               textAlign: TextAlign.center,
-              style: MyTextStyles().sub26,
+              style: AppTextStyles.sub26,
             ),
           ),
         ),
@@ -74,21 +74,21 @@ class P3Challenge2Solutions extends StatelessWidget {
             children: [
               TextSpan(
                 text: "Cart as a buying metaphor",
-                style: subHeaderTextStyle.copyWith(
+                style: AppTextStyles.sub26.copyWith(
                   fontSize: 26,
                   color: Colors.black,
                 ),
               ),
               TextSpan(
                 text: " + ",
-                style: subHeaderTextStyle.copyWith(
+                style: AppTextStyles.sub26.copyWith(
                   fontSize: 26,
                   color: kColorDash,
                 ),
               ),
               TextSpan(
                 text: "the Google four brand colors",
-                style: subHeaderTextStyle.copyWith(
+                style: AppTextStyles.sub26.copyWith(
                   fontSize: 26,
                   color: Colors.black,
                 ),
@@ -107,16 +107,16 @@ class P3Challenge2Solutions extends StatelessWidget {
               ),
               TextSpan(
                 text: "+ ",
-                style: MyTextStyles().subHeader.copyWith(
-                      color: kColorDash,
-                    ),
+                style: AppTextStyles.subHeader.copyWith(
+                  color: kColorDash,
+                ),
               ),
               TextSpan(
                 text: "Brand equity",
               )
             ],
           ),
-          style: MyTextStyles().subHeader,
+          style: AppTextStyles.subHeader,
         ),
 
         SizedBox(
@@ -167,7 +167,7 @@ class P3Challenge2Solutions extends StatelessWidget {
               columnSpace,
               Text(
                 "03",
-                style: titleTextStyle,
+                style: AppTextStyles.title,
               ),
               columnSpace,
               _infoText,
@@ -187,7 +187,7 @@ class P3Challenge2Solutions extends StatelessWidget {
                   columnSpace,
                   Text(
                     "03",
-                    style: titleTextStyle,
+                    style: AppTextStyles.title,
                   ),
                   columnSpace,
                   Padding(
@@ -209,9 +209,9 @@ class P3Challenge2Solutions extends StatelessWidget {
   Widget solution2() {
     final _text = Text(
       "Rearchitect the Google Shopping search results page and product details page to introduce an intuitive Buy on Google user flow.",
-      style: MyTextStyles().subHeader.copyWith(
-            height: 1.5,
-          ),
+      style: AppTextStyles.subHeader.copyWith(
+        height: 1.5,
+      ),
     );
 
     final _image = FadeInImage.assetNetwork(
@@ -230,7 +230,7 @@ class P3Challenge2Solutions extends StatelessWidget {
               columnSpace,
               Text(
                 "02",
-                style: titleTextStyle,
+                style: AppTextStyles.title,
               ),
               columnSpace,
               _text,
@@ -250,7 +250,7 @@ class P3Challenge2Solutions extends StatelessWidget {
                   columnSpace,
                   Text(
                     "02",
-                    style: titleTextStyle,
+                    style: AppTextStyles.title,
                   ),
                   columnSpace,
                   Padding(
@@ -273,11 +273,11 @@ class P3Challenge2Solutions extends StatelessWidget {
   Widget solution1() {
     final _text = Text(
       "Establish an identifiable icon representing products you can buy on Google.",
-      style: MyTextStyles().subHeader.copyWith(
-            height: 2,
-            fontWeight: FontWeight.w500,
-            letterSpacing: 1,
-          ),
+      style: AppTextStyles.subHeader.copyWith(
+        height: 2,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 1,
+      ),
     );
 
     final _image = FadeInImage.assetNetwork(
@@ -296,7 +296,7 @@ class P3Challenge2Solutions extends StatelessWidget {
               columnSpace,
               Text(
                 "01",
-                style: titleTextStyle,
+                style: AppTextStyles.title,
               ),
               columnSpace,
               _text,
@@ -316,7 +316,7 @@ class P3Challenge2Solutions extends StatelessWidget {
                   columnSpace,
                   Text(
                     "01",
-                    style: titleTextStyle,
+                    style: AppTextStyles.title,
                   ),
                   columnSpace,
                   SizedBox(
@@ -345,7 +345,7 @@ class DesktopMobileUserFlow extends StatelessWidget {
       children: [
         RichTextInParentheses(
           text: "Desktop User Flow",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         SizedBox(
@@ -363,9 +363,9 @@ class DesktopMobileUserFlow extends StatelessWidget {
               ),
               TextSpan(
                 text: "Google Search ",
-                style: MyTextStyles().subHeader.copyWith(
-                      color: kColorDash,
-                    ),
+                style: AppTextStyles.subHeader.copyWith(
+                  color: kColorDash,
+                ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () => launch("https://google.com/"),
               ),
@@ -374,7 +374,7 @@ class DesktopMobileUserFlow extends StatelessWidget {
               ),
             ],
           ),
-          style: MyTextStyles().subHeader,
+          style: AppTextStyles.subHeader,
         ),
 
         SizedBox(
@@ -399,7 +399,7 @@ class DesktopMobileUserFlow extends StatelessWidget {
 
         RichTextInParentheses(
           text: "Mobile  User Flow",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         SizedBox(
@@ -415,9 +415,9 @@ class DesktopMobileUserFlow extends StatelessWidget {
               ),
               TextSpan(
                 text: "Google Shopping ",
-                style: MyTextStyles().subHeader.copyWith(
-                      color: kColorDash,
-                    ),
+                style: AppTextStyles.subHeader.copyWith(
+                  color: kColorDash,
+                ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () => launch("https://shopping.google.com/"),
               ),
@@ -426,7 +426,7 @@ class DesktopMobileUserFlow extends StatelessWidget {
               ),
             ],
           ),
-          style: MyTextStyles().subHeader,
+          style: AppTextStyles.subHeader,
         ),
 
         SizedBox(

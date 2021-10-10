@@ -4,19 +4,19 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../configs/configs.dart';
 
-final _linkTextStyle = MyTextStyles().normatText.copyWith(
-      fontWeight: FontWeight.w500,
-      color: kColorDash,
-    );
+final _linkTextStyle = AppTextStyles.normal.copyWith(
+  fontWeight: FontWeight.w500,
+  color: kColorDash,
+);
 
 final Map<String, Widget> buyOnGoogleRowitems = {
   'DATE': Text(
     "March 2018- April 2019",
-    style: MyTextStyles().normatText,
+    style: AppTextStyles.normal,
   ),
   'ROLE': Text(
     "Visual + UX Designer / Brand Strategist",
-    style: MyTextStyles().normatText,
+    style: AppTextStyles.normal,
   ),
   'PRESS': RichText(
     text: TextSpan(
@@ -69,9 +69,9 @@ final Map<String, Widget> buyOnGoogleRowitems = {
   ),
   'LINKS': RichText(
     text: TextSpan(
-      style: MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w500,
-          ),
+      style: AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
       children: [
         TextSpan(
           text: "About Google Shopping, ",

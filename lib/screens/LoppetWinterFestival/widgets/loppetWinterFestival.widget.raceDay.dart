@@ -23,16 +23,16 @@ class P5RaceDay extends StatelessWidget {
             children: [
               Text(
                 '"',
-                style: titleTextStyle.copyWith(
+                style: AppTextStyles.title.copyWith(
                   fontStyle: FontStyle.italic,
                 ),
               ),
               Text(
                 "The best part of these prints is that no 2 prints are exactly alike. There are so many imperfections and beautiful little “accidents” that you cannot foresee prior to pulling the screens.",
                 textAlign: TextAlign.center,
-                style: MyTextStyles().sub26.copyWith(
-                      color: Colors.black,
-                    ),
+                style: AppTextStyles.sub26.copyWith(
+                  color: Colors.black,
+                ),
               ),
               columnSpace,
 
@@ -42,29 +42,29 @@ class P5RaceDay extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: "{ ",
-                      style: MyTextStyles().textInParan.copyWith(
-                            color: kColorDash,
-                          ),
+                      style: AppTextStyles.textInParan13.copyWith(
+                        color: kColorDash,
+                      ),
                     ),
                     TextSpan(
                       text: "JOSEPH DUFFY ",
-                      style: MyTextStyles().textInParan,
+                      style: AppTextStyles.textInParan13,
                     ),
                     TextSpan(
                       text: "• ",
-                      style: MyTextStyles().textInParan.copyWith(
-                            color: kColorDash,
-                          ),
+                      style: AppTextStyles.textInParan13.copyWith(
+                        color: kColorDash,
+                      ),
                     ),
                     TextSpan(
                       text: "PARTNER, DUFFY ",
-                      style: MyTextStyles().textInParan,
+                      style: AppTextStyles.textInParan13,
                     ),
                     TextSpan(
                       text: "}",
-                      style: MyTextStyles().textInParan.copyWith(
-                            color: kColorDash,
-                          ),
+                      style: AppTextStyles.textInParan13.copyWith(
+                        color: kColorDash,
+                      ),
                     ),
                   ],
                 ),
@@ -80,7 +80,7 @@ class P5RaceDay extends StatelessWidget {
         //TODO:: change color on -
         RichTextInParentheses(
           text: "Race Day - Bibs",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         columnSpace,

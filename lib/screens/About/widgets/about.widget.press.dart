@@ -20,15 +20,15 @@ class _LisaPressState extends State<LisaPress> {
       title: "PRESS",
       body: RichText(
         text: TextSpan(
-          style: MyTextStyles().normatText,
+          style: AppTextStyles.normal,
           children: [
             TextSpan(
               text: "The New York Times",
               onEnter: (event) => setState(() => _isHovered[0] = true),
               onExit: (event) => setState(() => _isHovered[0] = false),
               style: _isHovered[0]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -42,8 +42,8 @@ class _LisaPressState extends State<LisaPress> {
               onEnter: (event) => setState(() => _isHovered[1] = true),
               onExit: (event) => setState(() => _isHovered[1] = false),
               style: _isHovered[1]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -56,8 +56,8 @@ class _LisaPressState extends State<LisaPress> {
               onEnter: (event) => setState(() => _isHovered[2] = true),
               onExit: (event) => setState(() => _isHovered[2] = false),
               style: _isHovered[2]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -70,8 +70,8 @@ class _LisaPressState extends State<LisaPress> {
               onEnter: (event) => setState(() => _isHovered[3] = true),
               onExit: (event) => setState(() => _isHovered[3] = false),
               style: _isHovered[3]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -84,8 +84,8 @@ class _LisaPressState extends State<LisaPress> {
               onEnter: (event) => setState(() => _isHovered[4] = true),
               onExit: (event) => setState(() => _isHovered[4] = false),
               style: _isHovered[4]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -98,8 +98,8 @@ class _LisaPressState extends State<LisaPress> {
               onEnter: (event) => setState(() => _isHovered[5] = true),
               onExit: (event) => setState(() => _isHovered[5] = false),
               style: _isHovered[5]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(
@@ -112,8 +112,8 @@ class _LisaPressState extends State<LisaPress> {
               onEnter: (event) => setState(() => _isHovered[6] = true),
               onExit: (event) => setState(() => _isHovered[6] = false),
               style: _isHovered[6]
-                  ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                  : MyTextStyles().linkTextStyle,
+                  ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                  : AppTextStyles.linkTextStyle,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launch(

@@ -73,30 +73,30 @@ class P2LeveledRow extends StatelessWidget {
             title: "DATE",
             body: Text(
               "March 2017",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ),
           RowItem(
             title: "ROLE",
             body: Text(
               "Brand Designer",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ),
           RowItem(
             title: "AGENCY",
             body: RichText(
               text: TextSpan(
-                style: MyTextStyles().normatText.copyWith(
-                      fontWeight: FontWeight.w600,
-                      height: 1.7,
-                    ),
+                style: AppTextStyles.normal.copyWith(
+                  fontWeight: FontWeight.w600,
+                  height: 1.7,
+                ),
                 children: [
                   TextSpan(
                     children: [
                       TextSpan(
                         text: "Duffy Design\n",
-                        style: MyTextStyles().normatText,
+                        style: AppTextStyles.normal,
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             launch("https://duffy.com/");
@@ -109,7 +109,7 @@ class P2LeveledRow extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: " Kyle Hoyt\n",
-                        style: MyTextStyles().normatText,
+                        style: AppTextStyles.normal,
                       ),
                     ],
                   ),
@@ -121,17 +121,17 @@ class P2LeveledRow extends StatelessWidget {
             title: "TEAM",
             body: RichText(
               text: TextSpan(
-                style: MyTextStyles().normatText.copyWith(
-                      fontWeight: FontWeight.w600,
-                      height: 1.7,
-                    ),
+                style: AppTextStyles.normal.copyWith(
+                  fontWeight: FontWeight.w600,
+                  height: 1.7,
+                ),
                 children: [
                   TextSpan(
                     text: "Creative Direction _",
                     children: [
                       TextSpan(
                         text: " Alan Leusink\n",
-                        style: MyTextStyles().normatText,
+                        style: AppTextStyles.normal,
                       ),
                     ],
                   ),
@@ -140,7 +140,7 @@ class P2LeveledRow extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: " Joseph Duffy\n",
-                        style: MyTextStyles().normatText,
+                        style: AppTextStyles.normal,
                       ),
                     ],
                   ),
@@ -149,7 +149,7 @@ class P2LeveledRow extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: " Beccah Erickson",
-                        style: MyTextStyles().normatText,
+                        style: AppTextStyles.normal,
                       ),
                     ],
                   ),

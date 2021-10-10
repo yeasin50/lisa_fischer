@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/config.constants.dart';
-import 'package:portfolio/configs/config.textStyles.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../configs/configs.dart';
 
 ///* pass Text  in order and use bool value(because keys cant be dublicated) to use effect on that text
 class HoverEffectOnLink extends StatefulWidget {
@@ -31,12 +31,12 @@ class _HoverEffectOnLinkState extends State<HoverEffectOnLink> {
           ? spans.add(
               TextSpan(
                 text: "$key ",
-                style: MyTextStyles().normatText.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: _isHovered != null
-                          ? kColorDash
-                          : MyTextStyles().normalS16_W500_LH22_C737373.color,
-                    ),
+                style: AppTextStyles.normal.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: _isHovered != null
+                      ? kColorDash
+                      : AppTextStyles.normal.color,
+                ),
                 onEnter: (event) => setState(() => _isHovered = true),
                 onExit: (event) => setState(() => _isHovered = null),
                 recognizer: TapGestureRecognizer()
@@ -50,7 +50,7 @@ class _HoverEffectOnLinkState extends State<HoverEffectOnLink> {
           : spans.add(
               TextSpan(
                 text: "$key ",
-                style: MyTextStyles().normatText.copyWith(),
+                style: AppTextStyles.normal.copyWith(),
               ),
             );
     });

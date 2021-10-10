@@ -17,7 +17,7 @@ class Intro extends StatelessWidget {
       children: [
         Text(
           "Oro",
-          style: MyTextStyles().header,
+          style: AppTextStyles.header,
           textAlign: TextAlign.center,
         ),
         SizedBox(
@@ -31,7 +31,7 @@ class Intro extends StatelessWidget {
         ),
         Text(
           "A contemporary airline based out of Seville, Spain.",
-          style: MyTextStyles().sub26,
+          style: AppTextStyles.sub26,
           textAlign: TextAlign.center,
         ),
         SizedBox(

@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:portfolio/configs/config.textStyles.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../../configs/config.textStyles.dart';
 
 class LockStatus extends StatelessWidget {
   const LockStatus({Key? key}) : super(key: key);
@@ -32,30 +33,28 @@ class LockStatus extends StatelessWidget {
         SizedBox(height: 24),
         Text(
           "Comming Soon",
-          style: MyTextStyles().header,
+          style: AppTextStyles.header,
         ),
         Text(
           "Still piecing together this page...",
-          style: MyTextStyles().normalS16_W500_LH22_C737373.copyWith(
-                color: Colors.black,
-                fontStyle: FontStyle.italic,
-              ),
+          style: AppTextStyles.smallHeader13.copyWith(
+            color: Colors.black,
+            fontStyle: FontStyle.italic,
+          ),
         ),
         SizedBox(height: 32),
         RichText(
           text: TextSpan(
-            style: MyTextStyles()
-                .normalS16_W500_LH22_C737373
-                .copyWith(color: Colors.black),
+            style: AppTextStyles.smallHeader13.copyWith(color: Colors.black),
             children: [
               TextSpan(
                 text: "Visit",
               ),
               TextSpan(
                 text: " shopping.google.com",
-                style: MyTextStyles().normalS16_W500_LH22_C737373.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: AppTextStyles.smallHeader13.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     launch("https://shopping.google.com/");
@@ -66,9 +65,9 @@ class LockStatus extends StatelessWidget {
               ),
               TextSpan(
                 text: " see more projects here.",
-                style: MyTextStyles().normalS16_W500_LH22_C737373.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: AppTextStyles.smallHeader13.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     launch("http://www.lisasuefischer.com/");

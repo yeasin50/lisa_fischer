@@ -17,7 +17,7 @@ class Intro extends StatelessWidget {
       children: [
         Text(
           "Lucere",
-          style: MyTextStyles().header,
+          style: AppTextStyles.header,
           textAlign: TextAlign.center,
         ),
         SizedBox(
@@ -31,7 +31,7 @@ class Intro extends StatelessWidget {
         ),
         Text(
           "A takeaway salad and sandwich shop that provides a worry-free and wholesome experience for customers with food allergies or dietary needs.",
-          style: MyTextStyles().sub26,
+          style: AppTextStyles.sub26,
           textAlign: TextAlign.center,
         ),
         SizedBox(

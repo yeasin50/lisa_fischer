@@ -7,11 +7,11 @@ import '../../../configs/configs.dart';
 final Map<String, dynamic> loppetWinterFestivalRowItems = {
   "DATE": Text(
     "Winter 2017",
-    style: MyTextStyles().normatText,
+    style: AppTextStyles.normal,
   ),
   "ROLE": Text(
     "Designer / Illustrator",
-    style: MyTextStyles().normatText,
+    style: AppTextStyles.normal,
   ),
   "AGENCY": RichText(
     text: TextSpan(
@@ -21,10 +21,10 @@ final Map<String, dynamic> loppetWinterFestivalRowItems = {
       children: [
         TextSpan(
           text: "Duffy Design ",
-          style: MyTextStyles().normatText.copyWith(
-                fontWeight: FontWeight.w500,
-                color: kColorDash,
-              ),
+          style: AppTextStyles.normal.copyWith(
+            fontWeight: FontWeight.w500,
+            color: kColorDash,
+          ),
           recognizer: TapGestureRecognizer()
             ..onTap = () => launch(
                   "https://www.adweek.com/brand-marketing/google-unveils-new-features-to-make-shopping-easier-across-apps-and-search-results/",
@@ -32,16 +32,16 @@ final Map<String, dynamic> loppetWinterFestivalRowItems = {
         ),
         TextSpan(
           text: "Minneapolis, MN",
-          style: MyTextStyles().normatText,
+          style: AppTextStyles.normal,
         ),
       ],
     ),
   ),
   "DELIVERABLES": RichText(
     text: TextSpan(
-      style: MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w500,
-          ),
+      style: AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
       children: [
         TextSpan(
           text:

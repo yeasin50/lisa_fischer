@@ -16,9 +16,9 @@ class LisaAwards extends StatefulWidget {
 class _LisaAwardsState extends State<LisaAwards> {
   List<bool> _isHovered = List.generate(7, (index) => false);
 
-  final _linkTextStyle = MyTextStyles().normatText.copyWith(
-        color: linkTextColor,
-      );
+  final _linkTextStyle = AppTextStyles.normal.copyWith(
+    color: linkTextColor,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _LisaAwardsState extends State<LisaAwards> {
       title: "AWARDS",
       body: RichText(
         text: TextSpan(
-          style: MyTextStyles().normatText,
+          style: AppTextStyles.normal,
           children: [
             TextSpan(
               text: "Graphis ",

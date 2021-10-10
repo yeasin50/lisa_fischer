@@ -27,7 +27,7 @@ class P4Postars extends StatelessWidget {
       children: [
         RichTextInParentheses(
           text: "MoodBoard",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         // columnSpace,
@@ -40,7 +40,7 @@ class P4Postars extends StatelessWidget {
 
         RichTextInParentheses(
           text: "The Poster",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         columnSpace,
@@ -132,7 +132,7 @@ class P4Postars extends StatelessWidget {
 
         RichTextInParentheses(
           text: "Custom Snow Typography",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
         columnSpace,
 
@@ -155,7 +155,7 @@ class P4Postars extends StatelessWidget {
 
         RichTextInParentheses(
           text: "The Printmaking Process",
-          textStyle: MyTextStyles().textParan20,
+          textStyle: AppTextStyles.textParan20,
         ),
 
         columnSpace,
@@ -246,11 +246,11 @@ class P4Postars extends StatelessWidget {
           columnSpace,
           Text(
             "ALL IN THE DETAILS",
-            style: MyTextStyles().normatText.copyWith(
-                  color: Colors.black54,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1.4,
-                ),
+            style: AppTextStyles.normal.copyWith(
+              color: Colors.black54,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1.4,
+            ),
           ),
           SizedBox(height: 30),
           greenColorLine,
@@ -260,16 +260,16 @@ class P4Postars extends StatelessWidget {
               TextSpan(
                 text:
                     "Printing was a 5 day process:\n1 day for each layer of ink ",
-                style: MyTextStyles().sub26.copyWith(
-                      color: Colors.black,
-                    ),
+                style: AppTextStyles.sub26.copyWith(
+                  color: Colors.black,
+                ),
                 children: [
                   TextSpan(
                       text: "*",
-                      style: MyTextStyles().sub26.copyWith(
-                            color: kColorDash,
-                            height: 1.2,
-                          ))
+                      style: AppTextStyles.sub26.copyWith(
+                        color: kColorDash,
+                        height: 1.2,
+                      ))
                 ],
               ),
             ]),
@@ -281,23 +281,23 @@ class P4Postars extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: "*",
-                    style: MyTextStyles().normatText.copyWith(
-                          color: kColorDash,
-                        ),
+                    style: AppTextStyles.normal.copyWith(
+                      color: kColorDash,
+                    ),
                     children: [
                       TextSpan(
                         text:
                             " 4 colors + 1 varnish top coat applied to 130 posters\n",
-                        style: MyTextStyles().normatText.copyWith(height: 1.2),
+                        style: AppTextStyles.normal.copyWith(height: 1.2),
                       ),
                     ],
                   ),
                   TextSpan(
                     text: "(using Sky-Parchtone French Paper)",
-                    style: MyTextStyles().normatText.copyWith(
-                          fontStyle: FontStyle.italic,
-                          height: 1.2,
-                        ),
+                    style: AppTextStyles.normal.copyWith(
+                      fontStyle: FontStyle.italic,
+                      height: 1.2,
+                    ),
                   ),
                 ],
               ),

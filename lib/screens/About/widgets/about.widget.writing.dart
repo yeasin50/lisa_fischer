@@ -51,8 +51,8 @@ class _LisaWritingState extends State<LisaWriting> {
           text: TextSpan(
             text: _text,
             style: _isHovered
-                ? MyTextStyles().linkTextStyle.copyWith(color: kColorDash)
-                : MyTextStyles().linkTextStyle,
+                ? AppTextStyles.linkTextStyle.copyWith(color: kColorDash)
+                : AppTextStyles.linkTextStyle,
             onEnter: (event) => setState(() => _isHovered = true),
             onExit: (event) => setState(() => _isHovered = false),
             recognizer: TapGestureRecognizer()..onTap = _launchUrl,

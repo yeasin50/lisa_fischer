@@ -18,13 +18,13 @@ class _LisaEducationState extends State<LisaEducation> {
       title: 'EDUCATION',
       body: RichText(
         text: TextSpan(
-          style: MyTextStyles().normatText,
+          style: AppTextStyles.normal,
           children: [
             TextSpan(
               text: "Savannah College of Art and Design",
               style: _isHovered[0]
-                  ? MyTextStyles().subHeaderRow.copyWith(color: kColorDash)
-                  : MyTextStyles().subHeaderRow,
+                  ? AppTextStyles.subHeaderRow.copyWith(color: kColorDash)
+                  : AppTextStyles.subHeaderRow,
               onEnter: (event) => setState(() => _isHovered[0] = true),
               onExit: (event) => setState(() => _isHovered[0] = false),
               recognizer: TapGestureRecognizer()
@@ -36,8 +36,8 @@ class _LisaEducationState extends State<LisaEducation> {
             TextSpan(
               text: "\nGeorge Washington University",
               style: _isHovered[1]
-                  ? MyTextStyles().subHeaderRow.copyWith(color: kColorDash)
-                  : MyTextStyles().subHeaderRow,
+                  ? AppTextStyles.subHeaderRow.copyWith(color: kColorDash)
+                  : AppTextStyles.subHeaderRow,
               onEnter: (event) => setState(() => _isHovered[1] = true),
               onExit: (event) => setState(() => _isHovered[1] = false),
               recognizer: TapGestureRecognizer()

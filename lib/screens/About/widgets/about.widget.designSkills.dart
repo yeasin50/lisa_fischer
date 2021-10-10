@@ -10,7 +10,7 @@ class LisaDesignSkills extends StatelessWidget {
       title: 'DESIGN SKILLS',
       body: Text(
         "Branding + Identity, UI + UX,  Art Direction, Motion Design, Concept Development, Typography, Environmental Graphics, Design Thinking, Design Research, Creative Strategy, Packaging, Illustration, Design for Sustainability ",
-        style: MyTextStyles().normatText,
+        style: AppTextStyles.normal,
       ),
     );
   }

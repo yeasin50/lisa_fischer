@@ -31,14 +31,14 @@ class _P2ShowCaseState extends State<P2ShowCase> {
   /// Press and Links +> Hover Text Effect
   _textStyle(bool _isHover) {
     if (_isHover)
-      return MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w500,
-            color: kColorDash,
-          );
+      return AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w500,
+        color: kColorDash,
+      );
     else
-      return MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w500,
-          );
+      return AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w500,
+      );
   }
 
   /// Gshop Logo Aniamtion
@@ -173,7 +173,7 @@ class _P2ShowCaseState extends State<P2ShowCase> {
           title: "DATE",
           body: Text(
             "March 2018- April 2019",
-            style: MyTextStyles().normatText,
+            style: AppTextStyles.normal,
           ),
         ),
         RowItem(
@@ -181,7 +181,7 @@ class _P2ShowCaseState extends State<P2ShowCase> {
           title: "ROLE",
           body: Text(
             "Visual + UX Designer / Brand Strategist",
-            style: MyTextStyles().normatText,
+            style: AppTextStyles.normal,
           ),
         ),
         RowItem(
@@ -254,9 +254,9 @@ class _P2ShowCaseState extends State<P2ShowCase> {
           title: "LINKS",
           body: RichText(
             text: TextSpan(
-              style: MyTextStyles().normatText.copyWith(
-                    fontWeight: FontWeight.w500,
-                  ),
+              style: AppTextStyles.normal.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
               children: [
                 TextSpan(
                   text: "About Google Shopping, ",

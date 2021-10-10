@@ -9,16 +9,18 @@ class GetInTouchBrief extends StatelessWidget {
         children: [
           TextSpan(
             text: "Get In Touch\n",
-            style: titleTextStyle,
+            style: AppTextStyles.title,
           ),
           TextSpan(
             text:
                 "\nAvailable for questions, collaborations, projects & coffee.",
-            style: subHeaderTextStyle,
+            style: AppTextStyles.sub26,
           ),
           TextSpan(
             text: "\n— Based in the San Francisco Bay area.",
-            style: normalItalic,
+            style: AppTextStyles.normal.copyWith(
+              fontStyle: FontStyle.italic,
+            ),
           ),
         ],
       ),

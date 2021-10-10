@@ -26,14 +26,14 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
   /// Press and Links +> Hover Text Effect
   _textStyle(bool _isHover) {
     if (_isHover)
-      return MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w500,
-            color: kColorDash,
-          );
+      return AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w500,
+        color: kColorDash,
+      );
     else
-      return MyTextStyles().normatText.copyWith(
-            fontWeight: FontWeight.w500,
-          );
+      return AppTextStyles.normal.copyWith(
+        fontWeight: FontWeight.w500,
+      );
   }
 
   List<Padding> _rowItemsMobileView() {
@@ -99,7 +99,7 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
             title: "DATE",
             body: Text(
               "Winter 2017",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ),
           RowItem(
@@ -107,7 +107,7 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
             title: "ROLE",
             body: Text(
               "Designer / Illustrator",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ),
           RowItem(
@@ -131,7 +131,7 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
                   ),
                   TextSpan(
                     text: "Minneapolis, MN",
-                    style: MyTextStyles().normatText,
+                    style: AppTextStyles.normal,
                   ),
                 ],
               ),
@@ -144,9 +144,9 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
             title: "DELIVERABLES",
             body: RichText(
               text: TextSpan(
-                style: MyTextStyles().normatText.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
+                style: AppTextStyles.normal.copyWith(
+                  fontWeight: FontWeight.w500,
+                ),
                 children: [
                   TextSpan(
                     text:

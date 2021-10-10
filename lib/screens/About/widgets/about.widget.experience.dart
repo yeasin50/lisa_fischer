@@ -15,19 +15,19 @@ class LisaExperience extends StatelessWidget {
           /// we need linked google here 😂😂
           Text(
             "Google",
-            style: MyTextStyles().subHeaderRow,
+            style: AppTextStyles.subHeaderRow,
           ),
           Text(
             "June 2017 - present\n",
-            style: MyTextStyles().normatText.copyWith(),
+            style: AppTextStyles.normal.copyWith(),
           ),
           Text(
             "Duffy",
-            style: MyTextStyles().subHeaderRow,
+            style: AppTextStyles.subHeaderRow,
           ),
           Text(
             "June 2016 - April 2017",
-            style: MyTextStyles().normatText.copyWith(),
+            style: AppTextStyles.normal.copyWith(),
           ),
         ],
       ),

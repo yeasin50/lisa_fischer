@@ -25,7 +25,7 @@ class _P1IntroState extends State<P1Intro> {
       children: [
         Text(
           "Loppet Winter Festival",
-          style: titleTextStyle,
+          style: AppTextStyles.title,
         ),
         SubtitleCategoryOfWork(
           rolls: ['PRINTMAKING', 'ILLUSTRATION'],
@@ -33,7 +33,7 @@ class _P1IntroState extends State<P1Intro> {
         columnSpace,
         Text(
           "A Minnesota Winter Tradition",
-          style: MyTextStyles().textParan20,
+          style: AppTextStyles.textParan20,
         ),
         SizedBox(
           height: 10,
@@ -47,16 +47,16 @@ class _P1IntroState extends State<P1Intro> {
             children: [
               TextSpan(
                 text: "* ",
-                style: MyTextStyles().normatText.copyWith(
-                      color: kColorDash,
-                    ),
+                style: AppTextStyles.normal.copyWith(
+                  color: kColorDash,
+                ),
               ),
               TextSpan(
                 text:
                     "A special thanks to Rick Love for his printmaking expertise.",
-                style: MyTextStyles().normatText.copyWith(
-                      fontStyle: FontStyle.italic,
-                    ),
+                style: AppTextStyles.normal.copyWith(
+                  fontStyle: FontStyle.italic,
+                ),
               ),
             ],
           ),
@@ -72,17 +72,15 @@ class _P1IntroState extends State<P1Intro> {
   RichText briefDetails2() {
     return RichText(
       text: TextSpan(
-        style: MyTextStyles().normatText,
+        style: AppTextStyles.normal,
         text: "Every year, ",
         children: [
           TextSpan(
             text: "Duffy Design ",
-            style: MyTextStyles().normatText.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: _isHoverDuffy
-                      ? kColorDash
-                      : MyTextStyles().normatText.color,
-                ),
+            style: AppTextStyles.normal.copyWith(
+              fontWeight: FontWeight.w600,
+              color: _isHoverDuffy ? kColorDash : AppTextStyles.normal.color,
+            ),
 
             /// on hover Event Change the Text Color
             /// we arent adding underLine, because of padding issue,
@@ -106,17 +104,15 @@ class _P1IntroState extends State<P1Intro> {
   RichText briefDetails1() {
     return RichText(
       text: TextSpan(
-        style: MyTextStyles().normatText,
+        style: AppTextStyles.normal,
         text: "The ",
         children: [
           TextSpan(
             text: "City of Lakes Loppet ",
-            style: MyTextStyles().normatText.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: _isHoverLoppet
-                      ? kColorDash
-                      : MyTextStyles().normatText.color,
-                ),
+            style: AppTextStyles.normal.copyWith(
+              fontWeight: FontWeight.w600,
+              color: _isHoverLoppet ? kColorDash : AppTextStyles.normal.color,
+            ),
 
             ///on hover Event Change the Text Color
             /// we arent adding underLine, because of padding issue,

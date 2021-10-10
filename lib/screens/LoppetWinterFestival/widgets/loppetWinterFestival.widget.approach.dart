@@ -20,14 +20,14 @@ class P3Approch extends StatelessWidget {
       children: [
         Text(
           "APPROACH",
-          style: MyTextStyles().smallHeader13pxW610,
+          style: AppTextStyles.smallHeader13,
         ),
         columnSpace,
         Text(
           "No two snowflakes are alike",
-          style: MyTextStyles().sub26.copyWith(
-                color: Colors.black,
-              ),
+          style: AppTextStyles.sub26.copyWith(
+            color: Colors.black,
+          ),
         ),
         columnSpace,
         greenColorLine,
@@ -38,7 +38,7 @@ class P3Approch extends StatelessWidget {
           _approachText,
           textAlign: TextAlign.center,
           softWrap: true,
-          style: MyTextStyles().normalS16_W500_LH22_C737373,
+          style: AppTextStyles.smallHeader13,
         ),
         columnSpace,
         Image.network(

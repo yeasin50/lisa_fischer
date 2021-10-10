@@ -65,7 +65,8 @@ class _ContactFormState extends State<ContactForm> {
           children: [
             TextSpan(
               text: "$label ",
-              style: normalStyle.copyWith(color: Colors.black.withOpacity(.7)),
+              style: AppTextStyles.normal
+                  .copyWith(color: Colors.black.withOpacity(.7)),
             ),
             TextSpan(
               text: "*",

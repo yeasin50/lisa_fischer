@@ -11,9 +11,9 @@ class RichTextInParentheses extends StatelessWidget {
 
   TextStyle? paranTextStyle() {
     if (textStyle == null)
-      return MyTextStyles().textInParan.copyWith(
-            color: kColorDash,
-          );
+      return AppTextStyles.textInParan13.copyWith(
+        color: kColorDash,
+      );
     else
       return textStyle?.copyWith(color: kColorDash);
   }
@@ -22,7 +22,7 @@ class RichTextInParentheses extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        style: normalStyle,
+        style: AppTextStyles.normal,
         children: [
           TextSpan(
             text: "{ ",
@@ -30,7 +30,7 @@ class RichTextInParentheses extends StatelessWidget {
           ),
           TextSpan(
             text: text,
-            style: textStyle ?? MyTextStyles().textInParan,
+            style: textStyle ?? AppTextStyles.textInParan13,
           ),
           TextSpan(
             text: " }",

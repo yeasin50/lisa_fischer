@@ -14,7 +14,7 @@ class P1LeveledIntro extends StatelessWidget {
       children: [
         Text(
           "Leveled",
-          style: titleTextStyle,
+          style: AppTextStyles.title,
         ),
         SizedBox(height: 10),
         SubtitleCategoryOfWork(
@@ -23,19 +23,19 @@ class P1LeveledIntro extends StatelessWidget {
         columnSpace,
         Text(
           "Helping leaders and businesses make good on good intent.",
-          style: MyTextStyles().textParan20,
+          style: AppTextStyles.textParan20,
         ),
         const SizedBox(
           height: 10,
         ),
         Text(
           "Leveled is a Minneapolis-based consulting firm that helps leaders and businesses make good on good intent by coaching leaders and teams to have greater professional and personal impact. ",
-          style: MyTextStyles().normatText,
+          style: AppTextStyles.normal,
         ),
         columnSpace,
         Text(
           "As a new business, Leveled sought out a brand identity to establish and differentiate the female-run firm in its communications, messaging and orchestrated events.",
-          style: MyTextStyles().normatText,
+          style: AppTextStyles.normal,
         ),
         const SizedBox(
           height: 24,

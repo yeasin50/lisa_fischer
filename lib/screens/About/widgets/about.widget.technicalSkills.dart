@@ -10,7 +10,7 @@ class LisaTechnicalSkills extends StatelessWidget {
       title: 'TECHNICAL SKILLS',
       body: Text(
         "Figma, Sketch, Photoshop, Illustrator, InDesign, Lightroom, After Effects, CSS3 + HTML5, InVision, Principle, Microsoft Office, Apple Keynote\n",
-        style: MyTextStyles().normatText,
+        style: AppTextStyles.normal,
       ),
     );
   }

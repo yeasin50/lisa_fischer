@@ -17,7 +17,7 @@ class Intro extends StatelessWidget {
       children: [
         Text(
           "Thrive",
-          style: MyTextStyles().header,
+          style: AppTextStyles.header,
           textAlign: TextAlign.center,
         ),
         SizedBox(
@@ -31,7 +31,7 @@ class Intro extends StatelessWidget {
         ),
         Text(
           "A city park designed for the City of Charlotte, North Carolina with the triple bottom line (people + profit + planet) in mind.",
-          style: MyTextStyles().sub26,
+          style: AppTextStyles.sub26,
           textAlign: TextAlign.center,
         ),
         SizedBox(

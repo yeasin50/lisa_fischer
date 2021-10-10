@@ -22,7 +22,7 @@ class _P1GShopIntroState extends State<P1GShopIntro> {
       children: [
         Text(
           "Buy On Google",
-          style: titleTextStyle,
+          style: AppTextStyles.title,
         ),
         columnSpace,
         //  BRAND STRATEGY / VISUAL DESIGN / UX,
@@ -32,7 +32,7 @@ class _P1GShopIntroState extends State<P1GShopIntro> {
         columnSpace,
         Text(
           "Shop from thousands of stores directly on Google.",
-          style: MyTextStyles().sub26,
+          style: AppTextStyles.sub26,
         ),
         columnSpace,
         briefDetailsOfGoogleShopping(),
@@ -47,16 +47,15 @@ class _P1GShopIntroState extends State<P1GShopIntro> {
   Widget briefDetailsOfGoogleShopping() {
     return RichText(
       text: TextSpan(
-        style: MyTextStyles().normatText,
+        style: AppTextStyles.normal,
         text: "The ",
         children: [
           TextSpan(
             text: "newly launched Google Shopping ",
-            style: MyTextStyles().normatText.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color:
-                      _isHover ? kColorDash : MyTextStyles().normatText.color,
-                ),
+            style: AppTextStyles.normal.copyWith(
+              fontWeight: FontWeight.w600,
+              color: _isHover ? kColorDash : AppTextStyles.normal.color,
+            ),
 
             ///on hover Event Change the Text Color
             /// we arent adding underLine, because of padding issue,

@@ -23,7 +23,7 @@ class RowItem extends StatelessWidget {
         children: [
           Text(
             title,
-            style: MyTextStyles().subtitle12.copyWith(color: Colors.black),
+            style: AppTextStyles.subtitle12.copyWith(color: Colors.black),
           ),
 
           Padding(

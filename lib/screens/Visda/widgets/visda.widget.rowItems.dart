@@ -80,7 +80,7 @@ class P2VisdaRow extends StatelessWidget {
             title: "DATE",
             body: Text(
               "Sept - Nov 2019",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ),
           RowItem(
@@ -88,7 +88,7 @@ class P2VisdaRow extends StatelessWidget {
             title: "ROLE",
             body: Text(
               "Brand Designer",
-              style: MyTextStyles().normatText,
+              style: AppTextStyles.normal,
             ),
           ),
           RowItem(
@@ -96,17 +96,17 @@ class P2VisdaRow extends StatelessWidget {
             title: "TEAM",
             body: RichText(
               text: TextSpan(
-                style: MyTextStyles().normatText.copyWith(
-                      fontWeight: FontWeight.w600,
-                      height: 1.4,
-                    ),
+                style: AppTextStyles.normal.copyWith(
+                  fontWeight: FontWeight.w600,
+                  height: 1.4,
+                ),
                 children: [
                   TextSpan(
                     text: "Creative Direction _",
                     children: [
                       TextSpan(
                         text: " Brad Aldridge\n",
-                        style: MyTextStyles().normatText,
+                        style: AppTextStyles.normal,
                       ),
                     ],
                   ),
@@ -115,7 +115,7 @@ class P2VisdaRow extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: " Kyle Hoyt\n",
-                        style: MyTextStyles().normatText,
+                        style: AppTextStyles.normal,
                       ),
                     ],
                   ),
@@ -124,7 +124,7 @@ class P2VisdaRow extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: " Eric Henry",
-                        style: MyTextStyles().normatText,
+                        style: AppTextStyles.normal,
                       ),
                     ],
                   ),
@@ -137,9 +137,9 @@ class P2VisdaRow extends StatelessWidget {
             title: "DELIVERABLES",
             body: RichText(
               text: TextSpan(
-                style: MyTextStyles().normatText.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
+                style: AppTextStyles.normal.copyWith(
+                  fontWeight: FontWeight.w500,
+                ),
                 children: [
                   TextSpan(
                     text:
