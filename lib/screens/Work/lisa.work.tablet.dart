@@ -48,6 +48,7 @@ class TabletView extends StatelessWidget {
             (index) => GridItem(
               width: double.maxFinite,
               imageUrl: GridItemC.lisaWorklist[index].backgroundUrl,
+              imgHash: GridItemC.lisaWorklist[index].blurHash,
               subtitle: GridItemC.lisaWorklist[index].subtitle,
               title: GridItemC.lisaWorklist[index].title,
               onPress: () {},
