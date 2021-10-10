@@ -4,7 +4,7 @@ import '../../../constants/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../configs/config.constants.dart';
-import '../../../constants/config.textStyles.dart';
+import '../../../constants/const.textStyles.dart';
 import '../../../configs/configs.dart';
 import 'widgets.dart';
 

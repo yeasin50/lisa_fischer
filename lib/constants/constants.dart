@@ -1,3 +1,3 @@
-export 'config.colorPalette.dart';
-export 'config.textStyles.dart';
+export 'const.colorPalette.dart';
+export 'const.textStyles.dart';
 export 'lisa.const.divider.dart';
