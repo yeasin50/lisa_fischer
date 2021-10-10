@@ -47,6 +47,7 @@ class DesktopView extends StatelessWidget {
           children: List.generate(
             GridItemC.lisaWorklist.length,
             (index) => GridItem(
+              key: UniqueKey(),
               width: double.maxFinite,
               imageUrl: GridItemC.lisaWorklist[index].backgroundUrl,
               subtitle: GridItemC.lisaWorklist[index].subtitle,

@@ -25,10 +25,9 @@ class GridItem extends StatefulWidget {
 }
 
 class _GridItemState extends State<GridItem> {
-  bool _isHover = false;
+  bool _isHovered = false;
 
-  double _bottomPadding = 20;
-
+  ///TODO: change fontstyle
   final TextStyle _titleTextStyle = GoogleFonts.lateef(
     fontSize: 28,
     color: Colors.white,
@@ -38,7 +37,7 @@ class _GridItemState extends State<GridItem> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: widget.width,
       width: widget.width,
       child: InkWell(
@@ -46,21 +45,12 @@ class _GridItemState extends State<GridItem> {
           print("clicked: ${widget.imageUrl}");
         },
         onHover: (value) {
-          if (value) {
-            setState(() => _isHover = true);
-            Future.delayed(Duration(milliseconds: 100), () {
-              setState(() => _bottomPadding = 25);
-            });
-          } else
-            setState(() {
-              _isHover = false;
-              _bottomPadding = 0;
-            });
+          WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+            setState(() => _isHovered = value);
+          });
         },
         child: Stack(
           children: [
-            ///Migrate to BlurHash
-
             AspectRatio(
               aspectRatio: 1,
               child: BlurHash(
@@ -68,47 +58,44 @@ class _GridItemState extends State<GridItem> {
                 image: widget.imageUrl,
               ),
             ),
+            //* InkWell:HoverColor wont effect here
+            if (_isHovered)
+              Container(
+                color: Colors.black.withOpacity(.7),
+              ),
+            AnimatedAlign(
+              duration: Duration(milliseconds: 600),
+              alignment: Alignment(-.75, _isHovered ? .7 : 2),
+              // curve: Curves.decelerate,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.title,
+                    style: _titleTextStyle,
+                    textAlign: TextAlign.left,
+                  ),
 
-            /// a little pushUp and itemPopUp from bottom
-            /// we can increase bottom margin 😂
-            if (_isHover)
-              //todo: try animatedAlign
-              AnimatedContainer(
-                duration: Duration(milliseconds: 600),
-                padding: EdgeInsets.only(bottom: _bottomPadding),
-                width: widget.width * .9,
-                alignment: Alignment(-.75, .7),
-                curve: Curves.decelerate,
-                color: Colors.black.withOpacity(.65),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.title,
-                      style: _titleTextStyle,
-                      textAlign: TextAlign.left,
+                  /// divColor
+                  Container(
+                    width: 30,
+                    height: 3,
+                    color: Colors.green,
+                    padding: EdgeInsets.symmetric(vertical: 4),
+                  ),
+                  Text(
+                    widget.subtitle,
+                    textAlign: TextAlign.left,
+                    style: _titleTextStyle.copyWith(
+                      fontSize: 14,
+                      color: Colors.grey,
                     ),
-
-                    /// divColor
-                    Container(
-                      width: 30,
-                      height: 3,
-                      color: Colors.green,
-                      padding: EdgeInsets.symmetric(vertical: 4),
-                    ),
-                    Text(
-                      widget.subtitle,
-                      textAlign: TextAlign.left,
-                      style: _titleTextStyle.copyWith(
-                        fontSize: 14,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
-                ),
-              )
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
