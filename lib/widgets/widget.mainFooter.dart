@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/widgets/widgets.dart';
+import 'widgets.dart';
 
 Container footerRow() {
   return Container(

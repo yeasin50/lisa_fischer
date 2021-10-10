@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Portfolios',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: white,
+        scaffoldBackgroundColor: backgroundColor,
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),

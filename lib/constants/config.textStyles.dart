@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'config.constants.dart';
-import 'configs.dart';
+import '../configs/configs.dart';
+import 'constants.dart';
 
 ///TODO:: need to check the styles in finish level including Colors
 class AppTextStyles {

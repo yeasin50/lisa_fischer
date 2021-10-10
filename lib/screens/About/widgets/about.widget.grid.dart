@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import 'widgets.dart';
 
 class GridItem extends StatelessWidget {

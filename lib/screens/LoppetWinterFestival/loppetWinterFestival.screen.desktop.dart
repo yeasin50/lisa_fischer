@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../configs/config.constants.dart';
 import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {

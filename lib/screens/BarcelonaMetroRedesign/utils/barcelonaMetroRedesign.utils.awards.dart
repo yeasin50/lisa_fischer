@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:portfolio/widgets/widgets.dart';
+import '../../../widgets/widgets.dart';
 
 final awards = [
   //* Awards

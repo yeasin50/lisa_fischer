@@ -1,11 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../configs/config.constants.dart';
-import '../../../configs/config.textStyles.dart';
-import '../../../configs/configs.dart';
+import '../../../constants/config.textStyles.dart';
+import '../../../constants/constants.dart';
 import 'widgets.dart';
 
 class LisaAwards extends StatefulWidget {

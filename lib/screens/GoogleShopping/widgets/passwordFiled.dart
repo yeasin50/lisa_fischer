@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/config.textStyles.dart';
+import '../../../constants/config.textStyles.dart';
 
 class AuthenticationOnGShop extends StatefulWidget {
   const AuthenticationOnGShop({Key? key}) : super(key: key);

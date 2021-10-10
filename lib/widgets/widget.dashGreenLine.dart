@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../configs/configs.dart';
+import '../constants/constants.dart';
 
 get greenColorLine => Container(
       width: 30,

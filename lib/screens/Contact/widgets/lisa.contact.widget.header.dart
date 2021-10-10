@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/config.textStyles.dart';
+import '../../../constants/config.textStyles.dart';
 
 class GetInTouchBrief extends StatelessWidget {
   @override

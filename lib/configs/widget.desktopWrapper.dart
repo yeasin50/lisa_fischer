@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:portfolio/configs/configs.dart';
-import 'package:portfolio/widgets/widgets.dart';
+import 'configs.dart';
+import '../widgets/widgets.dart';
 
 class DesktopViewWrapper extends StatelessWidget {
   final Widget child;

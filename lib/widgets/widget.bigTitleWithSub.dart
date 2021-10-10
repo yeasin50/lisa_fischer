@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/config.textStyles.dart';
 
+import '../constants/config.textStyles.dart';
 import 'widgets.dart';
 
 ///for desktop and tablet mode it is always talking half screens' width

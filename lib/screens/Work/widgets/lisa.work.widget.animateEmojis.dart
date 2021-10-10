@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/widgets/widget.emojiWrapper.dart';
+import '../../../widgets/widget.emojiWrapper.dart';
 
 class AnimateEmojis extends StatefulWidget {
   @override

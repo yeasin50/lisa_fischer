@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/constants/constants.dart';
-import 'package:portfolio/widgets/widgets.dart';
+import '../constants/constants.dart';
+import '../widgets/widgets.dart';
 
 class MobieViewWrapper extends StatelessWidget {
   final Widget child;

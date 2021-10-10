@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/configs.dart';
+
+import '../../../configs/configs.dart';
 
 get gshopLogo => FadeInImage.assetNetwork(
       placeholder: placeHolderImagePath,

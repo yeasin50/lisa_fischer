@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:portfolio/configs/config.constants.dart';
+import '../configs/config.constants.dart';
 
 ///fadeInImageNetWork
 fadeNetImage(BoxConstraints constraints, String _url) =>

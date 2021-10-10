@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/widgets/widgets.dart';
+import '../../../constants/constants.dart';
+import '../../../widgets/widgets.dart';
 
 import '../../../configs/configs.dart';
 

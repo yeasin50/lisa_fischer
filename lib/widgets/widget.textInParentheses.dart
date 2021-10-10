@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/configs.dart';
+import '../constants/constants.dart';
 
 /// default `{ SOLUTION }` with `subTitleTextStyle`
 class RichTextInParentheses extends StatelessWidget {

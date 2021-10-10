@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../configs/config.textStyles.dart';
-import '../../../configs/configs.dart';
+import '../../../constants/config.textStyles.dart';
 import '../../../widgets/widgets.dart';
 import '../utils/utils.dart';
 

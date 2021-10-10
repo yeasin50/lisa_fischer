@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '/configs/config.textStyles.dart';
+import '../../../constants/config.textStyles.dart';
 import 'widgets.dart';
 
 class LisaDesignSkills extends StatelessWidget {

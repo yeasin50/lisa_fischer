@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/configs/config.constants.dart';
-import 'package:portfolio/configs/configs.dart';
+import '../../../configs/config.constants.dart';
+import '../../../configs/configs.dart';
 
 Text header(String title) {
   return Text(

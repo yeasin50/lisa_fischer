@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../configs/config.textStyles.dart';
+import '../../../constants/config.textStyles.dart';
 
 class LockStatus extends StatelessWidget {
   const LockStatus({Key? key}) : super(key: key);
