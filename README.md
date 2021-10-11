@@ -5,17 +5,19 @@
 
 TODO: on Lisa Fischer
 
-- tablet mode intro text works
-- [x] just make this repo from Lisa Fischer
+&nbsp;&nbsp;&nbsp; `🛠` project structure
+
+- [x] tablet mode intro text works
+- [ ] just make this repo from Lisa Fischer
 - [ ] ytVide size
-- hash-blur image
-- apply `const`
-- use dot name fileStruct
-- use offline files
-- controll font sizes
-- separate mobile view
-- use nav2
-- use Sizer
+- [x] hash-blur image
+- [ ] apply `const`
+- [x] use dot name fileStruct
+- [ ] use offline files: better with network file because of landing
+- [ ] controll font sizes
+- [x] separate mobile view
+- [ ] use nav2
+- [ ] use Sizer
 
 A new Flutter `web` project for creating different style portfolios.
 
