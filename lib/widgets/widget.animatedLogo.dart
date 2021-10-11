@@ -85,6 +85,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
 
   @override
   void dispose() {
+    _controller.removeListener(() {});
     _controller.dispose();
     super.dispose();
   }
