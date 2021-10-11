@@ -69,17 +69,19 @@ class _GridItemState extends State<GridItem> {
 
   @override
   Widget build(BuildContext context) {
+    print("width ${widget.width}");
     return SizedBox(
       height: widget.width,
       width: widget.width,
       child: InkWell(
         onTap: () => _navigate(context),
         onHover: (value) {
-          WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
-            setState(() => _isHovered = value);
-          });
+          // WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+          setState(() => _isHovered = value);
+          // });
         },
         child: Stack(
+          clipBehavior: Clip.hardEdge,
           children: [
             AspectRatio(
               aspectRatio: 1,
@@ -94,8 +96,8 @@ class _GridItemState extends State<GridItem> {
                 color: Colors.black.withOpacity(.7),
               ),
             AnimatedAlign(
-              duration: Duration(milliseconds: 600),
-              alignment: Alignment(-.75, _isHovered ? .7 : 2),
+              duration: Duration(milliseconds: 400),
+              alignment: Alignment(-.75, _isHovered ? .7 : 1.5),
               // curve: Curves.decelerate,
               child: Column(
                 mainAxisSize: MainAxisSize.min,

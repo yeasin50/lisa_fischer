@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'constants/constants.dart';
 import 'routes.dart';
-import 'screens/screens.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -16,8 +15,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: backgroundColor,
         primarySwatch: Colors.blue,
       ),
-      home: WorkPage(),
       routes: routes,
+      initialRoute: '/',
     );
   }
 }

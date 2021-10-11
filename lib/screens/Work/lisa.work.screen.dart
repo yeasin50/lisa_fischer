@@ -6,7 +6,7 @@ import 'Work.dart';
 
 ///`HomePage`
 class WorkPage extends StatelessWidget {
-  static const String routename = "LisaWork_Main";
+  static const String routename = "/";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
