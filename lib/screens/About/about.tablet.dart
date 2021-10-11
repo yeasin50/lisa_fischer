@@ -25,28 +25,28 @@ class TabletView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //* Profile image and intro
-                  // Row(
-                  //   crossAxisAlignment: CrossAxisAlignment.start,
-                  //   children: [
-                  //     Expanded(
-                  //       child: ProfileImage(),
-                  //     ),
-                  //     SizedBox(width: 20),
-                  //     Expanded(
-                  //       child: BriefInfo(),
-                  //     ),
-                  //   ],
-                  // ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: ProfileImage(),
+                      ),
+                      SizedBox(width: 20),
+                      Expanded(
+                        child: BriefInfo(),
+                      ),
+                    ],
+                  ),
 
-                  // SizedBox(
-                  //   height: columnSpace.height! * 3,
-                  // ),
+                  SizedBox(
+                    height: columnSpace.height! * 3,
+                  ),
 
-                  // divider,
+                  divider,
 
-                  // SizedBox(
-                  //   height: columnSpace.height! * 3,
-                  // ),
+                  SizedBox(
+                    height: columnSpace.height! * 3,
+                  ),
 
                   ///*  details
                   SizedBox(

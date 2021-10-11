@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'constants/constants.dart';
 import 'routes.dart';
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Portfolios',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: GoogleFonts.lato.toString(),
         scaffoldBackgroundColor: backgroundColor,
         primarySwatch: Colors.blue,
       ),
