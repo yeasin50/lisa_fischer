@@ -4,9 +4,9 @@ import '../../configs/configs.dart';
 import '../../widgets/widgets.dart';
 import 'Lucere.dart';
 
-class Lucere extends StatelessWidget {
+class LucerePage extends StatelessWidget {
   static final String routeName = "/work/oro";
-  const Lucere({Key? key}) : super(key: key);
+  const LucerePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

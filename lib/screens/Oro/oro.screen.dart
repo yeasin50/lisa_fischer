@@ -4,9 +4,9 @@ import '../../../configs/config.responsive.dart';
 import '../../../widgets/widgets.dart';
 import 'Oro.dart';
 
-class Oro extends StatelessWidget {
+class OroPage extends StatelessWidget {
   static final String routeName = "/work/oro";
-  const Oro({Key? key}) : super(key: key);
+  const OroPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

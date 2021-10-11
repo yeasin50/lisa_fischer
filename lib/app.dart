@@ -15,9 +15,10 @@ class MyApp extends StatelessWidget {
       ),
       home: WorkPage(),
       routes: {
+        ///* main 3 pages
         WorkPage.routename: (_) => WorkPage(),
-        LisaAboutPage.routeName: (_) => LisaAboutPage(),
-        LisaContactPage.routeName: (_) => LisaContactPage(),
+        AboutPage.routeName: (_) => AboutPage(),
+        ContactPage.routeName: (_) => ContactPage(),
       },
     );
   }

@@ -4,7 +4,7 @@ import '../../configs/configs.dart';
 import '../../widgets/widgets.dart';
 import 'LoppetWinterFestival.dart';
 
-class LoppetWinterFestival extends StatelessWidget {
+class LoppetWinterFestivalPage extends StatelessWidget {
   static final String routeName = "/work/loppetWinterFestival";
 
   @override

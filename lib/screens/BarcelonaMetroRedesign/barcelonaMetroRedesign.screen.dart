@@ -4,7 +4,7 @@ import '../../configs/configs.dart';
 import '../../widgets/widgets.dart';
 import 'BarcelonaMetroRedesign.dart';
 
-class BercelonaMetroRedesign extends StatelessWidget {
+class BercelonaMetroRedesignPage extends StatelessWidget {
   static const String routeName = "/work/bercelonaMetroRedesign";
   @override
   Widget build(BuildContext context) {

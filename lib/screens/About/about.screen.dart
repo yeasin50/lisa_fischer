@@ -4,7 +4,7 @@ import '../../configs/configs.dart';
 import '../../widgets/widgets.dart';
 import 'About.dart';
 
-class LisaAboutPage extends StatelessWidget {
+class AboutPage extends StatelessWidget {
   static final String routeName = "/about";
   @override
   Widget build(BuildContext context) {

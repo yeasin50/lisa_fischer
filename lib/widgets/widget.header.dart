@@ -41,7 +41,7 @@ class LSHeader {
             onClick: () {
               currentActiveIndex = 1;
               Navigator.of(context).pushReplacement(pageRouteFromRT(
-                  () => LisaAboutPage(),
+                  () => AboutPage(),
                   startOffset: Offset(.5, -.5)));
             }),
         PageNavigator(
@@ -50,7 +50,7 @@ class LSHeader {
             onClick: () {
               currentActiveIndex = 2;
               Navigator.of(context).pushReplacement(pageRouteFromRT(
-                  () => LisaContactPage(),
+                  () => ContactPage(),
                   startOffset: Offset(1.0, 0)));
             }),
       ],

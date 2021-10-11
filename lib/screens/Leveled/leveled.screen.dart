@@ -4,9 +4,9 @@ import '../../configs/configs.dart';
 import '../../widgets/widgets.dart';
 import 'Leveled.dart';
 
-class LeveledScreen extends StatelessWidget {
+class LeveledPage extends StatelessWidget {
   static final String routeName = "/work/leveled/";
-  const LeveledScreen({Key? key}) : super(key: key);
+  const LeveledPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

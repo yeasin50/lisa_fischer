@@ -6,7 +6,7 @@ import 'GoogleShopping.dart';
 
 ///* we dont need to use wrapper here,
 ///* Following the main UI
-class GoogleShpoing extends StatelessWidget {
+class GoogleShpoingPage extends StatelessWidget {
   static const String routeName = "/work/googleShoping";
   @override
   Widget build(BuildContext context) {
