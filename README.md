@@ -7,6 +7,9 @@ TODO: on Lisa Fischer
 
 &nbsp;&nbsp;&nbsp; `🛠` project structure
 
+- [ ] improve `Oro` desktop views
+- [ ] replace networkImage with blurHash
+- [ ] set yt player width
 - [x] tablet mode intro text works
 - [ ] just make this repo from Lisa Fischer
 - [ ] ytVide size
