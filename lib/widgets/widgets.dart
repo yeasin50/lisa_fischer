@@ -3,7 +3,6 @@ export 'widget.bigTitleWithSub.dart';
 export 'widget.circleNeonBorder.dart';
 export 'widget.customButton.dart';
 export 'widget.dashGreenLine.dart';
-export 'wrappers/widget.desktopWrapper.dart';
 export 'widget.emojiWrapper.dart';
 export 'widget.fadeInNetImage.dart';
 export 'widget.footerText.dart';
@@ -11,13 +10,13 @@ export 'widget.header.dart';
 export 'widget.hoverUnderlineOnLink.dart';
 export 'widget.mainFooter.dart';
 export 'widget.mobileMenu.dart';
-export 'wrappers/widget.mobileWrapper.dart';
 export 'widget.pageNav.dart';
 export 'widget.rectNeonBorder.dart';
 export 'widget.rowItem.dart';
 export 'widget.skillsAsSubtitle.dart';
 export 'widget.socialIcons.dart';
-export 'wrappers/widget.tabletWrapper.dart';
+
 export 'widget.textInParentheses.dart';
 export 'widget.waveAnimation.dart';
-export 'wrappers/widget.ytVideoWrapperForScrollIssue.dart';
+
+export 'baseLayoutViews/baseLayoutViews.dart';

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../configs/configs.dart';
-import '../../configs/widget.desktopWrapper.dart';
 import '../../widgets/widgets.dart';
-import 'lisa.work.desktop.dart';
-import 'lisa.work.mobile.dart';
-import 'lisa.work.tablet.dart';
+import 'Work.dart';
 
 ///`HomePage`
 class WorkPage extends StatelessWidget {
