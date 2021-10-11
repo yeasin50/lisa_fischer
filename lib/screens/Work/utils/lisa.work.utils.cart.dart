@@ -11,6 +11,8 @@ class GridItemC {
     required this.blurHash,
   });
 
+  static List<String> get titles => lisaWorklist.map((e) => e.title).toList();
+
   static final lisaWorklist = [
     GridItemC(
       title: "Buy On Google",

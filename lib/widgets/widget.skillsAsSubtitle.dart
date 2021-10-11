@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/constants.dart';
 
-import '../configs/configs.dart';
+import '../constants/constants.dart';
 
 class SubtitleCategoryOfWork extends StatelessWidget {
   final List<String> rolls;

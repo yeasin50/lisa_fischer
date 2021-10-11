@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../configs/config.constants.dart';
-import '../../widgets/widgets.dart';
 
+import '../../configs/config.constants.dart';
 import '../../constants/constants.dart';
+import '../../widgets/widgets.dart';
 import 'widgets/widgets.dart';
 
 class MobileView extends StatelessWidget {

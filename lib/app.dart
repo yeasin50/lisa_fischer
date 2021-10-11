@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'constants/constants.dart';
+import 'routes.dart';
 import 'screens/screens.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,12 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: WorkPage(),
-      routes: {
-        ///* main 3 pages
-        WorkPage.routename: (_) => WorkPage(),
-        AboutPage.routeName: (_) => AboutPage(),
-        ContactPage.routeName: (_) => ContactPage(),
-      },
+      routes: routes,
     );
   }
 }

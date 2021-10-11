@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
 import '../utils/awards.dart';
 

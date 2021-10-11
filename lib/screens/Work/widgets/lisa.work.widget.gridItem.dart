@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../screens.dart';
+import '../utils/utils.dart';
+
 class GridItem extends StatefulWidget {
   const GridItem({
     Key? key,
@@ -35,15 +38,42 @@ class _GridItemState extends State<GridItem> {
     letterSpacing: 1.3,
   );
 
+  ///** Naviagte to another page */
+  _navigate(BuildContext context) {
+    late String routeName;
+
+    if (widget.title == GridItemC.titles[0]) {
+      routeName = BuyOnGoolgePage.routeName;
+    } else if (widget.title == GridItemC.titles[1]) {
+      routeName = LoppetWinterFestivalPage.routeName;
+    } else if (widget.title == GridItemC.titles[2]) {
+      routeName = VisdaPage.routeName;
+    } else if (widget.title == GridItemC.titles[3]) {
+      routeName = LeveledPage.routeName;
+    } else if (widget.title == GridItemC.titles[4]) {
+      routeName = GoogleShpoingPage.routeName;
+    } else if (widget.title == GridItemC.titles[5]) {
+      routeName = BercelonaMetroRedesignPage.routeName;
+    } else if (widget.title == GridItemC.titles[6]) {
+      routeName = OroPage.routeName;
+    } else if (widget.title == GridItemC.titles[7]) {
+      routeName = ThrivePage.routeName;
+    } else if (widget.title == GridItemC.titles[8]) {
+      routeName = LucerePage.routeName;
+    } else {
+      routeName = WorkPage.routename;
+    }
+
+    Navigator.of(context).pushNamed(routeName);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: widget.width,
       width: widget.width,
       child: InkWell(
-        onTap: () {
-          print("clicked: ${widget.imageUrl}");
-        },
+        onTap: () => _navigate(context),
         onHover: (value) {
           WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
             setState(() => _isHovered = value);
