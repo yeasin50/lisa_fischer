@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '/configs/config.constants.dart';
+import '../../../constants/constants.dart';
 import 'widgets.dart';
 
 class ContactOnAbout extends StatelessWidget {
-  final TextStyle _header = TextStyle(
-    fontFamily: kFproximaNova,
-    fontWeight: FontWeight.bold,
-    fontSize: 19.5,
-    color: Colors.black.withOpacity(.91),
-  );
-
   final String _url = "mailto:lisasuefischer@gmail.com?";
 
   _launchMail() async =>
@@ -27,7 +20,10 @@ class ContactOnAbout extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Contact", style: _header),
+            Text(
+              "Contact",
+              style: AppTextStyles.midBlod,
+            ),
             SizedBox(height: 10),
             UrlNaVigator(
               onClick: () {},

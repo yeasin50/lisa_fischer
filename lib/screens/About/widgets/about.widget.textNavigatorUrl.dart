@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../configs/config.constants.dart';
-import '../../../configs/configs.dart';
 import '../../../constants/constants.dart';
 
 class UrlNaVigator extends StatefulWidget {
@@ -32,7 +30,6 @@ class _UrlNaVigatorState extends State<UrlNaVigator> {
           offset: Offset(0, -4),
         )
       ],
-      fontFamily: kFproximaNova,
       fontWeight: FontWeight.w700,
       fontSize: 14.5,
       color: Colors.transparent,

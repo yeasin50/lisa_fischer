@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../configs/config.constants.dart';
 import '../../../constants/const.textStyles.dart';
 import '../../../widgets/widgets.dart';
 
@@ -72,7 +71,7 @@ class _ContactFormState extends State<ContactForm> {
               text: "*",
               style: TextStyle(
                 // decoration: TextDecoration.overline,
-                fontFamily: kFproximaNova,
+
                 fontSize: 14,
               ),
             ),
@@ -162,7 +161,6 @@ class _ContactFormState extends State<ContactForm> {
                   Text(
                     "Fill out the form below.",
                     style: TextStyle(
-                      fontFamily: kFproximaNova,
                       color: Colors.black.withOpacity(.6),
                       fontSize: 14,
                       letterSpacing: 1.1,
@@ -203,7 +201,6 @@ class _ContactFormState extends State<ContactForm> {
                               Text(
                                 "First Name",
                                 style: TextStyle(
-                                  fontFamily: kFproximaNova,
                                   fontSize: 11.5,
                                 ),
                               ),
@@ -233,7 +230,6 @@ class _ContactFormState extends State<ContactForm> {
                               Text(
                                 "Last Name",
                                 style: TextStyle(
-                                  fontFamily: kFproximaNova,
                                   fontSize: 11.5,
                                 ),
                               ),

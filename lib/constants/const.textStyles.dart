@@ -34,6 +34,13 @@ class AppTextStyles {
         color: greyColor,
       );
 
+  //* Connect on About
+  static get midBlod => GoogleFonts.lato(
+        fontWeight: FontWeight.bold,
+        fontSize: _fontSize(19.5),
+        color: Colors.black.withOpacity(.95),
+      );
+
   // static TextStyle get normal => TextStyle(
   //       fontFamily: kFproximaNova,
   //       color: Colors.black,
@@ -86,8 +93,7 @@ class AppTextStyles {
         color: const Color.fromRGBO(18, 18, 18, .56),
       );
 
-  static TextStyle get subHeaderRow => TextStyle(
-        fontFamily: kFproximaNova,
+  static TextStyle get subHeaderRow => GoogleFonts.lato(
         letterSpacing: 1.3,
         height: 1.1,
         fontSize: _fontSize(14.5),
@@ -101,5 +107,11 @@ class AppTextStyles {
         fontWeight: FontWeight.w600,
         color: greyColor,
         letterSpacing: 1.5,
+      );
+
+  static TextStyle get customButton => GoogleFonts.lato(
+        color: Colors.white,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 1.4,
       );
 }

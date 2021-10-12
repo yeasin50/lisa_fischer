@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../configs/config.constants.dart';
-import '../configs/configs.dart';
 import '../constants/constants.dart';
 
 class CustomButton extends StatefulWidget {
@@ -20,13 +18,6 @@ class CustomButton extends StatefulWidget {
 }
 
 class _CustomButtonState extends State<CustomButton> {
-  final TextStyle _style = TextStyle(
-    fontFamily: kFproximaNova,
-    color: Colors.white,
-    fontWeight: FontWeight.w600,
-    letterSpacing: 1.4,
-  );
-
   bool _isHover = false;
 
   @override
@@ -49,7 +40,7 @@ class _CustomButtonState extends State<CustomButton> {
           color: _isHover ? kColorDash : Colors.black,
           child: Text(
             widget.label,
-            style: _style,
+            style: AppTextStyles.customButton,
           ),
         ),
       ),

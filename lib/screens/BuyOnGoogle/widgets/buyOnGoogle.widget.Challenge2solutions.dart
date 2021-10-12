@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
-import '../../../constants/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../configs/configs.dart';
 import '../../../../widgets/widgets.dart';
+import '../../../constants/constants.dart';
 
 class P3Challenge2Solutions extends StatelessWidget {
   final double maxWidth;
@@ -144,11 +144,8 @@ class P3Challenge2Solutions extends StatelessWidget {
   Widget solution3() {
     final _infoText = Text(
       "Ensure scalability of Buy on Google design for use across marketing communications & multiple Google destinations: Search, Shopping, Assistant, Images, YouTube.",
-      style: TextStyle(
-        fontFamily: kFproximaNova,
-        color: const Color(0xff737373),
-        fontWeight: FontWeight.w500,
-        fontSize: 16,
+      style: AppTextStyles.subHeader.copyWith(
+        height: 1.5,
       ),
     );
 

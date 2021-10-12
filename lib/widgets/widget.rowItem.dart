@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../configs/configs.dart';
 import '../constants/constants.dart';
 
 /// GirdItems details helper=> Row

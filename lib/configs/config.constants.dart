@@ -4,7 +4,7 @@ const double kMaxWidth = 1180.0;
 const double kMobileMaxWidth = 650.0;
 const double kTabletMaxWidth = 1130.0;
 
-const String kFproximaNova = "ProximaNova";
+// const String kFproximaNova = "ProximaNova";
 
 const double kNormalTextHeight = 1.4;
 
