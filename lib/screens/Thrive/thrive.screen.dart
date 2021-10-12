@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../configs/config.responsive.dart';
-import '../../widgets/widgets.dart';
+import '../../configs/configs.dart';
 import 'Thrive.dart';
 
 class ThrivePage extends StatelessWidget {

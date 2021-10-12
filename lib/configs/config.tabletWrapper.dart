@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../configs/configs.dart';
-import '../widgets.dart';
+import 'configs.dart';
+import '../widgets/widgets.dart';
 
 class TabletViewWrapper extends StatelessWidget {
   final Widget child;

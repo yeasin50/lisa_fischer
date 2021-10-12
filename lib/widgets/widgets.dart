@@ -15,8 +15,6 @@ export 'widget.rectNeonBorder.dart';
 export 'widget.rowItem.dart';
 export 'widget.skillsAsSubtitle.dart';
 export 'widget.socialIcons.dart';
-
 export 'widget.textInParentheses.dart';
 export 'widget.waveAnimation.dart';
-
-export 'baseLayoutViews/baseLayoutViews.dart';
+export 'widget.ytVideoWrapperForScrollIssue.dart';
