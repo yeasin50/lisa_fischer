@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import 'screens/screens.dart';
+import '../screens/screens.dart';
 
 //* Test on navigator1
 final Map<String, WidgetBuilder> routes = {
