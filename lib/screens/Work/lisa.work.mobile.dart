@@ -33,7 +33,6 @@ class MobileView extends StatelessWidget {
           children: List.generate(
             GridItemC.lisaWorklist.length,
             (index) => GridItem(
-              width: double.maxFinite,
               imgHash: GridItemC.lisaWorklist[index].blurHash,
               imageUrl: GridItemC.lisaWorklist[index].backgroundUrl,
               subtitle: GridItemC.lisaWorklist[index].subtitle,

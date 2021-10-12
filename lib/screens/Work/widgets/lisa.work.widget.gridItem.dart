@@ -8,7 +8,6 @@ import '../utils/utils.dart';
 class GridItem extends StatefulWidget {
   const GridItem({
     Key? key,
-    required this.width,
     required this.imageUrl,
     required this.onPress,
     required this.title,
@@ -17,7 +16,6 @@ class GridItem extends StatefulWidget {
   });
   final String title;
   final String subtitle;
-  final double width;
 
   final String imageUrl;
   final String imgHash;
@@ -69,10 +67,7 @@ class _GridItemState extends State<GridItem> {
 
   @override
   Widget build(BuildContext context) {
-    print("width ${widget.width}");
-    return SizedBox(
-      height: widget.width,
-      width: widget.width,
+    return ClipRect(
       child: InkWell(
         onTap: () => _navigate(context),
         onHover: (value) {
@@ -81,7 +76,6 @@ class _GridItemState extends State<GridItem> {
           // });
         },
         child: Stack(
-          clipBehavior: Clip.hardEdge,
           children: [
             AspectRatio(
               aspectRatio: 1,

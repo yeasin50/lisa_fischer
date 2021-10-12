@@ -48,7 +48,6 @@ class TabletView extends StatelessWidget {
               children: List.generate(
                 GridItemC.lisaWorklist.length,
                 (index) => GridItem(
-                  width: constraints.maxWidth / 2,
                   imageUrl: GridItemC.lisaWorklist[index].backgroundUrl,
                   imgHash: GridItemC.lisaWorklist[index].blurHash,
                   subtitle: GridItemC.lisaWorklist[index].subtitle,
