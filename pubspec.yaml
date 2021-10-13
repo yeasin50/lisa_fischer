@@ -67,11 +67,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: ProximaNova
-      fonts:
-        - asset: assets/fonts/ProximaNova/ProximaNovaRegular.otf
-        # - asset: assets/fonts/ProximaNova/Rene Bieder  Milliard Bold.woff
+  # fonts:
+  #   - family: ProximaNova
+  #     fonts:
+  #       - asset: assets/fonts/ProximaNova/ProximaNovaRegular.otf
+  #       # - asset: assets/fonts/ProximaNova/Rene Bieder  Milliard Bold.woff
         #   weight: 700
         # - asset: assets/fonts/ProximaNova/Rene-Bieder-Milliard-ExtraBold.woff
         #   weight: 900
