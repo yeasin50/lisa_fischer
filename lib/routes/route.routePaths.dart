@@ -62,4 +62,19 @@ class AppRoutePath {
   bool get isWork => pageName == null && !isUnkwon;
   bool get isAbout => pageName == PageName.about && !isUnkwon;
   bool get isContact => pageName == PageName.contact && !isUnkwon;
+
+  //* work pages
+  bool get isBercelonaMetroRedesign =>
+      pageName == PageName.bercelonaMetroRedesign && !isUnkwon;
+
+  bool get isBuyOnGoogle => pageName == PageName.buyOnGoogle && !isUnkwon;
+  bool get isGoogleShopping => pageName == PageName.googleShopping && !isUnkwon;
+  bool get isLeveled => pageName == PageName.leveled && !isUnkwon;
+  bool get isLoppetWinterFestival =>
+      pageName == PageName.loppetWinterFestival && !isUnkwon;
+
+  bool get isLucere => pageName == PageName.lucere && !isUnkwon;
+  bool get isOro => pageName == PageName.oro && !isUnkwon;
+  bool get isThrive => pageName == PageName.thrive && !isUnkwon;
+  bool get isVisda => pageName == PageName.visda && !isUnkwon;
 }
