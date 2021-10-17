@@ -4,21 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'constants/constants.dart';
 import 'routes/routes.dart';
 
-class MyApp extends StatefulWidget {
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  AppRouterDelegate _routerDelegate = AppRouterDelegate();
-
-  AppRouteInformationParser _informationParser = AppRouteInformationParser();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final AppRouterDelegate _routeDelegate = AppRouterDelegate();
     return MaterialApp.router(
-      routeInformationParser: _informationParser,
-      routerDelegate: _routerDelegate,
+      routerDelegate: AppRouterDelegate(),
+      routeInformationParser: AppRouteInformationParser(context: context),
       title: 'Portfolios',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

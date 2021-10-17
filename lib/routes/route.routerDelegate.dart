@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/provider.navigator.dart';
 
 import '../constants/constants.dart';
 import '../screens/screens.dart';
@@ -8,12 +10,12 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<AppRoutePath> {
   final GlobalKey<NavigatorState> navigatorKey;
 
+  PageName? _pageName;
   AppRouterDelegate() : navigatorKey = GlobalKey<NavigatorState>() {
     currentConfiguration;
   }
 
   bool show404 = false;
-  PageName? _pageName;
 
   AppRoutePath get currentConfiguration {
     if (show404) {
@@ -71,6 +73,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
 
   @override
   Widget build(BuildContext context) {
+    _pageName = context.read<PageNotifier>().pageName;
     return Navigator(
       key: navigatorKey,
       pages: [
