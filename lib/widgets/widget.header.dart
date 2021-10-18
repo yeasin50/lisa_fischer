@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'widget.pageNav.dart';
 
 class LSHeader {
-  /// track currentPage
+  /// track currentPage ///TODO: change to provider
   static int currentActiveIndex = 0;
 
   Image buildLogo({

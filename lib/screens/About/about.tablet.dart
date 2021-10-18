@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../configs/configs.dart';
 import '../../constants/constants.dart';
+import '../../providers/provider.navigator.dart';
 import '../../widgets/widgets.dart';
 import 'widgets/widgets.dart';
 
@@ -103,7 +105,14 @@ class TabletView extends StatelessWidget {
                         alignment: Alignment.topRight,
                         child: CustomButton(
                           label: "GET IN TOUCH",
-                          onTap: () {},
+                          onTap: () {
+                            print("GET IN TOUCH: tapped");
+                            LSHeader.currentActiveIndex = 2;
+                            Provider.of<PageNotifier>(
+                              context,
+                              listen: false,
+                            ).changeScreen(pageName: PageName.contact);
+                          },
                         ),
                       ),
                     ],
