@@ -40,7 +40,7 @@ class LSHeader {
               //     () => WorkPage(),
               //     startOffset: Offset(.2, .5)));
 
-              pageNotifier.changeScreen(null);
+              pageNotifier.changeScreen(pageName: null);
             }),
         PageNavigator(
             isActive: currentActiveIndex == 1,
@@ -50,14 +50,14 @@ class LSHeader {
               // Navigator.of(context).pushReplacement(pageRouteFromRT(
               //     () => AboutPage(),
               //     startOffset: Offset(.5, -.5)));
-              pageNotifier.changeScreen(PageName.about);
+              pageNotifier.changeScreen(pageName: PageName.about);
             }),
         PageNavigator(
             isActive: currentActiveIndex == 2,
             title: "CONTACT",
             onClick: () {
               currentActiveIndex = 2;
-              pageNotifier.changeScreen(PageName.contact);
+              pageNotifier.changeScreen(pageName: PageName.contact);
               // Navigator.of(context).pushReplacement(pageRouteFromRT(
               //     () => ContactPage(),
               //     startOffset: Offset(1.0, 0)));

@@ -1,21 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:portfolio/providers/provider.navigator.dart';
-import 'package:provider/provider.dart';
 
 import '../constants/constants.dart';
 import '../extensions/extensions.dart';
 import 'routes.dart';
 
 class AppRouteInformationParser extends RouteInformationParser<AppRoutePath> {
-  final BuildContext context;
-
-  late PageNotifier notifier;
-  AppRouteInformationParser({
-    required this.context,
-  }) {
-    notifier = Provider.of<PageNotifier>(context);
-  }
-
   @override
   Future<AppRoutePath> parseRouteInformation(
       RouteInformation routeInformation) async {
@@ -26,12 +15,10 @@ class AppRouteInformationParser extends RouteInformationParser<AppRoutePath> {
     }
 
     if (uri.pathSegments[0] == PageName.about.value) {
-      notifier.changeScreen(PageName.about);
       return AppRoutePath.about();
     }
 
     if (uri.pathSegments[0] == PageName.contact.value) {
-      notifier.changeScreen(PageName.contact);
       return AppRoutePath.contact();
     }
 
@@ -82,11 +69,9 @@ class AppRouteInformationParser extends RouteInformationParser<AppRoutePath> {
     }
 
     if (configuration.isAbout) {
-      notifier.changeScreen(PageName.about);
       return PageName.about.location;
     }
     if (configuration.isContact) {
-      notifier.changeScreen(PageName.contact);
       return PageName.contact.location;
     }
 

@@ -4,12 +4,18 @@ import '../constants/const.enum.pagesName.dart';
 
 class PageNotifier extends ChangeNotifier {
   PageName? _pageName;
+  bool _isUnknown = false;
 
   get pageName => _pageName;
+  get isUnknown => _isUnknown;
 
-  void changeScreen(PageName? pg) {
-    _pageName = pg;
+  void changeScreen({
+    required PageName? pageName,
+    bool isUnkwon = false,
+  }) {
+    _pageName = pageName;
+    _isUnknown = isUnkwon;
     notifyListeners();
-    print(_pageName.toString());
+    print(_pageName);
   }
 }
