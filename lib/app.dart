@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import 'constants/constants.dart';
+import 'providers/provider.navigator.dart';
 import 'routes/routes.dart';
 
-class MyApp extends StatefulWidget {
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  AppRouterDelegate _routerDelegate = AppRouterDelegate();
-
-  AppRouteInformationParser _informationParser = AppRouteInformationParser();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routeInformationParser: _informationParser,
-      routerDelegate: _routerDelegate,
+      routerDelegate: AppRouterDelegate(
+        notifier: Provider.of<PageNotifier>(context),
+      ),
+      routeInformationParser: AppRouteInformationParser(),
       title: 'Portfolios',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

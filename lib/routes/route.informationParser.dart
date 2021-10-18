@@ -14,11 +14,13 @@ class AppRouteInformationParser extends RouteInformationParser<AppRoutePath> {
       return AppRoutePath.work();
     }
 
-    if (uri.pathSegments[0] == PageName.about.value)
+    if (uri.pathSegments[0] == PageName.about.value) {
       return AppRoutePath.about();
+    }
 
-    if (uri.pathSegments[0] == PageName.contact.value)
+    if (uri.pathSegments[0] == PageName.contact.value) {
       return AppRoutePath.contact();
+    }
 
     if (uri.pathSegments[0] == PageName.bercelonaMetroRedesign.value) {
       return AppRoutePath.bercelonaMetroRedesign();
