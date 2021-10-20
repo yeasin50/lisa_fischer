@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../utils/utils.dart';
+
+import '../constants/constants.dart';
 
 class SocialIcons extends StatefulWidget {
   @override
@@ -27,34 +30,41 @@ class _SocialIconsState extends State<SocialIcons> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ///* found changes of order between views on main website
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/email.svg",
-              onClick: () {},
+              svgPath: AppIcon.twitter,
+              onClick: SocialIconClickEventHandler.twitter,
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/linkedIn.svg",
-              onClick: () {},
+              svgPath: AppIcon.email,
+              onClick: SocialIconClickEventHandler.email,
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/behance.svg",
-              onClick: () {},
+              svgPath: AppIcon.linkedIn,
+              onClick: SocialIconClickEventHandler.linkedIn,
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/insta.svg",
-              onClick: () {},
+              svgPath: AppIcon.behance,
+              onClick: SocialIconClickEventHandler.behench,
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/twitter.svg",
-              onClick: () {},
+              svgPath: AppIcon.insta,
+              onClick: SocialIconClickEventHandler.insta,
+              isGroupHover: _isHoverRow,
+            ),
+            SocialIcon(
+              size: _iconSize,
+              svgPath: AppIcon.medium,
+              onClick: SocialIconClickEventHandler.medium,
               isGroupHover: _isHoverRow,
             ),
           ],
@@ -88,7 +98,7 @@ class _SocialIconState extends State<SocialIcon> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),
       child: InkWell(
-        onTap: () {},
+        onTap: () => widget.onClick(),
         hoverColor: Colors.transparent,
         onHover: (value) {
           if (value)
