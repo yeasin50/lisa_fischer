@@ -5,40 +5,24 @@
 
 TODO: on Lisa Fischer
 
-&nbsp;&nbsp;&nbsp; `🛠` project structure
+&nbsp;&nbsp;&nbsp; **`🛠`** project structure
 
 - [ ] improve `Oro` desktop views
 - [ ] replace networkImage with blurHash
 - [ ] set yt player width
 - [x] tablet mode intro text works
-- [ ] just make this repo from Lisa Fischer
+- [x] just make this repo from Lisa Fischer
 - [ ] ytVide size
 - [x] hash-blur image
-- [ ] apply `const`
+-  **x** apply `const`
 - [x] use dot name fileStruct
-- [ ] use offline files: better with network file because of landing
-- [ ] controll font sizes
+- [x] use offline files: better with network file because of landing
+- [x] controll font sizes
 - [x] separate mobile view
-- [ ] use nav2
-- [ ] use Sizer
+- [x] use nav2
+- [ ] use Sizer [next one]
 
 A new Flutter `web` project for creating different style portfolios.
-
-Dependencies:
-
-- youtube_player_flutter: ^8.0.0 => BSD, doesnt support on web 😓
-- next using `video_player: ^2.1.1`
-
----
-
-Google fonts as Proxima Nova alternatives
-
-- Montserrat
-- Lato
-- Nunito Sans
-- Raleway
-
----
 
 ## Targets
 
