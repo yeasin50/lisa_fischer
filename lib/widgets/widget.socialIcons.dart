@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../constants/constants.dart';
+
 class SocialIcons extends StatefulWidget {
   @override
   _SocialIconsState createState() => _SocialIconsState();
@@ -29,31 +31,37 @@ class _SocialIconsState extends State<SocialIcons> {
           children: [
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/email.svg",
+              svgPath: AppIcon.medium,
               onClick: () {},
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/linkedIn.svg",
+              svgPath: AppIcon.email,
               onClick: () {},
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/behance.svg",
+              svgPath: AppIcon.linkedIn,
               onClick: () {},
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/insta.svg",
+              svgPath: AppIcon.behance,
               onClick: () {},
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
-              svgPath: "assets/images/twitter.svg",
+              svgPath: AppIcon.insta,
+              onClick: () {},
+              isGroupHover: _isHoverRow,
+            ),
+            SocialIcon(
+              size: _iconSize,
+              svgPath: AppIcon.twitter,
               onClick: () {},
               isGroupHover: _isHoverRow,
             ),
