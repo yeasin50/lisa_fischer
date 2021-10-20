@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/constants/constants.dart';
+import 'package:portfolio/providers/provider.navigator.dart';
+import 'package:provider/provider.dart';
 
 import '../../screens.dart';
 import '../utils/utils.dart';
@@ -38,31 +41,43 @@ class _GridItemState extends State<GridItem> {
 
   ///** Naviagte to another page */
   _navigate(BuildContext context) {
-    late String routeName;
+    late PageName? pageName;
 
     if (widget.title == GridItemC.titles[0]) {
-      routeName = BuyOnGoolgePage.routeName;
+      // routeName = BuyOnGoolgePage.routeName;
+      pageName = PageName.buyOnGoogle;
     } else if (widget.title == GridItemC.titles[1]) {
-      routeName = LoppetWinterFestivalPage.routeName;
+      // routeName = LoppetWinterFestivalPage.routeName;
+      pageName = PageName.loppetWinterFestival;
     } else if (widget.title == GridItemC.titles[2]) {
-      routeName = VisdaPage.routeName;
+      // routeName = VisdaPage.routeName;
+      pageName = PageName.visda;
     } else if (widget.title == GridItemC.titles[3]) {
-      routeName = LeveledPage.routeName;
+      // routeName = LeveledPage.routeName;
+      pageName = PageName.leveled;
     } else if (widget.title == GridItemC.titles[4]) {
-      routeName = GoogleShpoingPage.routeName;
+      // routeName = GoogleShpoingPage.routeName;
+      pageName = PageName.googleShopping;
     } else if (widget.title == GridItemC.titles[5]) {
-      routeName = BercelonaMetroRedesignPage.routeName;
+      // routeName = BercelonaMetroRedesignPage.routeName;
+      pageName = PageName.bercelonaMetroRedesign;
     } else if (widget.title == GridItemC.titles[6]) {
-      routeName = OroPage.routeName;
+      // routeName = OroPage.routeName;
+      pageName = PageName.oro;
     } else if (widget.title == GridItemC.titles[7]) {
-      routeName = ThrivePage.routeName;
+      // routeName = ThrivePage.routeName;
+      pageName = PageName.thrive;
     } else if (widget.title == GridItemC.titles[8]) {
-      routeName = LucerePage.routeName;
-    } else {
-      routeName = WorkPage.routename;
+      // routeName = LucerePage.routeName;
+      pageName = PageName.lucere;
     }
+    //  else {
+    //   // routeName = WorkPage.routename;
+    //   pageName = null;
+    // }
 
-    Navigator.of(context).pushNamed(routeName);
+    Provider.of<PageNotifier>(context, listen: false)
+        .changeScreen(pageName: pageName);
   }
 
   @override
