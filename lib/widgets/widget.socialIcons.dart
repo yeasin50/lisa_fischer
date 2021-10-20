@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../utils/utils.dart';
 
 import '../constants/constants.dart';
 
@@ -29,40 +30,41 @@ class _SocialIconsState extends State<SocialIcons> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ///* found changes of order between views on main website
             SocialIcon(
               size: _iconSize,
-              svgPath: AppIcon.medium,
-              onClick: () {},
+              svgPath: AppIcon.twitter,
+              onClick: SocialIconClickEventHandler.twitter,
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
               svgPath: AppIcon.email,
-              onClick: () {},
+              onClick: SocialIconClickEventHandler.email,
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
               svgPath: AppIcon.linkedIn,
-              onClick: () {},
+              onClick: SocialIconClickEventHandler.linkedIn,
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
               svgPath: AppIcon.behance,
-              onClick: () {},
+              onClick: SocialIconClickEventHandler.behench,
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
               svgPath: AppIcon.insta,
-              onClick: () {},
+              onClick: SocialIconClickEventHandler.insta,
               isGroupHover: _isHoverRow,
             ),
             SocialIcon(
               size: _iconSize,
-              svgPath: AppIcon.twitter,
-              onClick: () {},
+              svgPath: AppIcon.medium,
+              onClick: SocialIconClickEventHandler.medium,
               isGroupHover: _isHoverRow,
             ),
           ],
@@ -96,7 +98,7 @@ class _SocialIconState extends State<SocialIcon> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),
       child: InkWell(
-        onTap: () {},
+        onTap: () => widget.onClick(),
         hoverColor: Colors.transparent,
         onHover: (value) {
           if (value)
