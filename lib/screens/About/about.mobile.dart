@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../configs/config.constants.dart';
 import '../../constants/constants.dart';
 import '../../widgets/widgets.dart';
+import 'utils/utils.dart';
 import 'widgets/widgets.dart';
 
 class MobileView extends StatelessWidget {
@@ -47,7 +48,7 @@ class MobileView extends StatelessWidget {
               offset: Offset(-8, 0), //todo: separate Paddings form widgets
               child: CustomButton(
                 label: "GET IN TOUCH",
-                onTap: () {},
+                onTap: () => AboutPageClickEvent.getInTouchHandler(context),
               ),
             ),
           ].map(
