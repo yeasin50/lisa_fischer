@@ -40,6 +40,7 @@ dependencies:
   flutter_blurhash: ^0.6.0
   youtube_player_iframe: ^2.2.2
   pointer_interceptor: ^0.9.0+1
+  provider: ^6.0.1
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +81,7 @@ flutter:
   # - asset: assets/fonts/ProximaNova/Rene-Bieder-Milliard-ExtraBold-Italic.woff
   #   weight: 900
   #   style: italic
+
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

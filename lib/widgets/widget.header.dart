@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/const.enum.pagesName.dart';
+import 'package:portfolio/providers/provider.navigator.dart';
+import 'package:provider/provider.dart';
 
-import '/utils/utils.customRoute.dart';
-import '../screens/screens.dart';
 import 'widget.pageNav.dart';
 
 class LSHeader {
-  /// track currentPage
+  /// track currentPage ///TODO: change to provider
   static int currentActiveIndex = 0;
 
   Image buildLogo({
@@ -24,6 +25,9 @@ class LSHeader {
 
   Row navigators(BuildContext context) {
     // print("current index: $currentActiveIndex");
+
+    PageNotifier pageNotifier =
+        Provider.of<PageNotifier>(context, listen: false);
     return Row(
       children: [
         PageNavigator(
@@ -31,27 +35,32 @@ class LSHeader {
             isActive: currentActiveIndex == 0,
             onClick: () {
               currentActiveIndex = 0;
-              Navigator.of(context).pushReplacement(pageRouteFromRT(
-                  () => WorkPage(),
-                  startOffset: Offset(.2, .5)));
+
+              // Navigator.of(context).pushReplacement(pageRouteFromRT(
+              //     () => WorkPage(),
+              //     startOffset: Offset(.2, .5)));
+
+              pageNotifier.changeScreen(pageName: null);
             }),
         PageNavigator(
             isActive: currentActiveIndex == 1,
             title: "ABOUT",
             onClick: () {
               currentActiveIndex = 1;
-              Navigator.of(context).pushReplacement(pageRouteFromRT(
-                  () => AboutPage(),
-                  startOffset: Offset(.5, -.5)));
+              // Navigator.of(context).pushReplacement(pageRouteFromRT(
+              //     () => AboutPage(),
+              //     startOffset: Offset(.5, -.5)));
+              pageNotifier.changeScreen(pageName: PageName.about);
             }),
         PageNavigator(
             isActive: currentActiveIndex == 2,
             title: "CONTACT",
             onClick: () {
               currentActiveIndex = 2;
-              Navigator.of(context).pushReplacement(pageRouteFromRT(
-                  () => ContactPage(),
-                  startOffset: Offset(1.0, 0)));
+              pageNotifier.changeScreen(pageName: PageName.contact);
+              // Navigator.of(context).pushReplacement(pageRouteFromRT(
+              //     () => ContactPage(),
+              //     startOffset: Offset(1.0, 0)));
             }),
       ],
     );

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'utils/about.utils.clickEvents.dart';
+
+import 'package:provider/provider.dart';
+
 import '../../configs/config.constants.dart';
 import '../../constants/constants.dart';
+import '../../providers/provider.navigator.dart';
 import '../../widgets/widgets.dart';
-import 'utils/about.utils.clickEvents.dart';
 import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {
@@ -104,6 +108,7 @@ class DesktopView extends StatelessWidget {
                       label: "GET IN TOUCH",
                       onTap: () =>
                           AboutPageClickEvent.getInTouchHandler(context),
+
                     ),
                   ),
                 ],
