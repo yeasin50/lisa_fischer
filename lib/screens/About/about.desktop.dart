@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import 'utils/about.utils.clickEvents.dart';
+
 import 'package:provider/provider.dart';
 
 import '../../configs/config.constants.dart';
@@ -103,14 +106,9 @@ class DesktopView extends StatelessWidget {
                     alignment: Alignment.topRight,
                     child: CustomButton(
                       label: "GET IN TOUCH",
-                      onTap: () {
-                        print("GET IN TOUCH: tapped");
-                        LSHeader.currentActiveIndex = 2;
-                        Provider.of<PageNotifier>(
-                          context,
-                          listen: false,
-                        ).changeScreen(pageName: PageName.contact);
-                      },
+                      onTap: () =>
+                          AboutPageClickEvent.getInTouchHandler(context),
+
                     ),
                   ),
                 ],

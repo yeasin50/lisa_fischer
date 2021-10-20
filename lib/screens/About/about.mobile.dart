@@ -5,6 +5,7 @@ import '../../configs/config.constants.dart';
 import '../../constants/constants.dart';
 import '../../providers/provider.navigator.dart';
 import '../../widgets/widgets.dart';
+import 'utils/utils.dart';
 import 'widgets/widgets.dart';
 
 class MobileView extends StatelessWidget {
@@ -49,14 +50,7 @@ class MobileView extends StatelessWidget {
               offset: Offset(-8, 0), //todo: separate Paddings form widgets
               child: CustomButton(
                 label: "GET IN TOUCH",
-                onTap: () {
-                  print("GET IN TOUCH: tapped");
-                  LSHeader.currentActiveIndex = 2;
-                  Provider.of<PageNotifier>(
-                    context,
-                    listen: false,
-                  ).changeScreen(pageName: PageName.contact);
-                },
+                onTap: () => AboutPageClickEvent.getInTouchHandler(context),
               ),
             ),
           ].map(
