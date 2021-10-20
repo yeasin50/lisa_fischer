@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../widgets/widgets.dart';
 
 import '../../configs/config.constants.dart';
 import '../../constants/constants.dart';
+import '../../widgets/widgets.dart';
+import 'utils/about.utils.clickEvents.dart';
 import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {
@@ -101,9 +102,8 @@ class DesktopView extends StatelessWidget {
                     alignment: Alignment.topRight,
                     child: CustomButton(
                       label: "GET IN TOUCH",
-                      onTap: () {
-                        ///TODO: route to contactPage
-                      },
+                      onTap: () =>
+                          AboutPageClickEvent.getInTouchHandler(context),
                     ),
                   ),
                 ],

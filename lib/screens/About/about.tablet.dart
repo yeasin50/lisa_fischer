@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../configs/configs.dart';
 import '../../constants/constants.dart';
 import '../../widgets/widgets.dart';
+import 'utils/utils.dart';
 import 'widgets/widgets.dart';
 
 class TabletView extends StatelessWidget {
@@ -103,7 +104,8 @@ class TabletView extends StatelessWidget {
                         alignment: Alignment.topRight,
                         child: CustomButton(
                           label: "GET IN TOUCH",
-                          onTap: () {},
+                          onTap: () =>
+                              AboutPageClickEvent.getInTouchHandler(context),
                         ),
                       ),
                     ],
