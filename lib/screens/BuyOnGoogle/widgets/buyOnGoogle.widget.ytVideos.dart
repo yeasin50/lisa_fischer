@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import '../../../configs/config.constants.dart';
@@ -96,12 +97,22 @@ class _VideoAdsWebState extends State<VideoAdsWeb> {
         columnSpace,
 
         //* GShop logo
-
-        Image.network(
-          gshopImagePath,
+        SizedBox(
           width: widget.maxWidth * .6,
-          fit: BoxFit.fitWidth,
-        )
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: BlurHash(
+              hash: gshopPNG.hash,
+              image: gshopPNG.imageUrl,
+              imageFit: BoxFit.fitWidth,
+            ),
+          ),
+        ),
+        // Image.network(
+        //   gshopImagePath,
+        //   width: widget.maxWidth * .6,
+        //   fit: BoxFit.fitWidth,
+        // )
       ],
     );
   }
