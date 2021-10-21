@@ -79,3 +79,10 @@ HashImageData get ytMastHead => HashImageData(
       hash:
           "#FRCrWxu^kf+-AMyv~V@r?~qWBIUWBRjogoet7ju~CRjIUjsR+xtWVozWV4moz-qoyt7V@WERPkB#8jabvoLR*bHf+axofIUj[xuj[ofaxWBaxWB~CR*IUayRks:X8ofW=",
     );
+
+//* on ytVide //Issue on hash-generatorSide for png
+HashImageData get gshopPNG => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590218888566-5HEMUQQQEU7I5D1YZQOB/buy+on+google+cart+hero+in+elevation-08.png",
+      hash: "ULE3F[bH00jZaxayj]oL00f6~qbHbIj[jrWV",
+    );
