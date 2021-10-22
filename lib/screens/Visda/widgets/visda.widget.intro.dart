@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
 
 class P1VisdIntro extends StatelessWidget {
@@ -21,10 +21,6 @@ class P1VisdIntro extends StatelessWidget {
         SubtitleCategoryOfWork(
           rolls: ['BRANDING', 'VISUAL DESIGN'],
         ),
-        // TitleWithSub(
-        //   title: "VisD@",
-        //   rolls: ['BRANDING', 'VISUAL DESIGN'],
-        // ),
         columnSpace,
         Text(
           "Google’s 1st Visual Design Summit",
