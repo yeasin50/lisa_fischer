@@ -15,19 +15,19 @@ class MobileView extends StatelessWidget {
           padding: EdgeInsets.all(8),
           child: Column(
             children: [
-              // P1Intro(),
+              P1Intro(),
 
-              // P2ImageAndRow(
-              //   maxWidth: maxWidth,
-              //   isMobile: true,
-              // ),
-              // P3Approch(
-              //   maxWidth: maxWidth,
-              // ),
-              // P4Postars(
-              //   maxWidth: maxWidth,
-              //   isMobile: true,
-              // ),
+              P2ImageAndRow(
+                maxWidth: maxWidth,
+                isMobile: true,
+              ),
+              P3Approch(
+                maxWidth: maxWidth,
+              ),
+              P4Postars(
+                maxWidth: maxWidth,
+                isMobile: true,
+              ),
               P5RaceDay(
                 maxWidth: maxWidth,
                 isMobile: true,

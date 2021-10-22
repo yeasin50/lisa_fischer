@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
+import '../utils/utils.dart';
 
 class P5RaceDay extends StatelessWidget {
   final double maxWidth;
@@ -143,15 +145,16 @@ class P5RaceDay extends StatelessWidget {
         ],
 
         columnSpace,
-        FadeInImage.assetNetwork(
-          placeholder: placeHolderImagePath,
-          fit: BoxFit.cover,
-          width: maxWidth,
-          // height: constraints.maxWidth * .25,
-          image:
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587273600081-W9PVGDTOV5FNPQQWX87W/loppet+animation+banner+logo.gif?format=750w",
-          // imageScale: .3,
+
+        AspectRatio(
+          aspectRatio: maxWidth / (maxWidth / 2),
+          child: BlurHash(
+            hash: loppetLogo.hash,
+            image: loppetLogo.imageUrl,
+            imageFit: BoxFit.cover,
+          ),
         ),
+
         columnSpace,
       ],
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
+import '../utils/utils.dart';
 import '../../../constants/constants.dart';
 
 import '../../../configs/configs.dart';
@@ -179,14 +181,17 @@ class P4Postars extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //TODO:: add blurHash
                     //* gif of mixing
-                    Image.network(
-                      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587241668534-GTFT135D1T9YXBZC7P9T/ke17ZwdGBToddI8pDm48kJbAF3wIXfPI3KZ7YcFHtUlZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyncw1JCDmUPU_9GYCKL83k11DkbnWpd25D8SsFcoQaTAcgRNQqoIjeIA2Kt7udhCg/loppet+process+animation.gif?format=500w",
+                    SizedBox(
                       width: maxWidth * .5 - columnSpace.height! * .5,
                       height: maxWidth * .3 - columnSpace.height! * .5,
-                      fit: BoxFit.cover,
+                      child: BlurHash(
+                        hash: loppetProcessImage.hash,
+                        image: loppetProcessImage.imageUrl,
+                        imageFit: BoxFit.cover,
+                      ),
                     ),
+
                     Image.network(
                       "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587241736232-DMPCTZQ192ONBIL833TX/ke17ZwdGBToddI8pDm48kDHPSfPanjkWqhH6pl6g5ph7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5dNb1QJw9casjKdtTg1_-y4jz4ptJBmI9gQmbjSQnNGng/loppetphoto_process_rick+spraying+screen.jpg?format=500w",
                       width: maxWidth * .5 - columnSpace.height! * .5,

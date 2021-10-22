@@ -39,7 +39,7 @@ class P3Approch extends StatelessWidget {
           _approachText,
           textAlign: TextAlign.center,
           softWrap: true,
-          style: AppTextStyles.smallHeader13,
+          style: AppTextStyles.normal,
         ),
         columnSpace,
         Image.network(
