@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
+import '../utils/utils.dart';
 
 class P5WayFinding extends StatelessWidget {
   final double maxWidth;
@@ -13,6 +15,17 @@ class P5WayFinding extends StatelessWidget {
     required this.maxWidth,
     this.isMobile = false,
   }) : super(key: key);
+
+  AspectRatio _mWBHImage({required String hash, required String image}) {
+    return AspectRatio(
+      aspectRatio: 750 / 483,
+      child: BlurHash(
+        hash: hash,
+        image: image,
+        imageFit: BoxFit.cover,
+      ),
+    );
+  }
 
   _mwNImage(
     String url, {
@@ -33,8 +46,9 @@ class P5WayFinding extends StatelessWidget {
         ),
         columnSpace,
 
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586745060282-2YYV3ESZI1PV4YR0J21T/visd%40_welcome+sign+_more+horizontal+crop.jpg?format=750w",
+        _mWBHImage(
+          hash: welcomeSign.hash,
+          image: welcomeSign.imageUrl,
         ),
 
         columnSpace,
@@ -53,9 +67,11 @@ class P5WayFinding extends StatelessWidget {
         ),
         columnSpace,
 
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586745638782-JKSPXL3EMRRMMF8XFQS6/visd%2540_wayfinding1.jpg?format=750w",
+        _mWBHImage(
+          hash: wayfinding1.hash,
+          image: wayfinding1.imageUrl,
         ),
+
         columnSpace,
         _mwNImage(
           "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586804924546-XGK6W57V7PUF9OJNGVZD/image-asset.png?format=750w",
@@ -68,9 +84,8 @@ class P5WayFinding extends StatelessWidget {
         //{ Clipboards + Stickers + Drinks }
         clipBoardsDrinks(),
 
-        columnSpace,
-
-        if (!isMobile)
+        if (!isMobile) ...[
+          columnSpace,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -88,28 +103,39 @@ class P5WayFinding extends StatelessWidget {
               ),
             ],
           ),
+          columnSpace,
+          _mWBHImage(
+            hash: iceSculpture.hash,
+            image: iceSculpture.imageUrl,
+          ),
+        ],
 
         //* on MobileView { Clipboards + Stickers + Drinks } images will be column's children,
         //* extra `if` avoid using another inner Column,
         if (isMobile)
-          Padding(
-            padding: EdgeInsets.only(bottom: columnSpace.height!),
-            child: _mwNImage(
+          ...[
+            _mwNImage(
               "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586111656299-10RX9G24UXD4UMHQTQVK/visd%40_holding+clipboard.jpg?format=500w",
             ),
+            _mwNImage(
+                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586111692763-PQDTFXA10NOACBEHFDYE/visd%40_holding+stickers.jpg?format=500w"),
+            AspectRatio(
+              aspectRatio: maxWidth / (maxWidth * .7),
+              child: BlurHash(
+                hash: iceSculpture.hash,
+                image: iceSculpture.imageUrl,
+                imageFit: BoxFit.cover,
+              ),
+            ),
+          ].map(
+            (_mwNImage) => Padding(
+              padding: EdgeInsets.only(
+                top: columnSpace.height!,
+              ),
+              child: _mwNImage,
+            ),
           ),
-        if (isMobile)
-          _mwNImage(
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586111692763-PQDTFXA10NOACBEHFDYE/visd%40_holding+stickers.jpg?format=500w"),
 
-        columnSpace,
-
-        Image.network(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586112138309-3NI0ZRRW0WY1ROZ90Y5S/visd%40_ice+sculpture.jpg?format=750w",
-          width: maxWidth,
-          height: maxWidth * .7,
-          fit: BoxFit.fitWidth,
-        ),
         columnSpace,
 
         Row(
@@ -118,12 +144,12 @@ class P5WayFinding extends StatelessWidget {
           children: [
             ///CHEERS TO CREATIVITY
             cheer2Creativity(),
-            FadeInImage.assetNetwork(
-              placeholder: placeHolderImagePath,
+
+            SizedBox(
               width: maxWidth * .5,
-              image:
-                  "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586112099055-C95G3YLZMV5XMPUDT0RL/visd%40_cocktails.jpg?format=750w",
-            ),
+              child:
+                  _mWBHImage(hash: cocktails.hash, image: cocktails.imageUrl),
+            )
           ],
         ),
 
@@ -131,12 +157,15 @@ class P5WayFinding extends StatelessWidget {
           height: columnSpace.height! * 3,
         ),
 
-        Image.network(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586153019232-HLQRHY905V9TURS1WAFK/squarespace+banner+square_animated.gif?format=750w",
-          width: maxWidth,
-          height: maxWidth * .2,
-          fit: BoxFit.fitWidth,
+        AspectRatio(
+          aspectRatio: maxWidth / (maxWidth * .2),
+          child: BlurHash(
+            hash: squareAnimatedBanner.hash,
+            image: squareAnimatedBanner.imageUrl,
+            imageFit: BoxFit.fitWidth,
+          ),
         ),
+
         columnSpace,
 
         ///TODO::Rive anime

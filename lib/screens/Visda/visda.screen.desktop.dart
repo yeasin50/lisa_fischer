@@ -29,7 +29,9 @@ class DesktopView extends StatelessWidget {
             ),
             SizedBox(
               width: maxWidth * .65,
-              child: P3ApproachVisD(),
+              child: P3ApproachVisD(
+                maxWidth: maxWidth * .65,
+              ),
             ),
             P4SummitVisD(
               maxWidth: maxWidth,

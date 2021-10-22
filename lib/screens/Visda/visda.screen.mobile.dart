@@ -22,7 +22,9 @@ class MobileView extends StatelessWidget {
               maxWidth: maxWidth,
               isMobile: true,
             ),
-            P3ApproachVisD(),
+            P3ApproachVisD(
+              maxWidth: maxWidth,
+            ),
             P4SummitVisD(
               maxWidth: maxWidth,
               isMobile: true,

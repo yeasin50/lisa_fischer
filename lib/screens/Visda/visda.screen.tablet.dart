@@ -16,24 +16,28 @@ class TabletView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Align(
-                alignment: Alignment(-1, -1),
-                child: SizedBox(
-                  width: maxWidth * .5,
-                  child: P1VisdIntro(),
-                ),
-              ),
-              P2VisdaRow(
+              // Align(
+              //   alignment: Alignment(-1, -1),
+              //   child: SizedBox(
+              //     width: maxWidth * .5,
+              //     child: P1VisdIntro(),
+              //   ),
+              // ),
+              // P2VisdaRow(
+              //   maxWidth: maxWidth,
+              // ),
+              // SizedBox(
+              //   width: maxWidth * .75,
+              //   child: P3ApproachVisD(
+              //     maxWidth: maxWidth * .75,
+              //   ),
+              // ),
+              // P4SummitVisD(
+              //   maxWidth: maxWidth,
+              // ),
+              P5WayFinding(
                 maxWidth: maxWidth,
-              ),
-              SizedBox(
-                width: maxWidth * .75,
-                child: P3ApproachVisD(),
-              ),
-              P4SummitVisD(
-                maxWidth: maxWidth,
-              ),
-              P5WayFinding(maxWidth: maxWidth)
+              )
             ],
           ),
         );
