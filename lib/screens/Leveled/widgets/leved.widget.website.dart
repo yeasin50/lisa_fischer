@@ -133,6 +133,7 @@ class _P5LeveledState extends State<P5Leveled> {
           imageUrl: leveledFB(widget.maxWidth).imageUrl,
           aspectR: 15 / 10,
         ),
+        columnSpace,
         SizedBox(
           width: widget.maxWidth,
           height: widget.maxWidth * .6,

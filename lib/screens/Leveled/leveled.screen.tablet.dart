@@ -21,21 +21,21 @@ class TabletView extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    // Align(
-                    //   alignment: Alignment(-1, -1),
-                    //   child: SizedBox(
-                    //     width: constraints.maxWidth * .4,
-                    //     child: P1LeveledIntro(),
-                    //   ),
-                    // ),
-                    // P2LeveledRow(
-                    //   maxWidth: maxWidth, //last one
-                    // ),
-                    // SizedBox(
-                    //   width: constraints.maxWidth * .7,
-                    //   child: P3ApproachLeveled(),
-                    // ),
-                    // P4Mood2(maxWidth: maxWidth),
+                    Align(
+                      alignment: Alignment(-1, -1),
+                      child: SizedBox(
+                        width: constraints.maxWidth * .4,
+                        child: P1LeveledIntro(),
+                      ),
+                    ),
+                    P2LeveledRow(
+                      maxWidth: maxWidth, //last one
+                    ),
+                    SizedBox(
+                      width: constraints.maxWidth * .7,
+                      child: P3ApproachLeveled(),
+                    ),
+                    P4Mood2(maxWidth: maxWidth),
                     P5Leveled(maxWidth: maxWidth),
                   ],
                 ),
