@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
+import '../utils/utils.dart';
 
 class P5Leveled extends StatefulWidget {
   final double maxWidth;
@@ -20,20 +21,22 @@ class P5Leveled extends StatefulWidget {
 
 class _P5LeveledState extends State<P5Leveled> {
   get _itemSpaceAboveRTP => SizedBox(
-        height: 60,
+        height: columnSpace.height! * 3,
       );
 
-  final images = [
-    "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939842289-RW1LOWDBUE2QT2LG5T91/leveled_website+for+portfolio+with+pattern+latest-50.png?format=1500w",
-    "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939838360-F3OI2WQVR66L2ITAM9KV/leveled_website+for+portfolio+with+pattern+latest-51.png?format=1500w",
-    "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939843017-RIGTJG1PYLC0VR8N5UDF/leveled_website+for+portfolio+with+pattern+latest-49.png%22%20alt=%22leveled_website%20for%20portfolio%20with%20pattern%20latest-49.png",
-  ];
+  late final List<String> images;
   int _index = 0;
 
   late Timer _timer;
   @override
   void initState() {
     super.initState();
+    images = [
+      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939842289-RW1LOWDBUE2QT2LG5T91/leveled_website+for+portfolio+with+pattern+latest-50.png?format=${widget.maxWidth}w",
+      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939838360-F3OI2WQVR66L2ITAM9KV/leveled_website+for+portfolio+with+pattern+latest-51.png?format=${widget.maxWidth}w",
+      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939843017-RIGTJG1PYLC0VR8N5UDF/leveled_website+for+portfolio+with+pattern+latest-49.png%22%20alt=%22leveled_website%20for%20portfolio%20with%20pattern%20latest-49.png?format=${widget.maxWidth}w",
+    ];
+
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         _index++;
@@ -63,14 +66,10 @@ class _P5LeveledState extends State<P5Leveled> {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              FadeInImage.assetNetwork(
-                placeholder: placeHolderImagePath,
-                //TODO:: need to work on here
-                fadeOutDuration: Duration(milliseconds: 300),
-                fit: BoxFit.fitWidth,
-                // width: constraints.maxWidth,
-                height: widget.maxWidth * .6,
-                image: images[_index],
+              mwBHImage(
+                hash: levedLogoAnimation.hash,
+                imageUrl: images[_index],
+                aspectR: widget.maxWidth / (widget.maxWidth * .6),
               ),
 
               ///Controllers
@@ -129,23 +128,20 @@ class _P5LeveledState extends State<P5Leveled> {
           textStyle: AppTextStyles.textParan20,
         ),
         columnSpace,
-        FadeInImage.assetNetwork(
-          placeholder: placeHolderImagePath,
-          fadeOutDuration: Duration(milliseconds: 300),
-          fit: BoxFit.fitWidth,
-          width: widget.maxWidth,
-          height: widget.maxWidth * .6,
-          image:
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589906254946-2MV9VK3GDCBHJ773CCCA/leveled_twitter+social-fb-33.png?format=1500w",
+        mwBHImage(
+          hash: leveledFB(widget.maxWidth).hash,
+          imageUrl: leveledFB(widget.maxWidth).imageUrl,
+          aspectR: 15 / 10,
         ),
-        FadeInImage.assetNetwork(
-          placeholder: placeHolderImagePath,
-          fadeOutDuration: Duration(milliseconds: 300),
-          fit: BoxFit.fitWidth,
+        SizedBox(
           width: widget.maxWidth,
           height: widget.maxWidth * .6,
-          image:
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589665934776-XDY86EAOXW91EM8UY218/image-asset.jpeg?format=750w",
+          child: mwBHImage(
+            hash: levedLogoAnimation.hash,
+            imageUrl:
+                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589665934776-XDY86EAOXW91EM8UY218/image-asset.jpeg?format=${widget.maxWidth}w",
+            aspectR: widget.maxWidth / widget.maxWidth * .6,
+          ),
         ),
       ],
     );

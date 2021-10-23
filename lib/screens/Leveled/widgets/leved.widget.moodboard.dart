@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
+import '../utils/utils.dart';
 
 class P4Mood2 extends StatelessWidget {
   final double maxWidth;
@@ -16,14 +17,9 @@ class P4Mood2 extends StatelessWidget {
 
 // RichTextInParentheses
   get _itemSpaceAboveRTP => SizedBox(
-        height: 60,
+        height: columnSpace.height! * 3,
       );
 
-  _maxWImage(String url) => Image.network(
-        url,
-        width: maxWidth,
-        fit: BoxFit.fitWidth,
-      );
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -38,8 +34,10 @@ class P4Mood2 extends StatelessWidget {
           ),
         ),
 
-        _maxWImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589988875231-TT2998H1O1RGYR550OEL/leveled%25252Bmoodboard.jpg?format=1000w",
+        mwBHImage(
+          hash: levedBmoodboard.hash,
+          imageUrl: levedBmoodboard.imageUrl,
+          aspectR: 1000 / 401,
         ),
 
         _itemSpaceAboveRTP,
@@ -53,8 +51,10 @@ class P4Mood2 extends StatelessWidget {
 
         columnSpace,
 
-        _maxWImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589785381152-QW1HMB4Q2K3M6XULLLKW/image-asset.jpeg?format=750w",
+        mwBHImage(
+          hash: leved3xSample.hash,
+          imageUrl: leved3xSample.imageUrl,
+          aspectR: 750 / 532,
         ),
 
         columnSpace,
@@ -65,21 +65,30 @@ class P4Mood2 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.network(
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589782233115-SSA8HKVQOQ15TZCP902Y/leveled+logo+animation.gif?format=500w",
-                width: maxWidth * .5,
-                fit: BoxFit.fitWidth,
+              SizedBox(
+                width: maxWidth / 2,
+                child: mwBHImage(
+                  hash: levedLogoAnimation.hash,
+                  imageUrl: levedLogoAnimation.imageUrl,
+                  aspectR: 1.0,
+                ),
               ),
               detailsLeftRowItem(maxWidth * .5),
             ],
+          )
+        else ...[
+          Center(
+            child: SizedBox(
+              width: maxWidth * .75,
+              child: mwBHImage(
+                hash: levedLogoAnimation.hash,
+                imageUrl: levedLogoAnimation.imageUrl,
+                aspectR: 1.0,
+              ),
+            ),
           ),
-
-        //* yap, we can use another column for this
-        if (isMobile)
-          _maxWImage(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589782233115-SSA8HKVQOQ15TZCP902Y/leveled+logo+animation.gif?format=500w",
-          ),
-        if (isMobile) detailsLeftRowItem(maxWidth),
+          detailsLeftRowItem(maxWidth),
+        ],
 
         _itemSpaceAboveRTP,
 
@@ -92,8 +101,10 @@ class P4Mood2 extends StatelessWidget {
 
         columnSpace,
 
-        _maxWImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589770580457-4IWGZ7JH646O6P1NNWWC/leveled_pattern-11.jpg?format=1000w",
+        mwBHImage(
+          hash: levedPattern11(maxWidth).hash,
+          imageUrl: levedPattern11(maxWidth).imageUrl,
+          aspectR: 100 / 52,
         ),
 
         _itemSpaceAboveRTP,
@@ -120,52 +131,67 @@ class P4Mood2 extends StatelessWidget {
 
         columnSpace,
 
-        _maxWImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589789899508-71HYCGO8X76H4T5YJ1I4/leveled_letterhead+spread.jpg?format=1000w",
+        mwBHImage(
+          hash: levedLetterHead(maxWidth).hash,
+          imageUrl: levedLetterHead(maxWidth).imageUrl,
+          aspectR: 100 / 68,
         ),
-
         columnSpace,
 
         if (!isMobile)
           Row(
             children: [
-              Image.network(
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589789968976-ES0RROZ4NU9H2QR6TBPZ/leveled%252BBusiness-Cards%252Bon%252Bwall%252Bbeiege3%252B.jpg?format=750w",
-                fit: BoxFit.cover,
+              SizedBox(
                 height: maxWidth * .6,
                 width: maxWidth * .6 - columnSpace.height!,
+                child: mwBHImage(
+                  hash: leveledPencils(maxWidth).hash,
+                  imageUrl: leveledPencils(maxWidth).imageUrl,
+                  aspectR: 95 / 157,
+                ),
               ),
               SizedBox(
                 width: columnSpace.height,
               ),
-              Image.network(
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589866725189-HWJV7IXC3OTTCZWVBOCY/leveled_pencils+with+scaled+pattern+behind+vertical.png?format=300w",
-                fit: BoxFit.cover,
+              SizedBox(
                 width: maxWidth * .4,
                 height: maxWidth * .6,
+                child: mwBHImage(
+                  hash: leveledBusinessCard(maxWidth).hash,
+                  imageUrl: leveledBusinessCard(maxWidth).imageUrl,
+                  aspectR: 17 / 14,
+                ),
               ),
             ],
+          )
+        else ...[
+          mwBHImage(
+            hash: leveledPencils(maxWidth).hash,
+            imageUrl: leveledPencils(maxWidth).imageUrl,
+            aspectR: 95 / 157,
           ),
-
-        if (isMobile)
-          Column(
-            children: [
-              _maxWImage(
-                  "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589789968976-ES0RROZ4NU9H2QR6TBPZ/leveled%252BBusiness-Cards%252Bon%252Bwall%252Bbeiege3%252B.jpg?format=750w"),
-              columnSpace,
-              _maxWImage(
-                  "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589866725189-HWJV7IXC3OTTCZWVBOCY/leveled_pencils+with+scaled+pattern+behind+vertical.png?format=300w"),
-            ],
+          columnSpace,
+          mwBHImage(
+            hash: leveledBusinessCard(maxWidth).hash,
+            imageUrl: leveledBusinessCard(maxWidth).imageUrl,
+            aspectR: 17 / 14,
           ),
+        ],
 
         columnSpace,
 
-        _maxWImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589824103069-JVEV1Z0SLY9W063MO0G0/leveled_blue+pins+and+qoute-48.jpg?format=750w",
+        mwBHImage(
+          hash: leveledBluePattern11(maxWidth).hash,
+          imageUrl: leveledBluePattern11(maxWidth).imageUrl,
+          aspectR: 75 / 37,
         ),
+
         columnSpace,
-        _maxWImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589824302318-ZCOWLQIF27ZVK9FVTRAC/leveled_quote+and+pink+pin+on+right+-21.jpg?format=750w",
+
+        mwBHImage(
+          hash: leveledQoutePink(maxWidth).hash,
+          imageUrl: leveledQoutePink(maxWidth).imageUrl,
+          aspectR: 75 / 37,
         ),
 
         _itemSpaceAboveRTP,
@@ -182,17 +208,17 @@ class P4Mood2 extends StatelessWidget {
         alignment: WrapAlignment.spaceBetween,
         children: [
           Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940432727-V2HMTH14KQ8BP62UWNBK/leveled_jpgs+for+portfolio_main+icons+seperate-64.jpg?format=300w",
+            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940432727-V2HMTH14KQ8BP62UWNBK/leveled_jpgs+for+portfolio_main+icons+seperate-64.jpg?format=${maxWidth - 4}w",
             fit: BoxFit.fitWidth,
             width: _iconWidth - 4,
           ),
           Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940433133-WWWID5JHTS9NDINS3070/leveled_jpgs+for+portfolio_main+icons+seperate-65.jpg?format=300w",
+            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940433133-WWWID5JHTS9NDINS3070/leveled_jpgs+for+portfolio_main+icons+seperate-65.jpg?format=${maxWidth - 4}w",
             width: _iconWidth - 4,
             fit: BoxFit.fitWidth,
           ),
           Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940432668-K1KWCNNZP8X1D1706PJ0/leveled_jpgs+for+portfolio_main+icons+seperate-66.jpg?format=300w",
+            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940432668-K1KWCNNZP8X1D1706PJ0/leveled_jpgs+for+portfolio_main+icons+seperate-66.jpg?format=${maxWidth - 4}w",
             width: _iconWidth - 4,
             fit: BoxFit.fitWidth,
           ),
