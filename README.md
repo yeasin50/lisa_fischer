@@ -21,7 +21,14 @@ TODO: on Lisa Fischer
 - [x] separate mobile view
 - [x] use nav2
 - [ ] use Sizer [next one]
+- [ ] forgot to use `format` parameter on image Call
 
+---
+
+> Do I like to have `blurhash` in this case?  
+> No, I don't.
+> it would be much better to present only one loading indicator and after fetch present the UI.
+---
 A new Flutter `web` project for creating different style portfolios.
 
 ## Targets
