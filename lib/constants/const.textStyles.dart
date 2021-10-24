@@ -27,10 +27,17 @@ class AppTextStyles {
       );
 
   //* Connect on About
-  static get midBlod => GoogleFonts.lato(
+  static TextStyle get midBlod => GoogleFonts.lato(
         fontWeight: FontWeight.bold,
         fontSize: 19.5.fs,
         color: Colors.black.withOpacity(.95),
+      );
+
+  //* fontWeight Issue on copyWith check this: https://stackoverflow.com/q/69698916/10157127
+  //* used on [LockStatus]=> lib\screens\GoogleShopping\widgets\header.dart
+  static TextStyle get latoWithoutFontWeight => GoogleFonts.lato(
+        fontSize: 22.fs,
+        color: Colors.black,
       );
 
   // static TextStyle get normal => TextStyle(
