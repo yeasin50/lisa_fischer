@@ -199,7 +199,7 @@ class P4Mood2 extends StatelessWidget {
     );
   }
 
-  get _iconWidth => isMobile ? maxWidth / 2 : maxWidth / 3;
+  get _iconWidth => isMobile ? maxWidth / 2 - 4 : maxWidth / 3 - 4;
 
   SizedBox iconographyRow() {
     return SizedBox(
@@ -207,20 +207,29 @@ class P4Mood2 extends StatelessWidget {
       child: Wrap(
         alignment: WrapAlignment.spaceBetween,
         children: [
-          Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940432727-V2HMTH14KQ8BP62UWNBK/leveled_jpgs+for+portfolio_main+icons+seperate-64.jpg?format=${maxWidth - 4}w",
-            fit: BoxFit.fitWidth,
-            width: _iconWidth - 4,
+          SizedBox(
+            width: _iconWidth,
+            child: mwBHImage(
+              hash: portfolioMainIconsSeperate64(maxWidth).hash,
+              imageUrl: portfolioMainIconsSeperate64(maxWidth).imageUrl,
+              aspectR: 1,
+            ),
           ),
-          Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940433133-WWWID5JHTS9NDINS3070/leveled_jpgs+for+portfolio_main+icons+seperate-65.jpg?format=${maxWidth - 4}w",
-            width: _iconWidth - 4,
-            fit: BoxFit.fitWidth,
+          SizedBox(
+            width: _iconWidth,
+            child: mwBHImage(
+              hash: portfolioMainIconsSeperate65(maxWidth).hash,
+              imageUrl: portfolioMainIconsSeperate65(maxWidth).imageUrl,
+              aspectR: 1,
+            ),
           ),
-          Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940432668-K1KWCNNZP8X1D1706PJ0/leveled_jpgs+for+portfolio_main+icons+seperate-66.jpg?format=${maxWidth - 4}w",
-            width: _iconWidth - 4,
-            fit: BoxFit.fitWidth,
+          SizedBox(
+            width: _iconWidth,
+            child: mwBHImage(
+              hash: portfolioMainIconsSeperate66(maxWidth).hash,
+              imageUrl: portfolioMainIconsSeperate66(maxWidth).imageUrl,
+              aspectR: 1,
+            ),
           ),
         ],
       ),

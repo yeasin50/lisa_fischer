@@ -74,6 +74,26 @@ HashImageData leveledQoutePink(double width) => HashImageData(
           "g:Nc{F_Mj[RPIo-:ayofayfkj[ayj[ayNGt7ayR*ofWBj[WBoff6WVoeayfkNGt7fQR*s:WBj[",
     );
 
+//* iconographyRow
+HashImageData portfolioMainIconsSeperate64(double width) => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940432727-V2HMTH14KQ8BP62UWNBK/leveled_jpgs+for+portfolio_main+icons+seperate-64.jpg?format=${width}w",
+      hash: "U335a8o#7%TKkrfQbvfkGcbI+EnhPWfQv|fR",
+    );
+
+HashImageData portfolioMainIconsSeperate65(double width) => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940433133-WWWID5JHTS9NDINS3070/leveled_jpgs+for+portfolio_main+icons+seperate-65.jpg?format=${width}w",
+      hash: "U130c|kC0NbIs+ayNKj[0hfQ~9fP9va|-nj@",
+    );
+
+HashImageData portfolioMainIconsSeperate66(double width) => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589940432668-K1KWCNNZP8X1D1706PJ0/leveled_jpgs+for+portfolio_main+icons+seperate-66.jpg?format=${width}w",
+      hash: "U3SPOkxu_N%M?aaykDof.9ayDhfk_3ofITRj",
+    );
+///*iconographyRow:EOF
+
 //* [P5]
 HashImageData leveledFB(double width) => HashImageData(
       imageUrl:
