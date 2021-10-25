@@ -24,7 +24,9 @@ class MobileView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  WorkProcessUsingBlurHash(),
+                  WorkProcessUsingBlurHash(
+                    maxWidth: constraints.maxWidth * .75 - 8 * 2,
+                  ),
 
                   ///* from assets
                   Tickets(

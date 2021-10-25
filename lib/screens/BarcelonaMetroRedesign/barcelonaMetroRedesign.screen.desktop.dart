@@ -24,7 +24,9 @@ class DesktopView extends StatelessWidget {
             ),
             child: Column(
               children: [
-                WorkProcessUsingBlurHash(),
+                WorkProcessUsingBlurHash(
+                  maxWidth: constraints.maxWidth * .75,
+                ),
 
                 ///* from assets
                 Tickets(),
