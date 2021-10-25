@@ -34,6 +34,7 @@ class AppTextStyles {
       );
 
   //* fontWeight Issue on copyWith check this: https://stackoverflow.com/q/69698916/10157127
+  // Got an solution by using asset instead of api
   //* used on [LockStatus]=> lib\screens\GoogleShopping\widgets\header.dart
   static TextStyle get textShadow => GoogleFonts.lato(
         fontSize: 22.fs,
