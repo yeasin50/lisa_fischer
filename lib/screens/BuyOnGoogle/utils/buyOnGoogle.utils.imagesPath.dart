@@ -81,8 +81,12 @@ HashImageData get ytMastHead => HashImageData(
     );
 
 //* on ytVide //Issue on hash-generatorSide for png
-HashImageData get gshopPNG => HashImageData(
+HashImageData gshopPNG({
+  required double width,
+}) =>
+    HashImageData(
       imageUrl:
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590218888566-5HEMUQQQEU7I5D1YZQOB/buy+on+google+cart+hero+in+elevation-08.png",
+          // "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590218888566-5HEMUQQQEU7I5D1YZQOB/buy+on+google+cart+hero+in+elevation-08.png?format=${width}w",
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206819594-2Y1OOQMSW6IACML3OET9/ke17ZwdGBToddI8pDm48kHgeF6xw7HSVwCYTTeQdw017gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iE65AXCN5486i28K9GUUCgVjv5ZSo0OWMgFo2W4vcGZk1Rs35klMuCxeyNIaYEgSg/buy+on+google+cart+hero+in+elevation-08.png?format=${width}w",
       hash: "ULE3F[bH00jZaxayj]oL00f6~qbHbIj[jrWV",
     );

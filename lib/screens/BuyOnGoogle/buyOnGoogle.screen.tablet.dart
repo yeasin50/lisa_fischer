@@ -17,22 +17,22 @@ class TabletView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Align(
-                //   alignment: Alignment(-1, -1),
-                //   child: SizedBox(
-                //     width: maxWidth * .5,
-                //     child: P1GShopIntro(),
-                //   ),
-                // ),
-                // P2ShowCase(
-                //   maxWidth: maxWidth,
-                // ),
-                // P3Challenge2Solutions(
-                //   maxWidth: maxWidth,
-                // ),
-                // P4GShoppingActions(
-                //   maxWidth: maxWidth,
-                // ),
+                Align(
+                  alignment: Alignment(-1, -1),
+                  child: SizedBox(
+                    width: maxWidth * .5,
+                    child: P1GShopIntro(),
+                  ),
+                ),
+                P2ShowCase(
+                  maxWidth: maxWidth,
+                ),
+                P3Challenge2Solutions(
+                  maxWidth: maxWidth,
+                ),
+                P4GShoppingActions(
+                  maxWidth: maxWidth,
+                ),
                 VideoAdsWeb(
                   maxWidth: maxWidth,
                 ),
