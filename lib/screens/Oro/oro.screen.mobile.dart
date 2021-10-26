@@ -9,13 +9,12 @@ class MobileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) => Column(
+    return LayoutBuilder(builder: (context, constraints) {
+      final _maxWidth = constraints.maxWidth;
+      return Column(
         children: [
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .75,
-            ),
+          SizedBox(
+            width: _maxWidth * .75,
             child: Intro(),
           ),
           Padding(
@@ -23,11 +22,11 @@ class MobileView extends StatelessWidget {
               8.0,
             ),
             child: ImagesWithDetails(
-              constraints: constraints,
+              maxWidth: _maxWidth,
             ),
           ),
         ],
-      ),
-    );
+      );
+    });
   }
 }
