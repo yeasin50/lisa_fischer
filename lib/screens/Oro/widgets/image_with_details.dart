@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/blurHashImageTemplate.dart';
-import '../utils/image_data.dart';
+import '../utils/hashImageData.dart';
 import 'widgets.dart';
 
 class ImagesWithDetails extends StatelessWidget {
