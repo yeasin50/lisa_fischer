@@ -31,9 +31,9 @@ class TabletView extends StatelessWidget {
                   maxWidth: maxWidth,
                 ),
               ),
-              // P4Postars(
-              //   maxWidth: maxWidth,
-              // ),
+              P4Postars(
+                maxWidth: maxWidth,
+              ),
               P5RaceDay(
                 maxWidth: maxWidth,
               ),

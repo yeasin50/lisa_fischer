@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../configs/configs.dart';
 import '../../widgets/widgets.dart';
 import 'widgets/widgets.dart';
 
@@ -12,19 +13,21 @@ class TabletView extends StatelessWidget {
       builder: (context, constraints) => Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .65,
-            ),
+          SizedBox(
+            width: constraints.maxWidth * .5,
             child: Intro(),
           ),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .8,
-            ),
+          SizedBox(
+            width: constraints.maxWidth * .6,
             child: Column(
               children: [
-                WorkProcessUsingBlurHash(),
+                columnSpace,
+
+                WorkProcessUsingBlurHash(
+                  maxWidth: constraints.maxWidth * .6,
+                ),
+
+                columnSpace,
 
                 ///* from assets
                 Tickets(),

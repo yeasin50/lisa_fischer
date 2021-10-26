@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../constants/constants.dart';
 
 import '../../../../configs/configs.dart';
 import '../../../../widgets/widgets.dart';
+import '../../../constants/constants.dart';
+import '../utils/utils.dart';
 import 'widgets.dart';
 
 class P4GShoppingActions extends StatelessWidget {
@@ -15,14 +16,19 @@ class P4GShoppingActions extends StatelessWidget {
     required this.maxWidth,
   }) : super(key: key);
 
-  _mwNImage(
-    String url, {
-    double? width,
+  AspectRatio _mBHImage({
+    required String url,
+    required String hash,
+    required double height,
   }) =>
-      Image.network(
-        url,
-        width: width ?? maxWidth,
-        fit: BoxFit.fitWidth,
+      AspectRatio(
+        key: ValueKey(url),
+        aspectRatio: maxWidth / height,
+        child: BlurHash(
+          hash: hash,
+          image: url,
+          imageFit: BoxFit.cover,
+        ),
       );
 
   @override
@@ -66,15 +72,10 @@ class P4GShoppingActions extends StatelessWidget {
         AspectRatio(
           aspectRatio: 15 / 10,
           child: BlurHash(
-            hash:
-                "|4Sr_pRi=9?b=S%M,\$%Lw;E1M{xt%Mxuj[ofWBax+Dt7XCRjXVWBSkRkWt_3%MRjIUM{ayf6oft7}yxuNNM{IvWAW@ayt9?aofj[WBWBWBaya}WBrSRjtSt7kEofbJs:M|~WRjM{t7a#oLWBWAof-nWBRkj[ogofRkoeWC",
-            image:
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206382479-5BCIRGPFXN1ATGFIUZDB/ke17ZwdGBToddI8pDm48kPtRZ_-Of0eqM9r1dRvliRl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0qoS64ZWQL6nhDAOCStJyMk7phXbdIvSPHOI4WOcEVpcoGVtCguu3ffHOCGxqAJ6Fg/yellow-16.png?format=750w",
+            hash: merchantWebsiteMarketing.hash,
+            image: merchantWebsiteMarketing.imageUrl,
           ),
         ),
-        // _mwNImage(
-        //   "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206382479-5BCIRGPFXN1ATGFIUZDB/ke17ZwdGBToddI8pDm48kPtRZ_-Of0eqM9r1dRvliRl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0qoS64ZWQL6nhDAOCStJyMk7phXbdIvSPHOI4WOcEVpcoGVtCguu3ffHOCGxqAJ6Fg/yellow-16.png?format=750w",
-        // ),
 
         SizedBox(
           height: columnSpace.height! * 3,
@@ -87,8 +88,10 @@ class P4GShoppingActions extends StatelessWidget {
         ),
 
         columnSpace,
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1617311844887-KILWYR9VHJXLAYAF3WW1/ke17ZwdGBToddI8pDm48kFmKdAJFcOk5fsAfzma6oat7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0lBmuC7q0oQgWRqy00Cl_4F3vpkLCkkli9g3-UXYeMmJ-1E2SEfIzOVqQPwVgHD5qw/buy+on+google+images+for+portfolio+email+marketing-15.png?format=750w",
+        _mBHImage(
+          url: emailMarketing.imageUrl,
+          hash: emailMarketing.hash,
+          height: (490 * maxWidth) / 750,
         ),
 
         SizedBox(height: kTopLevelStackSpace * .5),
@@ -152,8 +155,10 @@ class P4GShoppingActions extends StatelessWidget {
 
         // columnSpace,
 
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590430636690-L93FH562JA8FZAYH00NF/ke17ZwdGBToddI8pDm48kNThfiiC1Ss5pt91TYgjpHJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iy8Rj2bPXFyaluz0PeKicNeQIZkpfdXStHiv_LMkZT49G9mFXgpd49nBN3haodOMw/Acheter%2Bsur%2BGoogle_official%2Bbrand%2Blockup_for%2Bportfolio%2Bone%2Bpage-14.jpg?format=1000w",
+        _mBHImage(
+          url: acheterSurGoogle.imageUrl,
+          hash: acheterSurGoogle.hash,
+          height: (780 * maxWidth) / 1000,
         ),
 
         SizedBox(
@@ -167,8 +172,10 @@ class P4GShoppingActions extends StatelessWidget {
 
         columnSpace,
 
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590429082173-SZYTUEL9IQ76JETF6FOQ/ke17ZwdGBToddI8pDm48kA1pvmKWYbmcHStTUhjdsVd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mIGv1bYyjw2Ebf4Z7encJBhjhWRA9vBfQElMMak6NDbLs51z2Nd-2qCPLgV8eBK_g/YT+masthead-18.png?format=1000w",
+        _mBHImage(
+          hash: ytMastHead.hash,
+          url: ytMastHead.imageUrl,
+          height: (642 * maxWidth) / 1000,
         ),
       ],
     );

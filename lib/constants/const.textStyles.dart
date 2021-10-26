@@ -27,11 +27,46 @@ class AppTextStyles {
       );
 
   //* Connect on About
-  static get midBlod => GoogleFonts.lato(
+  static TextStyle get midBlod => GoogleFonts.lato(
         fontWeight: FontWeight.bold,
         fontSize: 19.5.fs,
         color: Colors.black.withOpacity(.95),
       );
+
+  //* fontWeight Issue on copyWith check this: https://stackoverflow.com/q/69698916/10157127
+  // Got an solution by using asset instead of api
+  //* used on [LockStatus]=> lib\screens\GoogleShopping\widgets\header.dart
+  static TextStyle get textShadow => GoogleFonts.lato(
+        fontSize: 22.fs,
+        shadows: normalShadow,
+        color: Colors.transparent,
+      );
+
+  static List<Shadow> get hoverShadow => [
+        Shadow(
+          color: Colors.black, // change hover text color
+          offset: Offset(0, -5),
+        ),
+      ];
+
+  static List<Shadow> get normalShadow => [
+        Shadow(
+          color: Colors.black,
+          offset: Offset(0, -5),
+        ),
+      ];
+
+  static TextStyle get textShadowWithUnderline => GoogleFonts.lato(
+        fontSize: 22.fs,
+        fontWeight: FontWeight.bold,
+        shadows: normalShadow,
+        color: Colors.transparent,
+        decoration: TextDecoration.underline,
+        decorationColor: Colors.deepPurpleAccent,
+        decorationThickness: .3,
+      );
+
+//*End of Hover 
 
   // static TextStyle get normal => TextStyle(
   //       fontFamily: kFproximaNova,

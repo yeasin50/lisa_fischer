@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import '../../../configs/config.constants.dart';
@@ -81,9 +82,8 @@ class _VideoAdsWebState extends State<VideoAdsWeb> {
                 ),
               ),
             ],
-          ),
-
-        if (widget.isMobile) ...[
+          )
+        else ...[
           YTVideoScrollIssueWrapper(
             controller: _controllers[1],
           ),
@@ -96,12 +96,23 @@ class _VideoAdsWebState extends State<VideoAdsWeb> {
         columnSpace,
 
         //* GShop logo
-
-        Image.network(
-          gshopImagePath,
-          width: widget.maxWidth * .6,
-          fit: BoxFit.fitWidth,
-        )
+        // AspectRatio(
+        //   aspectRatio: 25 / 12,
+        //   child: BlurHash(
+        //     hash: gshopPNG(width: widget.maxWidth).hash,
+        //     image: gshopPNG(width: widget.maxWidth).imageUrl,
+        //     // gshopPNG(width: widget.maxWidth).imageUrl,
+        //     imageFit: BoxFit.fitWidth,
+        //   ),
+        // ), /// Issue with png
+        FadeInImage.assetNetwork(
+          placeholder: placeHolderImagePath,
+          image:
+              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206819594-2Y1OOQMSW6IACML3OET9/ke17ZwdGBToddI8pDm48kHgeF6xw7HSVwCYTTeQdw017gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iE65AXCN5486i28K9GUUCgVjv5ZSo0OWMgFo2W4vcGZk1Rs35klMuCxeyNIaYEgSg/buy+on+google+cart+hero+in+elevation-08.png?format=${widget.maxWidth}w",
+          width: widget.maxWidth * .4,
+          height: widget.maxWidth * .4,
+          fit: BoxFit.cover,
+        ),
       ],
     );
   }
