@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/Oro/utils/utils.dart';
 
 import '../../../utils/blurHashImageTemplate.dart';
 import '../utils/hashImageData.dart';
@@ -36,13 +37,8 @@ class ImagesWithDetails extends StatelessWidget {
             height: maxWidth * .75,
           ),
 
-          /// person3x
-          Image.asset(
-            "images/oro/p2.jpg",
-            fit: BoxFit.cover,
-            width: maxWidth,
-            height: maxWidth * .75,
-          ),
+          /// person3x // TODO: make this class as loader and show loading icon on screen util it finish the image(<500kb)s loading, for large image use blurhas
+          Image.network("${OroImageHelper().person3x}?format=${maxWidth}w"),
 
           Image.asset(
             "images/oro/ORO_BOARDING_PASSES_ISOMETRIC.jpg",

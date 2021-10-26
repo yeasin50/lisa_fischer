@@ -18,3 +18,7 @@ const String _ticketsOverView_5 =
 
 const String _ticketsOverView_6 =
     "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490567394013-JMPQ46RG4OWFTG0F48YK/image-asset.jpeg";
+
+class OroImageHelper {
+  String get person3x => _airX_4;
+}
