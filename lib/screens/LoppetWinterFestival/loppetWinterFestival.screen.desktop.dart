@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/constants.dart';
 import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {
@@ -9,36 +10,34 @@ class DesktopView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final maxWidth = constraints.maxWidth * .75;
+        final _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
 
-        return SizedBox(
-          width: maxWidth,
-          child: Column(
-            children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: SizedBox(
-                  width: maxWidth * .65,
-                  child: P1Intro(),
-                ),
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: SizedBox(
+                width: _maxWidth * .65,
+                child: P1Intro(),
               ),
-              P2ImageAndRow(
-                maxWidth: maxWidth,
+            ),
+            P2ImageAndRow(
+              maxWidth: _maxWidth,
+            ),
+            SizedBox(
+              width: _maxWidth * .65,
+              child: P3Approch(
+                maxWidth: _maxWidth * .65,
               ),
-              SizedBox(
-                width: maxWidth * .65,
-                child: P3Approch(
-                  maxWidth: maxWidth * .65,
-                ),
-              ),
-              P4Postars(
-                maxWidth: maxWidth,
-              ),
-              P5RaceDay(
-                maxWidth: maxWidth,
-              ),
-            ],
-          ),
+            ),
+            P4Postars(
+              maxWidth: _maxWidth,
+            ),
+            P5RaceDay(
+              maxWidth: _maxWidth,
+            ),
+          ],
         );
       },
     );

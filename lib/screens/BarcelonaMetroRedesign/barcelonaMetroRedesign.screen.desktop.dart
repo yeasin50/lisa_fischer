@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/constants.dart';
 import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {
@@ -8,34 +9,34 @@ class DesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .5,
+      builder: (context, constraints) {
+        double _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
+        double _introWidth = constraints.maxWidth * .5;
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: _introWidth,
+              child: Intro(),
             ),
-            child: Intro(),
-          ),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .75,
-            ),
-            child: Column(
-              children: [
-                WorkProcessUsingBlurHash(
-                  maxWidth: constraints.maxWidth * .75,
-                ),
+            SizedBox(
+              width: _maxWidth,
+              child: Column(
+                children: [
+                  WorkProcessUsingBlurHash(
+                    maxWidth: constraints.maxWidth * maxDesktopViewPortion,
+                  ),
 
-                ///* from assets
-                Tickets(),
-                MetroMobileApp(),
-              ],
+                  ///* from assets
+                  Tickets(),
+                  MetroMobileApp(),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
+          ],
+        );
+      },
     );
   }
 }
