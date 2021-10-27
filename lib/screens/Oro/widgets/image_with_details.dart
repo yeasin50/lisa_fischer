@@ -38,7 +38,7 @@ class ImagesWithDetails extends StatelessWidget {
           ),
 
           /// person3x // TODO: make this class as loader and show loading icon on screen util it finish the image(<500kb)s loading, for large image use blurhas
-          Image.network("${OroImageHelper().person3x}?format=${maxWidth}w"),
+          Image.network("${OroImageHelper.person3x}?format=${maxWidth}w"),
 
           Image.asset(
             "images/oro/ORO_BOARDING_PASSES_ISOMETRIC.jpg",
@@ -48,12 +48,8 @@ class ImagesWithDetails extends StatelessWidget {
           ),
 
           /// tickets
-          Image.asset(
-            "images/oro/p3.jpeg",
-            fit: BoxFit.cover,
-            width: maxWidth,
-            height: maxWidth * .75,
-          ),
+          Image.network(
+              "${OroImageHelper.tickerOverView6}?format=${maxWidth}w"),
 
           //* animated images (tickets🤔) // height commented 😂
           Image2xAnimation(
@@ -120,26 +116,11 @@ class ImagesWithDetails extends StatelessWidget {
             ),
           ),
 
-          Image.asset(
-            "images/oro/app_ui.jpeg",
-            fit: BoxFit.cover,
-            width: maxWidth,
-            height: maxWidth * .75,
-          ),
+          Image.network("${OroImageHelper.appUI_1}?format=${maxWidth}w"),
 
-          Image.asset(
-            "images/oro/app_ui2.jpeg",
-            fit: BoxFit.cover,
-            width: maxWidth,
-            height: maxWidth * .75,
-          ),
+          Image.network("${OroImageHelper.appUI_2}?format=${maxWidth}w"),
 
-          Image.asset(
-            "images/oro/oro_logo.jpeg",
-            fit: BoxFit.cover,
-            width: maxWidth,
-            height: maxWidth * .75,
-          ),
+          Image.network("${OroImageHelper.oroLogo}?format=${maxWidth}w"),
         ].map(
           (e) => Padding(
             padding: EdgeInsets.symmetric(
