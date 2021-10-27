@@ -24,7 +24,11 @@ class Intro extends StatelessWidget {
           height: itemSpace,
         ),
         SubtitleCategoryOfWork(
-          rolls: ["BRANDING", "UI+UX", "ENVIRONMENTAL GRAPHICS"],
+          rolls: [
+            "BRANDING",
+            "UI+UX",
+            "ENVIRONMENTAL GRAPHICS",
+          ],
         ),
         SizedBox(
           height: itemSpace,
