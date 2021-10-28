@@ -9,20 +9,20 @@ class MobileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
+        final _maxWidth = constraints.maxWidth - 8.0 * 2;
         return Column(
           children: [
-            ConstrainedBox(
-              constraints: BoxConstraints(
-                maxWidth: constraints.maxWidth * .75,
-              ),
+            SizedBox(
+              width: constraints.maxWidth * .75,
               child: Intro(),
             ),
             Padding(
+              //TODO: may goto top level
               padding: const EdgeInsets.all(
                 8.0,
               ),
               child: ImagesWithDetails(
-                constraints: constraints,
+                maxWidth: _maxWidth,
               ),
             ),
           ],
