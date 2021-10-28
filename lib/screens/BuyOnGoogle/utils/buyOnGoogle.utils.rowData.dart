@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
-import '../../../constants/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../configs/configs.dart';
+import '../../../constants/constants.dart';
+ 
 
 final _linkTextStyle = AppTextStyles.normal.copyWith(
   fontWeight: FontWeight.w500,
