@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/Oro/utils/utils.dart';
 
 import '../../../utils/blurHashImageTemplate.dart';
-import '../utils/hashImageData.dart';
+import '../utils/utils.dart';
 import 'widgets.dart';
 
 class ImagesWithDetails extends StatelessWidget {
@@ -19,81 +18,59 @@ class ImagesWithDetails extends StatelessWidget {
       children: [
         ...[
           mwBHImage(
-            hash: oroUpdateContecptVisual(width: maxWidth).hash,
-            imageUrl: oroUpdateContecptVisual(width: maxWidth).imageUrl,
+            hash: oroUpdateContecptVisual.hash,
+            imageUrl: oroUpdateContecptVisual.imageUrl,
+            width: maxWidth,
             aspectR: 1500 / 4820,
           ),
           mwBHImage(
-            hash: oroImageAssetGif(width: maxWidth).hash,
-            imageUrl: oroImageAssetGif(width: maxWidth).imageUrl,
+            hash: oroImageAssetGif.hash,
+            imageUrl: oroImageAssetGif.imageUrl,
+            width: maxWidth,
             aspectR: 600 / 361,
           ),
 
-          /// oro plane
-          Image.asset(
-            "images/oro/p1.jpeg",
-            fit: BoxFit.cover,
-            width: maxWidth,
-            height: maxWidth * .75,
+          ...[
+            OroImageHelper.oroPlane_3,
+            OroImageHelper.person3x_4,
+            OroImageHelper.tickerOverView_6,
+            OroImageHelper.tickerOverViewB_7,
+          ].map(
+            (path) => Image.network(
+              "$path?format=${maxWidth}w",
+            ),
           ),
-
-          /// person3x // TODO: make this class as loader and show loading icon on screen util it finish the image(<500kb)s loading, for large image use blurhas
-          Image.network("${OroImageHelper.person3x}?format=${maxWidth}w"),
-
-          Image.asset(
-            "images/oro/ORO_BOARDING_PASSES_ISOMETRIC.jpg",
-            fit: BoxFit.cover,
-            width: maxWidth,
-            height: maxWidth * .75,
-          ),
-
-          /// tickets
-          Image.network(
-              "${OroImageHelper.tickerOverView6}?format=${maxWidth}w"),
 
           //* animated images (tickets🤔) // height commented 😂
           Image2xAnimation(
-            fontImagePath: 'images/oro/ticket2.jpg',
-            backImagePath: 'images/oro/ticket2_x.jpg',
-            imageSize: Size(
-              maxWidth,
-              maxWidth,
-            ),
+            fontImagePath: OroImageHelper.tickerLaToreX_8,
+            backImagePath: OroImageHelper.tickerLaToreY_8,
+            width: maxWidth,
           ),
 
           Image2xAnimation(
-            fontImagePath:
-                'images/oro/ORO_PRINTBOARDINGPASS_UPDATED_Page_5.jpg',
-            backImagePath:
-                'images/oro/ORO_PRINTBOARDINGPASS_UPDATED_Page_6.jpg',
-            imageSize: Size(
-              maxWidth,
-              maxWidth,
-            ),
+            fontImagePath: OroImageHelper.tickerElRealX_9,
+            backImagePath: OroImageHelper.tickerElRealY_9,
+            width: maxWidth,
           ),
 
           Image2xAnimation(
-            fontImagePath: 'images/oro/ticket3.jpg',
-            backImagePath: 'images/oro/ticket3_x.jpg',
-            imageSize: Size(
-              maxWidth,
-              maxWidth,
-            ),
+            fontImagePath: OroImageHelper.tickerLaPlazaX_10,
+            backImagePath: OroImageHelper.tickerLaPlazaY_10,
+            width: maxWidth,
           ),
 
           Image2xAnimation(
-            fontImagePath: 'images/oro/ticket4.jpg',
-            backImagePath: 'images/oro/ticket4_x.jpg',
-            imageSize: Size(
-              maxWidth,
-              maxWidth,
-            ),
+            fontImagePath: OroImageHelper.tickerLasSetasX_11,
+            backImagePath: OroImageHelper.tickerLasSetasY_11,
+            width: maxWidth,
           ),
 
           //* giffy  website preview
           mwBHImage(
-            hash: websitePreview(width: maxWidth).hash,
-            imageUrl: websitePreview(width: maxWidth).imageUrl,
+            hash: websitePreview.hash,
+            imageUrl: websitePreview.imageUrl,
+            width: maxWidth,
             aspectR: 500 / 336,
           ),
 
@@ -109,18 +86,23 @@ class ImagesWithDetails extends StatelessWidget {
               color: Color.fromRGBO(188, 150, 4, 1),
             ),
             child: mwBHImage(
-              hash: phonePreview(width: maxWidth).hash,
-              imageUrl: phonePreview(width: maxWidth).imageUrl,
+              hash: phonePreview.hash,
+              imageUrl: phonePreview.imageUrl,
+              width: maxWidth,
               aspectR: 86 / 120,
               fit: BoxFit.fitHeight,
             ),
           ),
 
-          Image.network("${OroImageHelper.appUI_1}?format=${maxWidth}w"),
-
-          Image.network("${OroImageHelper.appUI_2}?format=${maxWidth}w"),
-
-          Image.network("${OroImageHelper.oroLogo}?format=${maxWidth}w"),
+          ...[
+            OroImageHelper.oroApp_12,
+            OroImageHelper.oroApp_13,
+            OroImageHelper.oroLogo,
+          ].map(
+            (path) => Image.network(
+              "$path?format=${maxWidth}w",
+            ),
+          ),
         ].map(
           (e) => Padding(
             padding: EdgeInsets.symmetric(
