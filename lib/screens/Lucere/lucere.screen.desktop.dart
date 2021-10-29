@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/constants.dart';
 import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {
@@ -8,24 +9,23 @@ class DesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) => Column(
-        children: [
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .5,
+      builder: (context, constraints) {
+        final maxWidht = constraints.maxWidth * maxDesktopViewPortion;
+        return Column(
+          children: [
+            SizedBox(
+              width: constraints.maxWidth * .5,
+              child: Intro(),
             ),
-            child: Intro(),
-          ),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .75,
+            SizedBox(
+              width: maxWidht,
+              child: ImagesWithDetails(
+                maxWidth: maxWidht,
+              ),
             ),
-            child: ImagesWithDetails(
-              constraints: constraints,
-            ),
-          ),
-        ],
-      ),
+          ],
+        );
+      },
     );
   }
 }

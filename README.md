@@ -7,14 +7,15 @@ TODO: on Lisa Fischer
 
 &nbsp;&nbsp;&nbsp; **`🛠`** project structure
 
-- [ ] improve `Oro` desktop views
-- [ ] replace networkImage with blurHash
+- [ ] reduce assets-size `<2mb` on images
+- [x] improve `Oro` desktop views
+- [x] replace networkImage with blurHash
 - [ ] set yt player width
 - [x] tablet mode intro text works
 - [x] just make this repo from Lisa Fischer
 - [ ] ytVide size
 - [x] hash-blur image
--  **x** apply `const`
+- **x** apply `const`
 - [x] use dot name fileStruct
 - [x] use offline files: better with network file because of landing
 - [x] controll font sizes
@@ -28,7 +29,9 @@ TODO: on Lisa Fischer
 > Do I like to have `blurhash` in this case?  
 > No, I don't.
 > it would be much better to present only one loading indicator and after fetch present the UI.
+
 ---
+
 A new Flutter `web` project for creating different style portfolios.
 
 ## Targets

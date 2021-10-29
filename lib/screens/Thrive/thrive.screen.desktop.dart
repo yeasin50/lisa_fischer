@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/const.viewPercentages.dart';
 import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {
@@ -7,25 +8,23 @@ class DesktopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) => Column(
+    return LayoutBuilder(builder: (context, constraints) {
+      final _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
+
+      return Column(
         children: [
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .5,
-            ),
+          SizedBox(
+            width: constraints.maxWidth * maxDesktopViewIntroPortion,
             child: Intro(),
           ),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .75,
-            ),
+          SizedBox(
+            width: _maxWidth,
             child: ImagesWithDetails(
-              constraints: constraints,
+              maxWidth: _maxWidth,
             ),
           ),
         ],
-      ),
-    );
+      );
+    });
   }
 }

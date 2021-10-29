@@ -60,6 +60,7 @@ class _VideoAdsWebState extends State<VideoAdsWeb> {
         columnSpace,
 
         YTVideoScrollIssueWrapper(
+          key: UniqueKey(),
           controller: _controllers[0],
         ),
 
@@ -96,6 +97,7 @@ class _VideoAdsWebState extends State<VideoAdsWeb> {
         columnSpace,
 
         //* GShop logo
+
         // AspectRatio(
         //   aspectRatio: 25 / 12,
         //   child: BlurHash(
@@ -105,10 +107,8 @@ class _VideoAdsWebState extends State<VideoAdsWeb> {
         //     imageFit: BoxFit.fitWidth,
         //   ),
         // ), /// Issue with png
-        FadeInImage.assetNetwork(
-          placeholder: placeHolderImagePath,
-          image:
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206819594-2Y1OOQMSW6IACML3OET9/ke17ZwdGBToddI8pDm48kHgeF6xw7HSVwCYTTeQdw017gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iE65AXCN5486i28K9GUUCgVjv5ZSo0OWMgFo2W4vcGZk1Rs35klMuCxeyNIaYEgSg/buy+on+google+cart+hero+in+elevation-08.png?format=${widget.maxWidth}w",
+        Image.network(
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206819594-2Y1OOQMSW6IACML3OET9/ke17ZwdGBToddI8pDm48kHgeF6xw7HSVwCYTTeQdw017gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iE65AXCN5486i28K9GUUCgVjv5ZSo0OWMgFo2W4vcGZk1Rs35klMuCxeyNIaYEgSg/buy+on+google+cart+hero+in+elevation-08.png?format=${widget.maxWidth}w",
           width: widget.maxWidth * .4,
           height: widget.maxWidth * .4,
           fit: BoxFit.cover,

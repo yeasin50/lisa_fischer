@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
-import 'package:portfolio/screens/BuyOnGoogle/utils/buyOnGoogle.utils.imagesPath.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../configs/configs.dart';
 import '../../../../widgets/widgets.dart';
 import '../../../constants/constants.dart';
+import '../../../utils/utils.dart';
+import '../utils/utils.dart';
 
 class P3Challenge2Solutions extends StatelessWidget {
   final double maxWidth;
@@ -29,9 +29,11 @@ class P3Challenge2Solutions extends StatelessWidget {
             text: "THE CHALLENGE",
           ),
         ),
+
         SizedBox(
           height: columnSpace.height! * 3,
         ),
+
         Center(
           child: SizedBox(
             width: maxWidth * .75,
@@ -53,13 +55,10 @@ class P3Challenge2Solutions extends StatelessWidget {
         columnSpace,
 
         //* Gshop logo
-        FadeInImage.assetNetwork(
-          placeholder: placeHolderImagePath,
-          image:
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206819594-2Y1OOQMSW6IACML3OET9/ke17ZwdGBToddI8pDm48kHgeF6xw7HSVwCYTTeQdw017gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iE65AXCN5486i28K9GUUCgVjv5ZSo0OWMgFo2W4vcGZk1Rs35klMuCxeyNIaYEgSg/buy+on+google+cart+hero+in+elevation-08.png?format=${maxWidth}w",
-          width: maxWidth * .4,
-          height: maxWidth * .4,
-          fit: BoxFit.cover,
+        mwBHImage(
+          hash: gshopLogoImage.hash,
+          imageUrl: gshopLogoImage.imageUrl,
+          width: maxWidth,
         ),
 
         columnSpace,
@@ -124,16 +123,16 @@ class P3Challenge2Solutions extends StatelessWidget {
         SizedBox(
           height: columnSpace.height! * 3,
         ),
-        solution2(),
+        // solution2(),
 
         SizedBox(
           height: columnSpace.height! * 3,
         ),
 
-        DesktopMobileUserFlow(),
+        // DesktopMobileUserFlow(maxWidth: maxWidth),
 
         ///* `Solution 3`
-        solution3(),
+        // solution3(),
 
         SizedBox(
           height: columnSpace.height! * 3,
@@ -150,12 +149,11 @@ class P3Challenge2Solutions extends StatelessWidget {
       ),
     );
 
-    final _image = AspectRatio(
-      aspectRatio: 750 / 451,
-      child: BlurHash(
-        hash: solution3Cover.hash,
-        image: solution3Cover.imageUrl,
-      ),
+    final _image = mwBHImage(
+      hash: solution3Cover.hash,
+      imageUrl: solution3Cover.imageUrl,
+      aspectR: 750 / 451,
+      width: maxWidth,
     );
 
     return isMobile
@@ -215,13 +213,12 @@ class P3Challenge2Solutions extends StatelessWidget {
       ),
     );
 
-    final _image = AspectRatio(
-      aspectRatio: 1500 / 626,
-      child: BlurHash(
-        hash: solution2Cover.hash,
-        image: solution2Cover.imageUrl,
-        imageFit: BoxFit.cover,
-      ),
+    final _image = mwBHImage(
+      hash: solution2Cover.hash,
+      imageUrl: solution2Cover.imageUrl,
+      aspectR: 1500 / 626,
+      width: maxWidth,
+      fit: BoxFit.cover,
     );
 
     return isMobile
@@ -284,13 +281,12 @@ class P3Challenge2Solutions extends StatelessWidget {
       ),
     );
 
-    final _image = AspectRatio(
-      aspectRatio: 750 / 486,
-      child: BlurHash(
-        hash: solution1Cover.hash,
-        image: solution1Cover.imageUrl,
-        imageFit: BoxFit.cover,
-      ),
+    final _image = mwBHImage(
+      hash: solution1Cover.hash,
+      imageUrl: solution1Cover.imageUrl,
+      fit: BoxFit.cover,
+      aspectR: 750 / 486,
+      width: maxWidth,
     );
 
     return isMobile
@@ -346,6 +342,13 @@ class P3Challenge2Solutions extends StatelessWidget {
 
 ///`Desktop+Mobile User Flow`
 class DesktopMobileUserFlow extends StatelessWidget {
+  final double maxWidth;
+
+  const DesktopMobileUserFlow({
+    Key? key,
+    required this.maxWidth,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -389,13 +392,12 @@ class DesktopMobileUserFlow extends StatelessWidget {
         ),
 
         // gShop search gif
-        AspectRatio(
-          key: ValueKey("Gshop search on Web"),
-          aspectRatio: 24 / 17,
-          child: BlurHash(
-            hash: gshopOnWebSearch.hash,
-            image: gshopOnWebSearch.imageUrl,
-          ),
+
+        mwBHImage(
+          hash: gshopOnWebSearch.hash,
+          imageUrl: gshopOnWebSearch.imageUrl,
+          aspectR: 24 / 17,
+          width: maxWidth,
         ),
 
         SizedBox(
@@ -438,13 +440,11 @@ class DesktopMobileUserFlow extends StatelessWidget {
           height: columnSpace.height! * 1.5,
         ),
 
-        AspectRatio(
-          key: ValueKey("Gshop search on mobileView"),
-          aspectRatio: 18 / 15,
-          child: BlurHash(
-            hash: gshopOnMobileSearch.hash,
-            image: gshopOnMobileSearch.imageUrl,
-          ),
+        mwBHImage(
+          hash: gshopOnMobileSearch.hash,
+          imageUrl: gshopOnMobileSearch.imageUrl,
+          aspectR: 18 / 15,
+          width: maxWidth,
         ),
 
         SizedBox(
