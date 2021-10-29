@@ -16,28 +16,28 @@ class DesktopView extends StatelessWidget {
           width: _maxWidth,
           child: Column(
             children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: SizedBox(
-                  width: _maxWidth * .65,
-                  child: P1Intro(),
-                ),
-              ),
-              P2ImageAndRow(
-                maxWidth: _maxWidth,
-              ),
-              SizedBox(
-                width: _maxWidth * .65,
-                child: P3Approch(
-                  maxWidth: _maxWidth * .65,
-                ),
-              ),
+              // Align(
+              //   alignment: Alignment.topLeft,
+              //   child: SizedBox(
+              //     width: _maxWidth * .65,
+              //     child: P1Intro(),
+              //   ),
+              // ),
+              // P2ImageAndRow(
+              //   maxWidth: _maxWidth,
+              // ),
+              // SizedBox(
+              //   width: _maxWidth * .65,
+              //   child: P3Approch(
+              //     maxWidth: _maxWidth * .65,
+              //   ),
+              // ),
               P4Postars(
                 maxWidth: _maxWidth,
               ),
-              P5RaceDay(
-                maxWidth: _maxWidth,
-              ),
+              // P5RaceDay(
+              //   maxWidth: _maxWidth,
+              // ),
             ],
           ),
         );
