@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 import '../../../configs/configs.dart';
 import '../../../constants/constants.dart';
+import '../../../utils/utils.dart';
 import '../../../widgets/widgets.dart';
 import '../utils/utils.dart';
 
@@ -89,70 +89,90 @@ class P5RaceDay extends StatelessWidget {
         columnSpace,
 
         if (!isMobile)
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              FadeInImage.assetNetwork(
-                placeholder: placeHolderImagePath,
-                width: maxWidth * .5 - columnSpace.height! * .5,
-                height: maxWidth * .8,
-                fit: BoxFit.cover,
-                image:
-                    "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587242384498-HZM20QZTTJ5K9932LWLW/loppetphoto_raceday2+copy.jpg?format=750w",
-              ),
-              Column(
-                children: [
-                  FadeInImage.assetNetwork(
-                    placeholder: placeHolderImagePath,
-                    width: maxWidth * .5 - columnSpace.height! * .5,
-                    height: maxWidth * .4 - columnSpace.height! * .5,
-                    fit: BoxFit.cover,
-                    image:
-                        "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587242954704-P7XG1WX7KEQH3H7RLHFN/loppetphoto_raceday3%2Bcopy.jpg?format=500w",
-                  ),
-                  columnSpace,
+          () {
+            final double rowHeight = maxWidth * .8;
+            final double rowWidth = maxWidth * .5 - columnSpace.height! * .5;
 
-                  ///* can be blurHash
-                  Image.network(
-                    "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587242545828-NFV2LK8X996N0EC5GD1V/loppetphoto_raceday.jpg?format=500w",
-                    width: maxWidth * .5 - columnSpace.height! * .5,
-                    height: maxWidth * .4 - columnSpace.height! * .5,
-                    fit: BoxFit.cover,
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: rowWidth,
+                  height: rowHeight,
+                  child: mwBHImage(
+                    hash: loppetRaceDay_L0.hash,
+                    imageUrl: loppetRaceDay_L0.imageUrl,
+                    width: this.maxWidth,
+                    aspectR: rowWidth / rowHeight,
                   ),
-                ],
-              ),
-            ],
-          ),
+                ),
+                () {
+                  final double columnItemHeight =
+                      maxWidth * .4 - columnSpace.height! * .5;
 
-        if (isMobile) ...[
-          Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587242384498-HZM20QZTTJ5K9932LWLW/loppetphoto_raceday2+copy.jpg?format=750w",
-            width: maxWidth,
-            fit: BoxFit.fitWidth,
+                  final double columnItemWidth =
+                      maxWidth * .5 - columnSpace.height! * .5;
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(
+                        width: columnItemWidth,
+                        height: columnItemHeight,
+                        child: mwBHImage(
+                          hash: loppetRaceDay_R0.hash,
+                          imageUrl: loppetRaceDay_R0.imageUrl,
+                          width: columnItemWidth,
+                          aspectR: columnItemWidth / columnItemHeight,
+                        ),
+                      ),
+                      columnSpace,
+                      SizedBox(
+                        width: columnItemWidth,
+                        height: columnItemHeight,
+                        child: mwBHImage(
+                          hash: loppetRaceDay_R1.hash,
+                          imageUrl: loppetRaceDay_R1.imageUrl,
+                          width: columnItemWidth,
+                          aspectR: columnItemWidth / columnItemHeight,
+                        ),
+                      ),
+                    ],
+                  );
+                }(),
+              ],
+            );
+          }()
+        else ...[
+          //* dublication 😅
+          mwBHImage(
+            hash: loppetRaceDay_L0.hash,
+            imageUrl: loppetRaceDay_L0.imageUrl,
+            width: this.maxWidth,
+            aspectR: 75 / 76,
           ),
           columnSpace,
-          Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587242954704-P7XG1WX7KEQH3H7RLHFN/loppetphoto_raceday3%2Bcopy.jpg?format=500w",
-            width: maxWidth,
-            fit: BoxFit.fitWidth,
+          mwBHImage(
+            hash: loppetRaceDay_R0.hash,
+            imageUrl: loppetRaceDay_R0.imageUrl,
+            width: this.maxWidth,
+            aspectR: 5 / 3,
           ),
           columnSpace,
-          Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587242545828-NFV2LK8X996N0EC5GD1V/loppetphoto_raceday.jpg?format=500w",
-            width: maxWidth,
-            fit: BoxFit.fitWidth,
+          mwBHImage(
+            hash: loppetRaceDay_R1.hash,
+            imageUrl: loppetRaceDay_R1.imageUrl,
+            width: this.maxWidth,
+            aspectR: 5 / 3,
           ),
         ],
 
         columnSpace,
 
-        AspectRatio(
-          aspectRatio: maxWidth / (maxWidth / 2),
-          child: BlurHash(
-            hash: loppetLogo.hash,
-            image: loppetLogo.imageUrl,
-            imageFit: BoxFit.cover,
-          ),
+        mwBHImage(
+          hash: loppetLogo.hash,
+          imageUrl: loppetLogo.imageUrl,
+          aspectR: maxWidth / (maxWidth / 2),
+          width: maxWidth,
         ),
 
         columnSpace,
