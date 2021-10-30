@@ -130,3 +130,102 @@ HashImageData imageAssetBMR11({
       hash:
           "|PJ[Cvxt0KD%oMWBs:%Mxu~qWXozt7aeayj[WBaxIURk?b%MWVofR*M{Rj_NxDRPRjozjbfPtRof_3V@RPRkWVf6ofofj[xZWrWAa#WBoeWWaeayt7ozNGWAoebHaeo2j[4nj]tRtQn%WCjZaeWBn#bIt6ogjuoekCayay",
     );
+
+//* Tickets
+HashImageData get ticketHeader => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490693906367-BPD09ZTEC0GXGQ078QPY/image-asset.jpeg",
+      hash: "Q1TI,aAp0eBT0yKO5Qk=Io?H-V%2%2\$*\$*xaxas:~C^k^k^Q^Q=|-V-V\$*",
+    );
+
+HashImageData get metroTicketLeft => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490600465737-YWHPLC4HRHNS93QEYU8P/image-asset.jpeg",
+      hash:
+          "|CGu%i00^k0000yCr?-V?H00i_XAtl?cV@xZjXM{D4~X9tEKnOnR?btkMx?wE0_3niD%E19Z-p\$*t,WVMJr=x]XTRjROt6nOD%%gtQM{s;xuNZxvMdxuXmIo-pM_NaW=s:R%?bIAofInkCW=aeV@M{ofWBt7bHWBRjozt7",
+    );
+
+HashImageData get metroTicketRight => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490600505031-JK97X0LB9ZMPKFT806DW/image-asset.jpeg",
+      hash:
+          "|WJasEDi_4E0.8M{xut7Rj^+ofR*R*WAs:WBa#WU-;bbWBnljFRjbbR*RjNaNGofspn%ozW;WBt7e.ofayoykCR*t7n%s:s:jFW;W;W;WVaes:V@ofayj[ofaxayWBWBbHbvS1aesVnifkofkCkCozj[oLaeayWBfkj[oL",
+    );
+
+HashImageData get metroTicketBottom => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490601007263-YPO0WNA2LPRIOX5N6L8Q/image-asset.jpeg",
+      hash:
+          "|KA1bW*0IAi^X-l8tSo~tm*}nOL0L0XRj[tRw|w1ozxarsMyogogjYadadWnoKsWV[kCbFjIe.WVWUNZbbtRX7NZofspoMxujursxHX8SLofjFaeS2WBn\$aeWCfkofadnjR*kCozWUofbHbHjsjut7j[aLaeozW.jZn%WU",
+    );
+
+//* Mobile App
+HashImageData get mobileAppHeader => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490693932294-B43S2FYK62CM025TG1LJ/image-asset.jpeg",
+      hash: "Q1TI,aAp0eBT0yKO5Qk=Io?H-V%2%2\$*\$*xaxas:~C^k^k^Q^Q=|-V-V\$*",
+    );
+
+HashImageData get mobileAppOnHand => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490601049986-TCAGJ59C5KCFVR3W3AI8/image-asset.jpeg",
+      hash:
+          "|5AKEs58000fVY%\$-=n3Fxt*x_=q4pIT8_.S?cR5u%o~lTMfo|V@WAtSwJ#8jDyE55IA_4#SodJQ4;^jElnLIoxI%MI:tQ5X_14;veS%-;tl9ZVDTzneDk-nNL.8M{nORP9a-S9ax@%\$n\$r@IAIovzRQOqtSo#\$fIVadNG",
+    );
+
+HashImageData get mobileAppScreensView => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1493960992395-O5QDA4EXTIBBU8ZAATVC/barelona+metro+app+portfolio+spread4.jpg",
+      hash:
+          "|_MHMrbHt7a}t7jst7f6t7WVfkM{ayofayj[ays:~qjtWBj@RjfkWBj[WBofjZt7fPWBfka|j[WBt7fQayfRayj@j[j[f7t7bGt7j[WBj@f6f6WBRjbHoffRofjtWBf6ayfQfQWBfPj[fQazfjj[aff6j@fPj[fRWVfkj[",
+    );
+
+//* Folding print MAP
+HashImageData get foldingPrintMapHeader => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490693960943-6MCE4QS02979DCR1Z6WO/image-asset.jpeg",
+      hash: "Q1TI,aAp0eBT0yKO5Qk=Io?H-V%2%2\$*\$*xaxas:~C^k^k^Q^Q=|-V-V\$*",
+    );
+
+HashImageData get foldingPrintMap1 => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490603544168-BFDY3QWVJ0J7S2LBPYWU/image-asset.jpeg",
+      hash:
+          "|iN-i\$IU}@s:tRxakWkCWBXSt7s:NGV@o0aya|j[}[s:EfbHNGS2aKWBs:xGR*WBxGShkCofWVjZoLkCNGRjs:sUofbHWVbbWBR*s:xaS2WBn%W;X7WBofxZayNaWBoLays:kBoLayW;jGS2j[jZjZj[jZWVbHaybHoLj[",
+    );
+
+//*
+HashImageData get bercelonaMetroMapLeft => HashImageData(
+      imageUrl:
+          'https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490604307162-RNRZSB5A733BX5WWUWHG/image-asset.jpeg',
+      hash:
+          '|aO|X}IU~qVsNGo|IUj@xuNHWW%Mo0M{WVofjZt7oeayWBoeWBazt7ayWB-qj[IUWBxuoLWBkBWB%Lf6M{kBj@afofj[ayofayjufkj[jtaya}ayxujZM{bHoff6j[j[WBxaf6Rka|ofj[ayayayxujsRPbHoff6bHj[ay',
+    );
+
+HashImageData get bercelonaMetroMapRight => HashImageData(
+      imageUrl:
+          'https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490604338516-0CKKWSL2422FLVG58GNR/P1014645.jpg',
+      hash:
+          '|JQJQCAB.8vM*Jd=IAcsZh-;xutls:jbX8VstRt7ELVsn+SgVsofo}nOX8=}o}M{niXSa0kWW:i_kqnObIW;VsgNniofo}WBfkoff+ofjGbbV@WV%MV@Rjt7ayoffkWBjZNGn*t7WVo1kCjujZWV-;WVM{j[WBjtoze:j[',
+    );
+
+HashImageData get bercelonaMetroMapStations => HashImageData(
+      imageUrl:
+          'https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490604377735-PADAECL2Y2C8JXVFHA29/image-asset.jpeg',
+      hash:
+          '|WN^oG=|~qE0V@RjaefQt6?vMxVsx]azV@WBofof?HIosos:Ios:s;t6R*Vsx]M{VstRWBn%WBoft7aKNaxajFS#oLjZWVxuRjkCRjo0kWa|jZWBn\$kCV[ofs:Rjbbn%jZofofR*aej@ofWBa{aeozaekCayofbHWBofj@',
+    );
+
+HashImageData get bercelonaMetroMapStationsP2 => HashImageData(
+      imageUrl:
+          'https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490604450138-CJP220S4VH5DZVU19QYS/image-asset.jpeg',
+      hash:
+          '|DNwTb00kV-V-;~q%3%gnPMe?bx[MxE1RPRjtRxH%1?v%gt7X8MxIUIUIU-px[V@M_o}t7t8bIV@?H%MIBDiI.M{oLtRt7%MRjIUjux]soWBa{RP%gbHIAR*tRs:t7t7n%kXM{Mx%M%MV@WBRjWUkWRPM{x]t7RPWVWBWB',
+    );
+
+HashImageData get bercelonaMetroRDBLogo => HashImageData(
+      imageUrl:
+          'https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490604704870-FSZ0CS0S6EOPRMCVDJX4/image-asset.jpeg',
+      hash:
+          '|JFsS+8E00tl-pNG%MtQR*s:ofRjRjoft7j[R*WB00bb~pV[ayfiE1ayofWVR*ofxuWBM{R*t7t7oft7t7M{D*xu%MV[kBRjkBt7WBR*oft7WVRj-;R*E1xu%MM|Rja{Rj%2ofM{Rjt7ofRjayofofj[WBj[t7WBRjt7t7',
+    );

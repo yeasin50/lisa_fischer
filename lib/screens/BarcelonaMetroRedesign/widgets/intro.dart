@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../configs/config.constants.dart';
 import '../../../constants/const.textStyles.dart';
 import '../../../widgets/widgets.dart';
 import '../utils/utils.dart';
@@ -52,7 +53,8 @@ class Intro extends StatelessWidget {
                 : print("failed to launch");
           },
           label: "VIEW PROCESS WORK",
-        )
+        ),
+        columnSpace,
       ],
     );
   }

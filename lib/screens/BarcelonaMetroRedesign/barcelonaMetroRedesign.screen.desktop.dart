@@ -29,8 +29,12 @@ class DesktopView extends StatelessWidget {
                   ),
 
                   ///* from assets
-                  Tickets(),
-                  MetroMobileApp(),
+                  Tickets(
+                    maxWidth: _maxWidth,
+                  ),
+                  MetroMobileApp(
+                    maxWidth: _maxWidth,
+                  ),
                 ],
               ),
             ),

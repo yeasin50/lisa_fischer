@@ -7,38 +7,29 @@ class MobileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ConstrainedBox(
-              constraints: BoxConstraints(
-                maxWidth: constraints.maxWidth * .75,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final maxWidth = constraints.maxWidth;
+          return Column(
+            children: [
+              // Intro(),
+              // WorkProcessUsingBlurHash(
+              //   maxWidth: maxWidth,
+              // ),
+              // Tickets(
+              //   isMobileView: true,
+              //   maxWidth: maxWidth,
+              // ),
+              MetroMobileApp(
+                isMobile: true,
+                maxWidth: maxWidth,
               ),
-              child: Intro(),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(
-                8.0,
-              ),
-              child: Column(
-                children: [
-                  WorkProcessUsingBlurHash(
-                    maxWidth: constraints.maxWidth * .75 - 8 * 2,
-                  ),
-
-                  ///* from assets
-                  Tickets(
-                    isMobileView: true,
-                  ),
-                  MetroMobileApp(),
-                ],
-              ),
-            ),
-          ],
-        );
-      },
+            ],
+          );
+        },
+      ),
     );
   }
 }
