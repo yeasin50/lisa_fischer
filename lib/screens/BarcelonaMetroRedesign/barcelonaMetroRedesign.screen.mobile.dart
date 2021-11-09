@@ -14,14 +14,14 @@ class MobileView extends StatelessWidget {
           final maxWidth = constraints.maxWidth;
           return Column(
             children: [
-              // Intro(),
-              // WorkProcessUsingBlurHash(
-              //   maxWidth: maxWidth,
-              // ),
-              // Tickets(
-              //   isMobileView: true,
-              //   maxWidth: maxWidth,
-              // ),
+              Intro(),
+              WorkProcessUsingBlurHash(
+                maxWidth: maxWidth,
+              ),
+              Tickets(
+                isMobileView: true,
+                maxWidth: maxWidth,
+              ),
               MetroMobileApp(
                 isMobile: true,
                 maxWidth: maxWidth,
