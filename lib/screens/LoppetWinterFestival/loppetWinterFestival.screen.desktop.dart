@@ -12,32 +12,34 @@ class DesktopView extends StatelessWidget {
       builder: (context, constraints) {
         final _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
 
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: SizedBox(
+        return SizedBox(
+          width: _maxWidth,
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: SizedBox(
+                  width: _maxWidth * .65,
+                  child: P1Intro(),
+                ),
+              ),
+              P2ImageAndRow(
+                maxWidth: _maxWidth,
+              ),
+              SizedBox(
                 width: _maxWidth * .65,
-                child: P1Intro(),
+                child: P3Approch(
+                  maxWidth: _maxWidth * .65,
+                ),
               ),
-            ),
-            P2ImageAndRow(
-              maxWidth: _maxWidth,
-            ),
-            SizedBox(
-              width: _maxWidth * .65,
-              child: P3Approch(
-                maxWidth: _maxWidth * .65,
+              P4Postars(
+                maxWidth: _maxWidth,
               ),
-            ),
-            P4Postars(
-              maxWidth: _maxWidth,
-            ),
-            P5RaceDay(
-              maxWidth: _maxWidth,
-            ),
-          ],
+              P5RaceDay(
+                maxWidth: _maxWidth,
+              ),
+            ],
+          ),
         );
       },
     );

@@ -42,6 +42,7 @@ class P3Approch extends StatelessWidget {
           style: AppTextStyles.normal,
         ),
         columnSpace,
+        //TODO: replace
         Image.network(
           "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587238918434-X29JU1GL3PSUQIL96K9H/ke17ZwdGBToddI8pDm48kF3OGmqRexbaat4Fgu0tdYsUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYwL8IeDg6_3B-BRuF4nNrNcQkVuAT7tdErd0wQFEGFSnNfmAL_0sLdQw3xKQnFn5blfCL0lSjXcZxb6AeIGgaRz_wejoirbp4zIamh7A25P1w/snowflakes-18.png?format=300w",
           width: maxWidth * .75,

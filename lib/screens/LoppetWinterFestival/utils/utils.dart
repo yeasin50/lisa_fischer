@@ -1,2 +1,2 @@
-export 'loppetWinterFestival.utils.blurHashimageData.dart';
+export 'blurHashimageData.dart';
 export 'loppetWinterFestival.utils.rowData.dart';

@@ -5,7 +5,6 @@ import 'package:portfolio/constants/constants.dart';
 import 'package:portfolio/providers/provider.navigator.dart';
 import 'package:provider/provider.dart';
 
-import '../../screens.dart';
 import '../utils/utils.dart';
 
 class GridItem extends StatefulWidget {
@@ -16,7 +15,10 @@ class GridItem extends StatefulWidget {
     required this.title,
     required this.subtitle,
     required this.imgHash,
+    required this.width,
   });
+
+  final double width;
   final String title;
   final String subtitle;
 
@@ -96,7 +98,7 @@ class _GridItemState extends State<GridItem> {
               aspectRatio: 1,
               child: BlurHash(
                 hash: widget.imgHash,
-                image: widget.imageUrl,
+                image: "${widget.imageUrl}?format=${widget.width}w",
               ),
             ),
             //* InkWell:HoverColor wont effect here
