@@ -1,11 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
 import '../utils/rowItems.utils.dart';
+import '../utils/utils.dart';
 
 class P2LeveledRow extends StatelessWidget {
   //* avoiding using another layoutBuilder
@@ -42,21 +43,20 @@ class P2LeveledRow extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.network(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1588445233651-7YV2Z0QRSRKL2HOIRUVJ/image-asset.png?format=750w",
-          fit: BoxFit.fitWidth,
-          width: maxWidth,
+        mwBHImage(
+          hash: makeGoodOnGoodIntent.hash,
+          imageUrl: makeGoodOnGoodIntent.imageUrl,
+          aspectR: 750 / 332,
         ),
         columnSpace,
         columnSpace,
-        if (!isMobile) _rowItemsNAMobile(),
-        if (isMobile) ..._rowItems(),
+        if (!isMobile) _rowItemsNAMobile() else ..._rowItems(),
         columnSpace,
         columnSpace,
-        Image.network(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1588448894297-OUXN5EOFGSB9YNY2I6UJ/leveled_jpgs+for+portfolio_leveled+logo+blue+bg.png?format=750w",
-          fit: BoxFit.fitWidth,
-          width: maxWidth,
+        mwBHImage(
+          hash: levedLogoBlueBG.hash,
+          imageUrl: levedLogoBlueBG.imageUrl,
+          aspectR: 750 / 355,
         ),
         columnSpace,
       ],

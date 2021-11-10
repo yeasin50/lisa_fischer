@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
+import '../../../utils/utils.dart';
 import '../../../widgets/widgets.dart';
+import '../utils/utils.dart';
 
 class P4Postars extends StatelessWidget {
   final double maxWidth;
@@ -31,10 +33,13 @@ class P4Postars extends StatelessWidget {
           textStyle: AppTextStyles.textParan20,
         ),
 
-        // columnSpace,
+        columnSpace,
 
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589992208210-0AT6M9TL10EKKELVL6TZ/ke17ZwdGBToddI8pDm48kJ4HEXNP32zXwoP2zqES2qR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1USR7LFWasliRhq1EJSA6JW2iqbIYCNeMWSk_VrINsC7NoTjsrrYTtYsb0Tg1GvqQYw/lopppet%25252Bmoodboard%25252B2020.jpg?format=1000w",
+        mwBHImage(
+          hash: moodboardLoppet.hash,
+          imageUrl: moodboardLoppet.imageUrl,
+          width: maxWidth,
+          aspectR: 100 / 46,
         ),
 
         columnSpace,
@@ -46,8 +51,11 @@ class P4Postars extends StatelessWidget {
 
         columnSpace,
 
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587406324634-2I2ASGHYA5EZAMNQM6Q9/ke17ZwdGBToddI8pDm48kEDtpK7ArUMPTQo-2dxdS2R7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0scl71iiVnMuLeEyTFSXT3q5ZxYLqVJqNLgflUUWlO8TMnWFXbjpmgt0vwyL6VuydA/loppetphoto_hanging%2Bon%2Bwall2.jpg?format=750w",
+        mwBHImage(
+          hash: posterH_1.hash,
+          imageUrl: posterH_1.imageUrl,
+          aspectR: 750 / 656,
+          width: maxWidth,
         ),
         columnSpace,
 
@@ -76,9 +84,8 @@ class P4Postars extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ],
-          ),
-
-        if (isMobile) ...[
+          )
+        else ...[
           _mwNImage(
             "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587416961975-QQGZAD2S3TI19JRLNKUQ/ke17ZwdGBToddI8pDm48kEsFk1O8Gek8ZkxpuU1MOuZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmgbBA9KfxWpJIziZzus6eiIV5SrldvG-ZfE4bDsavGsxSYzaAOcKLYDaVQCzbyV4T/loppetphoto_poster_kid%252Bdetail.jpg?format=500w",
           ),
@@ -87,7 +94,9 @@ class P4Postars extends StatelessWidget {
             "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587414384121-I3DT78PH3ZOY20R9A1IG/ke17ZwdGBToddI8pDm48kD-IJ-07EdvPVsYeiorIfKF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UW6WrXdejFHpuUHxuMj_JNBggSFovcBsWWcEjsR2m6yREzDpBYAkWSbbM3-8OZpI4w/loppetphoto_poster_logo%252Bdetail.jpg?format=500w",
           ),
         ],
+
         columnSpace,
+
         _mwNImage(
           "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587415935777-43CHU77JQE9RIPGSURUS/ke17ZwdGBToddI8pDm48kHU9G-5fquVhsOBL4byk0QV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UbhdWP0wyOfQlWTBoKTWCfe9pvJvwxjZ_92iR-HAgYufaHwHiHCbTxCLo3H57L5Cyw/loppetphoto_poster_angle+detail.jpg?format=750w",
         ),
@@ -102,29 +111,39 @@ class P4Postars extends StatelessWidget {
               _detailsLeftRowItem(
                 maxWidth * .5 - columnSpace.height!,
               ),
-              _mwNImage(
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587406500950-74HHP8MUHH2MTC7636HG/ke17ZwdGBToddI8pDm48kCQnVstGeYt8XWwGoxp8f_cUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcLthF_aOEGVRewCT7qiippvg9x7yr9GCB1FIEoSNFrAVthizQ3p-uRPkEaZVG0JL8/loppetphoto_poster_djoring%25252Bdetail2.jpg?format=500w",
-                width: maxWidth * .5,
+              SizedBox(
+                width: maxWidth * .5, //might not needed
+                child: mwBHImage(
+                  hash: allInDetailCover.hash,
+                  imageUrl: allInDetailCover.imageUrl,
+                  width: maxWidth * .5,
+                  aspectR: 5 / 3,
+                  fit: BoxFit.cover,
+                ),
               ),
             ],
-          ),
-
-        if (isMobile) ...[
+          )
+        else ...[
           _detailsLeftRowItem(maxWidth),
           columnSpace,
-          _mwNImage(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587406500950-74HHP8MUHH2MTC7636HG/ke17ZwdGBToddI8pDm48kCQnVstGeYt8XWwGoxp8f_cUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcLthF_aOEGVRewCT7qiippvg9x7yr9GCB1FIEoSNFrAVthizQ3p-uRPkEaZVG0JL8/loppetphoto_poster_djoring%25252Bdetail2.jpg?format=500w",
+          //* dublication :- mv to upOne
+          mwBHImage(
+            hash: allInDetailCover.hash,
+            imageUrl: allInDetailCover.imageUrl,
+            width: maxWidth * .5,
+            aspectR: 5 / 3,
+            fit: BoxFit.cover,
           ),
         ],
         SizedBox(
           height: columnSpace.height! * 3,
         ),
 
-        Image.network(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1516874801374-RFGBNC8OCF6HLOM0GU39/ke17ZwdGBToddI8pDm48kK-9XkuHLG0UKYVszNoreR97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0k9kZPbuygN4RSDPe_G5PO823i4FCZwXf4GlQRhJgNJJq9VLIOWaiL-CN3_RHafWow/loppetphoto_4b+copy.jpg?format=750w",
-          height: maxWidth * .75,
+        mwBHImage(
+          hash: posterH_1.hash,
+          imageUrl: posterH_1.imageUrl,
+          aspectR: maxWidth / (maxWidth * .75),
           width: maxWidth,
-          fit: BoxFit.cover,
         ),
 
         SizedBox(
@@ -137,10 +156,11 @@ class P4Postars extends StatelessWidget {
         ),
         columnSpace,
 
-        Image.network(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587798565022-JI0X9301BO4JXJWYHGEU/ke17ZwdGBToddI8pDm48kF4vMsvvtPVvER_z6V9sNad7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0qN_-Z3B7EvygvPOPmeOryXqk_AnveJOY8frwCLLkHmI8n299B5M95qw1T7CKwJXPA/Loppet+2017_Event+Snowy+Typography_FINAL-06.jpg?format=750w",
+        mwBHImage(
+          hash: typoGraphy.hash,
+          imageUrl: typoGraphy.imageUrl,
           width: maxWidth,
-          fit: BoxFit.contain,
+          aspectR: 750 / 1187,
         ),
 
         columnSpace,
@@ -161,8 +181,11 @@ class P4Postars extends StatelessWidget {
 
         columnSpace,
 
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587408236779-XNOV6AATYJ4I6EIW0EK9/ke17ZwdGBToddI8pDm48kNcKbxpnv5VyW17YqWwYalF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0oycmklwMHPwSb2Cr-KYzbreo3AdJijb0m4rmHl7_a7QDQ8-aut-wbauSBr9s231pA/loppetphoto_process_rick%252Blining%252Bup%252Bboard.jpg?format=750w",
+        mwBHImage(
+          hash: printingProcess_0.hash,
+          imageUrl: printingProcess_0.imageUrl,
+          aspectR: 750 / 479,
+          width: maxWidth,
         ),
 
         columnSpace,
@@ -179,44 +202,32 @@ class P4Postars extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //TODO:: add blurHash
                     //* gif of mixing
-                    Image.network(
-                      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587241668534-GTFT135D1T9YXBZC7P9T/ke17ZwdGBToddI8pDm48kJbAF3wIXfPI3KZ7YcFHtUlZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyncw1JCDmUPU_9GYCKL83k11DkbnWpd25D8SsFcoQaTAcgRNQqoIjeIA2Kt7udhCg/loppet+process+animation.gif?format=500w",
+                    SizedBox(
                       width: maxWidth * .5 - columnSpace.height! * .5,
                       height: maxWidth * .3 - columnSpace.height! * .5,
-                      fit: BoxFit.cover,
+                      child: prinitngProcess0(),
                     ),
-                    Image.network(
-                      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587241736232-DMPCTZQ192ONBIL833TX/ke17ZwdGBToddI8pDm48kDHPSfPanjkWqhH6pl6g5ph7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5dNb1QJw9casjKdtTg1_-y4jz4ptJBmI9gQmbjSQnNGng/loppetphoto_process_rick+spraying+screen.jpg?format=500w",
+
+                    SizedBox(
                       width: maxWidth * .5 - columnSpace.height! * .5,
                       height: maxWidth * .3 - columnSpace.height! * .5,
-                      fit: BoxFit.cover,
+                      child: prinitngProcess1(),
                     ),
                   ],
                 ),
-                Image.network(
-                  "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587241789122-LM9LY1AJHDJ8CKXJVMW7/ke17ZwdGBToddI8pDm48kOfPbKToHhcJtLbUxp3qS0t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeuL_TaR6SLy46ah5kOzWQM0KyfsAhEY16E6RU6p6w-xd-b3ia_Eh6COzPHYPjzSMA/loppetphoto_process_rick+paint.jpg?format=500w",
+                SizedBox(
                   width: maxWidth * .5 - columnSpace.height! * .5,
                   height: maxWidth * .6,
-                  fit: BoxFit.fill,
+                  child: prinitngProcess2(),
                 ),
               ],
             ),
-          ),
-
-        if (isMobile) ...[
-          _mwNImage(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587241668534-GTFT135D1T9YXBZC7P9T/ke17ZwdGBToddI8pDm48kJbAF3wIXfPI3KZ7YcFHtUlZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyncw1JCDmUPU_9GYCKL83k11DkbnWpd25D8SsFcoQaTAcgRNQqoIjeIA2Kt7udhCg/loppet+process+animation.gif?format=500w",
-          ),
-          columnSpace,
-          _mwNImage(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587241736232-DMPCTZQ192ONBIL833TX/ke17ZwdGBToddI8pDm48kDHPSfPanjkWqhH6pl6g5ph7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5dNb1QJw9casjKdtTg1_-y4jz4ptJBmI9gQmbjSQnNGng/loppetphoto_process_rick+spraying+screen.jpg?format=500w",
-          ),
-          columnSpace,
-          _mwNImage(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587241789122-LM9LY1AJHDJ8CKXJVMW7/ke17ZwdGBToddI8pDm48kOfPbKToHhcJtLbUxp3qS0t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UeuL_TaR6SLy46ah5kOzWQM0KyfsAhEY16E6RU6p6w-xd-b3ia_Eh6COzPHYPjzSMA/loppetphoto_process_rick+paint.jpg?format=500w",
-          ),
+          )
+        else ...[
+          prinitngProcess0(),
+          prinitngProcess1(),
+          prinitngProcess2(),
         ],
 
         columnSpace,
@@ -232,6 +243,35 @@ class P4Postars extends StatelessWidget {
           height: columnSpace.height! * 3,
         )
       ],
+    );
+  }
+
+  AspectRatio prinitngProcess2() {
+    return mwBHImage(
+      hash: printingProcess_R0.hash,
+      imageUrl: printingProcess_R0.imageUrl,
+      width: isMobile ? maxWidth : maxWidth * .5 - columnSpace.height! * .5,
+      aspectR: maxWidth * .5 - columnSpace.height! * .5 / maxWidth * .6,
+    );
+  }
+
+  AspectRatio prinitngProcess1() {
+    return mwBHImage(
+      hash: printingProcess_L1.hash,
+      imageUrl: printingProcess_L1.imageUrl,
+      width: isMobile ? maxWidth : maxWidth * .5 - columnSpace.height! * .5,
+      aspectR: maxWidth * .5 -
+          columnSpace.height! * .5 / maxWidth * .3 -
+          columnSpace.height! * .5,
+    );
+  }
+
+  AspectRatio prinitngProcess0() {
+    return mwBHImage(
+      hash: loppetProcessImage.hash,
+      imageUrl: loppetProcessImage.imageUrl,
+      fit: BoxFit.cover,
+      width: isMobile ? maxWidth : maxWidth * .5 - columnSpace.height! * .5,
     );
   }
 

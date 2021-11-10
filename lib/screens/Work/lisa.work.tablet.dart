@@ -10,12 +10,16 @@ class TabletView extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  int get _gridItemCount => 2;
+
   @override
   Widget build(BuildContext context) {
     final double _fontS = Theme.of(context).textTheme.headline5!.fontSize!;
 
     return LayoutBuilder(
       builder: (context, constraints) {
+        final gridItemWidht = constraints.maxWidth / _gridItemCount;
+
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -48,6 +52,7 @@ class TabletView extends StatelessWidget {
               children: List.generate(
                 GridItemC.lisaWorklist.length,
                 (index) => GridItem(
+                  width: gridItemWidht,
                   imageUrl: GridItemC.lisaWorklist[index].backgroundUrl,
                   imgHash: GridItemC.lisaWorklist[index].blurHash,
                   subtitle: GridItemC.lisaWorklist[index].subtitle,

@@ -13,9 +13,10 @@ class DesktopView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final _maxWidth = constraints.maxWidth * .75;
+        final _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
 
-        final _itemWidth = constraints.maxWidth * .75 / 4 - columnSpace.height!;
+        final _itemWidth = constraints.maxWidth * maxDesktopViewPortion / 4 -
+            columnSpace.height!;
 
         return SizedBox(
           width: _maxWidth,

@@ -1,98 +1,138 @@
 import 'package:flutter/material.dart';
 
+import '../../../configs/config.constants.dart';
+import '../../../utils/utils.dart';
+import '../utils/utils.dart';
+
 class MetroMobileApp extends StatelessWidget {
-  const MetroMobileApp({Key? key}) : super(key: key);
-  get _space => SizedBox(
-        height: 20,
-      );
+  final double maxWidth;
+  final bool isMobile;
+
+  const MetroMobileApp({
+    Key? key,
+    required this.maxWidth,
+    this.isMobile = false,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Column(
-          children: [
-            AspectRatio(
-              aspectRatio: 750 / 39,
-              child: Image.asset(
-                "images/mobile_app_title.jpeg",
-                fit: BoxFit.cover,
-              ),
-            ),
-            // _space,
-            Image.asset(
-              "images/mobile_app_use.jpeg",
-              width: constraints.maxWidth,
-              height: constraints.maxWidth * .75,
-              fit: BoxFit.cover,
-            ),
+    return Column(
+      children: [
+        ...[
+          mwBHImage(
+            hash: mobileAppHeader.hash,
+            imageUrl: mobileAppHeader.imageUrl,
+            width: maxWidth,
+            aspectR: 750 / 39,
+          ),
 
-            // _space,
-            Image.asset(
-              "images/barelona_metro_app_portfolio_spread4.jpg",
-              width: constraints.maxWidth,
-              height: constraints.maxWidth * .75,
-              fit: BoxFit.contain,
-            ),
+          mwBHImage(
+            hash: mobileAppOnHand.hash,
+            imageUrl: mobileAppOnHand.imageUrl,
+            width: maxWidth,
+            aspectR: 75 / 50,
+          ),
 
-            //* Printing
-            AspectRatio(
-              aspectRatio: 750 / 39,
-              child: Image.asset(
-                "images/folding_printing_title.jpeg",
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            _space,
-            Image.asset(
-              "images/folding_printing_map1.jpeg",
-              width: constraints.maxWidth,
-              fit: BoxFit.fitWidth,
-            ),
-            _space,
-            //TODO: align like the web
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  "images/folding_printing_map_L.jpeg",
-                  fit: BoxFit.fill,
-                  height: constraints.maxWidth * .3,
-                  scale: 2,
-                  width: constraints.maxWidth * .5 - 10,
-                ),
-                Image.asset(
-                  "images/folding_printing_map_R.jpeg",
-                  fit: BoxFit.fill,
-                  height: constraints.maxWidth * .3,
-                  width: constraints.maxWidth * .5 - 10,
-                ),
-              ],
-            ),
-            _space,
-            Image.asset(
-              "images/folding_printing_map_B1.jpeg",
-              width: constraints.maxWidth,
-              height: constraints.maxWidth * .75,
-              fit: BoxFit.cover,
-            ),
-            _space,
-            Image.asset(
-              "images/folding_printing_map_B2.jpeg",
-              width: constraints.maxWidth,
-              height: constraints.maxWidth * .75,
-              fit: BoxFit.cover,
-            ),
-            _space,
-            Image.asset(
-              "images/metro_logo.jpeg",
-              width: constraints.maxWidth,
-              height: constraints.maxWidth * .75,
-              fit: BoxFit.cover,
-            ),
-            _space,
+          mwBHImage(
+            hash: mobileAppScreensView.hash,
+            imageUrl: mobileAppScreensView.imageUrl,
+            width: maxWidth,
+            aspectR: 75 / 47,
+          ),
+
+          // * Folding print MAP
+          mwBHImage(
+            hash: foldingPrintMapHeader.hash,
+            imageUrl: foldingPrintMapHeader.imageUrl,
+            width: maxWidth,
+            aspectR: 750 / 39,
+          ),
+
+          mwBHImage(
+            hash: foldingPrintMap1.hash,
+            imageUrl: foldingPrintMap1.imageUrl,
+            width: maxWidth,
+            aspectR: 75 / 61,
+          ),
+
+          if (!isMobile)
+            () {
+              final _rowItemHeight = maxWidth * .4;
+
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    height: _rowItemHeight,
+                    width: maxWidth * .5 - columnSpace.height! * .5,
+                    child: _rowLeftItem(
+                      width: maxWidth * .5 - columnSpace.height! * .5,
+                    ),
+                  ),
+                  SizedBox(
+                    height: _rowItemHeight,
+                    width: maxWidth * .5 - 10,
+                    child: _rowItemRight(
+                      width: maxWidth * .5 - 10,
+                    ),
+                  ),
+                ],
+              );
+            }()
+          else ...[
+            _rowLeftItem(width: maxWidth),
+            _rowItemRight(width: maxWidth),
           ],
-        );
-      },
+
+          mwBHImage(
+            hash: bercelonaMetroMapStations.hash,
+            imageUrl: bercelonaMetroMapStations.imageUrl,
+            width: maxWidth,
+            aspectR: 75 / 55,
+          ),
+          mwBHImage(
+            hash: bercelonaMetroMapStationsP2.hash,
+            imageUrl: bercelonaMetroMapStationsP2.imageUrl,
+            width: maxWidth,
+            aspectR: 75 / 56,
+          ),
+
+          ///metroLogo
+          mwBHImage(
+            hash: bercelonaMetroRDBLogo.hash,
+            imageUrl: bercelonaMetroRDBLogo.imageUrl,
+            width: maxWidth,
+            aspectR: 75 / 53,
+          )
+        ].map(
+          (e) => Padding(
+            padding: EdgeInsets.only(bottom: columnSpace.height! * .5),
+            child: e,
+          ),
+        ),
+      ],
+    );
+  }
+
+  AspectRatio _rowItemRight({
+    required double width,
+  }) {
+    return mwBHImage(
+      hash: bercelonaMetroMapRight.hash,
+      imageUrl: bercelonaMetroMapRight.imageUrl,
+      width: width,
+      aspectR: isMobile ? 4 / 3 : 5 / 2,
+    );
+  }
+
+  AspectRatio _rowLeftItem({
+    required double width,
+  }) {
+    return mwBHImage(
+      hash: bercelonaMetroMapLeft.hash,
+      imageUrl: bercelonaMetroMapLeft.imageUrl,
+      width: width,
+      aspectR: isMobile ? 4 / 3 : 5 / 4,
     );
   }
 }

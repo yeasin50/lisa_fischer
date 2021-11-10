@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../configs/configs.dart';
-import '../../widgets/widgets.dart';
 import 'BarcelonaMetroRedesign.dart';
 
 class BercelonaMetroRedesignPage extends StatelessWidget {

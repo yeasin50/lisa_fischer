@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
+
+import 'package:portfolio/screens/Visda/utils/utils.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
 
 class P3ApproachVisD extends StatelessWidget {
+  final double maxWidth;
+
   P3ApproachVisD({
     Key? key,
+    required this.maxWidth,
   }) : super(key: key);
 
   @override
@@ -34,10 +40,13 @@ class P3ApproachVisD extends StatelessWidget {
           textAlign: TextAlign.center,
           style: AppTextStyles.smallHeader13,
         ),
-        Image.network(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1583659074237-04672AU5JJTMZF8I749R/visd%40_Event+Loop.gif?format=500w",
-          fit: BoxFit.fitWidth,
-        ),
+        AspectRatio(
+          aspectRatio: 500 / ((maxWidth * 281) / 500),
+          child: BlurHash(
+            hash: visdaEventLoopGif.hash,
+            image: visdaEventLoopGif.imageUrl,
+          ),
+        )
       ],
     );
   }

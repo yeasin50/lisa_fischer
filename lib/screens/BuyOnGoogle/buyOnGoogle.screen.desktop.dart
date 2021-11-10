@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/constants.dart';
 import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {
@@ -9,7 +10,7 @@ class DesktopView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final maxWidth = constraints.maxWidth * .75;
+        final maxWidth = constraints.maxWidth * maxDesktopViewPortion;
 
         return SizedBox(
           width: maxWidth,

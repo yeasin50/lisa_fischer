@@ -9,14 +9,14 @@ class Image2xAnimation extends StatefulWidget {
   final String fontImagePath;
   final String backImagePath;
   final Duration delay;
-  final Size imageSize;
+  final double width;
 
   Image2xAnimation({
     Key? key,
     required this.fontImagePath,
     required this.backImagePath,
     this.delay = const Duration(milliseconds: 3000),
-    required this.imageSize,
+    required this.width,
   }) : super(key: key);
 
   @override
@@ -42,29 +42,23 @@ class _Image2xAnimationState extends State<Image2xAnimation> {
   @override
   void dispose() {
     timer.cancel();
-
     super.dispose();
   }
+
+  Widget _netWorkImage(String path) => Image.network(
+        "$path?format=${widget.width}w",
+        key: ValueKey(path),
+        width: widget.width,
+        fit: BoxFit.fitWidth,
+      );
 
   @override
   Widget build(BuildContext context) {
     return AnimatedCrossFade(
       firstCurve: Curves.easeIn,
       secondCurve: Curves.easeInOut,
-      firstChild: Image.asset(
-        widget.fontImagePath,
-        key: ValueKey(widget.fontImagePath),
-        width: widget.imageSize.width,
-        // height: widget.imageSize.height,
-        fit: BoxFit.fitWidth,
-      ),
-      secondChild: Image.asset(
-        widget.backImagePath,
-        key: ValueKey(widget.backImagePath),
-        width: widget.imageSize.width,
-        fit: BoxFit.fitWidth,
-        // height: widget.imageSize.height,
-      ),
+      firstChild: _netWorkImage(widget.fontImagePath),
+      secondChild: _netWorkImage(widget.backImagePath),
       crossFadeState:
           _isFont ? CrossFadeState.showFirst : CrossFadeState.showSecond,
       duration: const Duration(milliseconds: 300),

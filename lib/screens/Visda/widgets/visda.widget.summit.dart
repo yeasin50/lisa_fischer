@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
-import '../../../widgets/widgets.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
+import '../../../widgets/widgets.dart';
+import '../utils/utils.dart';
 
 class P4SummitVisD extends StatelessWidget {
   final double maxWidth;
@@ -69,16 +71,36 @@ class P4SummitVisD extends StatelessWidget {
         columnSpace,
         //4x gif
         speakersRow(),
+
         columnSpace,
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586074893081-NVNGYGHSLDACLVCBSCPB/visd%40_photo+and+gif_kelli+anderson.gif?format=750w",
+
+        // kelli Anderson photo+Gif
+        AspectRatio(
+          aspectRatio: 750 / 407,
+          child: BlurHash(
+            hash: kelliAndersonGif.hash,
+            image: kelliAndersonGif.imageUrl,
+            imageFit: BoxFit.cover,
+          ),
         ),
+        // _mwNImage(
+        //   "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586074893081-NVNGYGHSLDACLVCBSCPB/visd%40_photo+and+gif_kelli+anderson.gif?format=750w",
+        // ),
 
         // columnSpace,
 
-        _mwNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586074652107-ZMHB67XOS1P1AHREFA8H/visd%40_photo+and+gif_jenny+odell.gif?format=750w",
+        //*  jenny Odell Gif photo+Gif
+        AspectRatio(
+          aspectRatio: 750 / 407,
+          child: BlurHash(
+            hash: jennyOdellGif.hash,
+            image: jennyOdellGif.imageUrl,
+            imageFit: BoxFit.cover,
+          ),
         ),
+        // _mwNImage(
+        //   "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586074652107-ZMHB67XOS1P1AHREFA8H/visd%40_photo+and+gif_jenny+odell.gif?format=750w",
+        // ),
 
         ///TODO:: add Rive
         _mwNImage(

@@ -1,79 +1,92 @@
 import 'package:flutter/material.dart';
 
+import '../../../configs/config.constants.dart';
+import '../../../utils/utils.dart';
+import '../utils/utils.dart';
+
 class Tickets extends StatelessWidget {
   ///* It seems may hard-coded but we are avoiding calling another Query
   final bool isMobileView;
+
+  final double maxWidth;
+
   const Tickets({
     Key? key,
     this.isMobileView = false,
+    required this.maxWidth,
   }) : super(key: key);
 
-  get _space => SizedBox(
-        height: 20,
-      );
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Column(
-          children: [
-            //* Tickets
-            AspectRatio(
-              aspectRatio: 750 / 39,
-              child: Image.asset(
-                "images/tickets_header.jpeg",
-                fit: BoxFit.cover,
-              ),
-            ),
+    return Column(
+      children: [
+        //* Tickets
+        mwBHImage(
+          aspectR: 750 / 39,
+          hash: ticketHeader.hash,
+          imageUrl: ticketHeader.imageUrl,
+          width: maxWidth,
+        ),
+        columnSpace,
 
-            if (!isMobileView)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    "images/ticket_L.jpeg",
-                    fit: BoxFit.cover,
-                    height: constraints.maxWidth * .4,
-                    width: constraints.maxWidth * 1 / 3 - 10,
-                  ),
-                  Image.asset(
-                    "images/ticket_R.jpeg",
-                    fit: BoxFit.cover,
-                    height: constraints.maxWidth * .4,
-                    width: constraints.maxWidth * 2 / 3 - 10,
-                  ),
-                ],
-              ),
+        if (!isMobileView)
+          () {
+            final double itemHeight = maxWidth * .4;
 
-            if (isMobileView)
-              Column(
-                children: [
-                  Image.asset(
-                    "images/ticket_L.jpeg",
-                    fit: BoxFit.cover,
-                    height: constraints.maxWidth * .4,
-                    width: constraints.maxWidth,
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: maxWidth * .4 - columnSpace.height! * .5,
+                  height: itemHeight,
+                  child: _metroTicketLeft(
+                    maxWidth * .4 - columnSpace.height! * .5,
                   ),
-                  _space,
-                  Image.asset(
-                    "images/ticket_R.jpeg",
-                    fit: BoxFit.cover,
-                    height: constraints.maxWidth * .4,
-                    width: constraints.maxWidth,
+                ),
+                SizedBox(
+                  width: maxWidth * .6 - columnSpace.height! * .5,
+                  height: itemHeight,
+                  child: _metroTicketRight(
+                    maxWidth * .6 - columnSpace.height! * .5,
                   ),
-                ],
-              ),
-            _space,
+                ),
+              ],
+            );
+          }()
+        else ...[
+          _metroTicketLeft(maxWidth),
+          columnSpace,
+          _metroTicketRight(maxWidth),
+        ],
 
-            Image.asset(
-              "images/ticket_B.jpeg",
-              width: constraints.maxWidth,
-              height: constraints.maxWidth * .75,
-              fit: BoxFit.cover,
-            ),
-          ],
-        );
-      },
+        columnSpace,
+
+        mwBHImage(
+          hash: metroTicketBottom.hash,
+          imageUrl: metroTicketBottom.imageUrl,
+          width: maxWidth,
+          aspectR: maxWidth / (maxWidth * .75),
+        ),
+        columnSpace,
+      ],
+    );
+  }
+
+  AspectRatio _metroTicketRight(double itemWidth) {
+    return mwBHImage(
+      hash: metroTicketRight.hash,
+      imageUrl: metroTicketRight.imageUrl,
+      aspectR: isMobileView ? 4 / 3 : 3 / 10,
+      width: itemWidth,
+    );
+  }
+
+  AspectRatio _metroTicketLeft(double itemWidth) {
+    return mwBHImage(
+      hash: metroTicketLeft.hash,
+      imageUrl: metroTicketLeft.imageUrl,
+      aspectR: isMobileView ? 3.5 / 4 : 6 / 10,
+      width: itemWidth,
     );
   }
 }
