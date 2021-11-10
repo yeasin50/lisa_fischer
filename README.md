@@ -7,6 +7,7 @@ TODO: on Lisa Fischer
 
 &nbsp;&nbsp;&nbsp; **`🛠`** project structure
 
+- [ ] work on maxWidth% of devices
 - [ ] all asset<500kb
 - [x] improved youtube ads
 - [x] reduce assets-size `<2mb` on images
@@ -29,7 +30,8 @@ TODO: on Lisa Fischer
 ---
 
 > Do I like to have `blurhash` in this case?  
-> I do now a little.  
+> I do now a little.
+
 ---
 
 A new Flutter `web` project for creating different style portfolios.

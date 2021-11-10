@@ -13,14 +13,14 @@ class TabletView extends StatelessWidget {
 
       return Column(
         children: [
-          // SizedBox(
-          //   width: constraints.maxWidth * .65,
-          //   child: Intro(),
-          // ),
           SizedBox(
-            width: _maxWidth * .8,
+            width: constraints.maxWidth * .65,
+            child: Intro(),
+          ),
+          SizedBox(
+            width: _maxWidth * .75,
             child: ImagesWithDetails(
-              maxWidth: _maxWidth * .8,
+              maxWidth: _maxWidth * .75,
             ),
           ),
           footerRow(),

@@ -1,21 +1,29 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+import '../../Leveled/utils/utils.dart';
+import '../utils/utils.dart';
 import 'widgets.dart';
 
 class ImageSliderOnThrive extends StatefulWidget {
-  ImageSliderOnThrive({Key? key}) : super(key: key);
+  ImageSliderOnThrive({
+    Key? key,
+    required this.maxWidth,
+  }) : super(key: key);
+
+  // used on image format, well we can also get width from LayoutBuilder but it will include an extra widget 🙂
+  final double maxWidth;
 
   @override
   _ImageSliderOnThriveState createState() => _ImageSliderOnThriveState();
 }
 
 class _ImageSliderOnThriveState extends State<ImageSliderOnThrive> {
-  final _imagesPath = [
-    'images/thrive/phones_in_lineeee3.jpg',
-    'images/thrive/phones_in_lineeee4.jpg',
-    'images/thrive/phones_in_lineeee5.jpg',
-    'images/thrive/phones_in_lineeee6.jpg',
+  final _imagesData = [
+    sliderImage0,
+    sliderImage1,
+    sliderImage2,
+    sliderImage3,
   ];
 
   late CarouselController controller = CarouselController();
@@ -40,10 +48,12 @@ class _ImageSliderOnThriveState extends State<ImageSliderOnThrive> {
           CarouselSlider(
             carouselController: controller,
             items: [
-              ..._imagesPath.map(
-                (p) => Image.asset(
-                  p,
-                  fit: BoxFit.fitWidth,
+              ..._imagesData.map(
+                (p) => mwBHImage(
+                  hash: p.hash,
+                  imageUrl: p.imageUrl,
+                  width: widget.maxWidth,
+                  aspectR: 750 / 485,
                 ),
               ),
             ],
