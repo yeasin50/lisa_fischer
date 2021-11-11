@@ -2,7 +2,7 @@ import '../../../model/model.dart';
 
 HashImageData get gshopLogoImage => HashImageData(
       imageUrl:
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593327372980-Q6HQFDRWZVOLL3GYCJKH/ke17ZwdGBToddI8pDm48kCRzb3JqnyRQ7VUq2pE7P097gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ksOtWCjLd_P5vfQSnAKwnrZQ9grcTPXokHRV5Fh7vm2zjLo1yw71vv4_q2u1s0ysA/cart+on+blue+updated-33-33.png?format=750w",
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593327372980-Q6HQFDRWZVOLL3GYCJKH/ke17ZwdGBToddI8pDm48kCRzb3JqnyRQ7VUq2pE7P097gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ksOtWCjLd_P5vfQSnAKwnrZQ9grcTPXokHRV5Fh7vm2zjLo1yw71vv4_q2u1s0ysA/cart+on+blue+updated-33-33.png",
       hash:
           "|3Q^2ax]G0\$,Q,l7?t-D0O?aayR:sps+S1WEspj]PDnjm%S|.8w14pKK~S%ioLs\$NtR;w}obNsadI9W;-=r?9GOY?awI9a-.W.f.wgjWOTaiwNkWJEjY\$cW?JEnh\$vS%I_.9jGV?XRkDnPfjXRaK~1fS0pfg~1a%5HoH=:",
     );
@@ -80,13 +80,10 @@ HashImageData get ytMastHead => HashImageData(
           "#FRCrWxu^kf+-AMyv~V@r?~qWBIUWBRjogoet7ju~CRjIUjsR+xtWVozWV4moz-qoyt7V@WERPkB#8jabvoLR*bHf+axofIUj[xuj[ofaxWBaxWB~CR*IUayRks:X8ofW=",
     );
 
-//* on ytVide //Issue on hash-generatorSide for png
-HashImageData gshopPNG({
-  required double width,
-}) =>
-    HashImageData(
+//* on ytVide //Issue on hash-generatorSide for png, take a ss on white[based on background] screen then create hash
+HashImageData get gshopPNG => HashImageData(
       imageUrl:
-          // "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590218888566-5HEMUQQQEU7I5D1YZQOB/buy+on+google+cart+hero+in+elevation-08.png?format=${width}w",
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206819594-2Y1OOQMSW6IACML3OET9/ke17ZwdGBToddI8pDm48kHgeF6xw7HSVwCYTTeQdw017gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iE65AXCN5486i28K9GUUCgVjv5ZSo0OWMgFo2W4vcGZk1Rs35klMuCxeyNIaYEgSg/buy+on+google+cart+hero+in+elevation-08.png?format=${width}w",
-      hash: "ULE3F[bH00jZaxayj]oL00f6~qbHbIj[jrWV",
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1592206819594-2Y1OOQMSW6IACML3OET9/ke17ZwdGBToddI8pDm48kHgeF6xw7HSVwCYTTeQdw017gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iE65AXCN5486i28K9GUUCgVjv5ZSo0OWMgFo2W4vcGZk1Rs35klMuCxeyNIaYEgSg/buy+on+google+cart+hero+in+elevation-08.png",
+      hash:
+          "|BS?DXX8~n-C9IOWxo\$*t8t6WVogspWCS1oIn%WG_1oL9GNt-.xGRRNuRj%Oo3V=N@ofwgWZSgs%emj[kXaxV?WXo#s:oH\$_W;N#r@skSzWCr@W?IuW.\${n+NgX6ngWBbwN#ae\$_ofNMaet1X5RnxoafNLkVs*aLX9f*V?",
     );

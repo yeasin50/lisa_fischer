@@ -8,6 +8,7 @@ TODO: on Lisa Fischer
 &nbsp;&nbsp;&nbsp; **`🛠`** project structure
 
 - [ ] work on maxWidth% of devices
+- [ ] add some space on row <Buy on Google
 - [ ] all asset<500kb
 - [x] improved youtube ads
 - [x] reduce assets-size `<2mb` on images
