@@ -170,6 +170,7 @@ class _P2ShowCaseState extends State<P2ShowCase> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         RowItem(
           width: _width,
