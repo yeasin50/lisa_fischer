@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import '../../../configs/configs.dart';
 import '../../../constants/constants.dart';
+import '../../../utils/utils.dart';
 import '../../../widgets/widgets.dart';
 import '../utils/utils.dart';
 
@@ -52,23 +52,6 @@ class _P2ShowCaseState extends State<P2ShowCase> {
   /// init ShowCase Opacity
   double _showcaseOpacity = 0;
 
-  AspectRatio _mwBHImage({
-    required String url,
-    required String hash,
-    required double width,
-    required double height,
-    BoxFit fit = BoxFit.fitWidth,
-  }) =>
-      AspectRatio(
-        key: ValueKey(url),
-        aspectRatio: width / height,
-        child: BlurHash(
-          hash: hash,
-          image: url,
-          imageFit: fit,
-        ),
-      );
-
   List<Padding> _rowItemsMobile() {
     List<Padding> _items = [];
 
@@ -93,6 +76,7 @@ class _P2ShowCaseState extends State<P2ShowCase> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        columnSpace,
         // GShop Logo
         VisibilityDetector(
           key: Key("GshopLogoOpacity"),
@@ -106,11 +90,11 @@ class _P2ShowCaseState extends State<P2ShowCase> {
             duration: Duration(milliseconds: 400),
             curve: Curves.easeInCirc,
             opacity: _opacityLevelLogo,
-            child: _mwBHImage(
+            child: mwBHImage(
               hash: gshopLogoImage.hash,
-              url: gshopLogoImage.imageUrl,
+              imageUrl: gshopLogoImage.imageUrl,
               width: 750,
-              height: 396,
+              aspectR: 750 / 396,
             ),
           ),
         ),
@@ -146,12 +130,12 @@ class _P2ShowCaseState extends State<P2ShowCase> {
             child: AnimatedOpacity(
               duration: Duration(milliseconds: 400),
               opacity: _showcaseOpacity,
-              child: _mwBHImage(
-                url: gshopShowCase.imageUrl,
+              child: mwBHImage(
+                imageUrl: gshopShowCase.imageUrl,
                 hash: gshopShowCase.hash,
                 width: widget.maxWidth,
                 //* may dirty way to handle it
-                height: widget.maxWidth * (448 / 1096),
+                aspectR: widget.maxWidth / (widget.maxWidth * (448 / 1096)),
                 fit: BoxFit.fitHeight,
               ),
             ),

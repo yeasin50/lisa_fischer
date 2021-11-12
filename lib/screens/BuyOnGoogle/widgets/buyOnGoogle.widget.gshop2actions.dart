@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../configs/configs.dart';
 import '../../../../widgets/widgets.dart';
 import '../../../constants/constants.dart';
+import '../../../utils/utils.dart';
 import '../utils/utils.dart';
 import 'widgets.dart';
 
@@ -16,21 +16,6 @@ class P4GShoppingActions extends StatelessWidget {
     required this.maxWidth,
   }) : super(key: key);
 
-  AspectRatio _mBHImage({
-    required String url,
-    required String hash,
-    required double height,
-  }) =>
-      AspectRatio(
-        key: ValueKey(url),
-        aspectRatio: maxWidth / height,
-        child: BlurHash(
-          hash: hash,
-          image: url,
-          imageFit: BoxFit.cover,
-        ),
-      );
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,9 +25,9 @@ class P4GShoppingActions extends StatelessWidget {
           textStyle: AppTextStyles.textParan20,
         ),
 
-        // SizedBox(
-        //   height: columnSpace.height! * .5,
-        // ),
+        SizedBox(
+          height: columnSpace.height! * .5,
+        ),
 
         Text(
           "Demonstrating Buy on Google destinations for merchants",
@@ -69,12 +54,11 @@ class P4GShoppingActions extends StatelessWidget {
           height: columnSpace.height! * 1.5,
         ),
 
-        AspectRatio(
-          aspectRatio: 15 / 10,
-          child: BlurHash(
-            hash: merchantWebsiteMarketing.hash,
-            image: merchantWebsiteMarketing.imageUrl,
-          ),
+        mwBHImage(
+          hash: merchantWebsiteMarketing.hash,
+          imageUrl: merchantWebsiteMarketing.imageUrl,
+          aspectR: 15 / 10,
+          width: maxWidth,
         ),
 
         SizedBox(
@@ -88,13 +72,14 @@ class P4GShoppingActions extends StatelessWidget {
         ),
 
         columnSpace,
-        _mBHImage(
-          url: emailMarketing.imageUrl,
+        mwBHImage(
+          imageUrl: emailMarketing.imageUrl,
           hash: emailMarketing.hash,
-          height: (490 * maxWidth) / 750,
+          aspectR: 750 / 490,
+          width: maxWidth,
         ),
 
-        SizedBox(height: kTopLevelStackSpace * .5),
+        SizedBox(height: columnSpace.height! * 3),
 
         //* `ACHETER SUR GOOGLE`
 
@@ -153,12 +138,13 @@ class P4GShoppingActions extends StatelessWidget {
           textStyle: AppTextStyles.textParan20,
         ),
 
-        // columnSpace,
+        columnSpace,
 
-        _mBHImage(
-          url: acheterSurGoogle.imageUrl,
+        mwBHImage(
+          imageUrl: acheterSurGoogle.imageUrl,
           hash: acheterSurGoogle.hash,
-          height: (780 * maxWidth) / 1000,
+          aspectR: 100 / 78,
+          width: maxWidth,
         ),
 
         SizedBox(
@@ -172,10 +158,11 @@ class P4GShoppingActions extends StatelessWidget {
 
         columnSpace,
 
-        _mBHImage(
+        mwBHImage(
           hash: ytMastHead.hash,
-          url: ytMastHead.imageUrl,
-          height: (642 * maxWidth) / 1000,
+          imageUrl: ytMastHead.imageUrl,
+          aspectR: 1000 / 642,
+          width: maxWidth,
         ),
       ],
     );

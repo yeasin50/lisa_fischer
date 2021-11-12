@@ -24,6 +24,8 @@ class P3Challenge2Solutions extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        columnSpace,
+
         //* The Challenge
         Center(
           child: RichTextInParentheses(
@@ -37,7 +39,7 @@ class P3Challenge2Solutions extends StatelessWidget {
 
         Center(
           child: SizedBox(
-            width: maxWidth * .75,
+            width: isMobile ? maxWidth : maxWidth * .75,
             child: Text(
               "How do you convey to users that products are transactable on Google across their Google shopping journey?",
               textAlign: TextAlign.center,
@@ -77,7 +79,7 @@ class P3Challenge2Solutions extends StatelessWidget {
           text: "VISUAL DESIGN SOLUTION",
         ),
 
-        // columnSpace,
+        columnSpace,
 
         //TODO:: align with +
         Text.rich(
@@ -86,26 +88,24 @@ class P3Challenge2Solutions extends StatelessWidget {
               TextSpan(
                 text: "Cart as a buying metaphor",
                 style: AppTextStyles.sub26.copyWith(
-                  fontSize: 26,
                   color: Colors.black,
                 ),
               ),
               TextSpan(
                 text: " + ",
                 style: AppTextStyles.sub26.copyWith(
-                  fontSize: 26,
                   color: kColorDash,
                 ),
               ),
               TextSpan(
                 text: "the Google four brand colors",
                 style: AppTextStyles.sub26.copyWith(
-                  fontSize: 26,
                   color: Colors.black,
                 ),
               )
             ],
           ),
+          textAlign: TextAlign.center,
         ),
 
         columnSpace,
