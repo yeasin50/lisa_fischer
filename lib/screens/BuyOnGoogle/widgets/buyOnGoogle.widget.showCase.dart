@@ -58,7 +58,7 @@ class _P2ShowCaseState extends State<P2ShowCase> {
     buyOnGoogleRowitems.forEach((key, value) {
       _items.add(
         Padding(
-          padding: const EdgeInsets.only(bottom: 16.0),
+          padding: const EdgeInsets.only(bottom: 24.0),
           child: RowItem(
             title: "$key",
             body: value,
