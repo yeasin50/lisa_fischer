@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 import '../../../utils/blurHashImageTemplate.dart';
 import '../utils/utils.dart';
@@ -28,25 +27,44 @@ class ImagesWithDetails extends StatelessWidget {
             imageUrl: thriveHeader_0.imageUrl,
             aspectR: 25 / 12,
           ),
-          Image.asset(
-            "images/thrive/p2.jpg",
-            fit: BoxFit.fitWidth,
+
+          //Overview
+          mwBHImage(
+            hash: overView_1.hash,
+            imageUrl: overView_1.imageUrl,
             width: maxWidth,
+            aspectR: 10 / 4,
           ),
 
-          Image.network("${ImageHandler.idea_2}?format=${maxWidth}w"),
-          Image.asset(
-            "images/thrive/thrive_research_logo.jpeg",
-            fit: BoxFit.fitWidth,
+          //idea
+          mwBHImage(
+            hash: idea_2.hash,
+            imageUrl: idea_2.imageUrl,
             width: maxWidth,
+            aspectR: 75 / 48,
+            fit: BoxFit.fitHeight,
           ),
+
+          // thrive_research_logo.jpeg",
+          mwBHImage(
+            hash: researcHeaders.hash,
+            imageUrl: researcHeaders.imageUrl,
+            width: maxWidth,
+            aspectR: 100 / 5,
+          ),
+
           //DONE: P4 add slide show
-          ImageSliderOnThrive(),
+          ImageSliderOnThrive(
+            maxWidth: maxWidth,
+          ),
 
-          Image.asset(
-            "images/thrive/p5_desing_problem.jpg",
-            fit: BoxFit.fitWidth,
+          //*  using overView hash😅
+          mwBHImage(
+            hash: overView_1.hash,
+            imageUrl: ImageHandler.designProblem_5,
             width: maxWidth,
+            fit: BoxFit.fitHeight,
+            aspectR: 100 / 37,
           ),
 
           mwBHImage(
@@ -56,10 +74,8 @@ class ImagesWithDetails extends StatelessWidget {
             aspectR: 25 / 14,
           ),
 
-          Image.asset(
-            "images/thrive/p7_designObjective.jpeg",
-            fit: BoxFit.fitWidth,
-            width: maxWidth,
+          Image.network(
+            "${ImageHandler.designObjective_6x}?format=${maxWidth}w",
           ),
 
           Image.network(
@@ -89,12 +105,14 @@ class ImagesWithDetails extends StatelessWidget {
             ),
           ),
 
-          Image.asset(
-            "images/thrive/park_map_header.jpeg",
-            fit: BoxFit.fitWidth,
+          //Header
+          mwBHImage(
+            hash: parkMapInteractiveHeader.hash,
+            imageUrl: parkMapInteractiveHeader.imageUrl,
             width: maxWidth,
+            fit: BoxFit.fitWidth,
+            aspectR: 750 / 38,
           ),
-
           mwBHImage(
             hash: parkMapInteractive.hash,
             imageUrl: parkMapInteractive.imageUrl,
@@ -102,7 +120,7 @@ class ImagesWithDetails extends StatelessWidget {
             aspectR: 1000 / 563,
           ),
 
-          ///TODO:: Video
+          //TODO:: Video
 
           ...[
             ImageHandler.parkppTitle_14,
@@ -112,6 +130,7 @@ class ImagesWithDetails extends StatelessWidget {
             ImageHandler.memorabilia_16,
             ImageHandler.tshirt_f_17,
             ImageHandler.tshirt_m_18,
+            ImageHandler.holdingBag_18,
             ImageHandler.holdingBag_19,
             ImageHandler.thriveLogo_end,
           ].map(

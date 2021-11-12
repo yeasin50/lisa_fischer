@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../configs/configs.dart';
@@ -23,6 +24,8 @@ class P3Challenge2Solutions extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        columnSpace,
+
         //* The Challenge
         Center(
           child: RichTextInParentheses(
@@ -31,12 +34,12 @@ class P3Challenge2Solutions extends StatelessWidget {
         ),
 
         SizedBox(
-          height: columnSpace.height! * 3,
+          height: columnSpace.height!,
         ),
 
         Center(
           child: SizedBox(
-            width: maxWidth * .75,
+            width: isMobile ? maxWidth : maxWidth * .75,
             child: Text(
               "How do you convey to users that products are transactable on Google across their Google shopping journey?",
               textAlign: TextAlign.center,
@@ -54,11 +57,20 @@ class P3Challenge2Solutions extends StatelessWidget {
 
         columnSpace,
 
-        //* Gshop logo
-        mwBHImage(
-          hash: gshopLogoImage.hash,
-          imageUrl: gshopLogoImage.imageUrl,
-          width: maxWidth,
+        //* Gshop logo todo: issu on BlurHashImage [https://github.com/fluttercommunity/flutter_blurhash/issues/35]
+        AspectRatio(
+          aspectRatio: 250 / 123,
+          // should i make it a little small 🤔
+          child: Image.network(
+            "${gshopPNG.imageUrl}?format=${maxWidth}w",
+            key: ValueKey("Gs  Logo RM-BG"),
+            loadingBuilder: (context, child, loadingProgress) =>
+                loadingProgress == null
+                    ? child
+                    : BlurHash(
+                        hash: gshopPNG.hash,
+                      ),
+          ),
         ),
 
         columnSpace,
@@ -67,7 +79,7 @@ class P3Challenge2Solutions extends StatelessWidget {
           text: "VISUAL DESIGN SOLUTION",
         ),
 
-        // columnSpace,
+        columnSpace,
 
         //TODO:: align with +
         Text.rich(
@@ -76,26 +88,24 @@ class P3Challenge2Solutions extends StatelessWidget {
               TextSpan(
                 text: "Cart as a buying metaphor",
                 style: AppTextStyles.sub26.copyWith(
-                  fontSize: 26,
                   color: Colors.black,
                 ),
               ),
               TextSpan(
                 text: " + ",
                 style: AppTextStyles.sub26.copyWith(
-                  fontSize: 26,
                   color: kColorDash,
                 ),
               ),
               TextSpan(
                 text: "the Google four brand colors",
                 style: AppTextStyles.sub26.copyWith(
-                  fontSize: 26,
                   color: Colors.black,
                 ),
               )
             ],
           ),
+          textAlign: TextAlign.center,
         ),
 
         columnSpace,
@@ -123,16 +133,16 @@ class P3Challenge2Solutions extends StatelessWidget {
         SizedBox(
           height: columnSpace.height! * 3,
         ),
-        // solution2(),
+        solution2(),
 
         SizedBox(
           height: columnSpace.height! * 3,
         ),
 
-        // DesktopMobileUserFlow(maxWidth: maxWidth),
+        DesktopMobileUserFlow(maxWidth: maxWidth),
 
         ///* `Solution 3`
-        // solution3(),
+        solution3(),
 
         SizedBox(
           height: columnSpace.height! * 3,

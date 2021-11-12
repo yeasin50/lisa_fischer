@@ -4,7 +4,6 @@ export 'widget.circleNeonBorder.dart';
 export 'widget.customButton.dart';
 export 'widget.dashGreenLine.dart';
 export 'widget.emojiWrapper.dart';
-export 'widget.fadeInNetImage.dart';
 export 'widget.footerText.dart';
 export 'widget.header.dart';
 export 'widget.hoverUnderlineOnLink.dart';

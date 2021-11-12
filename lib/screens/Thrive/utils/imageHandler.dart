@@ -2,14 +2,23 @@ class ImageHandler {
   static const String thriveHeading_0 =
       "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1460441563055-HX1KNKE965CJUTIH1U3M/image-asset.jpeg";
 
+  static const String overView_1 =
+      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490555125295-TZBD9JNGUR1LXVVPRAX8/overview+test.jpg";
+
   static const String idea_2 =
       "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1460441657463-KME6U8M8DNFBHJ4DRO0N/image-asset.jpeg";
 
+  static const String research_logo_3 =
+      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490501594326-7U7NOFB8JF2WB7FW2Q6A/image-asset.jpeg";
+
   static const String designProblem_5 =
-      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490502089602-V0K9XI671YV9DS3XBO12/image-asset.jpeg";
+      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490551925659-SNS58PABGJZ877DHI3TE/design+problem+tests2.jpg";
 
   static const String moodBoard_6 =
       "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490502089602-V0K9XI671YV9DS3XBO12/image-asset.jpeg";
+
+  static const String designObjective_6x =
+      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490768583943-ABJYWYZDIVNMGJLT5DYS/image-asset.jpeg";
 
   static const String identityHeader_7 =
       "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1490510450260-MCCZLX9GJ5KVNC2MG4EC/image-asset.jpeg?";

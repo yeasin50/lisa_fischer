@@ -1,5 +1,13 @@
 import '../../../model/mode.hashImage.dart';
 
+// better hash will be drawing colors*BW
+HashImageData get loppetAnimationBannerSkiier => HashImageData(
+      imageUrl:
+          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587270278664-X4Z6AW4RYTS4AER4DIOF/loppet+animation+banner+skiier.gif",
+      hash:
+          "|7QTJ+E2M}%MM{xuWBofaeA0%1IUxuRPt7WAWBof~UoJjrbHxuRjoLxuWBtSE2xaWBozWBWVofaxxu%LIUofRkt7WBR*oextRkxuWBofR+t7jZWXxvRjWBWBRjt6RjWBWBxtxtj]j@ofoft6WBt7WBRkofWBWAWBWBoLRj",
+    );
+
 //rm
 HashImageData get loppetProcessImage => HashImageData(
       imageUrl:

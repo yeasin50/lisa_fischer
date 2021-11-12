@@ -7,7 +7,11 @@ TODO: on Lisa Fischer
 
 &nbsp;&nbsp;&nbsp; **`🛠`** project structure
 
-- [ ] reduce assets-size `<2mb` on images
+- [ ] work on maxWidth% of devices
+- [ ] add some space on row <Buy on Google
+- [ ] all asset<500kb
+- [x] improved youtube ads
+- [x] reduce assets-size `<2mb` on images
 - [x] improve `Oro` desktop views
 - [x] replace networkImage with blurHash
 - [ ] set yt player width
@@ -27,8 +31,7 @@ TODO: on Lisa Fischer
 ---
 
 > Do I like to have `blurhash` in this case?  
-> No, I don't.
-> it would be much better to present only one loading indicator and after fetch present the UI.
+> I do now a little.
 
 ---
 
