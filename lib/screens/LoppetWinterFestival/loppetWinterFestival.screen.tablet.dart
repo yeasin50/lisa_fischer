@@ -28,7 +28,7 @@ class TabletView extends StatelessWidget {
               SizedBox(
                 width: maxWidth * .75,
                 child: P3Approch(
-                  maxWidth: maxWidth,
+                  maxWidth: maxWidth * .75,
                 ),
               ),
               P4Postars(
