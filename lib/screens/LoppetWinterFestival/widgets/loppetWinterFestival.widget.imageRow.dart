@@ -28,12 +28,12 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
   _textStyle(bool _isHover) {
     if (_isHover)
       return AppTextStyles.normal.copyWith(
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
         color: kColorDash,
       );
     else
       return AppTextStyles.normal.copyWith(
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
       );
   }
 
