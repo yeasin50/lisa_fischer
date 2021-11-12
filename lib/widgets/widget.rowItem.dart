@@ -28,8 +28,8 @@ class RowItem extends StatelessWidget {
 
           Padding(
             padding: EdgeInsets.only(
-              top: isMobile ? 4 : 8,
-              bottom: isMobile ? 6 : 12,
+              top: isMobile ? 4 : 10,
+              bottom: isMobile ? 6 : 14,
             ),
             child: Container(
               width: 25,
