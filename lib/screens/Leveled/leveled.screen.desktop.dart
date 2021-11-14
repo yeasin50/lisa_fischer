@@ -19,7 +19,7 @@ class DesktopView extends StatelessWidget {
               Align(
                 alignment: Alignment(-1, -1),
                 child: SizedBox(
-                  width: _maxWidth * .4,
+                  width: _maxWidth * maxDesktopViewIntroPortion,
                   child: P1LeveledIntro(),
                 ),
               ),

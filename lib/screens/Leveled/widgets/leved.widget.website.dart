@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../configs/configs.dart';
 import '../../../constants/constants.dart';
+import '../../../utils/utils.dart';
 import '../../../widgets/widgets.dart';
 import '../utils/utils.dart';
 
@@ -37,7 +38,8 @@ class _P5LeveledState extends State<P5Leveled> {
       "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939843017-RIGTJG1PYLC0VR8N5UDF/leveled_website+for+portfolio+with+pattern+latest-49.png%22%20alt=%22leveled_website%20for%20portfolio%20with%20pattern%20latest-49.png?format=${widget.maxWidth}w",
     ];
 
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    //TODO: reset timer on btn-Click
+    _timer = Timer.periodic(Duration(seconds: 1, milliseconds: 200), (timer) {
       setState(() {
         _index++;
         if (_index >= images.length) _index = 0;
@@ -70,6 +72,7 @@ class _P5LeveledState extends State<P5Leveled> {
                 hash: levedLogoAnimation.hash,
                 imageUrl: images[_index],
                 aspectR: widget.maxWidth / (widget.maxWidth * .6),
+                width: widget.maxWidth,
               ),
 
               ///Controllers
@@ -140,10 +143,12 @@ class _P5LeveledState extends State<P5Leveled> {
           child: mwBHImage(
             hash: levedLogoAnimation.hash,
             imageUrl:
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589665934776-XDY86EAOXW91EM8UY218/image-asset.jpeg?format=${widget.maxWidth}w",
+                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589665934776-XDY86EAOXW91EM8UY218/image-asset.jpeg",
             aspectR: widget.maxWidth / widget.maxWidth * .6,
+            width: widget.maxWidth,
           ),
         ),
+        columnSpace,
       ],
     );
   }

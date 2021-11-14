@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
-
-import 'package:portfolio/screens/Visda/utils/utils.dart';
 
 import '../../../configs/configs.dart';
 import '../../../constants/constants.dart';
+import '../../../extensions/extensions.dart';
+import '../../../utils/utils.dart';
 import '../../../widgets/widgets.dart';
+import '../utils/utils.dart';
 
 class P3ApproachVisD extends StatelessWidget {
   final double maxWidth;
@@ -33,20 +33,23 @@ class P3ApproachVisD extends StatelessWidget {
         columnSpace,
         greenColorLine,
         SizedBox(
-          height: 30,
+          height: columnSpace.height! * 1.5,
         ),
         Text(
           "The branding tells the story of the forever-evolving design process of Google’s Visual Designers by taking inspiration from blind contour drawing. The loosely energetic, yet confidentiality controlled, line work throughout the brand elements mirrors the chaotic expertise of Visual Designers at work.",
           textAlign: TextAlign.center,
-          style: AppTextStyles.smallHeader13,
-        ),
-        AspectRatio(
-          aspectRatio: 500 / ((maxWidth * 281) / 500),
-          child: BlurHash(
-            hash: visdaEventLoopGif.hash,
-            image: visdaEventLoopGif.imageUrl,
+          style: AppTextStyles.normal.copyWith(
+            fontSize: 22.fs,
           ),
-        )
+        ),
+        columnSpace,
+        mwBHImage(
+          hash: visdaEventLoopGif.hash,
+          imageUrl: visdaEventLoopGif.imageUrl,
+          aspectR: 192 / 108,
+          width: maxWidth,
+        ),
+        columnSpace,
       ],
     );
   }

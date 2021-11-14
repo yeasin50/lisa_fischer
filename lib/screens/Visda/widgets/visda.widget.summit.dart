@@ -106,6 +106,9 @@ class P4SummitVisD extends StatelessWidget {
         _mwNImage(
           "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586828783998-2R7W1WQZRALZTO3VZPU3/VisD%252BSummit%252BBranding_v10-52.jpg?format=750w",
         ),
+        SizedBox(
+          height: columnSpace.height! * 3,
+        ),
       ],
     );
   }

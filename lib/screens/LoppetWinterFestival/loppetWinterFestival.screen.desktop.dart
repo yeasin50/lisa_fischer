@@ -19,19 +19,22 @@ class DesktopView extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: SizedBox(
-                  width: _maxWidth * .65,
+                  width: _maxWidth * maxDesktopViewIntroPortion,
                   child: P1Intro(),
                 ),
               ),
               P2ImageAndRow(
                 maxWidth: _maxWidth,
               ),
-              SizedBox(
-                width: _maxWidth * .65,
-                child: P3Approch(
-                  maxWidth: _maxWidth * .65,
-                ),
-              ),
+              () {
+                final aproachWidth = _maxWidth * .65;
+                return SizedBox(
+                  width: aproachWidth,
+                  child: P3Approch(
+                    maxWidth: aproachWidth,
+                  ),
+                );
+              }(),
               P4Postars(
                 maxWidth: _maxWidth,
               ),
