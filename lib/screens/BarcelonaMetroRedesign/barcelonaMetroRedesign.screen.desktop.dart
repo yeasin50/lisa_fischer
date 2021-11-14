@@ -11,34 +11,27 @@ class DesktopView extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         double _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
-        double _introWidth = constraints.maxWidth * .5;
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: _introWidth,
-              child: Intro(),
-            ),
-            SizedBox(
-              width: _maxWidth,
-              child: Column(
-                children: [
-                  WorkProcessUsingBlurHash(
-                    maxWidth: constraints.maxWidth * maxDesktopViewPortion,
-                  ),
 
-                  ///* from assets
-                  Tickets(
-                    maxWidth: _maxWidth,
-                  ),
-                  MetroMobileApp(
-                    maxWidth: _maxWidth,
-                  ),
-                ],
+        return SizedBox(
+          width: _maxWidth,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: constraints.maxWidth * maxDesktopViewIntroPortion,
+                child: Intro(),
               ),
-            ),
-          ],
+              WorkProcessUsingBlurHash(
+                maxWidth: _maxWidth,
+              ),
+              Tickets(
+                maxWidth: _maxWidth,
+              ),
+              MetroMobileApp(
+                maxWidth: _maxWidth,
+              ),
+            ],
+          ),
         );
       },
     );

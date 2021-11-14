@@ -25,8 +25,6 @@ class P4Mood2 extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _itemSpaceAboveRTP,
-
         Center(
           child: RichTextInParentheses(
             text: "MoodBoard",
