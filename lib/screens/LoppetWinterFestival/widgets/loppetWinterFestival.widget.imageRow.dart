@@ -1,13 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/LoppetWinterFestival/utils/utils.dart';
-import 'package:portfolio/utils/utils.dart';
-import '../../../constants/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
+import '../../../utils/utils.dart';
 import '../../../widgets/widgets.dart';
-import '../utils/loppetWinterFestival.utils.rowData.dart';
+import '../utils/utils.dart';
 
 class P2ImageAndRow extends StatefulWidget {
   final double maxWidth;
