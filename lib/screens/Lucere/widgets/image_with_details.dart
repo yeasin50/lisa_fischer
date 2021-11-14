@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../configs/config.constants.dart';
 import '../../../utils/utils.dart';
 import '../utils/utils.dart';
 
@@ -30,7 +31,8 @@ class ImagesWithDetails extends StatelessWidget {
             width: maxWidth,
           ),
 
-          //* images
+          //* images Lazy -_-, all are on network image,
+          //TODO: let's generate a common hash for all
           ...[
             ImageHandler.lucerePhoneView_2,
             ImageHandler.lucerePhoneView_3,
@@ -50,8 +52,8 @@ class ImagesWithDetails extends StatelessWidget {
           )
         ].map(
           (w) => Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: 8,
+            padding: EdgeInsets.only(
+              bottom: columnSpace.height!,
             ),
             child: w,
           ),

@@ -14,7 +14,7 @@ class DesktopView extends StatelessWidget {
         return Column(
           children: [
             SizedBox(
-              width: constraints.maxWidth * .5,
+              width: constraints.maxWidth * maxDesktopViewIntroPortion,
               child: Intro(),
             ),
             SizedBox(

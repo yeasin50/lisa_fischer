@@ -8,23 +8,25 @@ class DesktopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      final _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
 
-      return Column(
-        children: [
-          SizedBox(
-            width: constraints.maxWidth * maxDesktopViewIntroPortion,
-            child: Intro(),
-          ),
-          SizedBox(
-            width: _maxWidth,
-            child: ImagesWithDetails(
-              maxWidth: _maxWidth,
+        return Column(
+          children: [
+            SizedBox(
+              width: constraints.maxWidth * maxDesktopViewIntroPortion,
+              child: Intro(),
             ),
-          ),
-        ],
-      );
-    });
+            SizedBox(
+              width: _maxWidth,
+              child: ImagesWithDetails(
+                maxWidth: _maxWidth,
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 }
