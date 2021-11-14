@@ -8,8 +8,10 @@ TODO: on Lisa Fischer
 &nbsp;&nbsp;&nbsp; **`🛠`** project structure
 
 - [ ] work on maxWidth% of devices
-- [ ] add some space on row <Buy on Google
-- [ ] all asset<500kb
+- [ ] reset timer on imageSlider button click
+- [ ] change intro color to black
+- [x] add some space on row <Buy on Google
+- [x] all asset<500kb
 - [x] improved youtube ads
 - [x] reduce assets-size `<2mb` on images
 - [x] improve `Oro` desktop views
