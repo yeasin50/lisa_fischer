@@ -1,4 +1,4 @@
-name: Flutter Web
+name: deploy web on github-page
 on:
   push:
     branches:
@@ -17,8 +17,7 @@ jobs:
       - run: flutter config --enable-web
       - run: flutter clean
       - run: flutter pub get
-      # base ref need to remove or change manually(./)
-      - run: flutter build web --release --web-renderer html --base-href /./
+      - run: flutter build web --release --web-renderer html
       - run: |
           cd build/web
           git init
