@@ -13,19 +13,20 @@ class DesktopView extends StatelessWidget {
         final _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
         //* in oro, portion of maxBodyView is < others' body
 
-        return Column(
-          children: [
-            SizedBox(
-              width: constraints.maxWidth * .5,
-              child: Intro(),
-            ),
-            SizedBox(
-              width: _maxWidth,
-              child: ImagesWithDetails(
+        return SizedBox(
+          width: _maxWidth,
+          child: Column(
+            children: [
+              SizedBox(
+                width: constraints.maxWidth * maxDesktopViewIntroPortion,
+                child: Intro(),
+              ),
+              //all are image 🤐
+              ImagesWithDetails(
                 maxWidth: _maxWidth,
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );
