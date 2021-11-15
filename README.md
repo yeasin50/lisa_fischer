@@ -7,9 +7,16 @@ TODO: on Lisa Fischer
 
 &nbsp;&nbsp;&nbsp; **`🛠`** project structure
 
+- [ ] create error page
+- [ ] splash screen
+- [ ] setup logo
+- [ ] handle logoAnimation
 - [ ] work on maxWidth% of devices
 - [ ] reset timer on imageSlider button click
-- [ ] change intro color to black
+- [ ] ytVide size
+- [ ] use Sizer [next one]
+- [ ] forgot to use `format` parameter on image Call
+- [x] change intro color to black
 - [x] add some space on row <Buy on Google
 - [x] all asset<500kb
 - [x] improved youtube ads
@@ -19,7 +26,6 @@ TODO: on Lisa Fischer
 - [ ] set yt player width
 - [x] tablet mode intro text works
 - [x] just make this repo from Lisa Fischer
-- [ ] ytVide size
 - [x] hash-blur image
 - **x** apply `const`
 - [x] use dot name fileStruct
@@ -27,8 +33,6 @@ TODO: on Lisa Fischer
 - [x] controll font sizes
 - [x] separate mobile view
 - [x] use nav2
-- [ ] use Sizer [next one]
-- [ ] forgot to use `format` parameter on image Call
 
 ---
 
