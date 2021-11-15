@@ -26,16 +26,14 @@ class TabletView extends StatelessWidget {
             AnimateEmojis(),
             Padding(
               padding: EdgeInsets.only(bottom: 16),
-              child: Center(
-                child: SizedBox(
-                  width: constraints.maxWidth * .6,
-                  child: Text(
-                    infoText,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.lato(
-                      fontSize: _fontS,
-                      fontWeight: FontWeight.w500,
-                    ),
+              child: SizedBox(
+                width: constraints.maxWidth * .6,
+                child: Text(
+                  infoText,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.lato(
+                    fontSize: _fontS,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
