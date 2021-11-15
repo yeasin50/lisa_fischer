@@ -10,11 +10,12 @@ TODO: on Lisa Fischer
 - [ ] create error page
 - [ ] splash screen
 - [ ] setup logo
+- [ ] navigation on tablet and mobile mode
 - [ ] handle logoAnimation
 - [ ] work on maxWidth% of devices
 - [ ] reset timer on imageSlider button click
 - [ ] ytVide size
-- [ ] use Sizer [next one]
+- [ ] **x** use Sizer [next one] not using for this project
 - [ ] forgot to use `format` parameter on image Call
 - [x] change intro color to black
 - [x] add some space on row <Buy on Google
