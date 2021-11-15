@@ -29,7 +29,9 @@ class Intro extends StatelessWidget {
           ),
           Text(
             "A city park designed for the City of Charlotte, North Carolina with the triple bottom line (people + profit + planet) in mind.",
-            style: AppTextStyles.sub26,
+            style: AppTextStyles.sub26.copyWith(
+              color: Colors.black,
+            ),
             textAlign: TextAlign.center,
           ),
 

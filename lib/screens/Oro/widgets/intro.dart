@@ -25,7 +25,9 @@ class Intro extends StatelessWidget {
           ),
           Text(
             "A contemporary airline based out of Seville, Spain.",
-            style: AppTextStyles.sub26,
+            style: AppTextStyles.sub26.copyWith(
+              color: Colors.black,
+            ),
             textAlign: TextAlign.center,
           ),
 
