@@ -23,14 +23,12 @@ class TabletView extends StatelessWidget {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            AnimateEmojis(),
             Padding(
               padding: EdgeInsets.only(bottom: 16),
               child: Center(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minWidth: 70,
-                    maxWidth: 700,
-                  ),
+                child: SizedBox(
+                  width: constraints.maxWidth * .6,
                   child: Text(
                     infoText,
                     textAlign: TextAlign.center,
@@ -57,7 +55,9 @@ class TabletView extends StatelessWidget {
                   imgHash: GridItemC.lisaWorklist[index].blurHash,
                   subtitle: GridItemC.lisaWorklist[index].subtitle,
                   title: GridItemC.lisaWorklist[index].title,
-                  onPress: () {},
+                  onPress: () {
+                    //todo: add navigation
+                  },
                 ),
               ),
             ),
