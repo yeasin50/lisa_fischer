@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import '../constants/constants.dart';
 
 class LSMenu extends StatelessWidget {
   @override
@@ -17,7 +18,8 @@ class LSMenu extends StatelessWidget {
             child: Text(
               "MENU",
               textAlign: TextAlign.center,
-              style: GoogleFonts.lato(
+              style: TextStyle(
+                fontFamily: AppTextStyles.fontFamily,
                 color: Colors.white,
               ),
             ),
@@ -62,10 +64,9 @@ class MenuItemLS extends StatelessWidget {
         onTap: () => onPress(),
         child: Text(
           text,
-          style: GoogleFonts.lato(
-            textStyle: TextStyle(
-              color: Colors.white,
-            ),
+          style: TextStyle(
+            fontFamily: AppTextStyles.fontFamily,
+            color: Colors.white,
           ),
         ),
       ),

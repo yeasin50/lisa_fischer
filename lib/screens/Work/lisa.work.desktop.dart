@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+import '../../constants/constants.dart';
 import 'utils/utils.dart';
 import 'widgets/widgets.dart';
 
@@ -30,7 +30,8 @@ class DesktopView extends StatelessWidget {
                 child: Text(
                   infoText,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.lato(
+                  style: TextStyle(
+                    fontFamily: AppTextStyles.fontFamily,
                     fontSize: _fontS,
                     fontWeight: FontWeight.w500,
                   ),
