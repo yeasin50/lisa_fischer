@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../configs/configs.dart';
 import '../../../../widgets/widgets.dart';
@@ -101,7 +100,7 @@ class P4GShoppingActions extends StatelessWidget {
 
         Text(
           "Buy on Google France",
-          style: GoogleFonts.lato(
+          style: AppTextStyles.normal.copyWith(
             fontSize: 26,
             color: Colors.black87,
           ),

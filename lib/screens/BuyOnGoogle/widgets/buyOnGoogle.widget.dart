@@ -33,7 +33,9 @@ class _P1GShopIntroState extends State<P1GShopIntro> {
         columnSpace,
         Text(
           "Shop from thousands of stores directly on Google.",
-          style: AppTextStyles.sub26,
+          style: AppTextStyles.sub26.copyWith(
+            color: Colors.black,
+          ),
         ),
         columnSpace,
         briefDetailsOfGoogleShopping(),

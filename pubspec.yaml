@@ -27,7 +27,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   easy_rich_text: ^1.0.0
   flutter_svg: ^0.23.0+1
-  google_fonts: ^2.0.0
+  # google_fonts: ^2.0.0
 
   carousel_slider: ^4.0.0
 
@@ -39,7 +39,7 @@ dependencies:
   sliver_tools: ^0.2.5
   flutter_blurhash: ^0.6.0
   youtube_player_iframe: ^2.2.2
- 
+
   provider: ^6.0.1
 
 dev_dependencies:
@@ -59,34 +59,38 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/fonts/
+ 
+ 
 
-  #   - images/a_dot_ham.jpeg
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware.
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: ProximaNova
-  #     fonts:
-  #       - asset: assets/fonts/ProximaNova/ProximaNovaRegular.otf
-  #       # - asset: assets/fonts/ProximaNova/Rene Bieder  Milliard Bold.woff
-  #   weight: 700
-  # - asset: assets/fonts/ProximaNova/Rene-Bieder-Milliard-ExtraBold.woff
-  #   weight: 900
-  # - asset: assets/fonts/ProximaNova/Rene-Bieder-Milliard-ExtraBold-Italic.woff
-  #   weight: 900
-  #   style: italic
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato/Lato-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Lato/Lato-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/Lato/Lato-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Lato/Lato-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Lato/Lato-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Lato/Lato-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Lato/Lato-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Lato/Lato-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Lato/Lato-ThinItalic.ttf
+          weight: 100
+          style: italic
+      
 
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+
+#
+# For details regarding fonts from package dependencies,
+# see https://flutter.dev/custom-fonts/#from-packages

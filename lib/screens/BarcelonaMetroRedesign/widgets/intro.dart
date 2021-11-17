@@ -25,7 +25,7 @@ class Intro extends StatelessWidget {
           ),
           Text(
             "A redesign that makes the metro clearer, friendlier, and true to Barcelona culture.",
-            style: AppTextStyles.sub26,
+            style: AppTextStyles.sub26.copyWith(color: Colors.black),
             textAlign: TextAlign.center,
           ),
 

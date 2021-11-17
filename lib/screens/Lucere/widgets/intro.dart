@@ -25,7 +25,9 @@ class Intro extends StatelessWidget {
           ),
           Text(
             "A takeaway salad and sandwich shop that provides a worry-free and wholesome experience for customers with food allergies or dietary needs.",
-            style: AppTextStyles.sub26,
+            style: AppTextStyles.sub26.copyWith(
+              color: Colors.black,
+            ),
             textAlign: TextAlign.center,
           ),
 
