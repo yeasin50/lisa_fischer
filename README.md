@@ -7,6 +7,7 @@ TODO: on Lisa Fischer
 
 &nbsp;&nbsp;&nbsp; **`🛠`** project structure
 
+- [ ] rm unused asset-font
 - [ ] create error page
 - [ ] splash screen
 - [ ] setup logo
@@ -16,7 +17,7 @@ TODO: on Lisa Fischer
 - [ ] reset timer on imageSlider button click
 - [ ] ytVide size
 - [ ] **x** use Sizer [next one] not using for this project
-- [ ] forgot to use `format` parameter on image Call
+- [x] forgot to use `format` parameter on image Call
 - [x] change intro color to black
 - [x] add some space on row <Buy on Google
 - [x] all asset<500kb
