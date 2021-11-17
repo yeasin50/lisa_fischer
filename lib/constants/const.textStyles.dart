@@ -9,7 +9,9 @@ import 'constants.dart';
 class AppTextStyles {
   ///views[Mobile,tablet,Desktop] based FontSize
 
-  static const String fontFamily = "Lato";
+  static const String fontFamily = 'Lato';
+  static const String fontFamily2 = 'Estonia';
+  
 
   static get title => TextStyle(
         fontFamily: fontFamily,

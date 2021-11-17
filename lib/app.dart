@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Lisa Fi',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(// maybe no use of family :-
-        fontFamily: AppTextStyles.fontFamily,
+        // fontFamily: AppTextStyles.fontFamily,
         scaffoldBackgroundColor: backgroundColor,
         primarySwatch: Colors.blue,
       ),

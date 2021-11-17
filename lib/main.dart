@@ -7,12 +7,12 @@ import 'app.dart';
 import 'providers/provider.navigator.dart';
 
 void main() {
-  LicenseRegistry.addLicense(
-    () async* {
-      final license = await rootBundle.loadString('assets/fonts/OFL.txt');
-      yield LicenseEntryWithLineBreaks(['google_fonts'], license);
-    },
-  );
+  // LicenseRegistry.addLicense(
+  //   () async* {
+  //     final license = await rootBundle.loadString('fonts/Lato/OFL.txt');
+  //     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  //   },
+  // );
 
   runApp(
     MultiProvider(
