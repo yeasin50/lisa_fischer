@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
 import '../../../configs/configs.dart';
@@ -29,6 +30,10 @@ class _P5LeveledState extends State<P5Leveled> {
   int _index = 0;
 
   late Timer _timer;
+
+  //* When user change the image by click, have delay before starting animate[_timer]
+  CancelableOperation? _cancelableOperation;
+
   @override
   void initState() {
     super.initState();
@@ -38,13 +43,36 @@ class _P5LeveledState extends State<P5Leveled> {
       "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1589939843017-RIGTJG1PYLC0VR8N5UDF/leveled_website+for+portfolio+with+pattern+latest-49.png%22%20alt=%22leveled_website%20for%20portfolio%20with%20pattern%20latest-49.png?format=${widget.maxWidth}w",
     ];
 
-    //TODO: reset timer on btn-Click
-    _timer = Timer.periodic(Duration(seconds: 1, milliseconds: 200), (timer) {
+    _timer = _intiTimer();
+  }
+
+  Timer _intiTimer() {
+    Timer timer =
+        Timer.periodic(Duration(seconds: 1, milliseconds: 200), (timer) {
       setState(() {
         _index++;
         if (_index >= images.length) _index = 0;
       });
     });
+
+    return timer;
+  }
+
+  _restartTimer() {
+    if (_cancelableOperation != null) {
+      _cancelableOperation!.cancel();
+    }
+
+    _cancelableOperation = CancelableOperation.fromFuture(
+      Future.delayed(Duration(seconds: 3)),
+    ).then(
+      (p0) {
+        _timer = _intiTimer();
+      },
+      onCancel: () {
+        _timer.cancel();
+      },
+    );
   }
 
   @override
@@ -82,8 +110,12 @@ class _P5LeveledState extends State<P5Leveled> {
                   hoverColor: Colors.black87,
                   onTap: () {
                     setState(() {
+                      _timer.cancel();
                       _index--;
                       if (_index < 0) _index = images.length - 1;
+
+                      //start timer again
+                      _restartTimer();
                     });
                   },
                   child: Container(
@@ -104,10 +136,13 @@ class _P5LeveledState extends State<P5Leveled> {
                 child: InkWell(
                   hoverColor: Colors.black87,
                   onTap: () {
+                    _timer.cancel();
                     setState(() {
                       _index++;
                       if (_index >= images.length) _index = 0;
                     });
+                    //start timer again
+                    _restartTimer();
                   },
                   child: Container(
                     width: 44,

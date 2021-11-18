@@ -41,6 +41,7 @@ dependencies:
   youtube_player_iframe: ^2.2.2
 
   provider: ^6.0.1
+  async: ^2.8.1
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +60,8 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/emojis/
+    - assets/Icons/
     - assets/fonts/
  
  
@@ -88,7 +91,7 @@ flutter:
         - asset: assets/fonts/Lato/Lato-ThinItalic.ttf
           weight: 100
           style: italic
-      
+
 
 
 #

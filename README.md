@@ -7,6 +7,8 @@ TODO: on Lisa Fischer
 
 &nbsp;&nbsp;&nbsp; **`🛠`** project structure
 
+
+- [x] svg image isnot visible on build
 - [ ] rm unused asset-font
 - [ ] create error page
 - [ ] splash screen
@@ -14,7 +16,7 @@ TODO: on Lisa Fischer
 - [ ] navigation on tablet and mobile mode
 - [ ] handle logoAnimation
 - [ ] work on maxWidth% of devices
-- [ ] reset timer on imageSlider button click
+- [x] reset timer on imageSlider button click
 - [ ] ytVide size
 - [ ] **x** use Sizer [next one] not using for this project
 - [x] forgot to use `format` parameter on image Call
