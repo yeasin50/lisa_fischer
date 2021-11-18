@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
 import '../../../configs/configs.dart';
@@ -31,7 +32,7 @@ class _P5LeveledState extends State<P5Leveled> {
   late Timer _timer;
 
   //* When user change the image by click, have delay before starting animate[_timer]
-  Future? restartTimer;
+  CancelableOperation? _cancelableOperation;
 
   @override
   void initState() {
@@ -57,11 +58,21 @@ class _P5LeveledState extends State<P5Leveled> {
     return timer;
   }
 
-  _restartTimer() async {
-    // if (restartTimer != null) restartTimer = null;
-    // restartTimer = Future.delayed(Duration(seconds: 3)).then((value) {
-    _timer = _intiTimer();
-    // });
+  _restartTimer() {
+    if (_cancelableOperation != null) {
+      _cancelableOperation!.cancel();
+    }
+
+    _cancelableOperation = CancelableOperation.fromFuture(
+      Future.delayed(Duration(seconds: 3)),
+    ).then(
+      (p0) {
+        _timer = _intiTimer();
+      },
+      onCancel: () {
+        _timer.cancel();
+      },
+    );
   }
 
   @override
