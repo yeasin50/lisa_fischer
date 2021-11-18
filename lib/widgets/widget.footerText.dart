@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../constants/constants.dart';
 
 class FooterText extends StatelessWidget {
-  final TextStyle _footerTextStyle = GoogleFonts.lato();
+  final TextStyle _footerTextStyle = TextStyle(
+    fontFamily: AppTextStyles.fontFamily,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Padding(

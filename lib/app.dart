@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'constants/constants.dart';
@@ -14,10 +13,10 @@ class MyApp extends StatelessWidget {
         notifier: Provider.of<PageNotifier>(context),
       ),
       routeInformationParser: AppRouteInformationParser(),
-      title: 'Portfolios',
+      title: 'Lisa Fi',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: GoogleFonts.lato.toString(),
+      theme: ThemeData(// maybe no use of family :-
+        // fontFamily: AppTextStyles.fontFamily,
         scaffoldBackgroundColor: backgroundColor,
         primarySwatch: Colors.blue,
       ),

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/constants/constants.dart';
-import 'package:portfolio/providers/provider.navigator.dart';
 import 'package:provider/provider.dart';
 
+import '../../../constants/constants.dart';
+import '../../../providers/provider.navigator.dart';
 import '../utils/utils.dart';
 
 class GridItem extends StatefulWidget {
@@ -34,7 +33,8 @@ class _GridItemState extends State<GridItem> {
   bool _isHovered = false;
 
   ///TODO: change fontstyle
-  final TextStyle _titleTextStyle = GoogleFonts.lateef(
+  final TextStyle _titleTextStyle = TextStyle(
+    fontFamily: AppTextStyles.fontFamily,// was latif 
     fontSize: 28,
     color: Colors.white,
     fontWeight: FontWeight.w600,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/constants/const.textStyles.dart';
 
 import '../../widgets/widgets.dart';
 import 'utils/utils.dart';
@@ -31,7 +31,8 @@ class TabletView extends StatelessWidget {
                 child: Text(
                   infoText,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.lato(
+                  style: TextStyle(
+                    fontFamily: AppTextStyles.fontFamily,
                     fontSize: _fontS,
                     fontWeight: FontWeight.w500,
                   ),

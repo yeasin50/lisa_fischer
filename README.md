@@ -6,7 +6,10 @@
 TODO: on Lisa Fischer
 
 &nbsp;&nbsp;&nbsp; **`🛠`** project structure
+
+
 - [x] svg image isnot visible on build
+- [ ] rm unused asset-font
 - [ ] create error page
 - [ ] splash screen
 - [ ] setup logo
