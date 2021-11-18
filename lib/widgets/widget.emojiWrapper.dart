@@ -14,7 +14,7 @@ class EmojiWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      "emojis/$imageName.png",
+      "assets/emojis/$imageName.png",
       fit: BoxFit.contain,
       width: size,
     );

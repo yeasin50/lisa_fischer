@@ -1,6 +1,6 @@
 ///* site have two icons for one :) [icon + mask]
 
-String _iconPath({required String iconName}) => "Icons/$iconName.svg";
+String _iconPath({required String iconName}) => "assets/Icons/$iconName.svg";
 
 class AppIcon {
   static final String behance = _iconPath(iconName: "behance");
