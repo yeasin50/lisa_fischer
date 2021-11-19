@@ -11,7 +11,8 @@ TODO: on Lisa Fischer
 - [x] svg image isnot visible on build
 - [ ] rm unused asset-font
 - [ ] create error page
-- [ ] splash screen
+- [ ] control pixel(4) on splash screen create separate one
+- [x] splash screen
 - [ ] setup logo
 - [ ] navigation on tablet and mobile mode
 - [ ] handle logoAnimation
