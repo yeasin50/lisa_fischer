@@ -1,10 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
+import '../../../utils/utils.dart';
 import '../../../widgets/widgets.dart';
 import '../utils/utils.dart';
 
@@ -24,7 +25,7 @@ class P2ShowCase extends StatefulWidget {
 }
 
 class _P2ShowCaseState extends State<P2ShowCase> {
-  bool _startShowCaseAnim = false;
+  // bool _startShowCaseAnim = false;
 
   ///there are total 8 links on row , is there any better way to handle this 🤔
   List<bool> _hoverItems = List.generate(8, (index) => false);
@@ -51,20 +52,13 @@ class _P2ShowCaseState extends State<P2ShowCase> {
   /// init ShowCase Opacity
   double _showcaseOpacity = 0;
 
-  _mwNImage(String url, {double? width, double? height}) => Image.network(
-        url,
-        width: width ?? widget.maxWidth,
-        height: height,
-        fit: BoxFit.fitWidth,
-      );
-
   List<Padding> _rowItemsMobile() {
     List<Padding> _items = [];
 
     buyOnGoogleRowitems.forEach((key, value) {
       _items.add(
         Padding(
-          padding: const EdgeInsets.only(bottom: 16.0),
+          padding: const EdgeInsets.only(bottom: 24.0),
           child: RowItem(
             title: "$key",
             body: value,
@@ -82,6 +76,7 @@ class _P2ShowCaseState extends State<P2ShowCase> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        columnSpace,
         // GShop Logo
         VisibilityDetector(
           key: Key("GshopLogoOpacity"),
@@ -95,8 +90,11 @@ class _P2ShowCaseState extends State<P2ShowCase> {
             duration: Duration(milliseconds: 400),
             curve: Curves.easeInCirc,
             opacity: _opacityLevelLogo,
-            child: _mwNImage(
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1593327372980-Q6HQFDRWZVOLL3GYCJKH/ke17ZwdGBToddI8pDm48kCRzb3JqnyRQ7VUq2pE7P097gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0ksOtWCjLd_P5vfQSnAKwnrZQ9grcTPXokHRV5Fh7vm2zjLo1yw71vv4_q2u1s0ysA/cart+on+blue+updated-33-33.png?format=750w",
+            child: mwBHImage(
+              hash: gshopLogoImage.hash,
+              imageUrl: gshopLogoImage.imageUrl,
+              width: 750,
+              aspectR: 750 / 396,
             ),
           ),
         ),
@@ -132,12 +130,13 @@ class _P2ShowCaseState extends State<P2ShowCase> {
             child: AnimatedOpacity(
               duration: Duration(milliseconds: 400),
               opacity: _showcaseOpacity,
-              child: Image.network(
-                "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590468794072-PYSGV917AQK089V5TJ6D/ke17ZwdGBToddI8pDm48kEQmqQZdtGBB2XcSE0k8ACoUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYwL8IeDg6_3B-BRuF4nNrNcQkVuAT7tdErd0wQFEGFSnJW4iJZo6K6e5Za5EXsF7Xug5INyFhYLnFibc4K5-AtxqVck-AY33nSz_C37nTLCqg/zoomed%252Bin%252Bproduct%252Bcards-22.jpg?format=1000w",
+              child: mwBHImage(
+                imageUrl: gshopShowCase.imageUrl,
+                hash: gshopShowCase.hash,
                 width: widget.maxWidth,
                 //* may dirty way to handle it
-                height: widget.maxWidth * (448 / 1096),
-                fit: BoxFit.cover,
+                aspectR: widget.maxWidth / (widget.maxWidth * (448 / 1096)),
+                fit: BoxFit.fitHeight,
               ),
             ),
           ),
@@ -149,25 +148,13 @@ class _P2ShowCaseState extends State<P2ShowCase> {
     );
   }
 
-  gshopShowCase() {
-    if (_startShowCaseAnim)
-      return FadeInImage.assetNetwork(
-        placeholder: placeHolderImagePath,
-        image:
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1590468794072-PYSGV917AQK089V5TJ6D/ke17ZwdGBToddI8pDm48kEQmqQZdtGBB2XcSE0k8ACoUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYwL8IeDg6_3B-BRuF4nNrNcQkVuAT7tdErd0wQFEGFSnJW4iJZo6K6e5Za5EXsF7Xug5INyFhYLnFibc4K5-AtxqVck-AY33nSz_C37nTLCqg/zoomed%252Bin%252Bproduct%252Bcards-22.jpg?format=1000w",
-      );
-    else
-      return SizedBox(
-        height: 200,
-      );
-  }
-
   /// row items of `Date Role Press Links`
   Row rowItems(double maxWidth) {
     final double _width = maxWidth / 4;
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         RowItem(
           width: _width,

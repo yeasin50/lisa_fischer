@@ -1,47 +1,63 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:pointer_interceptor/pointer_interceptor.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+
+import '../screens/BuyOnGoogle/utils/utils.dart';
+import '../utils/utils.dart';
 
 ///* Cheating 🤐
 ///* remove when we can fix Scroll-issue on yt package
 class YTVideoScrollIssueWrapper extends StatelessWidget {
   const YTVideoScrollIssueWrapper({
     Key? key,
-    required this.controller,
+    required this.videoId,
   }) : super(key: key);
 
-  final YoutubePlayerController controller;
+  final String videoId;
+
+  YoutubePlayerIFrame get youtubePlayer => YoutubePlayerIFrame(
+        controller: YoutubePlayerController(
+          initialVideoId: videoId,
+        ),
+        aspectRatio: 16 / 9,
+        gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{},
+      );
+
+  void _openVideoOnDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: AspectRatio(
+          aspectRatio: 16 / 9,
+          child: youtubePlayer,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        YoutubePlayerIFrame(
-          controller: controller,
-          aspectRatio: 16 / 9,
-        ),
-        PointerInterceptor(
-          child: AspectRatio(
-            aspectRatio: 16 / 9,
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            print(controller.initialVideoId);
-
-            launch(
-              "https://www.youtube.com/watch?v=${controller.initialVideoId}",
-            );
-          },
-          child: AspectRatio(
-            aspectRatio: 16 / 9,
-            child: Container(
-              color: Colors.transparent,
+    return InkWell(
+      onTap: () => _openVideoOnDialog(context),
+      child: AspectRatio(
+        aspectRatio: 16 / 9,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            mwBHImage(
+              hash: ytMastHead.hash,
+              imageUrl: ytVideoThumbnail(
+                videoId: videoId,
+              ),
             ),
-          ),
+            Icon(
+              Icons.play_circle_fill_rounded,
+              size: 64,
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

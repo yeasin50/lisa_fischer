@@ -2,17 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 class Background extends StatelessWidget {
-  const Background({Key? key}) : super(key: key);
+  final double maxWidth;
 
-  final String _gifPath =
-      "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1519857189311-F5WHSJVM5LMJP4H529WB/logo+piecing.gif?format=2500w";
+  const Background({
+    Key? key,
+    required this.maxWidth,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return BlurHash(
-      hash:
-          '.4N-1Q~WbHxuoft7of-;ayWVWBj[j[j[E1axs;j[WBazfR%MWBj[offka|f7WBWUWBs:j[ayfP%MayoLayaya{ayR*j[ayjaofjtay%Mayj[j[ayayay',
-      image: _gifPath,
-      imageFit: BoxFit.cover,
+    return SizedBox(
+      width: maxWidth,
+      child: AspectRatio(
+        aspectRatio: 7 / 8,
+        child: BlurHash(
+          hash:
+              ".EL;55RjD4r=S\$oyenx]axRPkXj@e-ofq[WBMdVst7ofWB.ma0x]ozVsa|bIt,bcxvV?MxWBfk%\$ivtRaxV@oybGyEtlkXV@aKV@WBaKjrf+oKozayjF",
+          image:
+              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1519857189311-F5WHSJVM5LMJP4H529WB/logo+piecing.gif?format=${maxWidth}w",
+          imageFit: BoxFit.cover,
+        ),
+      ),
     );
   }
 }

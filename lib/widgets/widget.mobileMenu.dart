@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+
+import '../constants/constants.dart';
+
 
 import '../constants/constants.dart';
 import '../providers/provider.navigator.dart';
@@ -78,10 +79,9 @@ class MenuItemLS extends StatelessWidget {
         onTap: () => onPress(),
         child: Text(
           text,
-          style: GoogleFonts.lato(
-            textStyle: TextStyle(
-              color: Colors.white,
-            ),
+          style: TextStyle(
+            fontFamily: AppTextStyles.fontFamily,
+            color: Colors.white,
           ),
         ),
       ),

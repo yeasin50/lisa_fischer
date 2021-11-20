@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
 import '../utils/utils.dart';
 
@@ -47,9 +48,16 @@ class P2VisdaRow extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _maxWNImage(
-          "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1583660350050-2Y6PW8T083OA8RI557VH/visd%40_visd%40+type+only+loop.gif?format=750w",
+        AspectRatio(
+          aspectRatio: 750 / 422,
+          child: BlurHash(
+            hash: visdaIntroGif.hash,
+            image: visdaIntroGif.imageUrl,
+          ),
         ),
+        // _maxWNImage(
+        //   "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1583660350050-2Y6PW8T083OA8RI557VH/visd%40_visd%40+type+only+loop.gif?format=750w",
+        // ),
         SizedBox(
           height: columnSpace.height! * 3,
         ),
@@ -63,6 +71,9 @@ class P2VisdaRow extends StatelessWidget {
         ),
         _maxWNImage(
           "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1586810922339-MK28Q12DO6ADFOWFNHHZ/VisD%252BSummit%252BBranding_v10-51.jpg?format=750w",
+        ),
+        SizedBox(
+          height: columnSpace.height! * 3,
         ),
       ],
     );

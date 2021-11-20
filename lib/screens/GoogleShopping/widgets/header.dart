@@ -6,10 +6,20 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../constants/const.textStyles.dart';
 
-class LockStatus extends StatelessWidget {
+class LockStatus extends StatefulWidget {
   const LockStatus({Key? key}) : super(key: key);
 
+  @override
+  State<LockStatus> createState() => _LockStatusState();
+}
+
+class _LockStatusState extends State<LockStatus> {
   get lockLogoColor => Colors.grey;
+
+  // hover effect on RichText
+  List<bool> _isHovered = List.generate(2, (index) => false);
+
+  Color get _hoverColor => Colors.deepPurpleAccent;
 
   @override
   Widget build(BuildContext context) {
@@ -37,24 +47,30 @@ class LockStatus extends StatelessWidget {
         ),
         Text(
           "Still piecing together this page...",
-          style: AppTextStyles.smallHeader13.copyWith(
+          style: AppTextStyles.sub26.copyWith(
             color: Colors.black,
             fontStyle: FontStyle.italic,
           ),
         ),
         SizedBox(height: 32),
-        RichText(
-          text: TextSpan(
-            style: AppTextStyles.smallHeader13.copyWith(color: Colors.black),
+        Text.rich(
+          TextSpan(
             children: [
               TextSpan(
                 text: "Visit",
+                style: AppTextStyles.textShadow,
               ),
               TextSpan(
                 text: " shopping.google.com",
-                style: AppTextStyles.smallHeader13.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+                style: _isHovered[0]
+                    ? AppTextStyles.textShadowWithUnderline.copyWith(
+                        shadows: AppTextStyles.hoverShadow,
+                      )
+                    : AppTextStyles.textShadow.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                onEnter: (event) => setState(() => _isHovered[0] = true),
+                onExit: (event) => setState(() => _isHovered[0] = false),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     launch("https://shopping.google.com/");
@@ -62,12 +78,19 @@ class LockStatus extends StatelessWidget {
               ),
               TextSpan(
                 text: " for the live experience or see",
+                style: AppTextStyles.textShadow,
               ),
               TextSpan(
-                text: " see more projects here.",
-                style: AppTextStyles.smallHeader13.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+                text: " more projects here.",
+                style: _isHovered[01]
+                    ? AppTextStyles.textShadowWithUnderline.copyWith(
+                        shadows: AppTextStyles.hoverShadow,
+                      )
+                    : AppTextStyles.textShadow.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                onEnter: (event) => setState(() => _isHovered[01] = true),
+                onExit: (event) => setState(() => _isHovered[01] = false),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     launch("http://www.lisasuefischer.com/");

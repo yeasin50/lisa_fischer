@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import '../constants/constants.dart';
+
 
 class PageNavigator extends StatefulWidget {
   final String title;
@@ -23,7 +25,8 @@ class _PageNavigatorState extends State<PageNavigator> {
   @override
   Widget build(BuildContext context) {
     _fontSize = Theme.of(context).textTheme.bodyText1!.fontSize!;
-    final TextStyle _textStyle = GoogleFonts.habibi(
+    final TextStyle _textStyle = TextStyle(
+      fontFamily: AppTextStyles.fontFamily,//TODO: was habibi 🤨
       fontSize: _fontSize,
       color: _isHover
           ? Colors.green

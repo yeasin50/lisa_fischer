@@ -1,11 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../../constants/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../configs/configs.dart';
+import '../../../constants/constants.dart';
+import '../../../utils/utils.dart';
 import '../../../widgets/widgets.dart';
-import '../utils/loppetWinterFestival.utils.rowData.dart';
+import '../utils/utils.dart';
 
 class P2ImageAndRow extends StatefulWidget {
   final double maxWidth;
@@ -28,12 +29,12 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
   _textStyle(bool _isHover) {
     if (_isHover)
       return AppTextStyles.normal.copyWith(
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
         color: kColorDash,
       );
     else
       return AppTextStyles.normal.copyWith(
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
       );
   }
 
@@ -63,17 +64,20 @@ class _P2ImageAndRowState extends State<P2ImageAndRow> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        InkWell(
-          // just full screen view according to website
-          onTap: () => launch(
-              "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587410695918-JVYIF2MWQTP0LLA3JQTC/ke17ZwdGBToddI8pDm48kMBU_r1tzMd4QwEaiVpd1vh7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hHMyhIh2kKzuOL3ydJCryB1dMAs-2ojG-6zt94yw4AbCPjKOpSfnmOGIuFB5W9LXA/loppetphoto_1.jpg?format=2500w"),
-          child: Image.network(
-            "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587410695918-JVYIF2MWQTP0LLA3JQTC/ke17ZwdGBToddI8pDm48kMBU_r1tzMd4QwEaiVpd1vh7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hHMyhIh2kKzuOL3ydJCryB1dMAs-2ojG-6zt94yw4AbCPjKOpSfnmOGIuFB5W9LXA/loppetphoto_1.jpg?format=750w",
-            fit: BoxFit.fitWidth,
-            width: widget.maxWidth,
-            height: widget.maxWidth * .4,
-          ),
-        ),
+        () {
+          // final imagePath =
+          //     "https://images.squarespace-cdn.com/content/v1/547fe426e4b0dc192edb1ed5/1587410695918-JVYIF2MWQTP0LLA3JQTC/ke17ZwdGBToddI8pDm48kMBU_r1tzMd4QwEaiVpd1vh7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hHMyhIh2kKzuOL3ydJCryB1dMAs-2ojG-6zt94yw4AbCPjKOpSfnmOGIuFB5W9LXA/loppetphoto_1.jpg?format=${widget.maxWidth}w";
+          return InkWell(
+            // just full screen view according to website
+            onTap: () => launch(loppetAnimationBannerSkiier.imageUrl),
+            child: mwBHImage(
+              hash: loppetAnimationBannerSkiier.hash,
+              imageUrl: loppetAnimationBannerSkiier.imageUrl,
+              width: widget.maxWidth,
+              aspectR: 100 / 26,
+            ),
+          );
+        }(),
         SizedBox(
           height: columnSpace.height! * 3,
         ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../configs/configs.dart';
-import '../../widgets/widgets.dart';
 import 'Contact.dart';
 
 class ContactPage extends StatelessWidget {

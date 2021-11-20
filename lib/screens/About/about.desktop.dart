@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'utils/about.utils.clickEvents.dart';
-
-import 'package:provider/provider.dart';
-
 import '../../configs/config.constants.dart';
 import '../../constants/constants.dart';
-import '../../providers/provider.navigator.dart';
 import '../../widgets/widgets.dart';
+import 'utils/about.utils.clickEvents.dart';
 import 'widgets/widgets.dart';
 
 class DesktopView extends StatelessWidget {
@@ -17,9 +13,10 @@ class DesktopView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final _maxWidth = constraints.maxWidth * .75;
+        final _maxWidth = constraints.maxWidth * maxDesktopViewPortion;
 
-        final _itemWidth = constraints.maxWidth * .75 / 4 - columnSpace.height!;
+        final _itemWidth = constraints.maxWidth * maxDesktopViewPortion / 4 -
+            columnSpace.height!;
 
         return SizedBox(
           width: _maxWidth,
@@ -108,7 +105,6 @@ class DesktopView extends StatelessWidget {
                       label: "GET IN TOUCH",
                       onTap: () =>
                           AboutPageClickEvent.getInTouchHandler(context),
-
                     ),
                   ),
                 ],

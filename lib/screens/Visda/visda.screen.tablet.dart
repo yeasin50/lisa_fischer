@@ -28,12 +28,16 @@ class TabletView extends StatelessWidget {
               ),
               SizedBox(
                 width: maxWidth * .75,
-                child: P3ApproachVisD(),
+                child: P3ApproachVisD(
+                  maxWidth: maxWidth * .75,
+                ),
               ),
               P4SummitVisD(
                 maxWidth: maxWidth,
               ),
-              P5WayFinding(maxWidth: maxWidth)
+              P5WayFinding(
+                maxWidth: maxWidth,
+              )
             ],
           ),
         );

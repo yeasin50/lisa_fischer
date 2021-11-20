@@ -28,6 +28,7 @@ class _P1IntroState extends State<P1Intro> {
           "Loppet Winter Festival",
           style: AppTextStyles.title,
         ),
+        columnSpace,
         SubtitleCategoryOfWork(
           rolls: ['PRINTMAKING', 'ILLUSTRATION'],
         ),

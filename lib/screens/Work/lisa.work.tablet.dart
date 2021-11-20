@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/constants/const.textStyles.dart';
 
 import '../../widgets/widgets.dart';
 import 'utils/utils.dart';
@@ -10,30 +10,31 @@ class TabletView extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  int get _gridItemCount => 2;
+
   @override
   Widget build(BuildContext context) {
     final double _fontS = Theme.of(context).textTheme.headline5!.fontSize!;
 
     return LayoutBuilder(
       builder: (context, constraints) {
+        final gridItemWidht = constraints.maxWidth / _gridItemCount;
+
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            AnimateEmojis(),
             Padding(
               padding: EdgeInsets.only(bottom: 16),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minWidth: 70,
-                    maxWidth: 700,
-                  ),
-                  child: Text(
-                    infoText,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.lato(
-                      fontSize: _fontS,
-                      fontWeight: FontWeight.w500,
-                    ),
+              child: SizedBox(
+                width: constraints.maxWidth * .6,
+                child: Text(
+                  infoText,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: AppTextStyles.fontFamily,
+                    fontSize: _fontS,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
@@ -48,11 +49,14 @@ class TabletView extends StatelessWidget {
               children: List.generate(
                 GridItemC.lisaWorklist.length,
                 (index) => GridItem(
+                  width: gridItemWidht,
                   imageUrl: GridItemC.lisaWorklist[index].backgroundUrl,
                   imgHash: GridItemC.lisaWorklist[index].blurHash,
                   subtitle: GridItemC.lisaWorklist[index].subtitle,
                   title: GridItemC.lisaWorklist[index].title,
-                  onPress: () {},
+                  onPress: () {
+                    //todo: add navigation
+                  },
                 ),
               ),
             ),

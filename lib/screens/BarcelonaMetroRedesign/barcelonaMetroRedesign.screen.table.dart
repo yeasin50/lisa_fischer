@@ -9,32 +9,37 @@ class TabletView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .65,
+      builder: (context, constraints) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: constraints.maxWidth * .5,
+              child: Intro(),
             ),
-            child: Intro(),
-          ),
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: constraints.maxWidth * .8,
-            ),
-            child: Column(
-              children: [
-                WorkProcessUsingBlurHash(),
-
-                ///* from assets
-                Tickets(),
-                MetroMobileApp(),
-              ],
-            ),
-          ),
-          footerRow(),
-        ],
-      ),
+            () {
+              final maxWidth = constraints.maxWidth * .6;
+              return SizedBox(
+                width: maxWidth,
+                child: Column(
+                  children: [
+                    WorkProcessUsingBlurHash(
+                      maxWidth: maxWidth,
+                    ),
+                    Tickets(
+                      maxWidth: maxWidth,
+                    ),
+                    MetroMobileApp(
+                      maxWidth: maxWidth,
+                    ),
+                  ],
+                ),
+              );
+            }(),
+            footerRow(),
+          ],
+        );
+      },
     );
   }
 }
