@@ -23,6 +23,7 @@ class LSHeader {
     );
   }
 
+  //* update: disable nav:from current page tab
   Row navigators(BuildContext context) {
     // print("current index: $currentActiveIndex");
 
@@ -39,8 +40,9 @@ class LSHeader {
               // Navigator.of(context).pushReplacement(pageRouteFromRT(
               //     () => WorkPage(),
               //     startOffset: Offset(.2, .5)));
-
-              pageNotifier.changeScreen(pageName: null);
+              if (pageNotifier.pageName != null) {
+                pageNotifier.changeScreen(pageName: null);
+              }
             }),
         PageNavigator(
             isActive: currentActiveIndex == 1,
@@ -50,14 +52,20 @@ class LSHeader {
               // Navigator.of(context).pushReplacement(pageRouteFromRT(
               //     () => AboutPage(),
               //     startOffset: Offset(.5, -.5)));
-              pageNotifier.changeScreen(pageName: PageName.about);
+              if (pageNotifier.pageName != PageName.about) {
+                pageNotifier.changeScreen(pageName: PageName.about);
+              }
             }),
         PageNavigator(
             isActive: currentActiveIndex == 2,
             title: "CONTACT",
             onClick: () {
               currentActiveIndex = 2;
-              pageNotifier.changeScreen(pageName: PageName.contact);
+
+              if (pageNotifier.pageName != PageName.contact) {
+                pageNotifier.changeScreen(pageName: PageName.contact);
+              }
+
               // Navigator.of(context).pushReplacement(pageRouteFromRT(
               //     () => ContactPage(),
               //     startOffset: Offset(1.0, 0)));
