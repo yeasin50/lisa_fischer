@@ -1,46 +1,62 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
+import '../constants/constants.dart';
+import '../providers/provider.navigator.dart';
+
+//* hide the current page Tab. maybe nextTime im gonna replace `ExpansionTile` with animated somthing to have collaps +current page
 class LSMenu extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: ExpansionTile(
-        trailing: SizedBox(),
-        backgroundColor: Colors.black,
-        collapsedBackgroundColor: Colors.black,
-        expandedAlignment: Alignment.center,
-        expandedCrossAxisAlignment: CrossAxisAlignment.center,
-        title: Center(
-          child: Transform.translate(
-            offset: Offset(16, 0),
-            child: Text(
-              "MENU",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.lato(
-                color: Colors.white,
-              ),
+  Widget build(BuildContext contextMenu) {
+    PageNotifier pageNotifier =
+        Provider.of<PageNotifier>(contextMenu, listen: false);
+
+    return ExpansionTile(
+      trailing: SizedBox(),
+      backgroundColor: Colors.black,
+      collapsedBackgroundColor: Colors.black,
+      expandedAlignment: Alignment.center,
+      expandedCrossAxisAlignment: CrossAxisAlignment.center,
+      onExpansionChanged: (value) {
+        print("value $value");
+      },
+      title: Center(
+        child: Transform.translate(
+          offset: Offset(16, 0),
+          child: Text(
+            "MENU",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.lato(
+              color: Colors.white,
             ),
           ),
         ),
-        children: [
+      ),
+      children: [
+        if (pageNotifier.pageName != null)
           MenuItemLS(
               text: "WORK",
               onPress: () {
-                print("Work");
+                // print("Work");
+
+                pageNotifier.changeScreen(pageName: null);
               }),
+        if (pageNotifier.pageName != PageName.about)
           MenuItemLS(
               text: "ABOUT",
               onPress: () {
-                print("About Nav");
+                // print("About Nav");
+                pageNotifier.changeScreen(pageName: PageName.about);
               }),
+        if (pageNotifier.pageName != PageName.contact)
           MenuItemLS(
               text: "CONTACT",
               onPress: () {
-                print("Contact Nav");
+                // print("Contact Nav");
+                pageNotifier.changeScreen(pageName: PageName.contact);
               }),
-        ],
-      ),
+      ],
     );
   }
 }
