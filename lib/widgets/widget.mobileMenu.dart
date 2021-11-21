@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../constants/constants.dart';
-
+import 'package:provider/provider.dart';
 
 import '../constants/constants.dart';
 import '../providers/provider.navigator.dart';
@@ -28,7 +26,7 @@ class LSMenu extends StatelessWidget {
           child: Text(
             "MENU",
             textAlign: TextAlign.center,
-            style: GoogleFonts.lato(
+            style: TextStyle(
               color: Colors.white,
             ),
           ),
