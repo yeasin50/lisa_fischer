@@ -33,7 +33,8 @@ class LSHeader {
       children: [
         PageNavigator(
             title: "WORK",
-            isActive: currentActiveIndex == 0,
+            isActive: pageNotifier.pageName != PageName.about &&
+                pageNotifier.pageName != PageName.contact,
             onClick: () {
               currentActiveIndex = 0;
 
@@ -45,7 +46,7 @@ class LSHeader {
               }
             }),
         PageNavigator(
-            isActive: currentActiveIndex == 1,
+            isActive: pageNotifier.pageName == PageName.about,
             title: "ABOUT",
             onClick: () {
               currentActiveIndex = 1;
@@ -57,7 +58,7 @@ class LSHeader {
               }
             }),
         PageNavigator(
-            isActive: currentActiveIndex == 2,
+            isActive: pageNotifier.pageName == PageName.contact,
             title: "CONTACT",
             onClick: () {
               currentActiveIndex = 2;
