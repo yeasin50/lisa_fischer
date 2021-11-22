@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../constants/const.enum.pagesName.dart';
+import '../providers/provider.navigator.dart';
 
 enum AnimationType {
   rotate,
@@ -30,7 +34,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
   _animationDuration() {
     /// set `animation controller duration`
     if (widget.animType == AnimationType.rotate)
-      return Duration(seconds: 5);
+      return Duration(seconds: 1);
     else
       return Duration(seconds: 1);
   }
@@ -100,10 +104,20 @@ class _AnimatedLogoState extends State<AnimatedLogo>
 
   @override
   Widget build(BuildContext context) {
-    if (widget.animType == AnimationType.rotate)
-      return _rotateAnimation();
-    else
-      return _transformScaleX();
+    return Consumer<PageNotifier>(
+      builder: (context, value, child) {
+        PageName? pageName = value.pageName;
+
+        if (pageName == null || pageName == PageName.about) {
+          return _rotateAnimation();
+        } else if (pageName == PageName.contact) {
+          return _transformScaleX();
+        } else
+
+          ///TODO:: add more animation
+          return _buildImage();
+      },
+    );
   }
 
   Transform _transformScaleX() {
