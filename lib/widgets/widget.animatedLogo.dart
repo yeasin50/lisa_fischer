@@ -31,12 +31,13 @@ class _AnimatedLogoState extends State<AnimatedLogo>
   late Animation<double> _animY;
   late Animation<double> _animZ;
 
+  ///TODO: play with animation duration of logo
   _animationDuration() {
     /// set `animation controller duration`
     if (widget.animType == AnimationType.rotate)
-      return Duration(seconds: 1);
+      return Duration(seconds: 3);
     else
-      return Duration(seconds: 1);
+      return Duration(milliseconds: 500);
   }
 
   _initAnim() {
