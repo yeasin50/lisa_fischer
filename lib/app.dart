@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
 ThemeData _appTheme(BuildContext context) {
   return ThemeData(
     // maybe no use of family :-
-    // fontFamily: AppTextStyles.fontFamily,
+    fontFamily: AppTextStyles.fontFamily,
     scaffoldBackgroundColor: backgroundColor,
     primarySwatch: Colors.blue,
     pageTransitionsTheme: PageTransitionsManager(),
