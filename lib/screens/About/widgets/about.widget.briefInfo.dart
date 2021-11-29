@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/extensions/font_size.dart';
 
 import '../../../constants/constants.dart';
 import '../../../widgets/widgets.dart';
@@ -21,21 +22,23 @@ class BriefInfo extends StatelessWidget {
         children: [
           Text(
             "Lisa Fischer",
-            textAlign: TextAlign.left,
             style: AppTextStyles.title,
           ),
           WavingWidget(
             //TODO: replace image to fix 1st render
             child: Text(
-              "👋",
+              "\n👋",
               style: TextStyle(
-                fontSize: 40,
+                fontSize: 40.fs,
               ),
             ),
           ),
           Text(
             "\nLisa is a designer focused on building brands and creating digital experiences — currently working at Google.",
-            style: AppTextStyles.sub26,
+            style: AppTextStyles.sub26.copyWith(
+              color: Colors.black,
+              fontSize: 24.fs,
+            ),
           ),
           Text(
             texts1 + "\n\n" + texts2 + "\n",

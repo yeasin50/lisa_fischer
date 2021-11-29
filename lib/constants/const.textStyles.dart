@@ -139,7 +139,7 @@ class AppTextStyles {
 
   static TextStyle get subHeaderRow => TextStyle(
         fontFamily: fontFamily,
-        letterSpacing: 1.3,
+        // letterSpacing: 1.3,
         height: 1.1,
         fontSize: 14.5.fs,
         fontWeight: FontWeight.w700,
