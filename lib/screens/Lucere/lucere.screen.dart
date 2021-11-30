@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../configs/configs.dart';
-import '../../widgets/widgets.dart';
+import '../../utils/utils.dart';
 import 'Lucere.dart';
 
 class LucerePage extends StatelessWidget {
@@ -10,6 +10,10 @@ class LucerePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    dynamicAppLabel(
+      context: context,
+      label: "Lisa Fischer — Lucere",
+    );
     return SafeArea(
       child: Scaffold(
         body: Responsive(

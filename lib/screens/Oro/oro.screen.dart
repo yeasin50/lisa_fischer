@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../configs/config.responsive.dart';
 import '../../configs/configs.dart';
+import '../../utils/utils.dart';
 import 'Oro.dart';
 
 class OroPage extends StatelessWidget {
@@ -10,6 +10,10 @@ class OroPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    dynamicAppLabel(
+      context: context,
+      label: "Lisa Fischer — Oro",
+    );
     return SafeArea(
       child: Scaffold(
         body: Responsive(
