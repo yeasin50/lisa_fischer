@@ -12,7 +12,7 @@ class VisdaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     dynamicAppLabel(
       context: context,
-      label: "Lisa Fischer — Visda",
+      label: "Lisa Fischer — Visd@",
     );
     return SafeArea(
       child: Scaffold(
