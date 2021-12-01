@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../widgets/widgets.dart';
 
 import '../../configs/configs.dart';
 import '../../constants/constants.dart';
@@ -63,7 +62,6 @@ class TabletView extends StatelessWidget {
             SizedBox(
               height: columnSpace.height! * 1.5,
             ),
-            footerRow(),
           ],
         );
       },

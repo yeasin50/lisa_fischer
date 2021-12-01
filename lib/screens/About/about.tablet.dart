@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../../configs/configs.dart';
 import '../../constants/constants.dart';
-import '../../providers/provider.navigator.dart';
 import '../../widgets/widgets.dart';
 import 'utils/utils.dart';
 import 'widgets/widgets.dart';
@@ -108,7 +106,6 @@ class TabletView extends StatelessWidget {
                           label: "GET IN TOUCH",
                           onTap: () =>
                               AboutPageClickEvent.getInTouchHandler(context),
-
                         ),
                       ),
                     ],
@@ -119,7 +116,6 @@ class TabletView extends StatelessWidget {
             SizedBox(
               height: columnSpace.height! * 3,
             ),
-            footerRow(),
           ],
         );
       },

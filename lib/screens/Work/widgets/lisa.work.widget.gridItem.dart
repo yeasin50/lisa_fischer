@@ -10,7 +10,6 @@ class GridItem extends StatefulWidget {
   const GridItem({
     Key? key,
     required this.imageUrl,
-    required this.onPress,
     required this.title,
     required this.subtitle,
     required this.imgHash,
@@ -23,7 +22,6 @@ class GridItem extends StatefulWidget {
 
   final String imageUrl;
   final String imgHash;
-  final Function onPress;
 
   @override
   _GridItemState createState() => _GridItemState();
@@ -34,7 +32,7 @@ class _GridItemState extends State<GridItem> {
 
   ///TODO: change fontstyle
   final TextStyle _titleTextStyle = TextStyle(
-    fontFamily: AppTextStyles.fontFamily,// was latif 
+    fontFamily: AppTextStyles.fontFamily, // was latif
     fontSize: 28,
     color: Colors.white,
     fontWeight: FontWeight.w600,
