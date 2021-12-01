@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../configs/configs.dart';
-import '../../widgets/widgets.dart';
+import '../../utils/utils.dart';
 import 'Visda.dart';
 
 class VisdaPage extends StatelessWidget {
@@ -10,6 +10,10 @@ class VisdaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    dynamicAppLabel(
+      context: context,
+      label: "Lisa Fischer — Visd@",
+    );
     return SafeArea(
       child: Scaffold(
         body: Responsive(

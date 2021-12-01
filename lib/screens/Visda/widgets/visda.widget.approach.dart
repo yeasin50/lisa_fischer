@@ -39,7 +39,7 @@ class P3ApproachVisD extends StatelessWidget {
           "The branding tells the story of the forever-evolving design process of Google’s Visual Designers by taking inspiration from blind contour drawing. The loosely energetic, yet confidentiality controlled, line work throughout the brand elements mirrors the chaotic expertise of Visual Designers at work.",
           textAlign: TextAlign.center,
           style: AppTextStyles.normal.copyWith(
-            fontSize: 22.fs,
+            fontSize: 20.fs,
           ),
         ),
         columnSpace,

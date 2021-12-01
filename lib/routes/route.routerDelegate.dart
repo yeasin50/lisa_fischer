@@ -114,7 +114,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
         if (notifier.pageName == PageName.googleShopping)
           MaterialPage(
             key: ValueKey<String>("googleShoppingPage"),
-            child: GoogleShpoingPage(),
+            child: GoogleShoppingPage(),
           ),
 
         if (notifier.pageName == PageName.leveled)

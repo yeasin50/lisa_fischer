@@ -47,6 +47,7 @@ class P1VisdIntro extends StatelessWidget {
                 text: "VisD@ = Visual Designers at Google",
                 style: AppTextStyles.normal.copyWith(
                   fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ],
