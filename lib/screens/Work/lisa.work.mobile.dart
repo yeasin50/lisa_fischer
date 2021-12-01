@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../constants/constants.dart';
 import 'utils/utils.dart';
 import 'widgets/widgets.dart';
+import 'widgets/work_grid_items.dart';
 
 class MobileView extends StatelessWidget {
   const MobileView({Key? key}) : super(key: key);
@@ -29,23 +30,9 @@ class MobileView extends StatelessWidget {
                 ),
               ),
             ),
-            GridView.count(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              crossAxisCount: _gridItemCount,
-              childAspectRatio: 1,
-              crossAxisSpacing: 0,
-              mainAxisSpacing: 0,
-              children: List.generate(
-                GridItemC.lisaWorklist.length,
-                (index) => GridItem(
-                  width: gridItemWidth,
-                  imgHash: GridItemC.lisaWorklist[index].blurHash,
-                  imageUrl: GridItemC.lisaWorklist[index].backgroundUrl,
-                  subtitle: GridItemC.lisaWorklist[index].subtitle,
-                  title: GridItemC.lisaWorklist[index].title,
-                ),
-              ),
+            WorkPageGridItems(
+              gridItemCount: _gridItemCount,
+              gridItemWidth: gridItemWidth,
             ),
           ],
         );

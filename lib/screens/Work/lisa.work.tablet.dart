@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/Work/widgets/work_grid_items.dart';
 
 import '../../constants/const.textStyles.dart';
 import '../../widgets/widgets.dart';
@@ -18,7 +19,7 @@ class TabletView extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        final gridItemWidht = constraints.maxWidth / _gridItemCount;
+        final gridItemWidth = constraints.maxWidth / _gridItemCount;
 
         return Column(
           mainAxisSize: MainAxisSize.min,
@@ -39,23 +40,9 @@ class TabletView extends StatelessWidget {
                 ),
               ),
             ),
-            GridView.count(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              childAspectRatio: 1,
-              crossAxisSpacing: 0,
-              mainAxisSpacing: 0,
-              children: List.generate(
-                GridItemC.lisaWorklist.length,
-                (index) => GridItem(
-                  width: gridItemWidht,
-                  imageUrl: GridItemC.lisaWorklist[index].backgroundUrl,
-                  imgHash: GridItemC.lisaWorklist[index].blurHash,
-                  subtitle: GridItemC.lisaWorklist[index].subtitle,
-                  title: GridItemC.lisaWorklist[index].title,
-                ),
-              ),
+            WorkPageGridItems(
+              gridItemWidth: gridItemWidth,
+              gridItemCount: 2,
             ),
             footerRow(),
           ],
