@@ -23,7 +23,6 @@ class TabletView extends StatelessWidget {
                 maxWidth: _maxWidth,
               ),
             ),
-            footerRow(),
           ],
         );
       },

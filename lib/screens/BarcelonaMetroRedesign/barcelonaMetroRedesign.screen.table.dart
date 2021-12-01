@@ -36,7 +36,7 @@ class TabletView extends StatelessWidget {
                 ),
               );
             }(),
-            footerRow(),
+           
           ],
         );
       },

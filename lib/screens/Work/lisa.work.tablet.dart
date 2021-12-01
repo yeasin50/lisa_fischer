@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/Work/widgets/work_grid_items.dart';
 
 import '../../constants/const.textStyles.dart';
-import '../../widgets/widgets.dart';
 import 'utils/utils.dart';
 import 'widgets/widgets.dart';
+import 'widgets/work_grid_items.dart';
 
 class TabletView extends StatelessWidget {
   const TabletView({
@@ -44,7 +43,6 @@ class TabletView extends StatelessWidget {
               gridItemWidth: gridItemWidth,
               gridItemCount: 2,
             ),
-            footerRow(),
           ],
         );
       },

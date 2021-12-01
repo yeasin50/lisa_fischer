@@ -33,6 +33,7 @@ class TabletViewWrapper extends StatelessWidget {
                       children: [
                         child,
                         tabletWrapperHomeButton(context),
+                        footerRow(),
                       ],
                     ),
                   )),
