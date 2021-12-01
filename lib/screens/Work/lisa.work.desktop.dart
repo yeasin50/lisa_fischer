@@ -59,7 +59,6 @@ class DesktopView extends StatelessWidget {
                   subtitle: GridItemC.lisaWorklist[index].subtitle,
                   title: GridItemC.lisaWorklist[index].title,
                   imgHash: GridItemC.lisaWorklist[index].blurHash,
-                  onPress: () {},
                 ),
               ),
             ),

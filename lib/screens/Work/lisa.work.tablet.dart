@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/constants/const.textStyles.dart';
 
+import '../../constants/const.textStyles.dart';
 import '../../widgets/widgets.dart';
 import 'utils/utils.dart';
 import 'widgets/widgets.dart';
@@ -54,9 +54,6 @@ class TabletView extends StatelessWidget {
                   imgHash: GridItemC.lisaWorklist[index].blurHash,
                   subtitle: GridItemC.lisaWorklist[index].subtitle,
                   title: GridItemC.lisaWorklist[index].title,
-                  onPress: () {
-                    //todo: add navigation
-                  },
                 ),
               ),
             ),
