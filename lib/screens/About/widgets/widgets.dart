@@ -10,6 +10,5 @@ export 'about.widget.grid.dart';
 export 'about.widget.press.dart';
 export 'about.widget.profileImage.dart';
 export 'about.widget.technicalSkills.dart';
-export 'about.widget.textHelper.dart';
 export 'about.widget.textNavigatorUrl.dart';
 export 'about.widget.writing.dart';

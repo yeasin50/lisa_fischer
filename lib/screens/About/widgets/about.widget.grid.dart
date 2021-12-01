@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants/constants.dart';
-import 'widgets.dart';
+import '../../../widgets/widgets.dart';
 
 class GridItem extends StatelessWidget {
   final String title;
   final Widget body;
 
-  const GridItem({Key? key, required this.title, required this.body})
-      : super(key: key);
+  const GridItem({
+    Key? key,
+    required this.title,
+    required this.body,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +19,16 @@ class GridItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        header(title),
-        Container(
-          padding: const EdgeInsets.only(top: 28),
-          margin: const EdgeInsets.symmetric(
-            vertical: 6,
+        Text(
+          title,
+          style: AppTextStyles.subtitle12.copyWith(
+            color: Colors.black,
           ),
-          width: 30,
-          height: 3,
-          color: kColorDash,
         ),
+
+        /// dash
+        DashLine(),
+
         body,
       ],
     );

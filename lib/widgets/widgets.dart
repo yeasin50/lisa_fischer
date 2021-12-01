@@ -1,3 +1,4 @@
+export 'green_divider_line.dart';
 export 'widget.animatedLogo.dart';
 export 'widget.bigTitleWithSub.dart';
 export 'widget.circleNeonBorder.dart';
