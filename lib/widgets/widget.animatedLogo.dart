@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../constants/const.enum.pagesName.dart';
+
 import '../providers/provider.navigator.dart';
 
 enum AnimationType {
@@ -137,7 +138,13 @@ class _AnimatedLogoState extends State<AnimatedLogo>
         ..rotateY((0 - _animY.value) * _magicValue)
         ..rotateZ((0 - _animZ.value) * _magicValue),
       alignment: FractionalOffset.bottomLeft,
-      child: _buildImage(),
+      child: InkWell(
+        onTap: () {
+          final notifier = Provider.of<PageNotifier>(context, listen: false);
+          if (notifier.pageName != null) notifier.changeScreen(pageName: null);
+        },
+        child: _buildImage(),
+      ),
     );
   }
 
