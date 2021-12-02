@@ -17,7 +17,7 @@ jobs:
       - run: flutter config --enable-web
       - run: flutter clean
       - run: flutter pub get
-      - run: flutter build web --release --web-renderer html
+      - run: flutter build web --release --web-renderer html --base-href /lisa_fischer/
       - run: |
           cd build/web
           git init
