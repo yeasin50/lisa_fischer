@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
+import '../utils/utils.dart';
 import '../widgets/widgets.dart';
 
 class MobieViewWrapper extends StatelessWidget {
@@ -33,6 +34,10 @@ class MobieViewWrapper extends StatelessWidget {
 
             SliverToBoxAdapter(
               child: child,
+            ),
+
+            SliverToBoxAdapter(
+              child: homeNavigatorButton(context),
             ),
 
             SliverPadding(

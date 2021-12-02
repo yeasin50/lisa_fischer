@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import '../constants/const.enum.pagesName.dart';
-import '../providers/provider.navigator.dart';
-import '../utils/utils.dart';
-import 'package:provider/provider.dart';
 
-import 'configs.dart';
+import '../utils/utils.dart';
 import '../widgets/widgets.dart';
+import 'configs.dart';
 
 class TabletViewWrapper extends StatelessWidget {
   final Widget child;
@@ -32,7 +29,7 @@ class TabletViewWrapper extends StatelessWidget {
                     child: Column(
                       children: [
                         child,
-                        tabletWrapperHomeButton(context),
+                        homeNavigatorButton(context),
                         footerRow(),
                       ],
                     ),
