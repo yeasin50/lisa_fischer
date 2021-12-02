@@ -41,33 +41,52 @@ class _GridItemState extends State<GridItem> {
 
   ///** Naviagte to another page */
   _navigate(BuildContext context) {
-    late PageName? pageName;
+    final pageNotifier = Provider.of<PageNotifier>(context, listen: false);
+    final _currentpage = pageNotifier.pageName;
 
-    if (widget.title == GridItemC.titles[0]) {
+    PageName? pageName;
+
+    //Done:skip nav on Current Index
+    if (widget.title == GridItemC.titles[0] &&
+        _currentpage != PageName.buyOnGoogle) {
       // routeName = BuyOnGoolgePage.routeName;
       pageName = PageName.buyOnGoogle;
-    } else if (widget.title == GridItemC.titles[1]) {
+    }
+    if (widget.title == GridItemC.titles[1] &&
+        _currentpage != PageName.loppetWinterFestival) {
       // routeName = LoppetWinterFestivalPage.routeName;
       pageName = PageName.loppetWinterFestival;
-    } else if (widget.title == GridItemC.titles[2]) {
+    }
+    if (widget.title == GridItemC.titles[2] && _currentpage != PageName.visda) {
       // routeName = VisdaPage.routeName;
       pageName = PageName.visda;
-    } else if (widget.title == GridItemC.titles[3]) {
+    }
+    if (widget.title == GridItemC.titles[3] &&
+        _currentpage != PageName.leveled) {
       // routeName = LeveledPage.routeName;
       pageName = PageName.leveled;
-    } else if (widget.title == GridItemC.titles[4]) {
+    }
+    if (widget.title == GridItemC.titles[4] &&
+        _currentpage != PageName.googleShopping) {
       // routeName = GoogleShpoingPage.routeName;
       pageName = PageName.googleShopping;
-    } else if (widget.title == GridItemC.titles[5]) {
+    }
+    if (widget.title == GridItemC.titles[5] &&
+        _currentpage != PageName.bercelonaMetroRedesign) {
       // routeName = BercelonaMetroRedesignPage.routeName;
       pageName = PageName.bercelonaMetroRedesign;
-    } else if (widget.title == GridItemC.titles[6]) {
+    }
+    if (widget.title == GridItemC.titles[6] && _currentpage != PageName.oro) {
       // routeName = OroPage.routeName;
       pageName = PageName.oro;
-    } else if (widget.title == GridItemC.titles[7]) {
+    }
+    if (widget.title == GridItemC.titles[7] &&
+        _currentpage != PageName.thrive) {
       // routeName = ThrivePage.routeName;
       pageName = PageName.thrive;
-    } else if (widget.title == GridItemC.titles[8]) {
+    }
+    if (widget.title == GridItemC.titles[8] &&
+        _currentpage != PageName.lucere) {
       // routeName = LucerePage.routeName;
       pageName = PageName.lucere;
     }
@@ -76,8 +95,9 @@ class _GridItemState extends State<GridItem> {
     //   pageName = null;
     // }
 
-    Provider.of<PageNotifier>(context, listen: false)
-        .changeScreen(pageName: pageName);
+    if (pageName != null) {
+      pageNotifier.changeScreen(pageName: pageName);
+    }
   }
 
   @override
