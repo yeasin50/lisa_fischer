@@ -135,8 +135,8 @@ class _P2ShowCaseState extends State<P2ShowCase> {
                 hash: gshopShowCase.hash,
                 width: widget.maxWidth,
                 //* may dirty way to handle it
-                aspectR: widget.maxWidth / (widget.maxWidth * (448 / 1096)),
-                fit: BoxFit.fitHeight,
+                aspectR: 1096 / 448,
+                fit: BoxFit.cover,
               ),
             ),
           ),
