@@ -51,6 +51,7 @@ class _P1IntroState extends State<P1Intro> {
                 text: "* ",
                 style: AppTextStyles.normal.copyWith(
                   color: kColorDash,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               TextSpan(
@@ -58,6 +59,7 @@ class _P1IntroState extends State<P1Intro> {
                     "A special thanks to Rick Love for his printmaking expertise.",
                 style: AppTextStyles.normal.copyWith(
                   fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ],

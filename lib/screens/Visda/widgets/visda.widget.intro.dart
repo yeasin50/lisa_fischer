@@ -41,6 +41,7 @@ class P1VisdIntro extends StatelessWidget {
                 text: "* ",
                 style: AppTextStyles.normal.copyWith(
                   color: kColorDash,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               TextSpan(
