@@ -7,6 +7,9 @@ class NeonRectBG extends StatefulWidget {
   ///Duration of animation default=`Duration(seconds: 3)`
   final Duration duration;
 
+  // dublicate rect show blur same as rect color. default:4.0
+  final double blurSpread;
+
   /// default Curve= `Curves.easeInOut`
   final Curve curve;
 
@@ -24,6 +27,7 @@ class NeonRectBG extends StatefulWidget {
   NeonRectBG({
     Key? key,
     this.duration = const Duration(seconds: 3),
+    this.blurSpread = 4.0,
     this.boxShadow = const [
       BoxShadow(
         color: Colors.transparent,
@@ -57,12 +61,15 @@ class _NeonRectBGState extends State<NeonRectBG>
     Color.fromRGBO(166, 253, 41, 1),
   ];
 
-  late Animation _animation;
+  late Animation<Alignment> _animation;
   late AnimationController _controller;
+
+  // for blur
+  late Animation<double> _blurAnimation;
 
   ///`Engine`
   _initRect() {
-    _controller = new AnimationController(
+    _controller = AnimationController(
       vsync: this,
       duration: widget.duration,
     )..addListener(() => setState(() {}));
@@ -81,7 +88,23 @@ class _NeonRectBGState extends State<NeonRectBG>
       ),
     );
 
+    _initBlurAnimation();
+
     _controller.repeat(reverse: true);
+  }
+
+  _initBlurAnimation() {
+    _blurAnimation = Tween<double>(
+      begin: 0,
+      end: widget.blurSpread,
+    ).animate(CurvedAnimation(
+      parent: _controller,
+      curve: Interval(
+        0.0,
+        1.0,
+        curve: widget.curve,
+      ),
+    ));
   }
 
   @override
@@ -101,44 +124,61 @@ class _NeonRectBGState extends State<NeonRectBG>
     return Stack(
       alignment: Alignment.center,
       children: [
-        ///`background`
-        Container(
-          width: widget.size.width + widget.frameThickness,
-          height: widget.size.height + widget.frameThickness,
-          decoration: BoxDecoration(
-            boxShadow: widget.boxShadow,
-            shape: BoxShape.rectangle,
-            gradient: LinearGradient(
-              begin: Alignment(
-                0,
-                1.0 - _animation.value.y,
-              ),
-              end: Alignment(
-                _animation.value.x,
-                _animation.value.y,
-              ),
-
-              ///breakPoints of [LinearGradient] colors
-              stops: [
-                .0,
-                .4,
-                .7,
-                1.0,
-              ],
-              colors: _colors,
+        // blur BG //just avoid building
+        if (widget.blurSpread != 0)
+          Opacity(
+            opacity: _animation.value.x.abs(),
+            child: backgroundContainer(
+              key: ValueKey("BlurBGOnNeonRect border"),
+              width: widget.size.width +
+                  widget.frameThickness +
+                  _blurAnimation.value,
+              height: widget.size.height +
+                  widget.frameThickness +
+                  _blurAnimation.value,
             ),
           ),
+
+        ///`background`
+        backgroundContainer(
+          key: ValueKey("BGOnNeonRect border"),
+          width: widget.size.width + widget.frameThickness,
+          height: widget.size.height + widget.frameThickness,
         ),
 
         ///[child]
-        ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: widget.size.height,
-            maxWidth: widget.size.width,
-          ),
-          child: widget.child,
-        ),
+        widget.child,
       ],
+    );
+  }
+
+  Container backgroundContainer({
+    required Key key,
+    required double width,
+    required double height,
+  }) {
+    return Container(
+      key: key,
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        boxShadow: widget.boxShadow,
+        shape: BoxShape.rectangle,
+        gradient: LinearGradient(
+          begin: Alignment(
+            0,
+            1.0 - _animation.value.y,
+          ),
+          end: Alignment(
+            _animation.value.x,
+            _animation.value.y,
+          ),
+
+          ///breakPoints of [LinearGradient] colors
+          stops: [.0, .4, .7, 1.0],
+          colors: _colors,
+        ),
+      ),
     );
   }
 }
