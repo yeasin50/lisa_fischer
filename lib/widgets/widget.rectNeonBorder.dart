@@ -7,6 +7,8 @@ class NeonRectBG extends StatefulWidget {
   ///Duration of animation default=`Duration(seconds: 3)`
   final Duration duration;
 
+  // be curcular border , depend on parent's
+  final BorderRadiusGeometry? borderRadius;
   // dublicate rect show blur same as rect color. default:4.0
   final double blurSpread;
 
@@ -28,6 +30,7 @@ class NeonRectBG extends StatefulWidget {
     Key? key,
     this.duration = const Duration(seconds: 3),
     this.blurSpread = 4.0,
+    this.borderRadius,
     this.boxShadow = const [
       BoxShadow(
         color: Colors.transparent,
@@ -162,6 +165,7 @@ class _NeonRectBGState extends State<NeonRectBG>
       width: width,
       height: height,
       decoration: BoxDecoration(
+        borderRadius: widget.borderRadius,
         boxShadow: widget.boxShadow,
         shape: BoxShape.rectangle,
         gradient: LinearGradient(
