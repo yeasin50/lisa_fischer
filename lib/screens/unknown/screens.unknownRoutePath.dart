@@ -22,6 +22,10 @@ class ErrorPage extends StatelessWidget {
           final boxHeight = width * .2;
           return Stack(
             children: [
+              ParticlesBackground(
+                backgroundSize: Size(width, height),
+                centerSafeArea: Size(boxWidth, boxHeight),
+              ),
               Align(
                 // alignment: Alignment(0, -.2),
                 child: () {
@@ -44,7 +48,7 @@ class ErrorPage extends StatelessWidget {
                       width: boxWidth,
                       height: boxHeight,
                       decoration: BoxDecoration(
-                        color: Colors.black,
+                        // color: Colors.black,
                         borderRadius: _borderRadius,
                       ),
                       alignment: Alignment.center,
@@ -76,10 +80,6 @@ class ErrorPage extends StatelessWidget {
                     ),
                   );
                 }(),
-              ),
-              ParticlesBackground(
-                backgroundSize: Size(width, height),
-                centerSafeArea: Size(boxWidth, boxHeight),
               ),
 
               ///Home Button
