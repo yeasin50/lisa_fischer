@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
+import '../utils/utils.dart';
 import '../../../constants/constants.dart';
+
+import '../utils/random_color.dart';
 import 'widgets.dart';
 
 ///This will be use as Rectframe, A little [Animation] of [Colors]
@@ -53,11 +55,9 @@ class NeonRectBG extends StatefulWidget {
 
 class _NeonRectBGState extends State<NeonRectBG>
     with SingleTickerProviderStateMixin {
-  int _activeColorsIndex = 0;
-  List<List<Color>> get _color4xList => [
-        color4Set1,
-        color4Set2,
-      ];
+  //dynamic color based on Hue
+  List<HSLColor> _randomColorPallet = hslColorSet(0);
+  double _colorHueValue = 0.0;
 
   late Animation<Alignment> _animation;
   late AnimationController _controller;
@@ -105,12 +105,31 @@ class _NeonRectBGState extends State<NeonRectBG>
     ));
 
     _blurAnimation.addStatusListener((status) {
-      print(status);
       if (status == AnimationStatus.forward) {
-        _activeColorsIndex++;
-        if (_activeColorsIndex >= _color4xList.length) {
-          _activeColorsIndex = 0;
+        _colorHueValue += 40;
+
+        if (_colorHueValue > 360) {
+          _colorHueValue = 0.0;
         }
+        setState(() {});
+
+        print(_colorHueValue);
+        setState(() {
+          // for (int i = 0; i < _randomColorPallet.length; i++) {
+          _randomColorPallet[0] = _randomColorPallet[0].withHue(
+            _colorHueValue,
+          );
+          // _randomColorPallet[1] = _randomColorPallet[1].withHue(
+          //   _colorHueValue,
+          // );
+          // _randomColorPallet[2] = _randomColorPallet[2].withHue(
+          //   _colorHueValue,
+          // );
+          _randomColorPallet[3] = _randomColorPallet[3].withHue(
+            _colorHueValue / 2 / 20 < 0 ? 0 : _colorHueValue * .4,
+          );
+          // }
+        });
       }
     });
   }
@@ -135,7 +154,7 @@ class _NeonRectBGState extends State<NeonRectBG>
         // blur BG //just avoid building
         if (widget.blurSpread != 0)
           Opacity(
-            opacity: _animation.value.x.abs(),
+            opacity: _animation.value.y.abs(),
             child: backgroundContainer(
               key: ValueKey("BlurBGOnNeonRect border"),
               borderThinckness: _blurAnimation.value / 2,
@@ -188,7 +207,7 @@ class _NeonRectBGState extends State<NeonRectBG>
 
             ///breakPoints of [LinearGradient] colors
             stops: [.0, .4, .7, 1.0],
-            colors: _color4xList[_activeColorsIndex],
+            colors: hslToRgbSet(_randomColorPallet),
           ),
         ),
       ),
