@@ -1,5 +1,6 @@
 export 'buble_radial_container.dart';
 export 'green_divider_line.dart';
+export 'neon_rect_clipper.dart';
 export 'particles_background.dart';
 export 'widget.animatedLogo.dart';
 export 'widget.bigTitleWithSub.dart';

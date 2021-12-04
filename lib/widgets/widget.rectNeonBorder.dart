@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../constants/constants.dart';
+import 'widgets.dart';
+
 ///This will be use as Rectframe, A little [Animation] of [Colors]
 ///this is repeated Animation using 4 colors.
 
@@ -50,19 +53,11 @@ class NeonRectBG extends StatefulWidget {
 
 class _NeonRectBGState extends State<NeonRectBG>
     with SingleTickerProviderStateMixin {
-  final colorizeColors = [
-    Colors.purple,
-    Colors.blue,
-    Colors.yellow,
-    Colors.red,
-  ];
-
-  List<Color> _colors = [
-    Color.fromRGBO(85, 255, 225, 1),
-    Color.fromRGBO(175, 61, 255, 1),
-    Color.fromRGBO(255, 59, 148, 1),
-    Color.fromRGBO(166, 253, 41, 1),
-  ];
+  int _activeColorsIndex = 0;
+  List<List<Color>> get _color4xList => [
+        color4Set1,
+        color4Set2,
+      ];
 
   late Animation<Alignment> _animation;
   late AnimationController _controller;
@@ -108,6 +103,16 @@ class _NeonRectBGState extends State<NeonRectBG>
         curve: widget.curve,
       ),
     ));
+
+    _blurAnimation.addStatusListener((status) {
+      print(status);
+      if (status == AnimationStatus.forward) {
+        _activeColorsIndex++;
+        if (_activeColorsIndex >= _color4xList.length) {
+          _activeColorsIndex = 0;
+        }
+      }
+    });
   }
 
   @override
@@ -133,18 +138,16 @@ class _NeonRectBGState extends State<NeonRectBG>
             opacity: _animation.value.x.abs(),
             child: backgroundContainer(
               key: ValueKey("BlurBGOnNeonRect border"),
-              width: widget.size.width +
-                  widget.frameThickness +
-                  _blurAnimation.value,
-              height: widget.size.height +
-                  widget.frameThickness +
-                  _blurAnimation.value,
+              borderThinckness: _blurAnimation.value / 2,
+              width: widget.size.width + widget.frameThickness,
+              height: widget.size.height + widget.frameThickness,
             ),
           ),
 
         ///`background`
         backgroundContainer(
           key: ValueKey("BGOnNeonRect border"),
+          borderThinckness: widget.frameThickness,
           width: widget.size.width + widget.frameThickness,
           height: widget.size.height + widget.frameThickness,
         ),
@@ -155,32 +158,38 @@ class _NeonRectBGState extends State<NeonRectBG>
     );
   }
 
-  Container backgroundContainer({
+  Widget backgroundContainer({
     required Key key,
     required double width,
     required double height,
+    required double borderThinckness,
   }) {
-    return Container(
-      key: key,
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        borderRadius: widget.borderRadius,
-        boxShadow: widget.boxShadow,
-        shape: BoxShape.rectangle,
-        gradient: LinearGradient(
-          begin: Alignment(
-            0,
-            1.0 - _animation.value.y,
-          ),
-          end: Alignment(
-            _animation.value.x,
-            _animation.value.y,
-          ),
+    return ClipPath(
+      clipper: RectClippet(
+        borderThinckness: borderThinckness,
+      ),
+      child: Container(
+        key: key,
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          // borderRadius: widget.borderRadius,
+          boxShadow: widget.boxShadow,
+          shape: BoxShape.rectangle,
+          gradient: LinearGradient(
+            begin: Alignment(
+              0,
+              1.0 - _animation.value.y,
+            ),
+            end: Alignment(
+              _animation.value.x,
+              _animation.value.y,
+            ),
 
-          ///breakPoints of [LinearGradient] colors
-          stops: [.0, .4, .7, 1.0],
-          colors: _colors,
+            ///breakPoints of [LinearGradient] colors
+            stops: [.0, .4, .7, 1.0],
+            colors: _color4xList[_activeColorsIndex],
+          ),
         ),
       ),
     );
