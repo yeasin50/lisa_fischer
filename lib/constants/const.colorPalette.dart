@@ -10,8 +10,8 @@ const linkTextColor2 = const Color(0xff141414);
 const Color greyColor = const Color(0xff737373);
 
 // Colors sets will be used on 404/error screen
-get color4Set1 => const [
-      Colors.purple,
+get color4Set1 =>   [
+      Colors.purple.shade400,
       Colors.blue,
       Colors.yellow,
       Colors.red,

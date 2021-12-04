@@ -3,7 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../model/model.dart';
+import '../../../model/model.dart';
 import 'widgets.dart';
 
 class ParticlesBackground extends StatefulWidget {

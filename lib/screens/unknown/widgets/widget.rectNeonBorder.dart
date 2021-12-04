@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart';
+import '../../../constants/constants.dart';
 import 'widgets.dart';
 
 ///This will be use as Rectframe, A little [Animation] of [Colors]
