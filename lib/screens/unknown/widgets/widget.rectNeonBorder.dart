@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import '../utils/utils.dart';
 import '../../../constants/constants.dart';
@@ -56,16 +59,17 @@ class NeonRectBG extends StatefulWidget {
 class _NeonRectBGState extends State<NeonRectBG>
     with SingleTickerProviderStateMixin {
   //dynamic color based on Hue
-  List<HSLColor> _randomColorPallet = hslColorSet(0);
-  double _colorHueValue = 0.0;
+  List<Color> _randomColorPallet = color4Set1;
+  double _colorHueValue = 0;
 
   late Animation<Alignment> _animation;
   late AnimationController _controller;
 
   // for blur
   late Animation<double> _blurAnimation;
+  Timer? _timerHueChanger;
 
-  ///`Engine`
+  ///`Engine` listner `setState` will handle updating ui, no need to call extra
   _initRect() {
     _controller = AnimationController(
       vsync: this,
@@ -87,7 +91,8 @@ class _NeonRectBGState extends State<NeonRectBG>
     );
 
     _initBlurAnimation();
-
+    // _changeHueAfterReverseAnimation(changeRate: 10,);
+    _changeHueOverTime();
     _controller.repeat(reverse: true);
   }
 
@@ -103,36 +108,37 @@ class _NeonRectBGState extends State<NeonRectBG>
         curve: widget.curve,
       ),
     ));
+  }
 
-    _blurAnimation.addStatusListener((status) {
-      if (status == AnimationStatus.forward) {
-        _colorHueValue += 40;
-
-        if (_colorHueValue > 360) {
-          _colorHueValue = 0.0;
-        }
-        setState(() {});
-
-        print(_colorHueValue);
-        setState(() {
-          // for (int i = 0; i < _randomColorPallet.length; i++) {
-          _randomColorPallet[0] = _randomColorPallet[0].withHue(
-            _colorHueValue,
-          );
-          // _randomColorPallet[1] = _randomColorPallet[1].withHue(
-          //   _colorHueValue,
-          // );
-          // _randomColorPallet[2] = _randomColorPallet[2].withHue(
-          //   _colorHueValue,
-          // );
-          _randomColorPallet[3] = _randomColorPallet[3].withHue(
-            _colorHueValue / 2 / 20 < 0 ? 0 : _colorHueValue * .4,
-          );
-          // }
-        });
+  ///* preodic change color:hue
+  _changeHueOverTime({
+    Duration duration = const Duration(seconds: 1),
+    double changeRate = 1.0,
+  }) async {
+    _timerHueChanger = Timer.periodic(duration, (timer) {
+      for (int i = 0; i < _randomColorPallet.length; i++) {
+        final v = _colorHueValue;
+        _randomColorPallet[i] =
+            changeColorHue(color: _randomColorPallet[i], newHueValue: v);
       }
+
+      _colorHueValue += changeRate;
+      print("update value = $_colorHueValue");
     });
   }
+
+  ////* change color: end of reverse
+  // _changeHueAfterReverseAnimation({required int changeRate}) {
+  //   _blurAnimation.addStatusListener((status) {
+  //     if (status == AnimationStatus.forward) {
+  //       _colorHueValue += changeRate;
+  //       for (int i = 0; i < _randomColorPallet.length; i++) {
+  //         _randomColorPallet[i] = changeColorHue(
+  //             color: _randomColorPallet[i], newHueValue: _colorHueValue);
+  //       }
+  //     }
+  //   });
+  // }
 
   @override
   void initState() {
@@ -142,8 +148,9 @@ class _NeonRectBGState extends State<NeonRectBG>
 
   @override
   void dispose() {
-    _controller.dispose();
     super.dispose();
+    _controller.dispose();
+    _timerHueChanger?.cancel();
   }
 
   @override
@@ -154,22 +161,25 @@ class _NeonRectBGState extends State<NeonRectBG>
         // blur BG //just avoid building
         if (widget.blurSpread != 0)
           Opacity(
-            opacity: _animation.value.y.abs(),
+            key: ValueKey("BlurBGOnNe3nRect border"),
+            opacity: 1,
+            // _animation.value.y.abs(),
             child: backgroundContainer(
               key: ValueKey("BlurBGOnNeonRect border"),
-              borderThinckness: _blurAnimation.value / 2,
+              borderThinckness: 33,
+              // _blurAnimation.value / 2,
               width: widget.size.width + widget.frameThickness,
               height: widget.size.height + widget.frameThickness,
             ),
           ),
 
         ///`background`
-        backgroundContainer(
-          key: ValueKey("BGOnNeonRect border"),
-          borderThinckness: widget.frameThickness,
-          width: widget.size.width + widget.frameThickness,
-          height: widget.size.height + widget.frameThickness,
-        ),
+        // backgroundContainer(
+        //   key: ValueKey("BGOnNeonRect border"),
+        //   borderThinckness: widget.frameThickness,
+        //   width: widget.size.width + widget.frameThickness,
+        //   height: widget.size.height + widget.frameThickness,
+        // ),
 
         ///[child]
         widget.child,
@@ -196,18 +206,18 @@ class _NeonRectBGState extends State<NeonRectBG>
           boxShadow: widget.boxShadow,
           shape: BoxShape.rectangle,
           gradient: LinearGradient(
-            begin: Alignment(
-              0,
-              1.0 - _animation.value.y,
-            ),
-            end: Alignment(
-              _animation.value.x,
-              _animation.value.y,
-            ),
+            // begin: Alignment(
+            //   0,
+            //   1.0 - _animation.value.y,
+            // ),
+            // end: Alignment(
+            //   _animation.value.x,
+            //   _animation.value.y,
+            // ),
 
             ///breakPoints of [LinearGradient] colors
             stops: [.0, .4, .7, 1.0],
-            colors: hslToRgbSet(_randomColorPallet),
+            colors: _randomColorPallet,
           ),
         ),
       ),

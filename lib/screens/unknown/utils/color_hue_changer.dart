@@ -9,13 +9,17 @@ Color changeColorHue({
   required Color color,
   required double newHueValue,
 }) {
-  return HSLColor.fromColor(color)
+  HSLColor hslColor = HSLColor.fromColor(color);
+  final _newHueValue = (newHueValue + hslColor.hue);
+
+  return hslColor
       .withHue(
-        newHueValue,
+        _newHueValue % 360 < 0 ? _newHueValue : _newHueValue % 360,
       )
       .toColor();
 }
 
+/// select Color set
 List<HSLColor> hslColorSet(int setNo) {
   int _setNo = setNo < 0
       ? 0
