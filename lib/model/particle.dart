@@ -36,9 +36,6 @@ const colorList = [
   baseColorPBY,
 ];
 
-///TODO:: control number of particles
-const int numberOfParticles = 10;
-
 class Particle {
   Pvector pos;
   Pvector velocity = Pvector(4, 4);
