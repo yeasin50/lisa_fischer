@@ -18,7 +18,7 @@ class AppRoutePath {
       : pageName = PageName.contact,
         isUnkwon = false;
 
-  AppRoutePath.unkwon()
+  AppRoutePath.unknown()
       : pageName = null,
         isUnkwon = true;
 

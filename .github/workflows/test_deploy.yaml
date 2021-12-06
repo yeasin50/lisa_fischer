@@ -2,7 +2,8 @@ name: deploy web on web-improvement branch
 on:
   push:
     branches:
-      - v0.0-web-improvement
+      # - v0.0-web-improvement
+      - v0.0-error-page
 jobs:
   build:
     name: Build Web
@@ -11,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v1.5.3
         with:
           channel: 'stable'
       - run: flutter config --enable-web

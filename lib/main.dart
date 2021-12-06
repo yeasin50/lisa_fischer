@@ -8,7 +8,7 @@ import 'app.dart';
 import 'providers/provider.navigator.dart';
 
 void main() {
-  setPathUrlStrategy();
+  // setPathUrlStrategy();
   LicenseRegistry.addLicense(
     () async* {
       final license = await rootBundle.loadString('fonts/Lato/OFL.txt');

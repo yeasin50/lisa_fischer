@@ -6,7 +6,6 @@ void dynamicAppLabel({
   BuildContext? context,
   required String label,
 }) {
-  
   SystemChrome.setApplicationSwitcherDescription(
     ApplicationSwitcherDescription(
       label: label,

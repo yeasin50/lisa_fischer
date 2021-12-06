@@ -59,7 +59,7 @@ class AppRouteInformationParser extends RouteInformationParser<AppRoutePath> {
     }
 
     ///* `unkwon route`
-    return AppRoutePath.unkwon();
+    return AppRoutePath.unknown();
   }
 
   @override

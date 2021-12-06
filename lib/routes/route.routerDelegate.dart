@@ -20,7 +20,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
   @override
   AppRoutePath get currentConfiguration {
     if (notifier.isUnknown) {
-      return AppRoutePath.unkwon();
+      return AppRoutePath.unknown();
     }
     if (notifier.pageName == null) {
       return AppRoutePath.work();
@@ -69,7 +69,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
       return AppRoutePath.visda();
     }
 
-    return AppRoutePath.unkwon();
+    return AppRoutePath.unknown();
   }
 
   @override

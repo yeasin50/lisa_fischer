@@ -12,4 +12,6 @@ export './Oro/oro.screen.dart';
 export './Thrive/thrive.screen.dart';
 export './Visda/visda.screen.dart';
 export './Work/lisa.work.screen.dart';
-export './unknown/unknown.dart';
+
+//* unknwon route path
+export './ErrorPage/ErrorPage.dart';
