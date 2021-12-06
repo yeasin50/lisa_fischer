@@ -6,11 +6,11 @@ void dynamicAppLabel({
   BuildContext? context,
   required String label,
 }) {
-  // SystemChrome.setApplicationSwitcherDescription(
-  //   ApplicationSwitcherDescription(
-  //     label: label,
-  //     primaryColor:
-  //         context == null ? null : Theme.of(context).primaryColor.value,
-  //   ),
-  // );
+  SystemChrome.setApplicationSwitcherDescription(
+    ApplicationSwitcherDescription(
+      label: label,
+      primaryColor:
+          context == null ? null : Theme.of(context).primaryColor.value,
+    ),
+  );
 }
