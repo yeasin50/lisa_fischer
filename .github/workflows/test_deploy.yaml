@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - v0.0-web-improvement
+      - v0.0-error-page
 jobs:
   build:
     name: Build Web
