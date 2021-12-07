@@ -48,14 +48,14 @@ class _GridItemState extends State<GridItem> {
 
     //Done:skip nav on Current Index
     if (widget.title == GridItemC.titles[0] &&
-        _currentpage != PageName.buyOnGoogle) {
+        _currentpage != PageName.buy_on_google) {
       // routeName = BuyOnGoolgePage.routeName;
-      pageName = PageName.buyOnGoogle;
+      pageName = PageName.buy_on_google;
     }
     if (widget.title == GridItemC.titles[1] &&
-        _currentpage != PageName.loppetWinterFestival) {
+        _currentpage != PageName.loppet_winter_festival) {
       // routeName = LoppetWinterFestivalPage.routeName;
-      pageName = PageName.loppetWinterFestival;
+      pageName = PageName.loppet_winter_festival;
     }
     if (widget.title == GridItemC.titles[2] && _currentpage != PageName.visda) {
       // routeName = VisdaPage.routeName;
@@ -67,14 +67,14 @@ class _GridItemState extends State<GridItem> {
       pageName = PageName.leveled;
     }
     if (widget.title == GridItemC.titles[4] &&
-        _currentpage != PageName.googleShopping) {
+        _currentpage != PageName.google_shopping) {
       // routeName = GoogleShpoingPage.routeName;
-      pageName = PageName.googleShopping;
+      pageName = PageName.google_shopping;
     }
     if (widget.title == GridItemC.titles[5] &&
-        _currentpage != PageName.bercelonaMetroRedesign) {
+        _currentpage != PageName.bercelona_metro_redesign) {
       // routeName = BercelonaMetroRedesignPage.routeName;
-      pageName = PageName.bercelonaMetroRedesign;
+      pageName = PageName.bercelona_metro_redesign;
     }
     if (widget.title == GridItemC.titles[6] && _currentpage != PageName.oro) {
       // routeName = OroPage.routeName;

@@ -5,11 +5,11 @@ enum PageName {
   contact,
 
   //* work-pages
-  bercelonaMetroRedesign,
-  buyOnGoogle,
-  googleShopping,
+  bercelona_metro_redesign,
+  buy_on_google,
+  google_shopping,
   leveled,
-  loppetWinterFestival,
+  loppet_winter_festival,
   lucere,
   oro,
   thrive,

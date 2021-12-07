@@ -33,15 +33,15 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
     }
 
     //* workPages
-    if (notifier.pageName == PageName.bercelonaMetroRedesign) {
+    if (notifier.pageName == PageName.bercelona_metro_redesign) {
       return AppRoutePath.bercelonaMetroRedesign();
     }
 
-    if (notifier.pageName == PageName.buyOnGoogle) {
+    if (notifier.pageName == PageName.buy_on_google) {
       return AppRoutePath.buyOnGoogle();
     }
 
-    if (notifier.pageName == PageName.googleShopping) {
+    if (notifier.pageName == PageName.google_shopping) {
       return AppRoutePath.googleShopping();
     }
 
@@ -49,7 +49,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
       return AppRoutePath.leveled();
     }
 
-    if (notifier.pageName == PageName.loppetWinterFestival) {
+    if (notifier.pageName == PageName.loppet_winter_festival) {
       return AppRoutePath.loppetWinterFestival();
     }
 
@@ -99,19 +99,19 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
           ),
 
         ///TODO: Overlay with WorkPage
-        if (notifier.pageName == PageName.buyOnGoogle)
+        if (notifier.pageName == PageName.buy_on_google)
           MaterialPage(
             key: ValueKey<String>("buyOnGooglePage"),
             child: BuyOnGoolgePage(),
           ),
 
-        if (notifier.pageName == PageName.bercelonaMetroRedesign)
+        if (notifier.pageName == PageName.bercelona_metro_redesign)
           MaterialPage(
             key: ValueKey<String>("bercelonaMetroRedesignPage"),
             child: BercelonaMetroRedesignPage(),
           ),
 
-        if (notifier.pageName == PageName.googleShopping)
+        if (notifier.pageName == PageName.google_shopping)
           MaterialPage(
             key: ValueKey<String>("googleShoppingPage"),
             child: GoogleShoppingPage(),
@@ -123,7 +123,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
             child: LeveledPage(),
           ),
 
-        if (notifier.pageName == PageName.loppetWinterFestival)
+        if (notifier.pageName == PageName.loppet_winter_festival)
           MaterialPage(
             key: ValueKey<String>("loppetWinterFestivalPage"),
             child: LoppetWinterFestivalPage(),
@@ -189,15 +189,15 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
 
     ///* workPages
     if (configuration.isBercelonaMetroRedesign) {
-      _setNewRoutePath(pName: PageName.bercelonaMetroRedesign);
+      _setNewRoutePath(pName: PageName.bercelona_metro_redesign);
     }
 
     if (configuration.isBuyOnGoogle) {
-      _setNewRoutePath(pName: PageName.buyOnGoogle);
+      _setNewRoutePath(pName: PageName.buy_on_google);
     }
 
     if (configuration.isGoogleShopping) {
-      _setNewRoutePath(pName: PageName.googleShopping);
+      _setNewRoutePath(pName: PageName.google_shopping);
     }
 
     if (configuration.isLeveled) {
@@ -205,7 +205,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
     }
 
     if (configuration.isLoppetWinterFestival) {
-      _setNewRoutePath(pName: PageName.loppetWinterFestival);
+      _setNewRoutePath(pName: PageName.loppet_winter_festival);
     }
 
     if (configuration.isLucere) {
