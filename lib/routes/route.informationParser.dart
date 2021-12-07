@@ -5,6 +5,8 @@ import '../extensions/extensions.dart';
 import 'routes.dart';
 
 class AppRouteInformationParser extends RouteInformationParser<AppRoutePath> {
+  String? _unkownPath;
+
   @override
   Future<AppRoutePath> parseRouteInformation(
       RouteInformation routeInformation) async {
@@ -13,7 +15,11 @@ class AppRouteInformationParser extends RouteInformationParser<AppRoutePath> {
     if (uri.pathSegments.isEmpty) {
       return AppRoutePath.work();
     }
-
+    //* goto to 404 if user use x/x/
+    if (uri.pathSegments.length > 1) {
+      _unkownPath = uri.path;
+      return AppRoutePath.unknown();
+    }
     if (uri.pathSegments[0] == PageName.about.value) {
       return AppRoutePath.about();
     }
@@ -65,7 +71,7 @@ class AppRouteInformationParser extends RouteInformationParser<AppRoutePath> {
   @override
   RouteInformation? restoreRouteInformation(AppRoutePath configuration) {
     if (configuration.isUnkwon) {
-      return RouteInformation(location: '/404');
+      return RouteInformation(location: _unkownPath);
     }
 
     if (configuration.isAbout) {
