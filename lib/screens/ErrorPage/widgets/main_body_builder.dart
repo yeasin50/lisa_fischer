@@ -11,7 +11,7 @@ class ErrorPageBodyBuilder extends StatelessWidget {
   }) : super(key: key);
 
   final double spreadFraction = .75;
-  
+
   @override
   Widget build(BuildContext context) {
     late double boxWidth;
@@ -35,6 +35,7 @@ class ErrorPageBodyBuilder extends StatelessWidget {
         return Stack(
           children: [
             ParticlesBackground(
+              bubleAnimateRate: 0,
               numberOfParticles: Responsive.isDesktop
                   ? 20
                   : Responsive.isTablet

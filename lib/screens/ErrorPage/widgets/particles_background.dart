@@ -11,11 +11,15 @@ class ParticlesBackground extends StatefulWidget {
   final Size? centerSafeArea;
   final int numberOfParticles;
 
+  // change color buble color over time
+  final double bubleAnimateRate;
+
   const ParticlesBackground({
     Key? key,
     required this.backgroundSize,
     this.centerSafeArea,
     required this.numberOfParticles,
+    required this.bubleAnimateRate,
   }) : super(key: key);
 
   @override
@@ -123,6 +127,8 @@ class _ParticlesBackgroundState extends State<ParticlesBackground> {
                   top: p.pos.y,
                   left: p.pos.x,
                   child: BubbleRadialContainer(
+                    key: UniqueKey(),
+                    animateRate: widget.bubleAnimateRate,
                     radius: p.radius,
                     colors: p.colors,
                   ),
