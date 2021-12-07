@@ -24,15 +24,15 @@ class AppRoutePath {
 
   //* work-pages
   AppRoutePath.bercelonaMetroRedesign()
-      : pageName = PageName.bercelonaMetroRedesign,
+      : pageName = PageName.bercelona_metro_redesign,
         isUnkwon = false;
 
   AppRoutePath.buyOnGoogle()
-      : pageName = PageName.buyOnGoogle,
+      : pageName = PageName.buy_on_google,
         isUnkwon = false;
 
   AppRoutePath.googleShopping()
-      : pageName = PageName.googleShopping,
+      : pageName = PageName.google_shopping,
         isUnkwon = false;
 
   AppRoutePath.leveled()
@@ -40,7 +40,7 @@ class AppRoutePath {
         isUnkwon = false;
 
   AppRoutePath.loppetWinterFestival()
-      : pageName = PageName.loppetWinterFestival,
+      : pageName = PageName.loppet_winter_festival,
         isUnkwon = false;
 
   AppRoutePath.lucere()
@@ -65,13 +65,13 @@ class AppRoutePath {
 
   //* work pages
   bool get isBercelonaMetroRedesign =>
-      pageName == PageName.bercelonaMetroRedesign && !isUnkwon;
+      pageName == PageName.bercelona_metro_redesign && !isUnkwon;
 
-  bool get isBuyOnGoogle => pageName == PageName.buyOnGoogle && !isUnkwon;
-  bool get isGoogleShopping => pageName == PageName.googleShopping && !isUnkwon;
+  bool get isBuyOnGoogle => pageName == PageName.buy_on_google && !isUnkwon;
+  bool get isGoogleShopping => pageName == PageName.google_shopping && !isUnkwon;
   bool get isLeveled => pageName == PageName.leveled && !isUnkwon;
   bool get isLoppetWinterFestival =>
-      pageName == PageName.loppetWinterFestival && !isUnkwon;
+      pageName == PageName.loppet_winter_festival && !isUnkwon;
 
   bool get isLucere => pageName == PageName.lucere && !isUnkwon;
   bool get isOro => pageName == PageName.oro && !isUnkwon;
