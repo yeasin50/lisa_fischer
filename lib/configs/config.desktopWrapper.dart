@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/Work/widgets/work_grid_items.dart';
+import 'package:provider/provider.dart';
 
-import 'configs.dart';
+import '../constants/const.enum.pagesName.dart';
+import '../providers/provider.navigator.dart';
+import '../screens/Work/widgets/work_grid_items.dart';
 import '../widgets/widgets.dart';
+import 'configs.dart';
 
 class DesktopViewWrapper extends StatelessWidget {
   final Widget child;
@@ -33,7 +36,6 @@ class DesktopViewWrapper extends StatelessWidget {
                         child: Column(
                           children: [
                             child,
-                            
                             WorkPageGridItems(
                               key: UniqueKey(),
                               gridItemCount: 3,
@@ -73,8 +75,12 @@ class DesktopViewWrapper extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      AnimatedLogo(
-                        animType: AnimationType.rotate,
+                      Consumer<PageNotifier>(
+                        builder: (context, value, child) => AnimatedLogo(
+                          animType: value.pageName == PageName.contact
+                              ? AnimationType.scaleX
+                              : AnimationType.rotate,
+                        ),
                       ),
                       LSHeader().navigators(context),
                     ],

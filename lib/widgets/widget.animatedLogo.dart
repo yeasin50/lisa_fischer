@@ -34,11 +34,13 @@ class _AnimatedLogoState extends State<AnimatedLogo>
 
   ///TODO: play with animation duration of logo
   _animationDuration() {
+    print(widget.animType);
+
     /// set `animation controller duration`
     if (widget.animType == AnimationType.rotate)
       return Duration(seconds: 3);
     else
-      return Duration(milliseconds: 500);
+      return Duration(milliseconds: 1500);
   }
 
   _initAnim() {
@@ -50,7 +52,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
         ;
 
     /// bounceInOut for [Get In Touch]=> [Contact page]
-    _animX = Tween<double>(begin: 3.5, end: 1).animate(
+    _animX = Tween<double>(begin: 2, end: 1).animate(
       CurvedAnimation(
         parent: _controller,
         curve: const Interval(
