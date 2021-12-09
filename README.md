@@ -2,7 +2,12 @@
 
 ---
 
-My Goal is to make it work with `navigator 2`, And I think it works well 🤐
+My Goal is to make it work with `navigator 2`, and I think it works well 🤐
+
+
+**TLDR:** My goal was just to make the page running using navigator 2, the way page changes on websites.  Views kinda messed-up because of change scaling others. This is a practice level project so that I can learn more about flutter web, and I've learned a lot from this project.
+
+---
 
 This is the first project I've started for web purposes. There are many things I did not notice like images can have format parameters etc. You can find different approaches for the same thing in this project because I was testing different approaches.
 
@@ -12,10 +17,9 @@ Also, the portfolio got some updates.
 
 There are many things that can be done here, like using painter class with animation from some images. Also, spacing and fonts are messed-up, and I am not satisfied of current state but 🤘😅.
 
-Thing get complicated without written plan and while I was doing internship, the middle of the Project I didn’t get enough time to finish this and others unfinished project. After 3 month I quit that to finish this and explore others new feature like navigator 2, rive etc. The best part is solving question Stack Overflow.
+Thing get complicated without written plan and while I was doing internship, the middle of the Project I didn’t get enough time to finish this and others unfinished project. After 3 months  of internship, I quit to finish this and explore others new feature like navigator 2, rive etc. The best part is solving question Stack Overflow.
 
 ---
-
 
 > I am thinking to create my portfolio, yea haven't done with flutter yet 🙂
 
@@ -25,10 +29,8 @@ Thing get complicated without written plan and while I was doing internship, the
 
 - [ ] rm unused asset-font
 - [ ] control pixel(4) on splash screen create separate one
-- [x] splash screen
+- [ ] splash screen's: scale down splash image
 - [ ] setup logo
-- [ ] navigation on tablet and mobile mode
-- [ ] handle logoAnimation
 - [ ] work on maxWidth% of devices
 - [ ] ytVide size
 - [ ] **x** use Sizer [next one] not using for this project
