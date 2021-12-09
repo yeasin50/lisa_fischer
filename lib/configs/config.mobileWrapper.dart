@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../constants/constants.dart';
+import '../providers/provider.navigator.dart';
 import '../utils/utils.dart';
 import '../widgets/widgets.dart';
 
@@ -28,7 +30,13 @@ class MobieViewWrapper extends StatelessWidget {
                 bottom: spaceBetweenColumnItemsOnMobile,
               ),
               sliver: SliverToBoxAdapter(
-                child: AnimatedLogo(),
+                child: Consumer<PageNotifier>(
+                  builder: (context, value, child) => AnimatedLogo(
+                    animType: value.pageName == PageName.contact
+                        ? AnimationType.scaleX
+                        : AnimationType.rotate,
+                  ),
+                ),
               ),
             ),
 

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../constants/constants.dart';
+import '../providers/provider.navigator.dart';
 import '../utils/utils.dart';
 import '../widgets/widgets.dart';
 import 'configs.dart';
@@ -48,8 +51,12 @@ class TabletViewWrapper extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AnimatedLogo(
-                    animType: AnimationType.rotate,
+                  Consumer<PageNotifier>(
+                    builder: (context, value, child) => AnimatedLogo(
+                      animType: value.pageName == PageName.contact
+                          ? AnimationType.scaleX
+                          : AnimationType.rotate,
+                    ),
                   ),
                   LSHeader().navigators(context),
                 ],
