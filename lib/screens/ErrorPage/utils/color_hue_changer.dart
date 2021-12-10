@@ -7,10 +7,10 @@ import '../../../constants/constants.dart';
 
 Color changeColorHue({
   required Color color,
-  required double newHueValue,
+  required double increaseBy,
 }) {
   HSLColor hslColor = HSLColor.fromColor(color);
-  final _newHueValue = (newHueValue + hslColor.hue);
+  final _newHueValue = (increaseBy + hslColor.hue);
 
   return hslColor
       .withHue(
