@@ -11,31 +11,38 @@ class ConnectOnAbout extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Connect",
               style: AppTextStyles.midBlod,
             ),
-            SizedBox(height: 10),
-            UrlNaVigator(
-              onClick: () {
-                launch("https://twitter.com/lisasuefischer");
-              },
-              title: 'Instagram',
-            ),
-            UrlNaVigator(
-              onClick: () {
-                launch("https://www.linkedin.com/in/lisasuefischer");
-              },
-              title: 'Linkedin',
-            ),
-            UrlNaVigator(
-              onClick: () {
-                launch("https://twitter.com/lisasuefischer");
-              },
-              title: 'Twitter',
+            //Done:fix overflow  1104-882
+
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                UrlNaVigator(
+                  onClick: () {
+                    launch("https://twitter.com/lisasuefischer");
+                  },
+                  title: 'Instagram',
+                ),
+                UrlNaVigator(
+                  onClick: () {
+                    launch("https://www.linkedin.com/in/lisasuefischer");
+                  },
+                  title: 'Linkedin',
+                ),
+                UrlNaVigator(
+                  onClick: () {
+                    launch("https://twitter.com/lisasuefischer");
+                  },
+                  title: 'Twitter',
+                ),
+              ],
             ),
           ],
         )
