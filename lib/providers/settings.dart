@@ -3,8 +3,10 @@
 import 'package:flutter/cupertino.dart';
 
 class ProjectSetting extends ChangeNotifier {
-  bool _showDialog = false;
+  bool _showDialog = true;
   bool _showCloneInfoOnFooter = true;
+
+  static final initDialogDelay = const Duration(seconds: 2);
 
   get cloneInfoOnFooter => _showCloneInfoOnFooter;
   get showDialog => _showDialog;

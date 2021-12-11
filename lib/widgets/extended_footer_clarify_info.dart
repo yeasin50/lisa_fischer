@@ -76,7 +76,7 @@ class _ProjectFooterState extends State<ProjectFooter> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => extendedFooterTapEvent(context),
+      onTap: () => showProjectInfo(context),
       child: SizedBox(
         height: widget.size.height,
         width: widget.size.width,

@@ -8,11 +8,7 @@ import '../constants/constants.dart';
 import '../providers/settings.dart';
 import '../widgets/widgets.dart';
 
-void extendedFooterTapEvent(BuildContext context) async {
-  _showDialog(context);
-}
-
-_showDialog(BuildContext context) {
+void showProjectInfo(BuildContext context) async {
   showDialog(
     context: context,
     barrierDismissible: false,
