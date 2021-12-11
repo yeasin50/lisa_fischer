@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/constants.dart';
+import '../../utils/utils.dart';
 import 'utils/utils.dart';
 import 'widgets/widgets.dart';
-import 'widgets/work_grid_items.dart';
 
-class MobileView extends StatelessWidget {
+class MobileView extends StatefulWidget {
   const MobileView({Key? key}) : super(key: key);
 
+  @override
+  State<MobileView> createState() => _MobileViewState();
+}
+
+class _MobileViewState extends State<MobileView> {
   int get _gridItemCount => 1;
+  
+  @override
+  void initState() {
+    super.initState();
+    _initDialog();
+  }
+
+  _initDialog() async {
+    await initalDialog(context);
+  }
 
   @override
   Widget build(BuildContext context) {

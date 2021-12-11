@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/const.textStyles.dart';
+import '../../utils/utils.dart';
 import 'utils/utils.dart';
 import 'widgets/widgets.dart';
-import 'widgets/work_grid_items.dart';
 
-class TabletView extends StatelessWidget {
+class TabletView extends StatefulWidget {
   const TabletView({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<TabletView> createState() => _TabletViewState();
+}
+
+class _TabletViewState extends State<TabletView> {
   int get _gridItemCount => 2;
+
+  @override
+  void initState() {
+    super.initState();
+    _initDialog();
+  }
+
+  _initDialog() async {
+    await initalDialog(context);
+  }
 
   @override
   Widget build(BuildContext context) {

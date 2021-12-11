@@ -3,14 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../constants/const.textStyles.dart';
 import '../constants/constants.dart';
 import '../providers/settings.dart';
 import '../widgets/widgets.dart';
 
-void showProjectInfo(BuildContext context) async {
-  showDialog(
-    context: context,
+// intial dialog after landing
+Future<void> initalDialog(BuildContext c) async {
+  WidgetsBinding.instance!.addPostFrameCallback(
+    (_) async {
+      if (Provider.of<ProjectSetting>(c, listen: false).showDialog) {
+        await Future.delayed(ProjectSetting.initDialogDelay);
+        _showDialog(c);
+      }
+    },
+  );
+}
+
+// footer tap event
+Future<void> showProjectInfo(BuildContext c) async {
+  await _showDialog(c);
+}
+
+_showDialog(BuildContext c) async {
+  await showDialog(
+    context: c,
     barrierDismissible: false,
     builder: (context) => AlertDialog(
       title: Text("⚠ Clone project"),
@@ -67,8 +83,9 @@ void showProjectInfo(BuildContext context) async {
       actionsAlignment: MainAxisAlignment.center,
       actions: [
         CustomButton(
-          size: Size(180, 40),
+          size: Size(180, 49),
           onTap: () {
+            Provider.of<ProjectSetting>(c, listen: false).cancelDialog();
             Navigator.of(context).pop();
           },
           label: "I am aware of this",
