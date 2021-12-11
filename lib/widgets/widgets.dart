@@ -1,3 +1,4 @@
+export 'extended_footer_clarify_info.dart';
 export 'green_divider_line.dart';
 export 'widget.animatedLogo.dart';
 export 'widget.bigTitleWithSub.dart';

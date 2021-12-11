@@ -38,7 +38,7 @@ class _BubbleRadialContainerState extends State<BubbleRadialContainer> {
     final changeIndex = 3;
     _timer = Timer.periodic(const Duration(milliseconds: 200), (t) {
       _colors[changeIndex] = changeColorHue(
-          color: _colors[changeIndex], newHueValue: widget.animateRate);
+          color: _colors[changeIndex], increaseBy: widget.animateRate);
 
       setState(() {});
     });

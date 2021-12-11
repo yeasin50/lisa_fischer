@@ -116,7 +116,7 @@ class _NeonRectBGState extends State<NeonRectBG>
     _timerHueChanger = Timer.periodic(duration, (timer) {
       _randomColorPallet = _randomColorPallet
           .map(
-            (color) => changeColorHue(color: color, newHueValue: changeRate),
+            (color) => changeColorHue(color: color, increaseBy: changeRate),
           )
           .toList();
     });
@@ -128,7 +128,7 @@ class _NeonRectBGState extends State<NeonRectBG>
       if (status == AnimationStatus.forward) {
         for (int i = 0; i < _randomColorPallet.length; i++) {
           _randomColorPallet[i] = changeColorHue(
-              color: _randomColorPallet[i], newHueValue: _colorHueValue);
+              color: _randomColorPallet[i], increaseBy: _colorHueValue);
         }
       }
     });

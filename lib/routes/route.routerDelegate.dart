@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../providers/provider.navigator.dart';
 
 import '../constants/constants.dart';
+import '../providers/providers.dart';
 import '../screens/screens.dart';
 import 'route.routePaths.dart';
 
@@ -74,6 +73,7 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
 
   @override
   Widget build(BuildContext context) {
+  
     return Navigator(
       key: navigatorKey,
       pages: [

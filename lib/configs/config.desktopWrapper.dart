@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../providers/providers.dart';
 import 'package:provider/provider.dart';
 
 import '../constants/const.enum.pagesName.dart';
@@ -53,16 +54,34 @@ class DesktopViewWrapper extends StatelessWidget {
               //* Footer
               Align(
                 alignment: Alignment(0, 1),
-                child: Container(
-                  color: Colors.white,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      FooterText(),
-                      SocialIcons(),
-                    ],
-                  ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      color: Colors.white,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          FooterText(),
+                          Consumer<ProjectSetting>(
+                            builder: (context, value, child) {
+                              if (value.cloneInfoOnFooter) {
+                                return ProjectFooter(
+                                  size: Size(
+                                    constraints.maxWidth * .25,
+                                    kToolbarHeight * .75,
+                                  ),
+                                );
+                              } else
+                                return SizedBox();
+                            },
+                          ),
+                          SocialIcons(),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
               //* Header

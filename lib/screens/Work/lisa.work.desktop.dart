@@ -1,13 +1,26 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/Work/widgets/work_grid_items.dart';
 
 import '../../constants/constants.dart';
+import '../../utils/utils.dart';
 import 'utils/utils.dart';
 import 'widgets/widgets.dart';
 
-class DesktopView extends StatelessWidget {
+class DesktopView extends StatefulWidget {
+  @override
+  State<DesktopView> createState() => _DesktopViewState();
+}
+
+class _DesktopViewState extends State<DesktopView> {
+  @override
+  void initState() {
+    super.initState();
+    _initDialog();
+  }
+
+  _initDialog() async {
+    await initalDialog(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     final double _fontS = Theme.of(context).textTheme.headline5!.fontSize!;

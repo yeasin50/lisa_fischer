@@ -1,5 +1,6 @@
 export 'blurHashImageTemplate.dart';
 export 'dynamic_app_label.dart';
+export 'extended_footer_tap_event.dart';
 export 'home_nav_button_tablet_wrapper.dart';
 export 'utils.customRoute.dart';
 export 'utils.socialIconClickEventHandler.dart';
