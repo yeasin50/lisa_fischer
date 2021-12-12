@@ -9,14 +9,13 @@ import '../widgets/widgets.dart';
 
 // intial dialog after landing
 Future<void> initalDialog(BuildContext c) async {
-  WidgetsBinding.instance!.addPostFrameCallback(
-    (_) async {
-      if (Provider.of<ProjectSetting>(c, listen: false).showDialog) {
-        await Future.delayed(ProjectSetting.initDialogDelay);
-        _showDialog(c);
-      }
-    },
-  );
+  await Future.delayed(ProjectSetting.initDialogDelay);
+
+  final projectSettingsNotifier = Provider.of<ProjectSetting>(c, listen: false);
+  if (projectSettingsNotifier.showDialog) {
+    await _showDialog(c);
+    projectSettingsNotifier.cancelDialog();
+  }
 }
 
 // footer tap event
@@ -33,26 +32,23 @@ _showDialog(BuildContext c) async {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text.rich(
-            TextSpan(
-              style: AppTextStyles.normal,
-              children: [
-                TextSpan(
-                  text:
-                      "This is not Lisa Fischer's original portfolio. I've just clone it to practice flutter Framework.\n",
-                ),
-                TextSpan(
-                  text: "Click to view the original\n",
-                  style: AppTextStyles.normal.copyWith(
-                    color: Colors.blue,
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () async {
-                      await launch("http://www.lisasuefischer.com/");
-                    },
-                ),
-              ],
+          Text(
+            "This is not Lisa Fischer's original portfolio. I've just clone it to practice flutter Framework.\n",
+            style: AppTextStyles.normal,
+          ),
+          InkWell(
+            onTap: () async {
+              await launch("http://www.lisasuefischer.com/");
+            },
+            child: Text(
+              "Click to view the original",
+              style: AppTextStyles.normal.copyWith(
+                color: Colors.blue,
+              ),
             ),
+          ),
+          const SizedBox(
+            height: 10,
           ),
           Row(
             children: [
@@ -85,7 +81,6 @@ _showDialog(BuildContext c) async {
         CustomButton(
           size: Size(180, 49),
           onTap: () {
-            Provider.of<ProjectSetting>(c, listen: false).cancelDialog();
             Navigator.of(context).pop();
           },
           label: "I am aware of this",
