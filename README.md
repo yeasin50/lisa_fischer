@@ -2,9 +2,17 @@
 
 ---
 
-My Goal is to make it work with `navigator 2`, and I think it works well 🤐
+My Goal was to make it work with `navigator2`, and I think it works well 🤐
 
 **TLDR:** My goal was just to make the page running using navigator 2, the way page changes on websites. Views kinda messed-up because of change scaling others. This is a practice level project so that I can learn more about flutter web, and I've learned a lot from this project.
+
+---
+
+- result of this project: [https://yeasin50.github.io/lisa_fischer/](https://yeasin50.github.io/lisa_fischer/)  
+  
+- clone the reposatory: [https://github.com/yeasin50/lisa_fischer.git](https://github.com/yeasin50/lisa_fischer.git)
+  
+> Check the original portfolio: [Lisa Fischer](http://www.lisasuefischer.com/)
 
 ---
 
